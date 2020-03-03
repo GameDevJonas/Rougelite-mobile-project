@@ -22,7 +22,7 @@ public class DungeonSpawnPoint : MonoBehaviour
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomManager>();
         daGrid = GameObject.FindGameObjectWithTag("RoomManager");
-        Invoke("Spawn", 1f);
+        Invoke("Spawn", .1f);
     }
 
     // Update is called once per frame
@@ -32,10 +32,10 @@ public class DungeonSpawnPoint : MonoBehaviour
         {
             if (openingDir == 1)
             {
-                
+
                 //need a room with top door
                 rand = Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[rand], transform.position, Quaternion.identity, daGrid.gameObject.transform);
+                Instantiate(templates.topRooms[rand], transform.position, Quaternion.identity);
             }
             else if (openingDir == 2)
             {
@@ -47,27 +47,31 @@ public class DungeonSpawnPoint : MonoBehaviour
             {
                 //need a room with a right door
                 rand = Random.Range(0, templates.rightRooms.Length);
-                Instantiate(templates.rightRooms[rand], transform.localPosition, Quaternion.identity, daGrid.gameObject.transform);
+                Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
             }
             else if (openingDir == 4)
             {
                 //need a room with a left door
                 rand = Random.Range(0, templates.leftRooms.Length);
-                Instantiate(templates.leftRooms[rand], transform.localPosition, Quaternion.identity, daGrid.gameObject.transform);
+                Instantiate(templates.leftRooms[rand], transform.position, Quaternion.identity);
             }
             spawned = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("SpawnPoint"))
+        DungeonSpawnPoint spawner = collision.gameObject.GetComponent<DungeonSpawnPoint>();
+        if (spawner != null)
         {
-            if(collision.GetComponent<DungeonSpawnPoint>().spawned == false && spawned == false)
+            if (collision.CompareTag("SpawnPoint"))
             {
-                Instantiate(templates.closedRooms[0], transform.position, Quaternion.identity, daGrid.gameObject.transform);
-                Destroy(gameObject);
+                if (collision.GetComponent<DungeonSpawnPoint>().spawned == false && spawned == false)
+                {
+                    Instantiate(templates.closedRooms[0], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                spawned = true;
             }
-            spawned = true;
         }
     }
 }
