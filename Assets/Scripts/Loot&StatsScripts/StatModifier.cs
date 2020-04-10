@@ -1,10 +1,4 @@
-﻿public enum StatModType
-{
-    Flat = 100,
-    PercentAdd = 200,
-    PercentMult = 300,
-}
-public class StatModifier
+﻿public class StatModifier
 {
     public readonly float Value;
     public readonly StatModType Type;
@@ -28,4 +22,10 @@ public class StatModifier
 
     // Requires Value, Type and Source. Sets Order to its default value: (int)Type
     public StatModifier(float value, StatModType type, object source) : this(value, type, (int)type, source) { }
+}
+public enum StatModType
+{
+    Flat = 100,
+    PercentAdd = 200,
+    PercentMult = 300,
 }

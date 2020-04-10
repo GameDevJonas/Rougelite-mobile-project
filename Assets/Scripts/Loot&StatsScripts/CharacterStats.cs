@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 public class CharacterStat
 {
     protected bool isDirty = true;
-    protected float _value;
+    public float _value;
     public float BaseValue;
     protected float lastBaseValue = float.MinValue;
     protected readonly List<StatModifier> statModifiers;
@@ -31,7 +31,7 @@ public class CharacterStat
     {
         BaseValue = baseValue;
     }
-    public float Value
+    public virtual float Value
     {
         get
         {
