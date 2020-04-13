@@ -43,6 +43,20 @@ public class Inventory : MonoBehaviour
         MovementSpeed.BaseValue = 5f;
 
         player.UpdateStats();
+
+        AddFlatModifier(Health, 0);
+        AddFlatModifier(HealthPercent, 0);
+        AddFlatModifier(Strength, 0);
+        AddFlatModifier(StrengthPercent, 0);
+        AddFlatModifier(Dexterity, 0);
+        AddFlatModifier(CritChance, 0);
+        AddFlatModifier(CritDamage, 0);
+        AddFlatModifier(LifeOnHit, 0);
+        AddFlatModifier(LifeOnHitPercent, 0);
+        AddFlatModifier(SwordAttackModifier, 0);
+        AddFlatModifier(CrossbowAttackModifier, 0);
+        AddFlatModifier(PotionPotency, 0);
+        AddFlatModifier(MovementSpeed, 0);
     }
     public void GiveItem(int id)
     {

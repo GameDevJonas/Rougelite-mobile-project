@@ -6,22 +6,30 @@ public class EnemyAI : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public float speed;
+    public GameObject aggroRange;
     public GameObject player;
+    public GameObject sword;
     public GameObject attack;
-    Vector2 direction;
     public bool closeEnough = false;
+    public bool canAttack = false;
+    public HealthSystem HealthSystem;
+    public float Health;
+    Vector2 direction;
     Vector2 walk;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         speed = 3f;
+        HealthSystem = new HealthSystem(50);
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        Health = HealthSystem.GetHealth();
+        
         if (closeEnough == false)
         {
             walk = (player.transform.position - transform.position).normalized * speed;
@@ -30,38 +38,44 @@ public class EnemyAI : MonoBehaviour
         else
         {
             rb2d.velocity = new Vector2(0, 0);
-            Invoke("Check", 1f);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D Attackrange)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (Attackrange.gameObject.tag == "Player")
+        
+        if (collider.tag == "Sword")
         {
-            closeEnough = true;
+            Inventory inventory = player.GetComponent<Inventory>();
+            HealthSystem.Damage(inventory.Strength.Value);
         }
     }
-    private void OnTriggerExit2D(Collider2D Attackrange)
+   
+    public void Attack()
     {
-        if (Attackrange.gameObject.tag == "Player")
-        {
-            closeEnough = false;
-        }
-    }
-    private void Attack()
-    {
+        canAttack = false;
         direction = player.transform.position - transform.position;
         float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90;
         GameObject clonedObject = Instantiate(attack, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
-        Check();
         Destroy(clonedObject, 0.3f);
+        Invoke("Check", 0.5f);
     }
-    private void Check()
+    public void Check()
     {
-        if (closeEnough == true)
+        if (closeEnough == true && canAttack == true)
         {
-            Attack();
+            Invoke("Attack", 0.5f);
+            print("1");
         }
-        else return;
+        if (closeEnough == false || canAttack == false)
+        {
+            Invoke("Wait", 0.5f);
+            print("2");
+        }
+    }
+    public void Wait()
+    {
+        canAttack = true;
+        print("3");
+        Check();
     }
 }

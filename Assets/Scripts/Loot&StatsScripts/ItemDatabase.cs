@@ -26,7 +26,6 @@ public class ItemDatabase : MonoBehaviour
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Inventory inventory = Player.GetComponent<Inventory>();
         Health = inventory.Health;
-        Health = inventory.Health;
         HealthPercent = inventory.HealthPercent;
         Strength = inventory.Strength;
         StrengthPercent = inventory.StrengthPercent;

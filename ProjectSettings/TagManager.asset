@@ -4,15 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - SpawnPoint
-  - Rooms
-  - RoomManager
-  - ItemPool
-  - PedestalSpawn
-=======
   - Enemy
->>>>>>> Stashed changes
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -49,7 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: NoLightPass
-    uniqueID: 2856728385
     locked: 0

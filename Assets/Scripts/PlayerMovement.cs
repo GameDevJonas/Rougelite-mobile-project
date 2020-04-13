@@ -18,9 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float attackspeed;
     public float rotationSpeed = 5f;
+    public HealthSystem HealthSystem;
+    public float Health;
 
     void Start()
     {
+        Inventory inventory = GetComponent<Inventory>();
         
         rb = GetComponent<Rigidbody2D>();
         
@@ -43,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateStats()
     {
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Inventory inventory = Player.GetComponent<Inventory>();
+        Inventory inventory = GetComponent<Inventory>();
         speed = inventory.MovementSpeed.Value;
         attackspeed = (100f - inventory.Dexterity.Value) / 100f;
-        print(1f / attackspeed + "attacks per second");
+        HealthSystem = new HealthSystem(inventory.Health.Value);
+        Health = HealthSystem.GetHealth();
     }
     void CheckInput()
     {
@@ -89,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         if (attack && (canAttack == true))
  
         {
-            GameObject clonedObject = Instantiate(sword, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z));
+            GameObject clonedObject = Instantiate(sword, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z), transform);
             canMove = false;
             canAttack = false;
             Destroy(clonedObject, 0.2f);
