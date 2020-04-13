@@ -17,15 +17,15 @@ public class ItemPool : MonoBehaviour
 
     public int current;
 
-    public Item[] itemArray;
+    public ItemNo[] itemArray;
 
     //public List<string> poolName = new List<string>();
     public List<float> poolPercentage = new List<float>();
-    public List<Item> itemsInPool = new List<Item>();
+    public List<ItemNo> itemsInPool = new List<ItemNo>();
     void Start()
     {
         current = 0;
-        foreach (Item item in itemArray)
+        foreach (ItemNo item in itemArray)
         {
             float percentageToAdd = item.myPercentage;
             current++;
@@ -37,7 +37,7 @@ public class ItemPool : MonoBehaviour
 
     public void ChooseItem()
     {
-        foreach (Item item in itemArray)
+        foreach (ItemNo item in itemArray)
         {
             if (!ItemPedestal.spawned)
             {
