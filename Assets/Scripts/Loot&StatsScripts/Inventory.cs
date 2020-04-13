@@ -21,7 +21,10 @@ public class Inventory : MonoBehaviour
     public CharacterStat MovementSpeed;
     public List<Item> Loot = new List<Item>();
     public ItemDatabase ItemDatabase;
+    public PlayerMovement player => GetComponent<PlayerMovement>();
     public int ItemCount = 0;
+
+    
 
     private void Start()
     {
@@ -29,7 +32,7 @@ public class Inventory : MonoBehaviour
         HealthPercent.BaseValue = 1f;
         Strength.BaseValue = 10;
         StrengthPercent.BaseValue = 1f;
-        Dexterity.BaseValue = 1;
+        Dexterity.BaseValue = 10;
         CritChance.BaseValue = 0;
         CritDamage.BaseValue = 0;
         LifeOnHit.BaseValue = 0;
@@ -37,9 +40,9 @@ public class Inventory : MonoBehaviour
         SwordAttackModifier.BaseValue = 1.5f;
         CrossbowAttackModifier.BaseValue = 1f;
         PotionPotency.BaseValue = 0;
-        MovementSpeed.BaseValue = 10;
+        MovementSpeed.BaseValue = 5f;
 
-        
+        player.UpdateStats();
     }
     public void GiveItem(int id)
     {
@@ -50,7 +53,7 @@ public class Inventory : MonoBehaviour
         AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
         Item itemCheck = CheckforItems(id);
     }
-    private void FixedUpdate()
+    private void UpdateItemInfo()
     {
         Debug.Log("I have " + ItemCount + " items and " + Health.Value + "Health and " + Strength.Value + "Strength");
     }
@@ -63,17 +66,21 @@ public class Inventory : MonoBehaviour
     public void AddFlatModifier(CharacterStat statType, float statValue)
     {
         statType.AddModifier(new StatModifier(statValue, StatModType.Flat, this));
+        UpdateItemInfo();
+        player.UpdateStats();
     }
     public void AddPercentAddModifier(CharacterStat statType, float statValue)
     {
         statType.AddModifier(new StatModifier(statValue, StatModType.PercentAdd, this));
+        player.UpdateStats();
     }
     public void AddFlatPercentMultModifier(CharacterStat statType, float statValue)
     {
         statType.AddModifier(new StatModifier(statValue, StatModType.PercentMult, this));
+        player.UpdateStats();
     }
 
-    public void RemoveItem(int id, CharacterStat statType, float statValue)
+    public void RemoveItem(int id)
     {
         Item item = CheckforItems(id);
         if (item != null)
@@ -81,6 +88,7 @@ public class Inventory : MonoBehaviour
             RemoveModifier();
             Loot.Remove(item);
             ItemCount -= 1;
+            player.UpdateStats();
         }
     }
     public void RemoveModifier()

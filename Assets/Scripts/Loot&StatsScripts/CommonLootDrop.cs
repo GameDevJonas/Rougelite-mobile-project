@@ -32,11 +32,17 @@ public class CommonLootDrop : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        IsInRange = true;
+        if (collider.gameObject.tag == "Player")
+        {
+            IsInRange = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        IsInRange = false;
+        if (collider.gameObject.tag == "Player")
+        {
+            IsInRange = false;
+        }
     }
 }

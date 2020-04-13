@@ -4,11 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - SpawnPoint
   - Rooms
   - RoomManager
   - ItemPool
   - PedestalSpawn
+=======
+  - Enemy
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
