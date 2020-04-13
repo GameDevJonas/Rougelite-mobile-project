@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-m_EditorVersion: 2019.3.5f1
-m_EditorVersionWithRevision: 2019.3.5f1 (d691e07d38ef)
-=======
-m_EditorVersion: 2019.3.3f1
-m_EditorVersionWithRevision: 2019.3.3f1 (7ceaae5f7503)
->>>>>>> master
+m_EditorVersion: 2019.3.9f1
+m_EditorVersionWithRevision: 2019.3.9f1 (e6e740a1c473)
