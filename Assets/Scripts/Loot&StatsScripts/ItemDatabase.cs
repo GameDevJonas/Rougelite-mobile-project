@@ -24,19 +24,19 @@ public class ItemDatabase : MonoBehaviour
     private void Start()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Inventory inventory = Player.GetComponent<Inventory>();
-        Health = inventory.Health;
-        HealthPercent = inventory.HealthPercent;
-        Strength = inventory.Strength;
-        StrengthPercent = inventory.StrengthPercent;
-        Dexterity = inventory.Dexterity;
-        CritChance = inventory.CritChance;
-        CritDamage = inventory.CritDamage;
-        LifeOnHit = inventory.LifeOnHitPercent;
-        SwordAttackModifier = inventory.SwordAttackModifier;
-        CrossbowAttackModifier = inventory.CrossbowAttackModifier;
-        PotionPotency = inventory.PotionPotency;
-        MovementSpeed = inventory.MovementSpeed;
+        PlayerStats playerstats = Player.GetComponent<PlayerStats>();
+        Health = playerstats.Health;
+        HealthPercent = playerstats.HealthPercent;
+        Strength = playerstats.Strength;
+        StrengthPercent = playerstats.StrengthPercent;
+        Dexterity = playerstats.Dexterity;
+        CritChance = playerstats.CritChance;
+        CritDamage = playerstats.CritDamage;
+        LifeOnHit = playerstats.LifeOnHitPercent;
+        SwordAttackModifier = playerstats.SwordAttackModifier;
+        CrossbowAttackModifier = playerstats.CrossbowAttackModifier;
+        PotionPotency = playerstats.PotionPotency;
+        MovementSpeed = playerstats.MovementSpeed;
         BuildDatabase();
     }
 

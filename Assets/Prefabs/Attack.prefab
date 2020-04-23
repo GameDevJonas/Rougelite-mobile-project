@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1986842023111703633}
   - component: {fileID: 1986842023111703634}
   - component: {fileID: 1986842023111703635}
+  - component: {fileID: 29149273853386679}
+  - component: {fileID: -1995331488550486208}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -135,3 +137,33 @@ PolygonCollider2D:
       - {x: 0.055136275, y: 0}
       - {x: 0.13486372, y: 0.10513502}
       - {x: 0.050558984, y: 0.14324324}
+--- !u!114 &29149273853386679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986842023111703662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f511846568c124489d2c9aa65ccd7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  player: {fileID: 0}
+  Enemy: {fileID: 0}
+--- !u!114 &-1995331488550486208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986842023111703662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12f511846568c124489d2c9aa65ccd7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  player: {fileID: 0}
+  Enemy: {fileID: 0}

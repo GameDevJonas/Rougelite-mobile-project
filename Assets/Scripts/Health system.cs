@@ -1,7 +1,6 @@
 ﻿using System;
 public class HealthSystem //new class
 {
-    public event EventHandler HealthChanged;
     private float health; //health number
     private float healthMax;
     public HealthSystem(float healthMax) //class handles health number
@@ -16,13 +15,11 @@ public class HealthSystem //new class
     public void Damage(float damageAmount) //damage is decided by damage amount
     {
         health -= damageAmount; //subtract damage amount from health
-        if (health < 0) health = 0; //health cannot go below zero
-        if (HealthChanged != null) HealthChanged(this, EventArgs.Empty);
+        if (health < 0) health = 0;//health cannot go below zero
     }
     public void Heal(float healAmount)
     {
         health += healAmount;
         if (health > healthMax) health = healthMax;
-        if (HealthChanged != null) HealthChanged(this, EventArgs.Empty);
     }
 }
