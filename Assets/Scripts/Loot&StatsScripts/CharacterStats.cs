@@ -90,12 +90,12 @@ public class CharacterStat
             {
                 finalValue += mod.Value;
             }
-            else if (mod.Type == StatModType.PercentAdd) // When we encounter a "PercentAdd" modifier
+            else if (mod.Type == StatModType.Percent) // When we encounter a "PercentAdd" modifier
             {
                 sumPercentAdd += mod.Value; // Start adding together all modifiers of this type
 
                 // If we're at the end of the list OR the next modifer isn't of this type
-                if (i + 1 >= statModifiers.Count || statModifiers[i + 1].Type != StatModType.PercentAdd)
+                if (i + 1 >= statModifiers.Count || statModifiers[i + 1].Type != StatModType.Percent)
                 {
                     finalValue *= 1 + sumPercentAdd; // Multiply the sum with the "finalValue", like we do for "PercentMult" modifiers
                     sumPercentAdd = 0; // Reset the sum back to 0

@@ -83,14 +83,16 @@ public class PlayerStats : MonoBehaviour
         UpdateItemInfo();
         player.UpdateStats();
     }
-    public void AddPercentAddModifier(CharacterStat statType, float statValue)
+    public void AddPercentModifier(CharacterStat statType, float statValue)
     {
-        statType.AddModifier(new StatModifier(statValue, StatModType.PercentAdd, this));
+        statType.AddModifier(new StatModifier(statValue, StatModType.Percent, this));
+        UpdateItemInfo();
         player.UpdateStats();
     }
-    public void AddFlatPercentMultModifier(CharacterStat statType, float statValue)
+    public void AddPercentMultModifier(CharacterStat statType, float statValue)
     {
         statType.AddModifier(new StatModifier(statValue, StatModType.PercentMult, this));
+        UpdateItemInfo();
         player.UpdateStats();
     }
 

@@ -8,6 +8,15 @@ public class HealthSystem //new class
         this.healthMax = healthMax; //setting health in other scripts defines the current health value
         health = healthMax;
     }
+    public void CurrentHealth(float healthCurrent)
+    {
+        this.health = healthCurrent;
+        health = healthCurrent;
+    }
+    public void ModMaxHealth(float healthMax)
+    {
+        this.healthMax = healthMax;
+    }
     public float GetHealth() //request current hp
     {
         return health; //get current hp
