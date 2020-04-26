@@ -26,6 +26,6 @@
 public enum StatModType
 {
     Flat = 100,
-    PercentAdd = 200,
+    Percent = 200,
     PercentMult = 300,
 }

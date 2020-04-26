@@ -15,7 +15,7 @@ public class CommonLootDrop : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Inventory>();
+        player.GetComponent<PlayerStats>();
     }
     private void Update()
     {
@@ -27,7 +27,7 @@ public class CommonLootDrop : MonoBehaviour
     }
     private void GiveItem()
     {
-        player.GetComponent<Inventory>().GiveItem(drop);
+        player.GetComponent<PlayerStats>().GiveItem(drop);
         Destroy(gameObject, 0);
     }
     private void OnTriggerEnter2D(Collider2D collider)

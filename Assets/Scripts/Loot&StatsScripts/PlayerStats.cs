@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Inventory : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
     public CharacterStat Health;
     public CharacterStat HealthPercent;
@@ -21,14 +21,14 @@ public class Inventory : MonoBehaviour
     public CharacterStat MovementSpeed;
     public List<Item> Loot = new List<Item>();
     public ItemDatabase ItemDatabase;
-    public PlayerMovement player => GetComponent<PlayerMovement>();
+    public Player player => GetComponent<Player>();
     public int ItemCount = 0;
 
     
 
     private void Start()
     {
-        Health.BaseValue = 100;
+        Health.BaseValue = 50;
         HealthPercent.BaseValue = 1f;
         Strength.BaseValue = 10;
         StrengthPercent.BaseValue = 1f;
@@ -83,14 +83,16 @@ public class Inventory : MonoBehaviour
         UpdateItemInfo();
         player.UpdateStats();
     }
-    public void AddPercentAddModifier(CharacterStat statType, float statValue)
+    public void AddPercentModifier(CharacterStat statType, float statValue)
     {
-        statType.AddModifier(new StatModifier(statValue, StatModType.PercentAdd, this));
+        statType.AddModifier(new StatModifier(statValue, StatModType.Percent, this));
+        UpdateItemInfo();
         player.UpdateStats();
     }
-    public void AddFlatPercentMultModifier(CharacterStat statType, float statValue)
+    public void AddPercentMultModifier(CharacterStat statType, float statValue)
     {
         statType.AddModifier(new StatModifier(statValue, StatModType.PercentMult, this));
+        UpdateItemInfo();
         player.UpdateStats();
     }
 

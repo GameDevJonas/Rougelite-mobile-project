@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 [Serializable]
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject sword;
+
+    public float maxHealth;
+    public float currentHealth;
+    public float speed;
+    public float attackspeed;
+    public float rotationSpeed = 5f;
+    public HealthSystem HealthSystem;
 
     public float xInput;
     public float yInput;
@@ -15,18 +23,15 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public bool canAttack = true;
 
-    public float speed;
-    public float attackspeed;
-    public float rotationSpeed = 5f;
-    public HealthSystem HealthSystem;
-    public float Health;
-
+    public Healthbar healthbar;
+    
     void Start()
     {
-        Inventory inventory = GetComponent<Inventory>();
+        PlayerStats playerstats = GetComponent<PlayerStats>();
         
         rb = GetComponent<Rigidbody2D>();
-        
+
+        UpdateStats();
     }
 
     void Update()
@@ -36,27 +41,35 @@ public class PlayerMovement : MonoBehaviour
         ApplyMovement();
         ApplyRotation();
         SwordAttack();
+        currentHealth = HealthSystem.GetHealth();
+        healthbar.SetHealth(currentHealth);
         
+
         if (canMove == false && Input.GetKeyUp(KeyCode.Space))
         {
             Invoke("MovementLock", 0.2f);
         }
-
+        if (currentHealth == 0)
+        {
+            RestartScene();
+        }
     }
 
     public void UpdateStats()
     {
-        Inventory inventory = GetComponent<Inventory>();
-        speed = inventory.MovementSpeed.Value;
-        attackspeed = (100f - inventory.Dexterity.Value) / 100f;
-        HealthSystem = new HealthSystem(inventory.Health.Value);
-        Health = HealthSystem.GetHealth();
+        PlayerStats playerstats = GetComponent<PlayerStats>();
+        speed = playerstats.MovementSpeed.Value;
+        attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
+        HealthSystem = new HealthSystem(playerstats.Health.Value);
+        maxHealth = HealthSystem.GetHealth();
+        healthbar.SetMaxHealth(maxHealth);
     }
     void CheckInput()
     {
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
         attack = Input.GetKey(KeyCode.Space);
+        
     }
 
     void ApplyMovement()
@@ -109,5 +122,10 @@ public class PlayerMovement : MonoBehaviour
     void AttackLock()
     {
         canAttack = true;
+    }
+    public void RestartScene()
+    {
+        Scene thisScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(thisScene.name);
     }
 }
