@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class ResetPos : MonoBehaviour
 {
+#if UNITY_EDITOR
     [MenuItem("Cool Tools/Shortcuts/Reset Transform #s")]
     public static void ResetTransform()
     {
@@ -21,4 +22,5 @@ public class ResetPos : MonoBehaviour
 
         EditorUtility.SetDirty(selectedObject.transform);
     }
+#endif
 }
