@@ -10,9 +10,14 @@ public class LevelGeneration : MonoBehaviour
     public int gridSizeX, gridSizeY, numberOfRooms = 20;
     public GameObject roomWhiteObj;
     public Transform mapRoot;
+
     public List<GameObject> roomList = new List<GameObject>();
+
+    public AssignLastTest bossDoorScript;
+
     void Start()
     {
+        bossDoorScript = GetComponent<AssignLastTest>();
         if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2))
         { // make sure we dont try to make more rooms than can fit in our grid
             numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
@@ -23,6 +28,7 @@ public class LevelGeneration : MonoBehaviour
         SetRoomDoors(); //assigns the doors where rooms would connect
         DrawMap(); //instantiates objects to make up a map
         GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
+        Invoke("ApplyBossDoor", .2f);
     }
     void CreateRooms()
     {
@@ -231,5 +237,12 @@ public class LevelGeneration : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ApplyBossDoor()
+    {
+        //Debug.Log(roomList[roomList.Count - 1], roomList[roomList.Count - 1].gameObject);
+        GameObject lastRoomInList = roomList[roomList.Count - 1];
+        bossDoorScript.SpawnBossDoor(lastRoomInList);
     }
 }
