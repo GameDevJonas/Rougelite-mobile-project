@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Items.unity
     guid: 2c9e8dcc88ba40843bc8b435ee9a032d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Joystick.unity
     guid: a0776466499ebd84697c1534694c0500
+  - enabled: 1
+    path: Assets/Scenes/Player stats.unity
+    guid: 7f6d81cdb44e3ba439519cb7c03c0bc8
   m_configObjects: {}

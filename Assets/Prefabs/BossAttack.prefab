@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1986842023111703633}
   - component: {fileID: 1986842023111703634}
   - component: {fileID: 1986842023111703635}
-  - component: {fileID: 29149273853386679}
+  - component: {fileID: 4477100206276600599}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: BossAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ PolygonCollider2D:
       - {x: 0.055136275, y: 0}
       - {x: 0.13486372, y: 0.10513502}
       - {x: 0.050558984, y: 0.14324324}
---- !u!114 &29149273853386679
+--- !u!114 &4477100206276600599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986842023111703662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f511846568c124489d2c9aa65ccd7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 71244348ff674144494dfc4bfbec227f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0

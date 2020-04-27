@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aac6967eded09a04ea63f37fa2c55470, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aebc9d232c8679348b2a591e6f3642fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -209,7 +209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.000024318695}
+  m_AnchoredPosition: {x: -5.8, y: 5.1}
   m_SizeDelta: {x: 0.000076294, y: -0.000019073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1433626310
@@ -503,7 +503,7 @@ MonoBehaviour:
   xInput: 0
   yInput: 0
   healthbar: {fileID: 1319494376}
-  useTouch: 0
+  useTouch: 1
   attack: 0
   canMove: 1
   canAttack: 1
@@ -792,8 +792,8 @@ MonoBehaviour:
   handleRange: 1
   deadZone: 0
   axisOptions: 0
-  snapX: 0
-  snapY: 0
+  snapX: 1
+  snapY: 1
   background: {fileID: 4541764480379956525}
   handle: {fileID: 4541764480097873623}
 --- !u!1001 &2419135290951016561
