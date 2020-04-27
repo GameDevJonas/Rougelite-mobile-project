@@ -93,7 +93,11 @@ public class Player : MonoBehaviour
     {
         if (xInput != 0 && (canMove == true) || yInput != 0 && (canMove == true))
         {
-            transform.position += new Vector3(xInput * speed * Time.deltaTime, yInput * speed * Time.deltaTime, transform.position.z);
+            //transform.position += new Vector3(xInput * speed * Time.deltaTime, yInput * speed * Time.deltaTime, transform.position.z);
+
+            Vector3 move = new Vector3(xInput * speed, yInput * speed, transform.position.z);
+
+            transform.position += Vector3.ClampMagnitude(move, speed) * Time.deltaTime;
         }
     }
 
@@ -114,6 +118,22 @@ public class Player : MonoBehaviour
         else if (yInput == -1 && (canMove == true))
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -180);
+        }
+        if ((xInput == 1 && yInput == 1) && (canMove == true))
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
+        }
+        else if ((xInput == -1 && yInput == -1) && (canMove == true))
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 135);
+        }
+        if ((xInput == 1 && yInput == -1) && (canMove == true))
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -135);
+        }
+        if ((xInput == -1 && yInput == 1) && (canMove == true))
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
         }
     }
 
