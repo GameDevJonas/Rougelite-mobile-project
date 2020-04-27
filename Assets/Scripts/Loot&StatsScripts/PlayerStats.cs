@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerStats : MonoBehaviour
 {
+    public float testSpeed;
     public CharacterStat Health;
     public CharacterStat HealthPercent;
     public CharacterStat Strength;
@@ -40,7 +41,7 @@ public class PlayerStats : MonoBehaviour
         SwordAttackModifier.BaseValue = 1.5f;
         CrossbowAttackModifier.BaseValue = 1f;
         PotionPotency.BaseValue = 0;
-        MovementSpeed.BaseValue = 5f;
+        MovementSpeed.BaseValue = testSpeed;
 
         player.UpdateStats();
 
