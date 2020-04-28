@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         CheckInput();
         ApplyRotation();
-        SwordAttack();
+        //SwordAttack();
         currentHealth = HealthSystem.GetHealth();
         healthbar.SetHealth(currentHealth);
 
@@ -85,7 +85,10 @@ public class Player : MonoBehaviour
             xInput = Input.GetAxisRaw("Horizontal");
             yInput = Input.GetAxisRaw("Vertical");
         }
-        attack = Input.GetKey(KeyCode.Space);
+        if (Input.GetKey(KeyCode.Space) && !useTouch)
+        {
+            SwordAttack();
+        }
 
     }
 
@@ -137,9 +140,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SwordAttack()
+    public void SwordAttack()
     {
-        if (attack && (canAttack == true))
+        if ((canAttack == true))
 
         {
             GameObject clonedObject = Instantiate(sword, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z), transform);
@@ -149,6 +152,7 @@ public class Player : MonoBehaviour
             if (canAttack == false)
             {
                 Invoke("AttackLock", attackspeed);
+                Invoke("MovementLock", attackspeed);
             }
         }
     }
