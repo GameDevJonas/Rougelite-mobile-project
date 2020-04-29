@@ -16,7 +16,11 @@ public class BossdoorScript : MonoBehaviour
     {
         if (IsInRange == true && PromptReady == true)
         {
-            Time.timeScale = 0;
+            if (!SacrificeMade)
+            {
+                Time.timeScale = 0;
+
+            }
             PromptReady = false;
             confirmation.SetActive(true);
         }
@@ -34,7 +38,7 @@ public class BossdoorScript : MonoBehaviour
             confirmation.SetActive(false);
             sacrifice.SetActive(true);
         }
-        
+
         if (sacrifice.GetComponent<SacrificeScript>().choiceMade == 1 && SacrificeMade == false)
         {
             Time.timeScale = 1;
@@ -52,7 +56,6 @@ public class BossdoorScript : MonoBehaviour
     {
         sacrifice.GetComponent<SacrificeScript>().choiceMade = 0;
         sacrifice.SetActive(false);
-        Destroy(this);
     }
     private void Sacrifice01()
     {
@@ -74,7 +77,16 @@ public class BossdoorScript : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            IsInRange = true;
+            if (!SacrificeMade)
+            {
+                IsInRange = true;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                MenuManager menu = FindObjectOfType<MenuManager>();
+                menu.ToAlphaBoss();
+            }
         }
     }
 
