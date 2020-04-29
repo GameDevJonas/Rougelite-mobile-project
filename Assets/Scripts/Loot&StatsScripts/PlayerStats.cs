@@ -29,7 +29,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        Health.BaseValue = 5000;
+        Health.BaseValue = 50;
         HealthPercent.BaseValue = 1f;
         Strength.BaseValue = 10;
         StrengthPercent.BaseValue = 1f;

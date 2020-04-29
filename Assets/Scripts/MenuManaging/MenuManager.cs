@@ -23,6 +23,7 @@ public class MenuManager : MonoBehaviour
     public bool isPaused;
     public bool fromStartMenu;
     public bool toBoss;
+    public bool fromBoss;
 
     void Awake()
     {
@@ -43,6 +44,11 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(1));
+    }
+
+    public void TestButton()
+    {
+        Debug.Log("Hei");
     }
 
     public void PauseMenu()
@@ -73,6 +79,24 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(2));
+    }
+
+    public void ToAlphaLevel()
+    {
+        if (fromBoss)
+        {
+            startButton.SetActive(false);
+            loadingThing.SetActive(true);
+            StartCoroutine(StartLoad(1));
+        }
+        else
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            fromStartMenu = true;
+            startButton.SetActive(false);
+            loadingThing.SetActive(true);
+            StartCoroutine(StartLoad(1));
+        }
     }
 
     public IEnumerator StartLoad(int buildIndex)
@@ -107,6 +131,12 @@ public class MenuManager : MonoBehaviour
                         GameObject player = GameObject.FindGameObjectWithTag("Player");
                         player.transform.position = new Vector3(0, 0, 0);
                         toBoss = false;
+                    }
+                    else if (fromBoss)
+                    {
+                        GameObject player = GameObject.FindGameObjectWithTag("Player");
+                        player.transform.position = new Vector3(0, 0, 0);
+                        fromBoss = false;
                     }
                     loadingThing.SetActive(false);
                     pauseButton.SetActive(true);

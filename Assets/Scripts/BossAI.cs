@@ -21,13 +21,16 @@ public class BossAI : MonoBehaviour
     Vector2 direction;
     Vector2 walk;
     Vector2 backOff;
+
+    public MenuManager menuManager;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        speed = 4f;
+        speed = 40f;
         HealthSystem = new HealthSystem(100);
         player = GameObject.FindGameObjectWithTag("Player");
+        menuManager = FindObjectOfType<MenuManager>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,8 @@ public class BossAI : MonoBehaviour
         Health = HealthSystem.GetHealth();
         if (Health == 0)//If dead
         {
+            menuManager.fromBoss = true;
+            menuManager.ToAlphaLevel();
             drop = Random.Range(-1, 2);
         if (drop == 0)
             {

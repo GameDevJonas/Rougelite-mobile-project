@@ -15,6 +15,8 @@ public class LevelGeneration : MonoBehaviour
 
     public AssignLastTest bossDoorScript;
 
+    public GameObject[] enemySpawns;
+
     void Start()
     {
         bossDoorScript = GetComponent<AssignLastTest>();

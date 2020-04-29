@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        speed = 3f;
+        speed = 30f;
         HealthSystem = new HealthSystem(50);
         player = GameObject.FindGameObjectWithTag("Player");
     }

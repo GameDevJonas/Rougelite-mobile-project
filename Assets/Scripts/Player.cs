@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     public bool canMove = true;
     public bool canAttack = true;
 
+    public MenuManager menuManager;
+
     void Start()
     {
         joystick = FindObjectOfType<FixedJoystick>();
@@ -36,7 +38,7 @@ public class Player : MonoBehaviour
         PlayerStats playerstats = GetComponent<PlayerStats>();
 
         rb = GetComponent<Rigidbody2D>();
-
+        menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
     }
 
@@ -53,9 +55,10 @@ public class Player : MonoBehaviour
         {
             Invoke("MovementLock", 0.2f);
         }
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
-            RestartScene();
+            menuManager.ToAlphaLevel();
+            //RestartScene();
         }
     }
     private void FixedUpdate()
