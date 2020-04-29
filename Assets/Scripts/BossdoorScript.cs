@@ -12,6 +12,10 @@ public class BossdoorScript : MonoBehaviour
     public bool PromptReady = true;
     public bool SacrificeMade = false;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
         if (IsInRange == true && PromptReady == true)
