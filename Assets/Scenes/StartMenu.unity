@@ -530,11 +530,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 873497110, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -284.45
+      value: -234.45001
       objectReference: {fileID: 0}
     - target: {fileID: 873497110, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 182
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 873497110, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873497110, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 967791660, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchoredPosition.x
