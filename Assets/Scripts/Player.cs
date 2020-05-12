@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [Serializable]
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    public Animator anim;
+
     public FixedJoystick joystick;
 
     public GameObject sword;
+
+    public Button swordAttack;
 
     public float maxHealth;
     public float currentHealth;
@@ -33,6 +38,10 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
+
+        swordAttack = GameObject.FindGameObjectWithTag("SwordButton").GetComponent<Button>();
+
         joystick = FindObjectOfType<FixedJoystick>();
 
         PlayerStats playerstats = GetComponent<PlayerStats>();
@@ -51,7 +60,7 @@ public class Player : MonoBehaviour
         healthbar.SetHealth(currentHealth);
 
 
-        if (canMove == false && Input.GetKeyUp(KeyCode.Space))
+        if (canMove == false)
         {
             Invoke("MovementLock", 0.2f);
         }
@@ -93,6 +102,15 @@ public class Player : MonoBehaviour
             SwordAttack();
         }
 
+        //Anim set
+        anim.SetInteger("X_Input", Mathf.RoundToInt(xInput));
+        anim.SetInteger("Y_Input", Mathf.RoundToInt(yInput));
+        if (xInput == 0 && yInput == 0)
+        {
+            anim.SetBool("IsIdle", true);
+        }
+        else anim.SetBool("IsIdle", false);
+
     }
 
     void ApplyMovement()
@@ -109,37 +127,37 @@ public class Player : MonoBehaviour
 
     void ApplyRotation()
     {
-        if (xInput == 1 && (canMove == true))
+        if (xInput == 1 && (canMove == true)) //Right
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -90);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -90);
         }
-        else if (xInput == -1 && (canMove == true))
+        else if (xInput == -1 && (canMove == true)) //Left
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 90);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 90);
         }
-        if (yInput == 1 && (canMove == true))
+        if (yInput == 1 && (canMove == true)) //Up
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 0);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 0);
         }
-        else if (yInput == -1 && (canMove == true))
+        else if (yInput == -1 && (canMove == true)) //Down
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -180);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -180);
         }
-        if ((xInput == 1 && yInput == 1) && (canMove == true))
+        if ((xInput == 1 && yInput == 1) && (canMove == true)) //Up right
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
         }
-        else if ((xInput == -1 && yInput == -1) && (canMove == true))
+        else if ((xInput == -1 && yInput == -1) && (canMove == true)) //Down left
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 135);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 135);
         }
-        if ((xInput == 1 && yInput == -1) && (canMove == true))
+        if ((xInput == 1 && yInput == -1) && (canMove == true)) //Down right
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -135);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -135);
         }
-        if ((xInput == -1 && yInput == 1) && (canMove == true))
+        if ((xInput == -1 && yInput == 1) && (canMove == true)) //Up left
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
+            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
         }
     }
 
@@ -152,6 +170,7 @@ public class Player : MonoBehaviour
             canMove = false;
             canAttack = false;
             Destroy(clonedObject, 0.2f);
+            swordAttack.interactable = false;
             if (canAttack == false)
             {
                 Invoke("AttackLock", attackspeed);
@@ -166,6 +185,7 @@ public class Player : MonoBehaviour
     void AttackLock()
     {
         canAttack = true;
+        swordAttack.interactable = true;
     }
     public void RestartScene()
     {
