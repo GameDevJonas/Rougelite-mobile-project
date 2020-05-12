@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class CommonLootDrop : MonoBehaviour
+public class RareLootDrop : MonoBehaviour
 {
     [SerializeField] Item item;
     private bool IsInRange;
@@ -20,7 +20,7 @@ public class CommonLootDrop : MonoBehaviour
     {
         if (IsInRange == true)
         {
-            drop = Random.Range(0, 5);
+            drop = Random.Range(5, 12);
             GiveItem();
         }
     }

@@ -6,16 +6,12 @@ using UnityEngine;
 [Serializable]
 public class PlayerStats : MonoBehaviour
 {
-    public float testSpeed;
     public CharacterStat Health;
-    public CharacterStat HealthPercent;
     public CharacterStat Strength;
-    public CharacterStat StrengthPercent;
     public CharacterStat Dexterity;
     public CharacterStat CritChance;
     public CharacterStat CritDamage;
     public CharacterStat LifeOnHit;
-    public CharacterStat LifeOnHitPercent;
     public CharacterStat SwordAttackModifier;
     public CharacterStat CrossbowAttackModifier;
     public CharacterStat PotionPotency;
@@ -30,30 +26,24 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         Health.BaseValue = 50;
-        HealthPercent.BaseValue = 1f;
         Strength.BaseValue = 10;
-        StrengthPercent.BaseValue = 1f;
         Dexterity.BaseValue = 10;
         CritChance.BaseValue = 0;
         CritDamage.BaseValue = 0;
         LifeOnHit.BaseValue = 0;
-        LifeOnHitPercent.BaseValue = 1f;
         SwordAttackModifier.BaseValue = 1.5f;
         CrossbowAttackModifier.BaseValue = 1f;
         PotionPotency.BaseValue = 0;
-        MovementSpeed.BaseValue = testSpeed;
+        MovementSpeed.BaseValue = 60;
 
         player.UpdateStats();
 
         AddFlatModifier(Health, 0);
-        AddFlatModifier(HealthPercent, 0);
         AddFlatModifier(Strength, 0);
-        AddFlatModifier(StrengthPercent, 0);
         AddFlatModifier(Dexterity, 0);
         AddFlatModifier(CritChance, 0);
         AddFlatModifier(CritDamage, 0);
         AddFlatModifier(LifeOnHit, 0);
-        AddFlatModifier(LifeOnHitPercent, 0);
         AddFlatModifier(SwordAttackModifier, 0);
         AddFlatModifier(CrossbowAttackModifier, 0);
         AddFlatModifier(PotionPotency, 0);
@@ -81,7 +71,16 @@ public class PlayerStats : MonoBehaviour
     }
     private void UpdateItemInfo()
     {
-        //Debug.Log("I have " + ItemCount + " items and " + Health.Value + "Health and " + Strength.Value + "Strength");
+        _ = Health.Value;
+        _ = Strength.Value;
+        _ = Dexterity.Value;
+        _ = CritChance.Value;
+        _ = CritDamage.Value;
+        _ = LifeOnHit.Value;
+        _ = SwordAttackModifier.Value;
+        _ = CrossbowAttackModifier.Value;
+        _ = PotionPotency.Value;
+        _ = MovementSpeed.Value;
     }
     public Item CheckforItems(int id)
     {

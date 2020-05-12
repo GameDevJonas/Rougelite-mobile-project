@@ -225,7 +225,7 @@ MonoBehaviour:
   player: {fileID: 0}
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
   attack: {fileID: 1986842023111703662, guid: 0d694c0c783051541af74d062da9445b, type: 3}
-  Loot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0, type: 3}
+  Loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}
   closeEnough: 0
   canAttack: 0
   waiting: 0

@@ -37,7 +37,7 @@ public class GetStats : MonoBehaviour
             currentDexterity.text = "Dexterity: " + currentStats.Dexterity.Value;
             currentLifeOnHit.text = "Life On Hit: " + currentStats.LifeOnHit.Value;
             currentPotionPotency.text = "Potion Potency: " + currentStats.PotionPotency.Value;
-}
+        }
 
 
     }

@@ -598,9 +598,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  joystick: {fileID: 0}
+  joystick: {fileID: 4541764480379956512}
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
-  swordAttack: {fileID: 0}
+  swordAttack: {fileID: 1317067018}
   maxHealth: 0
   currentHealth: 0
   speed: 0
