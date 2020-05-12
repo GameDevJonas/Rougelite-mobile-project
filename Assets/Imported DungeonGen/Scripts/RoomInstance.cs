@@ -11,7 +11,7 @@ public class RoomInstance : MonoBehaviour
     [HideInInspector]
     public bool doorTop, doorBot, doorLeft, doorRight;
     [SerializeField]
-    GameObject doorU, doorD, doorL, doorR, doorWall;
+    public GameObject doorU, doorD, doorL, doorR, doorUpWall, doorOtherWall;
     [SerializeField]
     ColorToGameObject[] mappings;
     float tileSize = 16;
@@ -69,9 +69,13 @@ public class RoomInstance : MonoBehaviour
         {
             if(dir == "top")
             {
-                //spawn top wall
+                Instantiate(doorUpWall, spawnPos, Quaternion.identity).transform.parent = transform;
             }
-            else if(dir == "bot")
+            else
+            {
+                Instantiate(doorOtherWall, spawnPos, Quaternion.identity).transform.parent = transform;
+            }
+            /*else if(dir == "bot")
             {
                 //spawn bottom wall
             }
@@ -82,8 +86,9 @@ public class RoomInstance : MonoBehaviour
             else if(dir == "left")
             {
                 //spawn left wall
-            }
-            Instantiate(doorWall, spawnPos, Quaternion.identity).transform.parent = transform;
+            }*/
+
+            //Instantiate(doorWall, spawnPos, Quaternion.identity).transform.parent = transform;
         }
     }
     void GenerateRoomTiles()

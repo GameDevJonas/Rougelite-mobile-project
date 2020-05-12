@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: 0a6047c633a36c149837d9c8fe5d51e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 023e81aab0eef604e8ccc155f8cd0ac1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,9 @@ MonoBehaviour:
   doorD: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 3}
   doorL: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 3}
   doorR: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 3}
-  doorWall: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2, type: 3}
+  doorUpWall: {fileID: 1348133729177994, guid: b9384d6d3adc0a148bd32663daa68663, type: 3}
+  doorOtherWall: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2,
+    type: 3}
   mappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1348133729177994, guid: b9384d6d3adc0a148bd32663daa68663, type: 3}
