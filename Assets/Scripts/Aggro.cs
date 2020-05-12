@@ -8,7 +8,7 @@ public class Aggro : MonoBehaviour
 
     void Start()
     {
-        parent = transform.parent.GetComponent<EnemyAI>();
+        parent = GetComponentInParent<EnemyAI>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)

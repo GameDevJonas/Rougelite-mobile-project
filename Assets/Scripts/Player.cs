@@ -51,6 +51,11 @@ public class Player : MonoBehaviour
         UpdateStats();
     }
 
+    public void StartPosition(Vector3 startPos)
+    {
+        transform.position = startPos;
+    }
+
     void Update()
     {
         CheckInput();

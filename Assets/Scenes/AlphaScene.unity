@@ -559,10 +559,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheetsNormal:
-  - {fileID: 2800000, guid: e53ddabeb50e7e341a58b68908b05e60, type: 3}
+  - {fileID: 2800000, guid: 36adc7919912bf940acd9bdbbeb57a0b, type: 3}
+  - {fileID: 2800000, guid: 36adc7919912bf940acd9bdbbeb57a0b, type: 3}
+  - {fileID: 2800000, guid: 36adc7919912bf940acd9bdbbeb57a0b, type: 3}
+  - {fileID: 2800000, guid: d8faa1d48d8de5c4d87ffa2fa411c9ce, type: 3}
+  startSheet: {fileID: 2800000, guid: acc1cf9ffdf20804abac9218a931f7e8, type: 3}
+  lastSheet: {fileID: 2800000, guid: 2f42a862844004f4bb56b2fda3faab17, type: 3}
   RoomObj: {fileID: 1038065722679700, guid: 092b915af527d594aa11083a065a8de8, type: 3}
   roomDimensions: {x: 272, y: 144}
   gutterSize: {x: 144, y: 64}
+  startRoomGenerated: 0
+  lastRoomGenerated: 0
+  theGen: {fileID: 0}
+  roomsCreated: []
 --- !u!114 &678893743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678893739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b7092458398ee745b45796f63d5aad1, type: 3}
   m_Name: 
@@ -1137,14 +1146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1956245875}
     m_Modifications:
-    - target: {fileID: 1317067016, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_TagString
-      value: SwordButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1317067018, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1212,6 +1213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}

@@ -30,8 +30,16 @@ public class LevelGeneration : MonoBehaviour
         SetRoomDoors(); //assigns the doors where rooms would connect
         DrawMap(); //instantiates objects to make up a map
         GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
-        Invoke("ApplyBossDoor", .2f);
+        //Invoke("ApplyBossDoor", .2f);
+        Invoke("AssignPlayerPos", 0);
     }
+
+    public void AssignPlayerPos()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player>().StartPosition(roomList[0].gameObject.transform.position);
+    }
+
     void CreateRooms()
     {
         //setup

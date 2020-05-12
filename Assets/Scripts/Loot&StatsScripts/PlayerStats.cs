@@ -81,7 +81,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void UpdateItemInfo()
     {
-        Debug.Log("I have " + ItemCount + " items and " + Health.Value + "Health and " + Strength.Value + "Strength");
+        //Debug.Log("I have " + ItemCount + " items and " + Health.Value + "Health and " + Strength.Value + "Strength");
     }
     public Item CheckforItems(int id)
     {
