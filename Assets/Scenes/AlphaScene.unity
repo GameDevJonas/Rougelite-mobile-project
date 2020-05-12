@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -559,12 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheetsNormal:
-  - {fileID: 2800000, guid: 5d4c4f40a1564c444887e7999c48d18d, type: 3}
-  - {fileID: 2800000, guid: dc7b8578c102bd546bd34dc9a366a8f0, type: 3}
-  - {fileID: 2800000, guid: 73332cb71d001244fb5ab7bc35af61a8, type: 3}
-  - {fileID: 2800000, guid: 99ae6df318064444bb24dd898bd356a5, type: 3}
-  - {fileID: 2800000, guid: 1d48a76d657a5804c9beacc313aec3ad, type: 3}
-  - {fileID: 2800000, guid: 564d6ca77f8ea7041bf378157f5feba0, type: 3}
+  - {fileID: 2800000, guid: e53ddabeb50e7e341a58b68908b05e60, type: 3}
   RoomObj: {fileID: 1038065722679700, guid: 092b915af527d594aa11083a065a8de8, type: 3}
   roomDimensions: {x: 272, y: 144}
   gutterSize: {x: 144, y: 64}
@@ -691,6 +686,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1956245875}
     m_Modifications:
+    - target: {fileID: 4926919477536543582, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926919477536543583, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4926919477902615528, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -750,6 +755,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926919477902615530, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926919478041552819, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926919478041552831, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926919478384781370, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
@@ -1112,13 +1137,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1956245875}
     m_Modifications:
-    - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1317067016, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
+      propertyPath: m_TagString
+      value: SwordButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317067018, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
+      propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -1372,7 +1405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1956245875
 Transform:
   m_ObjectHideFlags: 0
