@@ -12,9 +12,10 @@ public class Item
     public string lore;
     public string description;
     public CharacterStat statType;
+    public string modType;
     //public Sprite icon;
     public float statValue;
-    public Item(int id, string tier, string title, string lore, string description /*icon*/, CharacterStat statType, float statValue)
+    public Item(int id, string tier, string title, string lore, string description /*icon*/, CharacterStat statType, string modType,float statValue)
     {
         this.id = id;
         this.tier = tier;
@@ -23,6 +24,7 @@ public class Item
         this.description = description;
         //this.icon = Resources.Load<Sprite>(Sprite/Items + title);
         this.statType = statType;
+        this.modType = modType;
         this.statValue = statValue;
     }
     public Item(Item item)
@@ -34,6 +36,7 @@ public class Item
         this.description = item.description;
         //this.icon = Resources.Load<Sprite>(Sprite/Items + item.title);
         this.statType = item.statType;
+        this.modType = item.modType;
         this.statValue = item.statValue;
     }
 }

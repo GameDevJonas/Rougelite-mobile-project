@@ -21,7 +21,7 @@ public class CommonLootDrop : MonoBehaviour
     {
         if (IsInRange == true)
         {
-            drop = Random.Range(0, 2);
+            drop = Random.Range(0, 5);
             GiveItem();
         }
     }

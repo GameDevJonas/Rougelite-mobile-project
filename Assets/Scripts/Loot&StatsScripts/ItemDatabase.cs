@@ -49,8 +49,11 @@ public class ItemDatabase : MonoBehaviour
     {
         items = new List<Item>()
         {
-            new Item(0, "Common Loot", "Pale Scale", "A white scale from an unknown creature. Increases health.", "+ 25 Health", Health, 25),
-            new Item(1, "Common Loot", "Sharp Tooth", "A long and pointy tooth, it seems demonic. Increases strength.", "+ 1 Strength", Strength, 1)
+            new Item(0, "Common Loot", "Pale Scale", "A white scale from an unknown creature. Increases health.", "+ 25 Health", Health, "flat", 25),
+            new Item(1, "Common Loot", "Sharp Tooth", "A long and pointy tooth, it seems demonic. Increases strength.", "+ 1 Strength", Strength, "flat", 1),
+            new Item(2, "Common Loot", "Red String", "Hard to identify, but it is organic. Increases dexterity.", "+ 1 Dexterity", Dexterity, "flat", 1),
+            new Item(3, "Common Loot", "Shrunken Leech", "Shriveled, but still abnormally big. Increases life on hit.", "+ 1 Life on hit", LifeOnHit, "flat", 1),
+            new Item(4, "Common Loot", "Luminescent Black Mushroom", "A paradoxical and unnatural mushroom. Increases potion potency.", "+ 10 Potion Potency", PotionPotency, "flat", 10)
         };
     }
 }

@@ -65,7 +65,18 @@ public class PlayerStats : MonoBehaviour
         Loot.Add(itemToAdd);
         Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
         ItemCount += 1;
-        AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+        if (itemToAdd.modType == "flat")
+        {
+            AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+        }
+        if (itemToAdd.modType == "percent")
+        {
+            AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+        }
+        if (itemToAdd.modType == "multpercent")
+        {
+            AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
+        }
         Item itemCheck = CheckforItems(id);
     }
     private void UpdateItemInfo()

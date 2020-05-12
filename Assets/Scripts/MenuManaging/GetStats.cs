@@ -12,6 +12,9 @@ public class GetStats : MonoBehaviour
 
     public TextMeshProUGUI currentMaxHealth;
     public TextMeshProUGUI currentStrength;
+    public TextMeshProUGUI currentDexterity;
+    public TextMeshProUGUI currentLifeOnHit;
+    public TextMeshProUGUI currentPotionPotency;
 
     void Start()
     {
@@ -31,7 +34,10 @@ public class GetStats : MonoBehaviour
 
             currentMaxHealth.text = "Max health: " + currentStats.Health.Value;
             currentStrength.text = "Strength: " + currentStats.Strength.Value;
-        }
+            currentDexterity.text = "Dexterity: " + currentStats.Dexterity.Value;
+            currentLifeOnHit.text = "Life On Hit: " + currentStats.LifeOnHit.Value;
+            currentPotionPotency.text = "Potion Potency: " + currentStats.PotionPotency.Value;
+}
 
 
     }
