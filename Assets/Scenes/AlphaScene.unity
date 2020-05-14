@@ -319,12 +319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280548008}
   m_CullTransparentMesh: 0
---- !u!4 &339264615 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4926919477902615528, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 1150683354}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &408347336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,18 +1070,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1234121822 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671866788}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1234121823 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671866788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1264740631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,38 +1639,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1956245874
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1956245875}
-  m_Layer: 0
-  m_Name: DeleteThis
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1956245875
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956245874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.724177, y: -11.543946, z: 183.12636}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1234121823}
-  - {fileID: 339264615}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986897926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myVCam: {fileID: 2043898293}
+  player: {fileID: 0}
   player: {fileID: 1234121822}
 --- !u!1 &2049483392
 GameObject:
