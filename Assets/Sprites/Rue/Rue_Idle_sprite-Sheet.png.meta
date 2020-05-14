@@ -74,6 +74,150 @@ TextureImporter:
   - first:
       213: -7084254167581362002
     second: Rue_Idle_sprite-Sheet_23
+  - first:
+      213: -7705440292780874317
+    second: Rue_Idle_sprite-Sheet_0
+  - first:
+      213: 7858065962429170416
+    second: Rue_Idle_sprite-Sheet_1
+  - first:
+      213: -8817022150392871984
+    second: Rue_Idle_sprite-Sheet_2
+  - first:
+      213: -3133873075787570468
+    second: Rue_Idle_sprite-Sheet_3
+  - first:
+      213: 1268415648348155390
+    second: Rue_Idle_sprite-Sheet_4
+  - first:
+      213: 6907789666301074886
+    second: Rue_Idle_sprite-Sheet_5
+  - first:
+      213: 948767405927505545
+    second: Rue_Idle_sprite-Sheet_6
+  - first:
+      213: 8261529847569422702
+    second: Rue_Idle_sprite-Sheet_7
+  - first:
+      213: -2110370955164950686
+    second: Rue_Idle_sprite-Sheet_8
+  - first:
+      213: -8901054373012468793
+    second: Rue_Idle_sprite-Sheet_9
+  - first:
+      213: -2285066526390514597
+    second: Rue_Idle_sprite-Sheet_10
+  - first:
+      213: 1627877630681766600
+    second: Rue_Idle_sprite-Sheet_11
+  - first:
+      213: 3562844190805961701
+    second: Rue_Idle_sprite-Sheet_12
+  - first:
+      213: -3561536616957272716
+    second: Rue_Idle_sprite-Sheet_13
+  - first:
+      213: 1199805406610736841
+    second: Rue_Idle_sprite-Sheet_14
+  - first:
+      213: 181419261897256469
+    second: Rue_Idle_sprite-Sheet_15
+  - first:
+      213: -7380270389348835564
+    second: Rue_Idle_sprite-Sheet_16
+  - first:
+      213: -2056470629700731445
+    second: Rue_Idle_sprite-Sheet_17
+  - first:
+      213: -5740472868544391883
+    second: Rue_Idle_sprite-Sheet_18
+  - first:
+      213: 754780118193225376
+    second: Rue_Idle_sprite-Sheet_19
+  - first:
+      213: -5584316762653282456
+    second: Rue_Idle_sprite-Sheet_20
+  - first:
+      213: 5841639376347643939
+    second: Rue_Idle_sprite-Sheet_21
+  - first:
+      213: 7923073326883510084
+    second: Rue_Idle_sprite-Sheet_22
+  - first:
+      213: 1093219849804763919
+    second: Rue_Idle_sprite-Sheet_23
+  - first:
+      213: -5379503645977417975
+    second: Rue_Idle_sprite-Sheet_24
+  - first:
+      213: -7063602479122728323
+    second: Rue_Idle_sprite-Sheet_25
+  - first:
+      213: 1565178792002731781
+    second: Rue_Idle_sprite-Sheet_26
+  - first:
+      213: 5343864556973041084
+    second: Rue_Idle_sprite-Sheet_27
+  - first:
+      213: -8462216619948973685
+    second: Rue_Idle_sprite-Sheet_28
+  - first:
+      213: 3065158939741402811
+    second: Rue_Idle_sprite-Sheet_29
+  - first:
+      213: 5392463476308296991
+    second: Rue_Idle_sprite-Sheet_30
+  - first:
+      213: 8218997153107312904
+    second: Rue_Idle_sprite-Sheet_31
+  - first:
+      213: 3893647401504605260
+    second: Rue_Idle_sprite-Sheet_32
+  - first:
+      213: 7848910225097358623
+    second: Rue_Idle_sprite-Sheet_33
+  - first:
+      213: 6634670823146376326
+    second: Rue_Idle_sprite-Sheet_34
+  - first:
+      213: 5237956075301058610
+    second: Rue_Idle_sprite-Sheet_35
+  - first:
+      213: -3327333228957042232
+    second: Rue_Idle_sprite-Sheet_36
+  - first:
+      213: -8513082338584227579
+    second: Rue_Idle_sprite-Sheet_37
+  - first:
+      213: -2336155044740271573
+    second: Rue_Idle_sprite-Sheet_38
+  - first:
+      213: 5475363061817298116
+    second: Rue_Idle_sprite-Sheet_39
+  - first:
+      213: -8201985958167144422
+    second: Rue_Idle_sprite-Sheet_40
+  - first:
+      213: 7513378781654541383
+    second: Rue_Idle_sprite-Sheet_41
+  - first:
+      213: 452590106754508582
+    second: Rue_Idle_sprite-Sheet_42
+  - first:
+      213: 222586956503610442
+    second: Rue_Idle_sprite-Sheet_43
+  - first:
+      213: 3925536217485733145
+    second: Rue_Idle_sprite-Sheet_44
+  - first:
+      213: -6178270470240829888
+    second: Rue_Idle_sprite-Sheet_45
+  - first:
+      213: 1896507592256134153
+    second: Rue_Idle_sprite-Sheet_46
+  - first:
+      213: -808115540413557463
+    second: Rue_Idle_sprite-Sheet_47
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -176,8 +320,8 @@ TextureImporter:
         serializedVersion: 2
         x: 8
         y: 425
-        width: 22
-        height: 38
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23c9a5423aec07550800000000000000
-      internalID: 6156647890700377138
+      spriteID: 3b560def0e6c01590800000000000000
+      internalID: -7705440292780874317
       vertices: []
       indices: 
       edges: []
@@ -197,8 +341,8 @@ TextureImporter:
         serializedVersion: 2
         x: 108
         y: 425
-        width: 22
-        height: 37
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +350,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52525bab7f4ecfb0800000000000000
-      internalID: -4625672374689050018
+      spriteID: 0f2cd28eb557d0d60800000000000000
+      internalID: 7858065962429170416
       vertices: []
       indices: 
       edges: []
@@ -218,8 +362,8 @@ TextureImporter:
         serializedVersion: 2
         x: 208
         y: 425
-        width: 22
-        height: 36
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,8 +371,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9db3c96a901a340f0800000000000000
-      internalID: -1133885618345198631
+      spriteID: 0d3051d9115a3a580800000000000000
+      internalID: -8817022150392871984
       vertices: []
       indices: 
       edges: []
@@ -239,8 +383,8 @@ TextureImporter:
         serializedVersion: 2
         x: 310
         y: 425
-        width: 21
-        height: 37
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2590931acfc8013f0800000000000000
-      internalID: -932090106201175726
+      spriteID: cd26582aa0f3284d0800000000000000
+      internalID: -3133873075787570468
       vertices: []
       indices: 
       edges: []
@@ -260,8 +404,8 @@ TextureImporter:
         serializedVersion: 2
         x: 410
         y: 425
-        width: 21
-        height: 36
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +413,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aaf484be4cb76910800000000000000
-      internalID: 1830638819771480736
+      spriteID: efda653df415a9110800000000000000
+      internalID: 1268415648348155390
       vertices: []
       indices: 
       edges: []
@@ -281,8 +425,8 @@ TextureImporter:
         serializedVersion: 2
         x: 10
         y: 325
-        width: 21
-        height: 35
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +434,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61580c84468da98c0800000000000000
-      internalID: -3991640194481617642
+      spriteID: 6cd5dfa3a166ddf50800000000000000
+      internalID: 6907789666301074886
       vertices: []
       indices: 
       edges: []
@@ -300,10 +444,10 @@ TextureImporter:
       name: Rue_Idle_sprite-Sheet_6
       rect:
         serializedVersion: 2
-        x: 115
+        x: 110
         y: 325
-        width: 17
-        height: 38
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,8 +455,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8dd069d8ecc66450800000000000000
-      internalID: 6081773647261916557
+      spriteID: 98e17cccde2ba2d00800000000000000
+      internalID: 948767405927505545
       vertices: []
       indices: 
       edges: []
@@ -321,10 +465,10 @@ TextureImporter:
       name: Rue_Idle_sprite-Sheet_7
       rect:
         serializedVersion: 2
-        x: 215
+        x: 210
         y: 325
-        width: 17
-        height: 37
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e8130a4ed1597f50800000000000000
-      internalID: 6879619920951449830
+      spriteID: e6999a9ff99d6a270800000000000000
+      internalID: 8261529847569422702
       vertices: []
       indices: 
       edges: []
@@ -342,10 +486,10 @@ TextureImporter:
       name: Rue_Idle_sprite-Sheet_8
       rect:
         serializedVersion: 2
-        x: 315
+        x: 310
         y: 325
-        width: 17
-        height: 36
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,8 +497,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a88ef5a3bee028a60800000000000000
-      internalID: 7674713118452213898
+      spriteID: 26f57192cc476b2e0800000000000000
+      internalID: -2110370955164950686
       vertices: []
       indices: 
       edges: []
@@ -365,7 +509,7 @@ TextureImporter:
         serializedVersion: 2
         x: 414
         y: 325
-        width: 20
+        width: 26
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -374,8 +518,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4dc91b4bc4344930800000000000000
-      internalID: 4126481206321204556
+      spriteID: 7cb8722253a197480800000000000000
+      internalID: -8901054373012468793
       vertices: []
       indices: 
       edges: []
@@ -386,8 +530,8 @@ TextureImporter:
         serializedVersion: 2
         x: 14
         y: 225
-        width: 20
-        height: 38
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,8 +539,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdf0116abf9b16ed0800000000000000
-      internalID: -2422450634074550308
+      spriteID: b5c8b5ed910d940e0800000000000000
+      internalID: -2285066526390514597
       vertices: []
       indices: 
       edges: []
@@ -407,217 +551,7 @@ TextureImporter:
         serializedVersion: 2
         x: 114
         y: 225
-        width: 20
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb1ad8e215506e0e0800000000000000
-      internalID: -2241097918338719301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 225
-        width: 23
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55ca53ee11ad313c0800000000000000
-      internalID: -4389925441210307499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 314
-        y: 225
-        width: 23
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3034f9fb6bd0cccf0800000000000000
-      internalID: -230794402352643325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 414
-        y: 225
-        width: 23
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09cf6f48b916b4a10800000000000000
-      internalID: 1894715388818029712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 125
-        width: 22
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f267eb2a593a1fd40800000000000000
-      internalID: 5616450073383564847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 125
-        width: 22
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae6ae37b7b3764b20800000000000000
-      internalID: 3118307024891193066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 125
-        width: 22
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7007754d1b67641c0800000000000000
-      internalID: -4519794669875924985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 125
-        width: 18
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 996c70dbf316ff8c0800000000000000
-      internalID: -3963342220680509799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 125
-        width: 18
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82f12840a0dd465d0800000000000000
-      internalID: -3070086010864787672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_20
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 25
-        width: 18
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9633435af1dc96b70800000000000000
-      internalID: 8892864475019096937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rue_Idle_sprite-Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 25
-        width: 17
+        width: 26
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -626,8 +560,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf522c0a189aa6230800000000000000
-      internalID: 3632902423640679932
+      spriteID: 8ca579a8412679610800000000000000
+      internalID: 1627877630681766600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebad0f2ae3c17130800000000000000
+      internalID: 3562844190805961701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d17b31151e29ec0800000000000000
+      internalID: -3561536616957272716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c640a419a096a010800000000000000
+      internalID: 1199805406610736841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51eacc48bd7848200800000000000000
+      internalID: 181419261897256469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f5788ee23049990800000000000000
+      internalID: -7380270389348835564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdf9a1abd2f573e0800000000000000
+      internalID: -2056470629700731445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535d4a3275eb550b0800000000000000
+      internalID: -5740472868544391883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae3f6cb484897a00800000000000000
+      internalID: 754780118193225376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86faac8cd758082b0800000000000000
+      internalID: -5584316762653282456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320c22dff0ca11150800000000000000
+      internalID: 5841639376347643939
       vertices: []
       indices: 
       edges: []
@@ -636,10 +780,10 @@ TextureImporter:
       name: Rue_Idle_sprite-Sheet_22
       rect:
         serializedVersion: 2
-        x: 215
+        x: 206
         y: 25
-        width: 17
-        height: 38
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -647,8 +791,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387dbe9505d739370800000000000000
-      internalID: 8328137919997663107
+      spriteID: 447934a663964fd60800000000000000
+      internalID: 7923073326883510084
       vertices: []
       indices: 
       edges: []
@@ -657,10 +801,10 @@ TextureImporter:
       name: Rue_Idle_sprite-Sheet_23
       rect:
         serializedVersion: 2
-        x: 315
+        x: 306
         y: 25
-        width: 17
-        height: 37
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,8 +812,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea87bba5e5cafad90800000000000000
-      internalID: -7084254167581362002
+      spriteID: f03d40949a5eb2f00800000000000000
+      internalID: 1093219849804763919
       vertices: []
       indices: 
       edges: []
