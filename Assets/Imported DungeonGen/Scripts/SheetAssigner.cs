@@ -31,7 +31,7 @@ public class SheetAssigner : MonoBehaviour
     {
         int lenghtOfRooms = rooms.Length;
         int i = 0;
-        Debug.Log("Max rooms is " + theGen.numberOfRooms);
+        //Debug.Log("Max rooms is " + theGen.numberOfRooms);
         //Debug.Log(theGen.roomList.Count);
         foreach (Room room in rooms)
         {
@@ -49,7 +49,7 @@ public class SheetAssigner : MonoBehaviour
                 myRoom.Setup(startSheet, room.gridPos, room.type, room.doorTop, room.doorBot, room.doorLeft, room.doorRight);
                 startRoomGenerated = true;
                 roomsCreated.Add(myRoom.gameObject);
-                Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
+                //Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
             }
             else if(roomsCreated.Count < theGen.numberOfRooms - 1)
             {
@@ -60,7 +60,7 @@ public class SheetAssigner : MonoBehaviour
                 RoomInstance myRoom = Instantiate(RoomObj, pos, Quaternion.identity).GetComponent<RoomInstance>();
                 myRoom.Setup(sheetsNormal[index], room.gridPos, room.type, room.doorTop, room.doorBot, room.doorLeft, room.doorRight);
                 roomsCreated.Add(myRoom.gameObject);
-                Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
+                //Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
             }
             else
             {
@@ -68,7 +68,7 @@ public class SheetAssigner : MonoBehaviour
                 RoomInstance myRoom = Instantiate(RoomObj, pos, Quaternion.identity).GetComponent<RoomInstance>();
                 myRoom.Setup(lastSheet, room.gridPos, room.type, room.doorTop, room.doorBot, room.doorLeft, room.doorRight);
                 roomsCreated.Add(myRoom.gameObject);
-                Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
+                //Debug.Log(roomsCreated.Count, roomsCreated[roomsCreated.Count - 1]);
             }
         }
     }

@@ -58,7 +58,7 @@ public class RoomInstance : MonoBehaviour
     }
     void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn, string dir)
     {
-        Debug.Log(dir + " " + door, gameObject);
+        //Debug.Log(dir + " " + door, gameObject);
 
         // check whether its a door or wall, then spawn
         if (door)
