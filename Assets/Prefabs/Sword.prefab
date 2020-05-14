@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1986842023111703633}
   - component: {fileID: 1986842023111703634}
   - component: {fileID: 1986842023111703635}
+  - component: {fileID: 6114072658807406800}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Sword
@@ -135,3 +136,20 @@ PolygonCollider2D:
       - {x: 0.055136275, y: 0}
       - {x: 0.13486372, y: 0.10513502}
       - {x: 0.050558984, y: 0.14324324}
+--- !u!114 &6114072658807406800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986842023111703662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc76ee7873d0d4dba41adf67c095d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerstats: {fileID: 0}
+  critRoll: 0
+  critChance: 0
+  Crit: 0

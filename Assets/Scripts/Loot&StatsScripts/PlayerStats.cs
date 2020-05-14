@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     public CharacterStat FireArrows;
     public CharacterStat SwordRangeIncreased;
     public CharacterStat SwordArcIncreased;
+    public CharacterStat Power;
     public CharacterStat ShieldReflectsDmg;
     public CharacterStat NoSacrifice;
     public CharacterStat RueHPDmgOnHit;
@@ -66,7 +67,7 @@ public class PlayerStats : MonoBehaviour
         Strength.BaseValue = 10;
         Dexterity.BaseValue = 10;
         CritChance.BaseValue = 0;
-        CritDamage.BaseValue = 0;
+        CritDamage.BaseValue = 200;
         LifeOnHit.BaseValue = 0;
         SwordAttackModifier.BaseValue = 1.5f;
         CrossbowAttackModifier.BaseValue = 1f;
@@ -87,6 +88,7 @@ public class PlayerStats : MonoBehaviour
         FireArrows.BaseValue = 0;
         SwordRangeIncreased.BaseValue = 0;
         SwordArcIncreased.BaseValue = 0;
+        Power.BaseValue = 0;
         ShieldReflectsDmg.BaseValue = 0;
         NoSacrifice.BaseValue = 0;
         RueHPDmgOnHit.BaseValue = 0;
