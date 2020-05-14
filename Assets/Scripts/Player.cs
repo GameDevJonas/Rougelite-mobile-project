@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     public void UpdateStats()
     {
         PlayerStats playerstats = GetComponent<PlayerStats>();
-        speed = playerstats.MovementSpeed.Value;
+        speed = playerstats.MovementSpeed.Value * 6;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         HealthSystem = new HealthSystem(playerstats.Health.Value);
         maxHealth = HealthSystem.GetHealth();

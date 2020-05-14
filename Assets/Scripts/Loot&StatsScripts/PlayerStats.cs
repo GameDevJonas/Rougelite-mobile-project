@@ -34,7 +34,7 @@ public class PlayerStats : MonoBehaviour
         SwordAttackModifier.BaseValue = 1.5f;
         CrossbowAttackModifier.BaseValue = 1f;
         PotionPotency.BaseValue = 0;
-        MovementSpeed.BaseValue = 60;
+        MovementSpeed.BaseValue = 10;
 
         player.UpdateStats();
 
