@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -562,7 +562,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: c555b6555b71a2046b65aca764ca01de, type: 3}
   startSheet: {fileID: 2800000, guid: 56625c7d8c9396e4a80c448d80432e42, type: 3}
   lastSheet: {fileID: 2800000, guid: 47a2506e5b1d7d047a84e8d92af4a0d2, type: 3}
-  RoomObj: {fileID: 1038065722679700, guid: 092b915af527d594aa11083a065a8de8, type: 3}
+  RoomObj: {fileID: 1038065722679700, guid: 51474b2b7ed18e745a617e4e8ea7911f, type: 3}
   roomDimensions: {x: 272, y: 144}
   gutterSize: {x: 144, y: 64}
   startRoomGenerated: 0
