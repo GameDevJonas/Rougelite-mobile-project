@@ -83,18 +83,18 @@ public class ItemDatabase : MonoBehaviour
     {
         items = new List<Item>()
         {
-            new Item(0, "Common Loot", "Pale Scale", "A white scale from an unknown creature. Increases health.", "+ 25 Health.", Health, "flat", 25),
-            new Item(1, "Common Loot", "Sharp Tooth", "A long and pointy tooth, it seems demonic. Increases strength.", "+ 1 Strength.", Strength, "flat", 1),
-            new Item(2, "Common Loot", "Red String", "Hard to identify, but it is organic. Increases dexterity.", "+ 1 Dexterity.", Dexterity, "flat", 1),
-            new Item(3, "Common Loot", "Shrunken Leech", "Shriveled, but still abnormally big. Increases life on hit.", "+ 1 Life on hit.", LifeOnHit, "flat", 1),
-            new Item(4, "Common Loot", "Luminescent Black Mushroom", "A paradoxical and unnatural mushroom. Increases potion potency.", "+ 10 Potion Potency.", PotionPotency, "flat", 10),
-            new Item(5, "Rare Loot", "Pale Skin",  "White and scaled skin which looks like snakeskin but has protrusions and holes which suggest otherwise. Increases health.", "+ 10 % Health.", Health, "percent", 0.1f),
-            new Item(6, "Rare Loot", "Broken Horn", "A horn resembling a goat but seems predatory and evil… Seems like these pieces originate from the same creature. Increases attack damage.", "+ 10 % Strength.", Strength, "percent", 0.1f),
-            new Item(7, "Rare Loot", "Red Guts", "Apparently intestines, but from what? Increases attack speed.", "+ 10 % Dexterity.", Dexterity, "percent", 0.1f),
+            new Item(0, "Common Loot", "Pale scale", "A white scale from an unknown creature. Increases health.", "+ 25 Health.", Health, "flat", 25),
+            new Item(1, "Common Loot", "Sharp tooth", "A long and pointy tooth, it seems demonic. Increases strength.", "+ 1 Strength.", Strength, "flat", 1),
+            new Item(2, "Common Loot", "Red string", "Hard to identify, but it is organic. Increases dexterity.", "+ 1 Dexterity.", Dexterity, "flat", 1),
+            new Item(3, "Common Loot", "Shrunken leech", "Shriveled, but still abnormally big. Increases life on hit.", "+ 1 Life on hit.", LifeOnHit, "flat", 1),
+            new Item(4, "Common Loot", "Luminescent black mushroom", "A paradoxical and unnatural mushroom. Increases potion potency.", "+ 10 Potion Potency.", PotionPotency, "flat", 10),
+            new Item(5, "Rare Loot", "Pale skin",  "White and scaled skin which looks like snakeskin but has protrusions and holes which suggest otherwise. Increases health.", "+ 10 % Health.", Health, "percent", 0.1f),
+            new Item(6, "Rare Loot", "Broken horn", "A horn resembling a goat but seems predatory and evil… Seems like these pieces originate from the same creature. Increases attack damage.", "+ 10 % Strength.", Strength, "percent", 0.1f),
+            new Item(7, "Rare Loot", "Red guts", "Apparently intestines, but from what? Increases attack speed.", "+ 10 % Dexterity.", Dexterity, "percent", 0.1f),
             new Item(8, "Rare Loot", "Magnetic dust", "A hot magnetic powder clinging to sword blades; however, it does not attach to other metals. Increases sword damage.", "+ 25 % sword damage.", SwordAttackModifier, "percent", 0.25f),
             new Item(9, "Rare Loot", "Fetid wax", "Nauseating smell, but it is very smooth when applied to the crossbow barrel. Increases crossbow damage.", "+ 25 % crossbow damage.", CrossbowAttackModifier, "percent", 0.25f),
             new Item(10, "Rare Loot", "Pulsating something", "Mysteriously irresistible, invigorating when eaten. Increases movement speed.", "+ 5 % movement speed", MovementSpeed, "percent", 0.05f),
-            new Item(11, "Rare Loot", "Stained Nail", "Feels like a plant, but hard as iron. Stained with dried liquids. Increases critical strike chance.", "+ 5 % Critical strike chance.", CritChance, "flat", 5),
+            new Item(11, "Rare Loot", "Stained nail", "Feels like a plant, but hard as iron. Stained with dried liquids. Increases critical strike chance.", "+ 5 % Critical strike chance.", CritChance, "flat", 5),
             new Item(12, "Rare Loot", "Hair fetish", "Small occult looking doll. It seems to have the power to inflict great pain. Increases critical strike damage.", "+ 10 % Critical strike damage.", CritDamage, "flat", 10),
             new Item(13, "Legendary Loot", "Violet light particle", "Gives off no sensation of touch but can be grasped. Enemies can no longer hide in the light.", "All enemies are visible in the light.", EnemiesVisibleInsideLight, "flat", 1),
             new Item(14, "Legendary Loot",  "White light particle", "Cannot be grasped but feels strangely warm and solid. Enemies can no longer hide in the darkness.", "All enemies are visible in the darkness.", EnemiesVisibleOutsideLight, "flat", 1),
@@ -107,7 +107,17 @@ public class ItemDatabase : MonoBehaviour
             new Item(21, "Legendary Loot", "Shadow mimic", "Small unintelligent creature, copies what it touches. Shoot more arrows.", "+2 additional arrows.", TripleArrow, "flat", 1),
             new Item(22, "Legendary Loot", "Possessed amulet", "Beautiful golden amulet, the jewel whispers constantly, but offers great power. Increases stats.", "Increases Health, Strength, Dexterity, Life on hit, Sword modifier and Crossbow modifier by 25 %.", Power, "flat", 0.25f),
             new Item(23, "Legendary Loot", "Bottomless vial", "Unending substance poured from a small vial, benefits potions. Potions increases Strength.", "Consuming potions increases Strength by 5", PotsIncreaseStr, "flat", 1),
-            new Item(24, "Legendary Loot", "Second chance", "I have less regrets…", "Additional extra life.", ExtraLife, "flat", 1)
+            new Item(24, "Legendary Loot", "Second chance", "I have less regrets…", "Additional extra life.", ExtraLife, "flat", 1),
+            new Item(25, "Ancient Loot", "Nihilistic essence", "Children of chance and suffering, This void of meaninglessness, All pains endured, Are pains to be inflicted.", "Shield reflects damage.", ShieldReflectsDmg, "flat", 1),
+            new Item(26, "Ancient Loot", "Futile avarice", "For those who have all, All will be given, From those who have nothing, All will be taken.", "Loot drop chance is 100 %, potions has a 50 % chance to additionally drop.", DropGarantueed, "flat", 1),
+            new Item(27, "Ancient Loot", "Madman’s insight", "Forbidden fruits of knowledge, To know good and evil, Know you can be hurt, Know you can hurt others.", "Deal 10% of your maximum health as damage.", RueHPDmgOnHit, "flat", 1),
+            new Item(28, "Ancient Loot", "Desperate will", "Suffering rooted in desire, To steal life from others, Desperation is, What desperation does.", "Life on hit is increased by 300%.", LifeOnHit, "flat", 1),
+            new Item(29, "Ancient Loot", "Infernal flame", "Red and hot demon soul, Ancient past unresolved, A bitter flame, Burns through all.", "Fire arrows which pierce through enemies, arrow damage doubled.", FireArrows, "flat", 1),
+            new Item(30, "Ancient Loot", "Hell frost", "Black and frozen, Cold injustice, The chill of spite, Spite passed on.", "Sword swings shoots a projectile and deals damage twice.", SwordProjectile, "flat", 1),
+            new Item(31, "Ancient Loot", "Surfaced wrath", "When you raise the wall for long, To contain the turmoil of your soul.We will take hold and violently erupt, Your sorrows made wrath and violence inflicted.", "Gains rapid fire arrows, damage is increased by Dexterity.", RapidFire, "flat", 1),
+            new Item(32, "Ancient Loot", "Hatred fragment", "Fundamentally flawed, Corruption beyond repair. Why mend what is broken, Instead of swift destruction?", "Sword attacks execute enemies below 20% health.", SwordExecute, "flat", 1),
+            new Item(33, "Ancient Loot", "Guilt of Belial", "I see what is broken and breaks them further, I torment them with their past and torment them with the future. I trap their lives in a prison of time with bars of guilt.", "Boss doors and death no longer require sacrifices", NoSacrifice, "flat", 1),
+            new Item(34, "Ancient Loot", "Wickedness of Belial", "I whisper sweet promises and sweet release of sin, I say where all fault lies, not with them but with others. I inspire their souls with wickedness and claim justice for their victimhood.", "Critical strikes deal equal to 2% of enemies’ maximum health.", PercentHpDmg, "flat", 1)
         };
     }
 }

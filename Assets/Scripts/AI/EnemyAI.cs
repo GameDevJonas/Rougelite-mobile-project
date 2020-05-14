@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     public float speed;
     private int drop;
     public GameObject aggroRange;
-    public GameObject player;
+    public GameObject rue;
     public GameObject sword;
     public GameObject attack;
     public GameObject Loot;
@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         speed = 30f;
         HealthSystem = new HealthSystem(50);
-        player = GameObject.FindGameObjectWithTag("Player");
+        rue = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class EnemyAI : MonoBehaviour
         if (closeEnough == false && waiting == false)
         {
             rb2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
-            walk = (player.transform.position - transform.position).normalized * speed;
+            walk = (rue.transform.position - transform.position).normalized * speed;
             rb2d.velocity = new Vector2(walk.x, walk.y);
         }
         if (closeEnough == true || waiting == true || BackOff == true && closeEnough == true)
@@ -82,8 +82,21 @@ public class EnemyAI : MonoBehaviour
         
         if (collider.tag == "Sword")
         {
-            PlayerStats playerstats = player.GetComponent<PlayerStats>();
-            HealthSystem.Damage(playerstats.Strength.Value);
+            PlayerStats playerstats = rue.GetComponent<PlayerStats>();
+            Player player = rue.GetComponent<Player>();
+            Swordscript swordCrit = collider.GetComponent<Swordscript>();
+            if (swordCrit.Crit == false)
+            {
+                HealthSystem.Damage(playerstats.Strength.Value);
+                player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+            }
+            if (swordCrit.Crit == true)
+            {
+                HealthSystem.Damage(playerstats.Strength.Value * (playerstats.CritDamage.Value / 100));
+                player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+            }
+
+
         }
         
     }
@@ -92,7 +105,7 @@ public class EnemyAI : MonoBehaviour
     {
         waiting = true;
         canAttack = false;
-        direction = player.transform.position - transform.position;
+        direction = rue.transform.position - transform.position;
         float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90;
         GameObject clonedObject = Instantiate(attack, transform.position, Quaternion.AngleAxis(angle, Vector3.forward), transform);
         Destroy(clonedObject, 0.3f);
@@ -121,7 +134,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Damage()
     {
-        PlayerStats playerstats = player.GetComponent<PlayerStats>();
+        PlayerStats playerstats = rue.GetComponent<PlayerStats>();
         HealthSystem.Damage(playerstats.Strength.Value);
     }
 }

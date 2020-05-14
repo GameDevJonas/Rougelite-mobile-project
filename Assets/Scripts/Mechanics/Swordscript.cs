@@ -5,18 +5,34 @@ using UnityEngine;
 public class Swordscript : MonoBehaviour
 {
     public GameObject player;
-    public GameObject Enemy;
-    private void OnTriggerEnter2D(Collider2D other)
+    public PlayerStats playerstats;
+    public int critRoll;
+    public float critChance;
+    public bool Crit;
+
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerstats = player.GetComponent<PlayerStats>();
+        critRoll = Random.Range(0, 100);
+        critChance = playerstats.CritChance.Value;
+
+        CritCheck();
+    }
+    private void Update()
+    {
+        critChance = playerstats.CritChance.Value;
+    }
+    public void CritCheck()
+    {
+        
+        if (critRoll > critChance)
         {
-            Enemy = GameObject.FindGameObjectWithTag("Enemy");
-
-            PlayerStats playerstats = player.GetComponent<PlayerStats>();
-            
-            EnemyAI enemy = Enemy.GetComponent<EnemyAI>();
-
-            enemy.HealthSystem.Damage(playerstats.Strength.Value);
+            Crit = false;
+        }
+        if (critRoll < critChance || critRoll == critChance)
+        {
+            Crit = true;
         }
     }
 }
