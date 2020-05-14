@@ -15,7 +15,7 @@ public class Item
     public string modType;
     //public Sprite icon;
     public float statValue;
-    public Item(int id, string tier, string title, string lore, string description /*icon*/, CharacterStat statType, string modType,float statValue)
+    public Item(int id, string tier, string title, string lore, string description, /*icon,*/ CharacterStat statType, string modType,float statValue)
     {
         this.id = id;
         this.tier = tier;
