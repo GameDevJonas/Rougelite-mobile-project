@@ -87,7 +87,10 @@ public class Player : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            menuManager.ToAlphaLevel();
+            if (menuManager == null)
+            {
+                menuManager.ToAlphaLevel();
+            }
             //RestartScene();
         }
     }
@@ -101,6 +104,7 @@ public class Player : MonoBehaviour
         PlayerStats playerstats = GetComponent<PlayerStats>();
         speed = playerstats.MovementSpeed.Value * 6;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
+        shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
         HealthSystem = new HealthSystem(playerstats.Health.Value);
         maxHealth = HealthSystem.GetHealth();
         healthbar.SetMaxHealth(maxHealth);
@@ -184,12 +188,12 @@ public class Player : MonoBehaviour
 
     public void SwitchWeapon()
     {
-        if(weaponInUse == WeaponState.sword)
+        if (weaponInUse == WeaponState.sword)
         {
             debugWeaponState.text = "bow";
             weaponInUse = WeaponState.bow;
         }
-        else if(weaponInUse == WeaponState.bow)
+        else if (weaponInUse == WeaponState.bow)
         {
             debugWeaponState.text = "sword";
             weaponInUse = WeaponState.sword;
@@ -232,6 +236,15 @@ public class Player : MonoBehaviour
         if (canAttack)
         {
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
+            arrowClone.GetComponent<Arrow>().ShootyShoot(dir);
+            canMove = false;
+            canAttack = false;
+            //Destroy(arrowClone, 5f);
+            if (canAttack == false)
+            {
+                Invoke("AttackLock", shootSpeed);
+                Invoke("MovementLock", attackspeed);
+            }
         }
     }
 
