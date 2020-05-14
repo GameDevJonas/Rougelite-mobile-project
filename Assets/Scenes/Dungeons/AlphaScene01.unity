@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -553,9 +553,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheetsNormal:
-  - {fileID: 2800000, guid: e53ddabeb50e7e341a58b68908b05e60, type: 3}
-  startSheet: {fileID: 2800000, guid: e53ddabeb50e7e341a58b68908b05e60, type: 3}
-  lastSheet: {fileID: 2800000, guid: e53ddabeb50e7e341a58b68908b05e60, type: 3}
+  - {fileID: 2800000, guid: c6498566b0492cb46b01c40dfa4e0636, type: 3}
+  - {fileID: 2800000, guid: 36adc7919912bf940acd9bdbbeb57a0b, type: 3}
+  - {fileID: 2800000, guid: d8faa1d48d8de5c4d87ffa2fa411c9ce, type: 3}
+  - {fileID: 2800000, guid: 1c698b3d2b70886498e148eb3165a2c2, type: 3}
+  - {fileID: 2800000, guid: 92b3ae88c586a4a41acf5b12df06e885, type: 3}
+  - {fileID: 2800000, guid: ad2f94cf677464945b418dd825e14b06, type: 3}
+  - {fileID: 2800000, guid: c555b6555b71a2046b65aca764ca01de, type: 3}
+  startSheet: {fileID: 2800000, guid: 56625c7d8c9396e4a80c448d80432e42, type: 3}
+  lastSheet: {fileID: 2800000, guid: 47a2506e5b1d7d047a84e8d92af4a0d2, type: 3}
   RoomObj: {fileID: 1038065722679700, guid: 092b915af527d594aa11083a065a8de8, type: 3}
   roomDimensions: {x: 272, y: 144}
   gutterSize: {x: 144, y: 64}
@@ -591,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &679718504
 Transform:
   m_ObjectHideFlags: 0
