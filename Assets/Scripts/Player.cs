@@ -4,10 +4,15 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 [Serializable]
 public class Player : MonoBehaviour
 {
+    public enum WeaponState { sword, bow };
+    public WeaponState weaponInUse = WeaponState.sword;
+    public TextMeshProUGUI debugWeaponState;
+
     private Rigidbody2D rb;
 
     public Animator anim;
@@ -36,9 +41,19 @@ public class Player : MonoBehaviour
 
     public MenuManager menuManager;
 
-    void Start()
+    public string dir;
+    public GameObject arrow;
+    public float shootSpeed;
+    public float shootForce;
+    public Transform shootPoint;
+
+    void Awake()
     {
+        debugWeaponState.text = "sword";
+
         anim = GetComponentInChildren<Animator>();
+
+        shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
 
         swordAttack = GameObject.FindGameObjectWithTag("SwordButton").GetComponent<Button>();
 
@@ -49,6 +64,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
+        dir = "U";
     }
 
     public void StartPosition(Vector3 startPos)
@@ -104,7 +120,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && !useTouch)
         {
-            SwordAttack();
+            DoAnAttack();
         }
 
         //Anim set
@@ -134,35 +150,62 @@ public class Player : MonoBehaviour
     {
         if (xInput == 1 && (canMove == true)) //Right
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -90);
+            dir = "R";
         }
         else if (xInput == -1 && (canMove == true)) //Left
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 90);
+            dir = "L";
         }
         if (yInput == 1 && (canMove == true)) //Up
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 0);
+            dir = "U";
         }
         else if (yInput == -1 && (canMove == true)) //Down
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -180);
+            dir = "D";
         }
         if ((xInput == 1 && yInput == 1) && (canMove == true)) //Up right
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
+            dir = "UR";
         }
         else if ((xInput == -1 && yInput == -1) && (canMove == true)) //Down left
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, 135);
+            dir = "DL";
         }
         if ((xInput == 1 && yInput == -1) && (canMove == true)) //Down right
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -135);
+            dir = "DR";
         }
         if ((xInput == -1 && yInput == 1) && (canMove == true)) //Up left
         {
-            ///transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.x, -45);
+            dir = "UL";
+        }
+    }
+
+    public void SwitchWeapon()
+    {
+        if(weaponInUse == WeaponState.sword)
+        {
+            debugWeaponState.text = "bow";
+            weaponInUse = WeaponState.bow;
+        }
+        else if(weaponInUse == WeaponState.bow)
+        {
+            debugWeaponState.text = "sword";
+            weaponInUse = WeaponState.sword;
+        }
+    }
+
+    public void DoAnAttack()
+    {
+        switch (weaponInUse)
+        {
+            case WeaponState.sword:
+                SwordAttack();
+                break;
+            case WeaponState.bow:
+                BowAttack();
+                break;
         }
     }
 
@@ -183,6 +226,15 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void BowAttack()
+    {
+        if (canAttack)
+        {
+            GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
+        }
+    }
+
     void MovementLock()
     {
         canMove = true;

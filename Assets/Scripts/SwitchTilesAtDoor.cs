@@ -10,7 +10,7 @@ public class SwitchTilesAtDoor : MonoBehaviour
     public bool isThereDoor = false;
     void Start()
     {
-        Debug.Log("", gameObject);
+        //Debug.Log("", gameObject);
     }
 
     // Update is called once per frame
