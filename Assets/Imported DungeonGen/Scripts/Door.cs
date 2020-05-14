@@ -24,23 +24,39 @@ public class Door : MonoBehaviour
 
         if (upRay)
         {
-            Debug.Log(upRay.collider.gameObject + " upRay", gameObject);
-            upRay.collider.gameObject.transform.position += new Vector3(0, 110, 0);
+            //Debug.Log(upRay.collider.gameObject + " upRay", gameObject);
+            if (upRay.collider.gameObject.CompareTag("Player"))
+            {
+                upRay.collider.gameObject.transform.position += new Vector3(0, 110, 0);
+            }
+            else
+            {
+
+            }
         }
         else if (leftRay)
         {
-            Debug.Log(leftRay.collider.gameObject + " leftRay", gameObject);
-            leftRay.collider.gameObject.transform.position -= new Vector3(190, 0, 0);
+            //Debug.Log(leftRay.collider.gameObject + " leftRay", gameObject);
+            if (leftRay.collider.gameObject.CompareTag("Player"))
+            {
+                leftRay.collider.gameObject.transform.position -= new Vector3(190, 0, 0);
+            }
         }
         else if (rightRay)
         {
-            Debug.Log(rightRay.collider.gameObject + " rightRay", gameObject);
-            rightRay.collider.gameObject.transform.position += new Vector3(190, 0, 0);
+            //Debug.Log(rightRay.collider.gameObject + " rightRay", gameObject);
+            if (rightRay.collider.gameObject.CompareTag("Player"))
+            {
+                rightRay.collider.gameObject.transform.position += new Vector3(190, 0, 0);
+            }
         }
         else if (downRay)
         {
-            Debug.Log(downRay.collider.gameObject + " downRay", gameObject);
-            downRay.collider.gameObject.transform.position -= new Vector3(0, 110, 0);
+            //Debug.Log(downRay.collider.gameObject + " downRay", gameObject);
+            if (downRay.collider.gameObject.CompareTag("Player"))
+            {
+                downRay.collider.gameObject.transform.position -= new Vector3(0, 110, 0);
+            }
         }
     }
 
