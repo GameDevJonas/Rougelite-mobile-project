@@ -7,18 +7,14 @@ public class SwitchTilesAtDoor : MonoBehaviour
     public Sprite notDoorSprite;
     public Sprite doorSprite;
 
+    public bool isThereDoor = false;
     void Start()
     {
-        
+        Debug.Log("", gameObject);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    public void SwitchTile(bool isThereDoor)
     {
         if (isThereDoor)
         {
@@ -28,5 +24,10 @@ public class SwitchTilesAtDoor : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = notDoorSprite;
         }
+    }
+
+    public void SwitchTile()
+    {
+        
     }
 }

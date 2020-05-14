@@ -120,7 +120,7 @@ MonoBehaviour:
     prefab: {fileID: 44572211779749757, guid: 5e08b1999d80d1a4a9e5267574b31409, type: 3}
   - color: {r: 1, g: 0, b: 1, a: 1}
     prefab: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2, type: 3}
-  - color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+  - color: {r: 1, g: 1, b: 1, a: 1}
     prefab: {fileID: 1348133729177994, guid: 6563d0b76516a724986f0acabf0e5857, type: 3}
   enemySpawns: []
   theGen: {fileID: 0}
