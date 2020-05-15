@@ -9,6 +9,8 @@ TagManager:
   - Sword
   - SwordButton
   - ShootPoint
+  - Arrow
+  - RoomRoot
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - 
   - SwitchTilesAtDoors
   - Player
-  - 
+  - Obstacles
   - 
   - 
   - 

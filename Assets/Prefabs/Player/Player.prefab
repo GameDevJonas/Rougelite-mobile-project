@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -57.3, y: 51.3}
+  m_AnchoredPosition: {x: -57.25, y: 51.25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1317067020
@@ -803,7 +803,7 @@ MonoBehaviour:
   xInput: 0
   yInput: 0
   healthbar: {fileID: 1319494376}
-  useTouch: 0
+  useTouch: 1
   attack: 0
   canMove: 1
   canAttack: 1
@@ -895,6 +895,9 @@ MonoBehaviour:
     _value: 0
     BaseValue: 0
   SwordArcIncreased:
+    _value: 0
+    BaseValue: 0
+  Power:
     _value: 0
     BaseValue: 0
   ShieldReflectsDmg:
@@ -1105,7 +1108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 3632902423640679932, guid: 44c97a7bca832ba49a38b07f69aed47f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

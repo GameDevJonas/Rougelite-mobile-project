@@ -47,6 +47,10 @@ public class Player : MonoBehaviour
     public float shootForce;
     public Transform shootPoint;
 
+    public GameObject currentRoom;
+
+    public AstarStarter aStarManager;
+
     void Awake()
     {
         debugWeaponState.text = "sword";
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour
 
     public void StartPosition(Vector3 startPos)
     {
+        aStarManager = GameObject.FindGameObjectWithTag("RoomRoot").GetComponent<AstarStarter>();
         transform.position = startPos;
     }
 
@@ -87,12 +92,13 @@ public class Player : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            if (menuManager == null)
+            if (menuManager != null)
             {
                 menuManager.ToAlphaLevel();
             }
             //RestartScene();
         }
+
     }
     private void FixedUpdate()
     {
@@ -261,5 +267,14 @@ public class Player : MonoBehaviour
     {
         Scene thisScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(thisScene.name);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "RoomRoot" && collision.GetComponent<RoomInstance>())
+        {
+            currentRoom = collision.gameObject;
+            aStarManager.DoTheScan(currentRoom);
+        }
     }
 }

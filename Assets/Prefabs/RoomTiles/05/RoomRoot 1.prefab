@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4205649482228934}
   - component: {fileID: 212522987513716332}
   - component: {fileID: 114554197803855032}
+  - component: {fileID: 7093899554307248772}
   m_Layer: 0
   m_Name: RoomRoot 1
-  m_TagString: Untagged
+  m_TagString: RoomRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +115,7 @@ MonoBehaviour:
   - color: {r: 0, g: 0, b: 1, a: 1}
     prefab: {fileID: 1132586047390324, guid: bc30f97f46fcb0240a9bb7f33ee8dc7b, type: 3}
   - color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1081537837574819491, guid: 5dfdd5b4780af384e99f6f6a56470fed,
+    prefab: {fileID: 6429758075927487342, guid: 414e621c93069bb4e8fff0887d883d79,
       type: 3}
   - color: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 44572211779749757, guid: 5e08b1999d80d1a4a9e5267574b31409, type: 3}
@@ -124,3 +125,29 @@ MonoBehaviour:
     prefab: {fileID: 1348133729177994, guid: 36310b19b43edd74c93ca5bac82295e3, type: 3}
   enemySpawns: []
   theGen: {fileID: 0}
+--- !u!61 &7093899554307248772
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038065722679700}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 272, y: 144}
+    newSize: {x: 272, y: 144}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 272, y: 144}
+  m_EdgeRadius: 0

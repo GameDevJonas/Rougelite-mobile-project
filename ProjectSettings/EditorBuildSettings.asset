@@ -5,22 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu.unity
     guid: 6b4d39e2a7c84a24bad1b037adc64c4c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene01.unity
     guid: 12e65dbcf7ec3d44d952e61d6a5d9bb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/AlphaBoss.unity
     guid: 6a09627be64d7634aa287f74a549e921
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene02.unity
     guid: eeeb83911da79194881759098f93e4ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene03.unity
     guid: 6e5aa880a12977f4a9647835d9d37016
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene04.unity
     guid: eb9aef7ee67a8da4dbd4bece55ea210b
   - enabled: 1

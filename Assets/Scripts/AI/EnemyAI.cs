@@ -80,17 +80,22 @@ public class EnemyAI : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
-        if (collider.tag == "Sword")
+        if (collider.tag == "Sword" || collider.tag == "Arrow")
         {
+            if(collider.tag == "Arrow")
+            {
+                Debug.Log("arrow hit");
+            }
             PlayerStats playerstats = rue.GetComponent<PlayerStats>();
             Player player = rue.GetComponent<Player>();
             Swordscript swordCrit = collider.GetComponent<Swordscript>();
-            if (swordCrit.Crit == false)
+            Arrow arrowCrit = collider.GetComponent<Arrow>();
+            if (swordCrit.Crit == false || arrowCrit.crit == false)
             {
                 HealthSystem.Damage(playerstats.Strength.Value);
                 player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
             }
-            if (swordCrit.Crit == true)
+            if (swordCrit.Crit == true || arrowCrit.crit == true)
             {
                 HealthSystem.Damage(playerstats.Strength.Value * (playerstats.CritDamage.Value / 100));
                 player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
