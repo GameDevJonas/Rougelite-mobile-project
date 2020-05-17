@@ -92,12 +92,12 @@ public class EnemyAI : MonoBehaviour
             Arrow arrowCrit = collider.GetComponent<Arrow>();
             if (swordCrit.Crit == false || arrowCrit.crit == false)
             {
-                HealthSystem.Damage(playerstats.Strength.Value);
+                HealthSystem.Damage(playerstats.Strength.Value * playerstats.SwordAttackModifier.Value);
                 player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
             }
             if (swordCrit.Crit == true || arrowCrit.crit == true)
             {
-                HealthSystem.Damage(playerstats.Strength.Value * (playerstats.CritDamage.Value / 100));
+                HealthSystem.Damage((playerstats.Strength.Value * playerstats.SwordAttackModifier.Value) * (playerstats.CritDamage.Value / 100));
                 player.HealthSystem.Heal(playerstats.LifeOnHit.Value);
             }
 

@@ -63,3 +63,4 @@ crashlytics-build.properties
 
 # Test files to ignore
 TEST*
+Assets/Sprites/Dungeontiles.meta

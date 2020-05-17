@@ -10,11 +10,12 @@ public class CommonLootDrop : MonoBehaviour
     private int drop;
     private CharacterStat type;
     public GameObject player;
+    public GameObject MenuManager;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<PlayerStats>();
+        MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
     }
     private void Update()
     {
@@ -26,7 +27,7 @@ public class CommonLootDrop : MonoBehaviour
     }
     private void GiveItem()
     {
-        player.GetComponent<PlayerStats>().GiveItem(drop);
+        MenuManager.GetComponent<LootFound>().GiveItem(drop);
         Destroy(gameObject, 0);
     }
     private void OnTriggerEnter2D(Collider2D collider)

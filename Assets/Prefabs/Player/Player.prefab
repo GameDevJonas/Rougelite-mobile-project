@@ -680,9 +680,9 @@ GameObject:
   - component: {fileID: 1665562176945504401}
   - component: {fileID: 1665562176945504402}
   - component: {fileID: 1665562176945504403}
+  - component: {fileID: 2546891582353642013}
   - component: {fileID: 1665562176945504407}
   - component: {fileID: 1643031055}
-  - component: {fileID: 2546891582353642013}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -777,6 +777,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &2546891582353642013
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665562176945504413}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &1665562176945504407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,23 +969,10 @@ MonoBehaviour:
     BaseValue: 0
   Loot: []
   ItemDatabase: {fileID: 496618011368227173}
-  ItemCount: 0
---- !u!58 &2546891582353642013
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665562176945504413}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  inventory:
+    ItemDatabase: {fileID: 0}
+    lootName: []
+    consumables: []
 --- !u!1 &1665562177985097422
 GameObject:
   m_ObjectHideFlags: 0

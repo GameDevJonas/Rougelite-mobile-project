@@ -57,7 +57,6 @@ public class PlayerStats : MonoBehaviour
     public List<Item> Loot = new List<Item>();
     public ItemDatabase ItemDatabase;
     public Player player => GetComponent<Player>();
-    public int ItemCount = 0;
 
     
 
@@ -110,36 +109,56 @@ public class PlayerStats : MonoBehaviour
 
         player.UpdateStats();
 
-        AddFlatModifier(Health, 0);
-        AddFlatModifier(Strength, 0);
-        AddFlatModifier(Dexterity, 0);
-        AddFlatModifier(CritChance, 0);
-        AddFlatModifier(CritDamage, 0);
-        AddFlatModifier(LifeOnHit, 0);
-        AddFlatModifier(SwordAttackModifier, 0);
-        AddFlatModifier(CrossbowAttackModifier, 0);
-        AddFlatModifier(PotionPotency, 0);
-        AddFlatModifier(MovementSpeed, 0);
+        UpdateItemInfo();
+
     }
     public void GiveItem(int id)
     {
         Item itemToAdd = ItemDatabase.GetItem(id);
-        Loot.Add(itemToAdd);
-        Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
-        ItemCount += 1;
-        if (itemToAdd.modType == "flat")
+        bool AlreadyinInventory = false;
+        foreach (Item item in Loot)
         {
-            AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+            if (itemToAdd.id == item.id)
+            {
+                itemToAdd.amount += item.amount;
+                AlreadyinInventory = true;
+
+                Debug.Log("Got another " + itemToAdd.title + itemToAdd.description);
+                if (itemToAdd.modType == "flat")
+                {
+                    AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+                }
+                if (itemToAdd.modType == "percent")
+                {
+                    AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+                }
+                if (itemToAdd.modType == "multpercent")
+                {
+                    AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
+                }
+                Item itemCheck = CheckforItems(id);
+            }
         }
-        if (itemToAdd.modType == "percent")
+        if (!AlreadyinInventory)
         {
-            AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+            Loot.Add(itemToAdd);
+
+            Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
+            if (itemToAdd.modType == "flat")
+            {
+                AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+            }
+            if (itemToAdd.modType == "percent")
+            {
+                AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+            }
+            if (itemToAdd.modType == "multpercent")
+            {
+                AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
+            }
+            Item itemCheck = CheckforItems(id);
         }
-        if (itemToAdd.modType == "multpercent")
-        {
-            AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
-        }
-        Item itemCheck = CheckforItems(id);
+        
     }
     private void UpdateItemInfo()
     {
@@ -168,6 +187,7 @@ public class PlayerStats : MonoBehaviour
         _ = FireArrows.Value;
         _ = SwordRangeIncreased.Value;
         _ = SwordArcIncreased.Value;
+        _ = Power.Value;
         _ = ShieldReflectsDmg.Value;
         _ = NoSacrifice.Value;
         _ = RueHPDmgOnHit.Value;
@@ -218,7 +238,6 @@ public class PlayerStats : MonoBehaviour
         {
             RemoveModifier();
             Loot.Remove(item);
-            ItemCount -= 1;
             player.UpdateStats();
         }
     }
