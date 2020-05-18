@@ -19,6 +19,7 @@ public class LootFound : MonoBehaviour
     void Start()
     {
         MenuManager = gameObject.GetComponent<MenuManager>();
+
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class LootFound : MonoBehaviour
             {
                 player = GameObject.FindGameObjectWithTag("Player");
                 ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
+
             }
         }
         if (Loot.Count > 0 && MenuManager.isPaused && AcceptLoot.Loot.Count == 0)

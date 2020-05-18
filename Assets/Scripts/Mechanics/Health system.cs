@@ -13,14 +13,17 @@ public class HealthSystem //new class
         this.health = healthCurrent;
         health = healthCurrent;
     }
-    public void ModMaxHealth(float healthMax)
-    {
-        this.healthMax = healthMax;
-    }
     public float GetHealth() //request current hp
     {
         return health; //get current hp
     }
+
+    public void ModMaxHealth(float MaxHealth)
+    {
+        this.healthMax = MaxHealth;
+        healthMax = MaxHealth;
+    }
+
     public void Damage(float damageAmount) //damage is decided by damage amount
     {
         health -= damageAmount; //subtract damage amount from health

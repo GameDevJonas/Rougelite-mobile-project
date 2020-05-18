@@ -11,19 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene01.unity
     guid: 12e65dbcf7ec3d44d952e61d6a5d9bb5
-  - enabled: 0
-    path: Assets/Scenes/Bosses/AlphaBoss.unity
-    guid: 6a09627be64d7634aa287f74a549e921
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene02.unity
     guid: eeeb83911da79194881759098f93e4ec
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene03.unity
     guid: 6e5aa880a12977f4a9647835d9d37016
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene04.unity
     guid: eb9aef7ee67a8da4dbd4bece55ea210b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene05.unity
     guid: 2b5bf0a2efd459841912f9203830ee55
+  - enabled: 1
+    path: Assets/Scenes/Bosses/AlphaBoss.unity
+    guid: 6a09627be64d7634aa287f74a549e921
+  - enabled: 1
+    path: Assets/Scenes/Old/Player stats.unity
+    guid: 7f6d81cdb44e3ba439519cb7c03c0bc8
   m_configObjects: {}

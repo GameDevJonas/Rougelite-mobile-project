@@ -2,51 +2,104 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
 public class EnemyAI : MonoBehaviour
 {
     public Rigidbody2D rb2d;
-    public float speed;
-    private int drop;
     public GameObject aggroRange;
     public GameObject rue;
     public GameObject sword;
     public GameObject attack;
-    public GameObject Loot;
+
+    
+
     public bool closeEnough = false;
     public bool canAttack = false;
     public bool waiting;
     public bool BackOff = false;
-    public HealthSystem HealthSystem;
-    public float Health;
+    
+    
     Vector2 direction;
     Vector2 walk;
     Vector2 backOff;
+
+    //Stats after class
+
+    public EnemyStats EnemyStats;
+
+    public GameObject commonLoot;
+    public GameObject rareLoot;
+    public GameObject legendaryLoot;
+    public GameObject ancientLoot;
+    public GameObject potion;
+
+    public HealthSystem HealthSystem;
+
+    public float health;
+    public int damage;
+    public int speed;
+
+    public int[] Table;
+    public int commondropRange;
+    public int raredropRange;
+    public int legendarydropRange;
+    public int ancientdropRange;
+    public int potiondropRange;
+    public int none;
+    public int lootTotal;
+
+    public bool blocksLight;
+    public bool hidesInDark;
+    public bool hidesInLight;
+
+    public int level;
+
+    public EnemyType thisType;
+
+    //end of Stats after class
     // Start is called before the first frame update
     void Start()
     {
+        //stats in Start()
+
+        thisType = EnemyType.trash;
+
+        level = SceneManager.GetActiveScene().buildIndex;
+
+        EnemyStats = new EnemyStats(thisType, level);
+
+
+        health = EnemyStats.health;
+        damage = EnemyStats.damage;
+        speed = EnemyStats.speed;
+        HealthSystem = new HealthSystem(health);
+
+        
+        Table = EnemyStats.Table;
+        commondropRange = EnemyStats.commondropRange;
+        raredropRange = EnemyStats.raredropRange;
+        legendarydropRange = EnemyStats.legendarydropRange;
+        ancientdropRange = EnemyStats.ancientdropRange;
+        potiondropRange = EnemyStats.potiondropRange;
+        none = EnemyStats.none;
+        lootTotal = EnemyStats.lootTotal;
+
+        blocksLight = EnemyStats.blocksLight;
+        hidesInDark = EnemyStats.hidesInDark;
+        hidesInLight = EnemyStats.hidesInLight;
+
+        //end of stats in Start()*/
+
         rb2d = GetComponent<Rigidbody2D>();
-        speed = 30f;
-        HealthSystem = new HealthSystem(50);
+        
         rue = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Health = HealthSystem.GetHealth();
-        if (Health == 0)//If dead
-        {
-            drop = Random.Range(-1, 2);
-        if (drop == 0)
-            {
-                Destroy(gameObject);
-            }
-        if (drop == 1)
-            {
-                GameObject lootDrop = Instantiate(Loot, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-            }
-            }
+        health = HealthSystem.GetHealth();
+        
         if (closeEnough == false && waiting == false)
         {
             rb2d.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;

@@ -10,6 +10,8 @@ public class GetStats : MonoBehaviour
 
     public PlayerStats currentStats;
 
+    public Player currenthealth;
+
     public TextMeshProUGUI currentMaxHealth;
     public TextMeshProUGUI currentStrength;
     public TextMeshProUGUI currentDexterity;
@@ -34,9 +36,10 @@ public class GetStats : MonoBehaviour
             {
                 player = GameObject.FindGameObjectWithTag("Player");
                 currentStats = player.GetComponent<PlayerStats>();
+                currenthealth = player.GetComponent<Player>();
             }
 
-            currentMaxHealth.text = "Max health: " + currentStats.Health.Value;
+            currentMaxHealth.text = "Health: " + currenthealth.currentHealth + "/" + currentStats.Health.Value;
             currentStrength.text = "Strength: " + currentStats.Strength.Value;
             currentDexterity.text = "Dexterity: " + currentStats.Dexterity.Value;
             currentMovementSpeed.text = "Movement Speed: " + currentStats.MovementSpeed.Value;

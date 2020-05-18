@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public float xInput;
     public float yInput;
 
-    public HealthSystem HealthSystem;
+    public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
 
     public bool useTouch;
@@ -111,8 +111,8 @@ public class Player : MonoBehaviour
         speed = playerstats.MovementSpeed.Value * 6;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
-        HealthSystem = new HealthSystem(playerstats.Health.Value);
-        maxHealth = HealthSystem.GetHealth();
+        HealthSystem.ModMaxHealth(playerstats.Health.Value);
+        maxHealth = playerstats.Health.Value;
         healthbar.SetMaxHealth(maxHealth);
     }
 
