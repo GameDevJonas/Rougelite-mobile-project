@@ -91,43 +91,43 @@ public bool dropping = false;
 
                 if (weight == commondropRange)
                 {
-                    Instantiate<GameObject>(commonLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
 
                 }
 
                 if (weight == raredropRange)
                 {
-                    Instantiate<GameObject>(rareLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == legendarydropRange)
                 {
-                    Instantiate<GameObject>(legendaryLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == ancientdropRange)
                 {
-                    Instantiate<GameObject>(ancientLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == potiondropRange)
                 {
-                    Instantiate<GameObject>(potion, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == none)
                 {
-                    Destroy(this.gameObject);
+                    Destroy(gameObject);
                     return;
                 }
             }

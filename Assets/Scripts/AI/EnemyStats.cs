@@ -24,31 +24,6 @@ public class EnemyStats
 
     public EnemyType thisType;
 
-    //test
-    /*
-    public int randomNumber;
-    void Start()
-    {
-        foreach (var item in Table)
-        {
-            lootTotal += item;
-        }
-
-        randomNumber = Random.Range(0, lootTotal);
-
-        foreach (var weight in Table)
-        {
-            if (randomNumber <= weight)
-            {
-
-            }
-            else
-            {
-                randomNumber -= weight;
-            }
-        }
-    }*/
-    //test end
     public EnemyStats(EnemyType enemyType, int level)
     {
         if (enemyType == EnemyType.trash)

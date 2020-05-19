@@ -49,6 +49,8 @@ public class EnemyAI : MonoBehaviour
     public int randomNumber;
     public int lootTotal;
 
+    private Vector2 dropPoint;
+
     public bool blocksLight;
     public bool hidesInDark;
     public bool hidesInLight;
@@ -102,7 +104,8 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         health = HealthSystem.GetHealth();
-        
+
+        dropPoint = transform.position;
 
         if (health == 0 && dropping == false)
         {
@@ -146,43 +149,43 @@ public class EnemyAI : MonoBehaviour
 
                 if (weight == commondropRange)
                 {
-                    Instantiate<GameObject>(commonLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
 
                 }
 
                 if (weight == raredropRange)
                 {
-                    Instantiate<GameObject>(rareLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == legendarydropRange)
                 {
-                    Instantiate<GameObject>(legendaryLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == ancientdropRange)
                 {
-                    Instantiate<GameObject>(ancientLoot, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == potiondropRange)
                 {
-                    Instantiate<GameObject>(potion, transform);
-                    Destroy(this.gameObject);
+                    Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
                     return;
                 }
 
                 if (weight == none)
                 {
-                    Destroy(this.gameObject);
+                    Destroy(gameObject);
                     return;
                 }
             }
