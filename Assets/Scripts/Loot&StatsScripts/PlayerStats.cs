@@ -36,6 +36,7 @@ public class PlayerStats : MonoBehaviour
     public CharacterStat ShieldReflectsDmg;
     public CharacterStat NoSacrifice;
     public CharacterStat RueHPDmgOnHit;
+    public CharacterStat IncreasedLifeOnHit;
     public CharacterStat PercentHpDmg;
     public CharacterStat ExtraLife;
     public CharacterStat DropGarantueed;
@@ -91,6 +92,7 @@ public class PlayerStats : MonoBehaviour
         ShieldReflectsDmg.BaseValue = 0;
         NoSacrifice.BaseValue = 0;
         RueHPDmgOnHit.BaseValue = 0;
+        IncreasedLifeOnHit.BaseValue = 0;
         PercentHpDmg.BaseValue = 0;
         ExtraLife.BaseValue = 0;
         DropGarantueed.BaseValue = 0;
@@ -166,12 +168,23 @@ public class PlayerStats : MonoBehaviour
         _ = Strength.Value;
         _ = Dexterity.Value;
         _ = CritChance.Value;
+
+        if (CritChance.Value > 100)
+        {
+            AddFlatModifier(CritChance, -(CritChance.Value - 100));
+        }
+
         _ = CritDamage.Value;
         _ = LifeOnHit.Value;
         _ = SwordAttackModifier.Value;
         _ = CrossbowAttackModifier.Value;
         _ = PotionPotency.Value;
         _ = MovementSpeed.Value;
+
+        if (MovementSpeed.Value > 15)
+        {
+            AddFlatModifier(MovementSpeed, -(MovementSpeed.Value - 15));
+        }
 
         _ = EnemiesVisibleInsideLight.Value;
         _ = EnemiesVisibleOutsideLight.Value;
@@ -191,6 +204,7 @@ public class PlayerStats : MonoBehaviour
         _ = ShieldReflectsDmg.Value;
         _ = NoSacrifice.Value;
         _ = RueHPDmgOnHit.Value;
+        _ = IncreasedLifeOnHit;
         _ = PercentHpDmg.Value;
         _ = ExtraLife.Value;
         _ = DropGarantueed.Value;

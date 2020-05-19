@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public float currentHealth;
     public float speed;
     public float attackspeed;
+    public int potion = 0;
+    public float potionPotency;
     public float rotationSpeed = 5f;
     public float xInput;
     public float yInput;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
     public bool attack;
     public bool canMove = true;
     public bool canAttack = true;
+    public bool canHeal = true;
 
     public MenuManager menuManager;
 
@@ -108,12 +111,30 @@ public class Player : MonoBehaviour
     public void UpdateStats()
     {
         PlayerStats playerstats = GetComponent<PlayerStats>();
-        speed = playerstats.MovementSpeed.Value * 6;
+        speed = playerstats.MovementSpeed.Value * 5;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
         HealthSystem.ModMaxHealth(playerstats.Health.Value);
         maxHealth = playerstats.Health.Value;
         healthbar.SetMaxHealth(maxHealth);
+        potionPotency = playerstats.PotionPotency.Value;
+    }
+    
+    public void UsePotion()
+    {
+        if (potion > 0 && canHeal == true)
+        {
+            canMove = false;
+            canHeal = false;
+            Invoke("MovementLock", 0.2f);
+            Invoke("CanHeal", 0.3f);
+            potion -= 1;
+            HealthSystem.Heal((maxHealth / 2.5f) + potionPotency);
+        }
+        else
+        {
+            return;
+        }
     }
 
     void CheckInput()
@@ -262,6 +283,10 @@ public class Player : MonoBehaviour
     {
         canAttack = true;
         swordAttack.interactable = true;
+    }
+    void CanHeal()
+    {
+        canHeal = true;
     }
     public void RestartScene()
     {

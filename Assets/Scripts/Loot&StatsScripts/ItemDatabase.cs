@@ -39,6 +39,7 @@ public class ItemDatabase : MonoBehaviour
     public CharacterStat ShieldReflectsDmg;
     public CharacterStat NoSacrifice;
     public CharacterStat RueHPDmgOnHit;
+    public CharacterStat IncreasedLifeOnHit;
     public CharacterStat PercentHpDmg;
     public CharacterStat ExtraLife;
     public CharacterStat DropGarantueed;
@@ -148,7 +149,7 @@ public class ItemDatabase : MonoBehaviour
             new Item(25, "Ancient Loot", "Nihilistic essence", "Children of chance and suffering, This void of meaninglessness, All pains endured, Are pains to be inflicted.", "Shield reflects damage.", ShieldReflectsDmg, "flat", 1, 1),
             new Item(26, "Ancient Loot", "Futile avarice", "For those who have all, All will be given, From those who have nothing, All will be taken.", "Loot drop chance is 100 %, potions has a 50 % chance to additionally drop.", DropGarantueed, "flat", 1, 1),
             new Item(27, "Ancient Loot", "Madman’s insight", "Forbidden fruits of knowledge, To know good and evil, Know you can be hurt, Know you can hurt others.", "Deal 10% of your maximum health as damage.", RueHPDmgOnHit, "flat", 1, 1),
-            new Item(28, "Ancient Loot", "Desperate will", "Suffering rooted in desire, To steal life from others, Desperation is, What desperation does.", "Life on hit is increased by 300%.", LifeOnHit, "flat", 1, 1),
+            new Item(28, "Ancient Loot", "Desperate will", "Suffering rooted in desire, To steal life from others, Desperation is, What desperation does.", "Life on hit is increased by 300%.", IncreasedLifeOnHit, "flat", 1, 1),
             new Item(29, "Ancient Loot", "Infernal flame", "Red and hot demon soul, Ancient past unresolved, A bitter flame, Burns through all.", "Fire arrows which pierce through enemies, arrow damage doubled.", FireArrows, "flat", 1, 1),
             new Item(30, "Ancient Loot", "Hell frost", "Black and frozen, Cold injustice, The chill of spite, Spite passed on.", "Sword swings shoots a projectile and deals damage twice.", SwordProjectile, "flat", 1, 1),
             new Item(31, "Ancient Loot", "Surfaced wrath", "When you raise the wall for long, To contain the turmoil of your soul.We will take hold and violently erupt, Your sorrows made wrath and violence inflicted.", "Gains rapid fire arrows, damage is increased by Dexterity.", RapidFire, "flat", 1, 1),
