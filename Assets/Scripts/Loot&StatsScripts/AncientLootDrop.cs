@@ -20,78 +20,71 @@ public class AncientLootDrop : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        PlayerStats = player.GetComponent<PlayerStats>();
     }
     private void Update()
     {
         if (PlayerStats.ShieldReflectsDmg.Value >= 1 || PlayerStats.ShieldArm.Value >= 1)
         {
             AvailableLoot.Remove(25);
-            return;
         }
 
         if (PlayerStats.DropGarantueed.Value >= 1)
         {
             AvailableLoot.Remove(26);
-            return;
         }
 
         if (PlayerStats.RueHPDmgOnHit.Value >= 1)
         {
             AvailableLoot.Remove(27);
-            return;
         }
 
         if (PlayerStats.IncreasedLifeOnHit.Value >= 1)
         {
             AvailableLoot.Remove(28);
-            return;
         }
 
         if (PlayerStats.FireArrows.Value >= 1 || PlayerStats.HasCrossbow.Value >= 1)
         {
             AvailableLoot.Remove(29);
-            return;
         }
 
         if (PlayerStats.SwordProjectile.Value >= 1 || PlayerStats.HasSword.Value >= 1)
         {
             AvailableLoot.Remove(30);
-            return;
         }
 
         if (PlayerStats.RapidFire.Value >= 1 || PlayerStats.HasCrossbow.Value >= 1)
         {
             AvailableLoot.Remove(31);
-            return;
         }
 
         if (PlayerStats.SwordExecute.Value >= 1 || PlayerStats.HasSword.Value >= 1)
         {
             AvailableLoot.Remove(32);
-            return;
         }
 
         if (PlayerStats.NoSacrifice.Value >= 1)
         {
             AvailableLoot.Remove(33);
-            return;
         }
 
         if (PlayerStats.PercentHpDmg.Value >= 1)
         {
             AvailableLoot.Remove(34);
-            return;
         }
         
 
-        if (AvailableLoot.Count <= 0)
+        if (AvailableLoot.Count == 0)
         {
             Instantiate(LegendaryLoot, transform.position, Quaternion.identity);
+            Destroy(gameObject, 0);
         }
 
         if (IsInRange == true && AvailableLoot.Count > 0)
         {
-            drop = Random.Range(24, AvailableLoot.Count);
+            drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)];
+            print(drop);
             GiveItem();
         }
     }
