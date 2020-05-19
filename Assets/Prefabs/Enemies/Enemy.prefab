@@ -220,14 +220,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  speed: 0
   aggroRange: {fileID: 1081537837184502182}
-  player: {fileID: 0}
+  rue: {fileID: 0}
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
   attack: {fileID: 1986842023111703662, guid: 0d694c0c783051541af74d062da9445b, type: 3}
-  Loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}
   closeEnough: 0
   canAttack: 0
   waiting: 0
   BackOff: 0
-  Health: 0
+  commonLoot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
+    type: 3}
+  rareLoot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d,
+    type: 3}
+  legendaryLoot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
+    type: 3}
+  ancientLoot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
+    type: 3}
+  potion: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0, type: 3}
+  None: {fileID: 7429492013899378007, guid: 2921db1a512845345beccab006dae006, type: 3}
+  health: 0
+  damage: 0
+  speed: 0
+  Table: 
+  commondropRange: 0
+  raredropRange: 0
+  legendarydropRange: 0
+  ancientdropRange: 0
+  potiondropRange: 0
+  none: 0
+  randomNumber: 0
+  lootTotal: 0
+  blocksLight: 0
+  hidesInDark: 0
+  hidesInLight: 0
+  level: 0
+  thisType: 0
+  drop: []
+  testbool: 0

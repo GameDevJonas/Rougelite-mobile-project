@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 using UnityEngine.SceneManagement;
 public class EnemyAI : MonoBehaviour
 {
@@ -46,6 +46,7 @@ public class EnemyAI : MonoBehaviour
     public int ancientdropRange;
     public int potiondropRange;
     public int none;
+    public int randomNumber;
     public int lootTotal;
 
     public bool blocksLight;
@@ -56,10 +57,16 @@ public class EnemyAI : MonoBehaviour
 
     public EnemyType thisType;
 
+    public bool dropping = false;
+
     //end of Stats after class
     // Start is called before the first frame update
     void Start()
     {
+
+        rb2d = GetComponent<Rigidbody2D>();
+
+        rue = GameObject.FindGameObjectWithTag("Player");
         //stats in Start()
 
         thisType = EnemyType.trash;
@@ -74,7 +81,7 @@ public class EnemyAI : MonoBehaviour
         speed = EnemyStats.speed;
         HealthSystem = new HealthSystem(health);
 
-        
+
         Table = EnemyStats.Table;
         commondropRange = EnemyStats.commondropRange;
         raredropRange = EnemyStats.raredropRange;
@@ -89,16 +96,18 @@ public class EnemyAI : MonoBehaviour
         hidesInLight = EnemyStats.hidesInLight;
 
         //end of stats in Start()*/
-
-        rb2d = GetComponent<Rigidbody2D>();
-        
-        rue = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         health = HealthSystem.GetHealth();
+        
+
+        if (health == 0 && dropping == false)
+        {
+            DropLootAndDie();
+        }
         
         if (closeEnough == false && waiting == false)
         {
@@ -114,6 +123,77 @@ public class EnemyAI : MonoBehaviour
         {
             rb2d.velocity = new Vector2(backOff.x, backOff.y);
         }
+    }
+
+    //Copy/Paste method in other scripts and use DropLootAndDie() after hp reaches zero or death animations are done.
+    private void DropLootAndDie()
+    {
+
+
+        foreach (var item in Table)
+        {
+            lootTotal += item;
+            dropping = true;
+        }
+        randomNumber = Random.Range(0, (lootTotal + 1));
+
+
+        foreach (var weight in Table)
+        {
+            if (randomNumber <= weight)
+            {
+
+
+                if (weight == commondropRange)
+                {
+                    Instantiate<GameObject>(commonLoot, transform);
+                    Destroy(this.gameObject);
+                    return;
+
+                }
+
+                if (weight == raredropRange)
+                {
+                    Instantiate<GameObject>(rareLoot, transform);
+                    Destroy(this.gameObject);
+                    return;
+                }
+
+                if (weight == legendarydropRange)
+                {
+                    Instantiate<GameObject>(legendaryLoot, transform);
+                    Destroy(this.gameObject);
+                    return;
+                }
+
+                if (weight == ancientdropRange)
+                {
+                    Instantiate<GameObject>(ancientLoot, transform);
+                    Destroy(this.gameObject);
+                    return;
+                }
+
+                if (weight == potiondropRange)
+                {
+                    Instantiate<GameObject>(potion, transform);
+                    Destroy(this.gameObject);
+                    return;
+                }
+
+                if (weight == none)
+                {
+                    Destroy(this.gameObject);
+                    return;
+                }
+            }
+
+            else
+
+            {
+                randomNumber -= weight;
+            }
+        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

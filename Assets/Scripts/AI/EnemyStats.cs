@@ -59,7 +59,7 @@ public class EnemyStats
                 damage = 10;
                 speed = 30;
 
-                int[] table = { none, potiondropRange, commondropRange, raredropRange };
+                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 20;
                 raredropRange = 5;
@@ -76,7 +76,7 @@ public class EnemyStats
                 this.damage = 10;
                 this.speed = 30;
                 
-                int[] thisTable = { none, potiondropRange, commondropRange, raredropRange };
+                int[] thisTable = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 this.Table = thisTable;
                 this.commondropRange = 20;
                 this.raredropRange = 5;
@@ -95,7 +95,7 @@ public class EnemyStats
                 this.damage = 20;
                 this.speed = 35;
                 
-                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange };
+                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 this.Table = table;
                 this.commondropRange = 20;
                 this.raredropRange = 10;
@@ -114,7 +114,7 @@ public class EnemyStats
                 damage = 50;
                 speed = 30;
 
-                int[] table = { potiondropRange, none, commondropRange, raredropRange, legendarydropRange };
+                int[] table = { potiondropRange, none, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 20;
                 raredropRange = 14;
@@ -133,7 +133,7 @@ public class EnemyStats
                 damage = 100;
                 speed = 40;
 
-                int[] table = { potiondropRange, raredropRange, none, commondropRange, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, none, commondropRange, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 13;
                 raredropRange = 25;
@@ -152,7 +152,7 @@ public class EnemyStats
                 damage = 200;
                 speed = 35;
 
-                int[] table = { potiondropRange, raredropRange, commondropRange, none, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, commondropRange, none, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 12;
                 raredropRange = 30;
@@ -174,7 +174,7 @@ public class EnemyStats
                 damage = 20;
                 speed = 30;
 
-                int[] table = { potiondropRange, commondropRange, raredropRange, legendarydropRange };
+                int[] table = { potiondropRange, commondropRange, raredropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 30;
                 raredropRange = 19;
@@ -193,7 +193,7 @@ public class EnemyStats
                 damage = 40;
                 speed = 35;
 
-                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 25;
                 raredropRange = 28;
@@ -212,7 +212,7 @@ public class EnemyStats
                 damage = 80;
                 speed = 40;
 
-                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 20;
                 raredropRange = 37;
@@ -231,7 +231,7 @@ public class EnemyStats
                 damage = 100;
                 speed = 35;
 
-                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange };
+                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
                 Table = table;
                 commondropRange = 15;
                 raredropRange = 45;
@@ -250,7 +250,7 @@ public class EnemyStats
                 damage = 150;
                 speed = 40;
 
-                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange };
+                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
                 Table = table;
                 commondropRange = 10;
                 raredropRange = 54;
@@ -272,7 +272,7 @@ public class EnemyStats
                 damage = 25;
                 speed = 30;
 
-                int[] table = { potiondropRange, commondropRange, raredropRange, legendarydropRange };
+                int[] table = { potiondropRange, commondropRange, raredropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 30;
                 raredropRange = 19;
@@ -291,7 +291,7 @@ public class EnemyStats
                 damage = 40;
                 speed = 25;
 
-                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 25;
                 raredropRange = 28;
@@ -310,7 +310,7 @@ public class EnemyStats
                 damage = 90;
                 speed = 30;
 
-                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange };
+                int[] table = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
                 Table = table;
                 commondropRange = 20;
                 raredropRange = 37;
@@ -329,7 +329,7 @@ public class EnemyStats
                 damage = 120;
                 speed = 25;
 
-                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange };
+                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
                 Table = table;
                 commondropRange = 15;
                 raredropRange = 45;
@@ -348,7 +348,7 @@ public class EnemyStats
                 damage = 180;
                 speed = 30;
 
-                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange };
+                int[] table = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
                 Table = table;
                 commondropRange = 10;
                 raredropRange = 54;
@@ -370,7 +370,7 @@ public class EnemyStats
                 damage = 30;
                 speed = 30;
 
-                int[] table = { raredropRange, legendarydropRange, ancientdropRange };
+                int[] table = { raredropRange, legendarydropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 50;
@@ -389,7 +389,7 @@ public class EnemyStats
                 damage = 60;
                 speed = 35;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 45;
@@ -408,7 +408,7 @@ public class EnemyStats
                 damage = 100;
                 speed = 40;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 40;
@@ -427,7 +427,7 @@ public class EnemyStats
                 damage = 120;
                 speed = 35;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 35;
@@ -446,7 +446,7 @@ public class EnemyStats
                 damage = 180;
                 speed = 40;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 30;
@@ -468,7 +468,7 @@ public class EnemyStats
                 damage = 50;
                 speed = 30;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 35;
@@ -487,7 +487,7 @@ public class EnemyStats
                 damage = 100;
                 speed = 35;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 35;
@@ -506,7 +506,7 @@ public class EnemyStats
                 damage = 150;
                 speed = 35;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 30;
@@ -525,7 +525,7 @@ public class EnemyStats
                 damage = 200;
                 speed = 40;
 
-                int[] table = { legendarydropRange, raredropRange, ancientdropRange };
+                int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 35;
@@ -544,7 +544,7 @@ public class EnemyStats
                 damage = 500;
                 speed = 45;
 
-                int[] table = { ancientdropRange };
+                int[] table = { ancientdropRange, none, commondropRange, raredropRange, legendarydropRange, potiondropRange };
                 Table = table;
                 commondropRange = 0;
                 raredropRange = 0;
