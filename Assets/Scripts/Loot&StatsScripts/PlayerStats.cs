@@ -59,7 +59,11 @@ public class PlayerStats : MonoBehaviour
     public ItemDatabase ItemDatabase;
     public Player player => GetComponent<Player>();
 
+    private StatModifier flat;
+    private StatModifier percent;
+    private StatModifier mult;
     
+    public bool Fixed = true;
 
     private void Start()
     {
@@ -171,7 +175,13 @@ public class PlayerStats : MonoBehaviour
 
         if (CritChance.Value > 100)
         {
-            AddFlatModifier(CritChance, -(CritChance.Value - 100));
+            RemoveAllModifiers(CritChance);
+            if (CritChance.Value == CritChance.BaseValue)
+            {
+                AddFlatModifier(CritChance, 100);
+                return;
+            }
+
         }
 
         _ = CritDamage.Value;
@@ -183,7 +193,12 @@ public class PlayerStats : MonoBehaviour
 
         if (MovementSpeed.Value > 15)
         {
-            AddFlatModifier(MovementSpeed, -(MovementSpeed.Value - 15));
+            RemoveAllModifiers(MovementSpeed);
+            if (MovementSpeed.Value == MovementSpeed.BaseValue)
+            {
+                AddFlatModifier(MovementSpeed, 15);
+                return;
+            }
         }
 
         _ = EnemiesVisibleInsideLight.Value;
@@ -231,17 +246,20 @@ public class PlayerStats : MonoBehaviour
     
     public void AddFlatModifier(CharacterStat statType, float statValue)
     {
-        statType.AddModifier(new StatModifier(statValue, StatModType.Flat, this));
+        flat = new StatModifier(statValue, StatModType.Flat, this);
+        statType.AddModifier(flat);
         UpdateItemInfo();
     }
     public void AddPercentModifier(CharacterStat statType, float statValue)
     {
-        statType.AddModifier(new StatModifier(statValue, StatModType.Percent, this));
+        percent = new StatModifier(statValue, StatModType.Percent, this);
+        statType.AddModifier(percent);
         UpdateItemInfo();
     }
     public void AddPercentMultModifier(CharacterStat statType, float statValue)
     {
-        statType.AddModifier(new StatModifier(statValue, StatModType.PercentMult, this));
+        mult = new StatModifier(statValue, StatModType.PercentMult, this);
+        statType.AddModifier(mult);
         UpdateItemInfo();
     }
 
@@ -250,15 +268,16 @@ public class PlayerStats : MonoBehaviour
         Item item = CheckforItems(id);
         if (item != null)
         {
-            RemoveModifier();
             Loot.Remove(item);
-            player.UpdateStats();
         }
     }
-    public void RemoveModifier()
+    public void RemoveAllModifiers(CharacterStat statType)
     {
         {
-            
+            statType.RemoveModifier(flat);
+            statType.RemoveModifier(percent);
+            statType.RemoveModifier(mult);
+            UpdateItemInfo();
         }
     }
 }

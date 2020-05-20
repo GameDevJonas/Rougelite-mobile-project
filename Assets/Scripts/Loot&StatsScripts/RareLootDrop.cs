@@ -13,43 +13,40 @@ public class RareLootDrop : MonoBehaviour
     public GameObject player;
     public GameObject MenuManager;
     public PlayerStats PlayerStats;
-    public List<int> AvailableLoot = new List<int>(new int[] { 6, 7, 8, 9, 10, 11, 12 });
+    public List<int> AvailableLoot = new List<int>(new int[] { 5, 6, 7, 8, 9, 10, 11, 12 });
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        PlayerStats = player.GetComponent<PlayerStats>();
     }
     private void Update()
     {
         if (PlayerStats.HasSword.Value >= 1)
         {
             AvailableLoot.Remove(8);
-            return;
         }
 
         if (PlayerStats.HasCrossbow.Value >= 1)
         {
             AvailableLoot.Remove(9);
-            return;
         }
        
         if (PlayerStats.MovementSpeed.Value >= 15)
         {
             AvailableLoot.Remove(10);
-            return;
         }
 
         if (PlayerStats.CritChance.Value >= 100)
         {
             AvailableLoot.Remove(11);
-            return;
         }
 
 
         if (IsInRange == true)
         {
-            drop = Random.Range(5, AvailableLoot.Count);
+            drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)];
             GiveItem();
         }
     }
