@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 212058162008467170}
   - component: {fileID: 61406581372063362}
   - component: {fileID: 4404250988824886255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5496775103729032402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpTrigger
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1373087747472178149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7808958930845308888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6127367255407179264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}

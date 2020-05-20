@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
         pauseButton.SetActive(true);
         DontDestroyOnLoad(this);
         loadingThing.SetActive(false);
-        DontDestroyOnLoad(alphaAudio);
+        //DontDestroyOnLoad(alphaAudio);
         startButton.SetActive(true);
         pauseMenu.SetActive(false);
     }
@@ -116,7 +116,7 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1;
             float progress = Mathf.Clamp01(loadStart.progress / 0.9f);
             Debug.Log("Loading progress: " + (progress * 100) + "%");
-            loadingSlider.value = progress;
+            loadingSlider.value = Mathf.RoundToInt(progress);
             progressText.text = "Progress: " + progress * 100 + "%";
 
             // Loading completed

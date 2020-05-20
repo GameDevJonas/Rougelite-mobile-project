@@ -12,6 +12,7 @@ TagManager:
   - Arrow
   - RoomRoot
   - MenuManager
+  - WeaponSwitchButton
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,270 @@
 fileFormatVersion: 2
 guid: e11ab82d8dfa22548ad6fc3479cb7f70
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3782553624696154740
+    second: UI_weapon_swap_0
+  - first:
+      213: 717202909467117853
+    second: UI_weapon_swap_1
+  - first:
+      213: 6656533045282808322
+    second: UI_weapon_swap_2
+  - first:
+      213: 3248795981224063446
+    second: UI_weapon_swap_3
+  - first:
+      213: -3296546757565646874
+    second: UI_weapon_swap_4
+  - first:
+      213: -2174992645796945027
+    second: UI_weapon_swap_5
+  - first:
+      213: -4846853117661974496
+    second: UI_weapon_swap_6
+  - first:
+      213: -4815516060916620112
+    second: UI_weapon_swap_7
+  - first:
+      213: 9038807023956601292
+    second: UI_weapon_swap_8
+  - first:
+      213: -6739514294963742581
+    second: UI_weapon_swap_9
+  - first:
+      213: 5791216935606650695
+    second: UI_weapon_swap_10
+  - first:
+      213: 30875240888130916
+    second: UI_weapon_swap_11
+  - first:
+      213: 8528131130704888462
+    second: UI_weapon_swap_12
+  - first:
+      213: 7815810972469056653
+    second: UI_weapon_swap_13
+  - first:
+      213: -8075077418280702352
+    second: UI_weapon_swap_14
+  - first:
+      213: 7506971174467625716
+    second: UI_weapon_swap_15
+  - first:
+      213: 5275767099931930871
+    second: UI_weapon_swap_16
+  - first:
+      213: -8354056130181848915
+    second: UI_weapon_swap_17
+  - first:
+      213: 3776401878359842863
+    second: UI_weapon_swap_18
+  - first:
+      213: 242620236956921707
+    second: UI_weapon_swap_19
+  - first:
+      213: -6401397848203080697
+    second: UI_weapon_swap_20
+  - first:
+      213: 1751997874042492296
+    second: UI_weapon_swap_21
+  - first:
+      213: -5374495660865043206
+    second: UI_weapon_swap_22
+  - first:
+      213: 6718575341177532161
+    second: UI_weapon_swap_23
+  - first:
+      213: -4016488807369327159
+    second: UI_weapon_swap_24
+  - first:
+      213: 568460756670928502
+    second: UI_weapon_swap_25
+  - first:
+      213: 5164823368227695620
+    second: UI_weapon_swap_26
+  - first:
+      213: -2747469070674130151
+    second: UI_weapon_swap_27
+  - first:
+      213: 1335867632692840096
+    second: UI_weapon_swap_28
+  - first:
+      213: -3655527377061004841
+    second: UI_weapon_swap_29
+  - first:
+      213: -7843035414406747966
+    second: UI_weapon_swap_30
+  - first:
+      213: -5735720318396825443
+    second: UI_weapon_swap_31
+  - first:
+      213: 5093319112653159941
+    second: UI_weapon_swap_32
+  - first:
+      213: -3132865888186117829
+    second: UI_weapon_swap_33
+  - first:
+      213: -9083691604102179803
+    second: UI_weapon_swap_34
+  - first:
+      213: -837665058012317948
+    second: UI_weapon_swap_35
+  - first:
+      213: -5196087951731831485
+    second: UI_weapon_swap_36
+  - first:
+      213: 5552957351310514348
+    second: UI_weapon_swap_37
+  - first:
+      213: 1351094054220432077
+    second: UI_weapon_swap_38
+  - first:
+      213: 6435241397187090471
+    second: UI_weapon_swap_39
+  - first:
+      213: -9067579525025031880
+    second: UI_weapon_swap_40
+  - first:
+      213: -4337787286996642214
+    second: UI_weapon_swap_41
+  - first:
+      213: 4096478610184456685
+    second: UI_weapon_swap_42
+  - first:
+      213: -2471502040954741127
+    second: UI_weapon_swap_43
+  - first:
+      213: -954729826356430348
+    second: UI_weapon_swap_44
+  - first:
+      213: 4932192519414900399
+    second: UI_weapon_swap_45
+  - first:
+      213: -580658389917442787
+    second: UI_weapon_swap_46
+  - first:
+      213: 2666412195577440941
+    second: UI_weapon_swap_47
+  - first:
+      213: 237693082807082736
+    second: UI_weapon_swap_48
+  - first:
+      213: -5698348491046276665
+    second: UI_weapon_swap_49
+  - first:
+      213: 8738805636546548785
+    second: UI_weapon_swap_50
+  - first:
+      213: 6223716624133855542
+    second: UI_weapon_swap_51
+  - first:
+      213: 6928932390054254111
+    second: UI_weapon_swap_52
+  - first:
+      213: -4674781233062564568
+    second: UI_weapon_swap_53
+  - first:
+      213: 6298785315746361080
+    second: UI_weapon_swap_54
+  - first:
+      213: 2737489797741980142
+    second: UI_weapon_swap_55
+  - first:
+      213: -3790519468664228756
+    second: UI_weapon_swap_56
+  - first:
+      213: -5821282759270355957
+    second: UI_weapon_swap_57
+  - first:
+      213: 8043814786977289293
+    second: UI_weapon_swap_58
+  - first:
+      213: -8565737766754355542
+    second: UI_weapon_swap_59
+  - first:
+      213: 8243517173075570354
+    second: UI_weapon_swap_60
+  - first:
+      213: 7438347033328936546
+    second: UI_weapon_swap_61
+  - first:
+      213: 3294099322464851437
+    second: UI_weapon_swap_62
+  - first:
+      213: -1737775803337057380
+    second: UI_weapon_swap_63
+  - first:
+      213: 4499519590556043901
+    second: UI_weapon_swap_64
+  - first:
+      213: 3669398957561413149
+    second: UI_weapon_swap_65
+  - first:
+      213: 6883020479998842019
+    second: UI_weapon_swap_66
+  - first:
+      213: 9189666827738224579
+    second: UI_weapon_swap_67
+  - first:
+      213: -5664045059919257776
+    second: UI_weapon_swap_68
+  - first:
+      213: -6174793088193525696
+    second: UI_weapon_swap_69
+  - first:
+      213: -3721216171607045681
+    second: UI_weapon_swap_70
+  - first:
+      213: 4694100437518366103
+    second: UI_weapon_swap_71
+  - first:
+      213: 4635779769980773379
+    second: UI_weapon_swap_72
+  - first:
+      213: 1073660257764837591
+    second: UI_weapon_swap_73
+  - first:
+      213: 4343556718011467695
+    second: UI_weapon_swap_74
+  - first:
+      213: 9139314159820817582
+    second: UI_weapon_swap_75
+  - first:
+      213: -2915826164654221808
+    second: UI_weapon_swap_76
+  - first:
+      213: -6215686460765683732
+    second: UI_weapon_swap_77
+  - first:
+      213: -2506584451272327270
+    second: UI_weapon_swap_78
+  - first:
+      213: -205966919811013126
+    second: UI_weapon_swap_79
+  - first:
+      213: -3312588821542037416
+    second: UI_weapon_swap_80
+  - first:
+      213: 888614578035446881
+    second: UI_weapon_swap_81
+  - first:
+      213: -5055306157875472602
+    second: UI_weapon_swap_82
+  - first:
+      213: 2393020605171143177
+    second: UI_weapon_swap_83
+  - first:
+      213: 7273252018179995445
+    second: UI_weapon_swap_84
+  - first:
+      213: -7704376273215071294
+    second: UI_weapon_swap_85
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -31,27 +289,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1024
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -64,7 +322,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,11 +355,557 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI_weapon_swap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a61e71b745e7430800000000000000
+      internalID: 3782553624696154740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1068
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d190aaa0f3404f900800000000000000
+      internalID: 717202909467117853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_2
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1068
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2022bbf6981c06c50800000000000000
+      internalID: 6656533045282808322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1068
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1b3986bba061d20800000000000000
+      internalID: 3248795981224063446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 890
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e775d990305042d0800000000000000
+      internalID: -3296546757565646874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_5
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 890
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73af2656bfd0d1e0800000000000000
+      internalID: -2174992645796945027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_6
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 890
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020734be4c48cbcb0800000000000000
+      internalID: -4846853117661974496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_7
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 890
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b460e208a9db2db0800000000000000
+      internalID: -4815516060916620112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 712
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc92d30491b407d70800000000000000
+      internalID: 9038807023956601292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 712
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88d40ac47f6872a0800000000000000
+      internalID: -6739514294963742581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_10
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 712
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7478f08ae198e5050800000000000000
+      internalID: 5791216935606650695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_11
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 712
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ddd753ed0bd6000800000000000000
+      internalID: 30875240888130916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e828d9354120a5670800000000000000
+      internalID: 8528131130704888462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_13
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 534
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d845e956ba6577c60800000000000000
+      internalID: 7815810972469056653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_14
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 534
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ea9952fdf8fef80800000000000000
+      internalID: -8075077418280702352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_15
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 534
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f26d31728e1e2860800000000000000
+      internalID: 7506971174467625716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 356
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0b225a93a473940800000000000000
+      internalID: 5275767099931930871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_17
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 356
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da026d6163e601c80800000000000000
+      internalID: -8354056130181848915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_18
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 356
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20a1c80089786430800000000000000
+      internalID: 3776401878359842863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_19
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 356
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f632fe1d5fd5300800000000000000
+      internalID: 242620236956921707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70cc7e7b29aa927a0800000000000000
+      internalID: -6401397848203080697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_21
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 178
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885da81b8c8505810800000000000000
+      internalID: 1751997874042492296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_22
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 178
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4c247fba4f965b0800000000000000
+      internalID: -5374495660865043206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_23
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 178
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fe59f1dac2d3d50800000000000000
+      internalID: 6718575341177532161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd3b60c5b09248c0800000000000000
+      internalID: -4016488807369327159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_weapon_swap_25
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 284
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676de1edb0493e700800000000000000
+      internalID: 568460756670928502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

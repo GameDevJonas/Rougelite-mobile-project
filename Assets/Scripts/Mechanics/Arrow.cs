@@ -21,8 +21,8 @@ public class Arrow : MonoBehaviour
         critRoll = Random.Range(0, 101);
         critChance = stats.CritChance.Value;
         Destroy(gameObject, 5f);
-        Debug.Log(critRoll);
-        Debug.Log(critChance);
+        //Debug.Log(critRoll);
+        //Debug.Log(critChance);
     }
 
     void Update()

@@ -12,7 +12,7 @@ public class LootFound : MonoBehaviour
     public GameObject Button;
     public MenuManager MenuManager;
     public AcceptLoot AcceptLoot => AcceptObject.GetComponent<AcceptLoot>();
-    
+
 
     public bool poppedUp = false;
     // Start is called before the first frame update
@@ -25,16 +25,16 @@ public class LootFound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            if (player == null)
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-                ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
 
-            }
+        //if (SceneManager.GetActiveScene().buildIndex == 1)
+
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
+
         }
+
         if (Loot.Count > 0 && MenuManager.isPaused && AcceptLoot.Loot.Count == 0)
         {
             AcceptLoot.GiveItem(Loot[0].id, Loot[0].amount);
@@ -63,10 +63,10 @@ public class LootFound : MonoBehaviour
         if (!AlreadyinInventory)
         {
             Loot.Add(itemToAdd);
+            Item itemCheck = CheckforItems(id);
 
             Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
 
-            Item itemCheck = CheckforItems(id);
         }
     }
     public Item CheckforItems(int id)

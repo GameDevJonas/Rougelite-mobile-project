@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 5f;
     public float xInput;
     public float yInput;
+    public int weaponState;
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
         menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
         dir = "U";
+#if UNITY_EDITOR
+        useTouch = false;
+#else
+        useTouch = true;
+#endif
     }
 
     public void StartPosition(Vector3 startPos)
@@ -85,6 +91,7 @@ public class Player : MonoBehaviour
         CheckInput();
         ApplyRotation();
         //SwordAttack();
+        Anims();
         currentHealth = HealthSystem.GetHealth();
         healthbar.SetHealth(currentHealth);
 
@@ -119,7 +126,7 @@ public class Player : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
         potionPotency = playerstats.PotionPotency.Value;
     }
-    
+
     public void UsePotion()
     {
         if (potion > 0 && canHeal == true)
@@ -153,7 +160,10 @@ public class Player : MonoBehaviour
         {
             DoAnAttack();
         }
+    }
 
+    public void Anims()
+    {
         //Anim set
         anim.SetInteger("X_Input", Mathf.RoundToInt(xInput));
         anim.SetInteger("Y_Input", Mathf.RoundToInt(yInput));
@@ -163,6 +173,17 @@ public class Player : MonoBehaviour
         }
         else anim.SetBool("IsIdle", false);
 
+        if (weaponInUse == WeaponState.sword)
+        {
+            weaponState = 1;
+        }
+        else if (weaponInUse == WeaponState.bow)
+        {
+            weaponState = 2;
+        }
+
+        Animator switchAnim = GameObject.FindGameObjectWithTag("WeaponSwitchButton").GetComponent<Animator>();
+        switchAnim.SetInteger("WeaponState", weaponState);
     }
 
     void ApplyMovement()
