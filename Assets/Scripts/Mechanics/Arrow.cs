@@ -18,14 +18,16 @@ public class Arrow : MonoBehaviour
         isParented = false;
         rb = GetComponent<Rigidbody2D>();
         stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-        critRoll = Random.Range(0, 100);
+        critRoll = Random.Range(0, 101);
         critChance = stats.CritChance.Value;
         Destroy(gameObject, 5f);
+        Debug.Log(critRoll);
+        Debug.Log(critChance);
     }
 
     void Update()
     {
-        critChance = stats.CritChance.Value;
+        //critChance = stats.CritChance.Value;
     }
 
     public void CritCheck()
@@ -42,7 +44,7 @@ public class Arrow : MonoBehaviour
 
     public void AddForce()
     {
-        rb.AddRelativeForce(transform.up * Time.deltaTime * 450000);
+        rb.AddRelativeForce(transform.up * 6500);
     }
 
     public void ShootyShoot(string dir)
@@ -86,7 +88,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.tag != "Player" && collision.tag != "RoomRoot")
         {
-            Debug.Log(collision.gameObject.name, collision.gameObject);
+            //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);
             rb.bodyType = RigidbodyType2D.Kinematic;
             if (!isParented && collision.tag == "Enemy")

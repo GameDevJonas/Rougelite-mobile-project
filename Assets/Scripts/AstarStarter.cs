@@ -22,6 +22,7 @@ public class AstarStarter : MonoBehaviour
 
     public void DoTheScan(GameObject newRoom)
     {
+        Debug.Log("Scanned room");
         thePath.data.gridGraph.center = newRoom.transform.position;
         thePath.Scan();
     }
