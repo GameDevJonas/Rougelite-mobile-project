@@ -22,12 +22,17 @@ public class BossdoorScript : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         level = SceneManager.GetActiveScene().buildIndex;
-        GiveSacrifice(1);
     }
     private void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            SacrificeDatabase = player.GetComponentInChildren<SacrificeDatabase>();
+            GiveSacrifice(1);
+            return;
+        }
         if (IsInRange == true && PromptReady == true)
         {
             if (!SacrificeMade)
