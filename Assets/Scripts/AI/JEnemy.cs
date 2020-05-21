@@ -44,6 +44,7 @@ public class JEnemy : MonoBehaviour
     public bool blocksLight;
     public bool hidesInDark;
     public bool hidesInLight;
+    public bool attacked;
 
     public int level;
 
@@ -139,6 +140,8 @@ public class JEnemy : MonoBehaviour
     void Update()
     {
         myHealth = healthSystem.GetHealth();
+
+        attacked = false;
         switch (myState)
         {
             case EnemyState.idle:
@@ -284,6 +287,10 @@ public class JEnemy : MonoBehaviour
 
         if (collider.tag == "Sword" || collider.tag == "Arrow")
         {
+            if (attacked)
+            {
+                return;
+            }
             if (collider.tag == "Arrow")
             {
                 PlayerStats playerstats = player.GetComponent<PlayerStats>();
@@ -295,6 +302,7 @@ public class JEnemy : MonoBehaviour
                     healthSystem.Damage(damage);
                     rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                     Debug.Log("Crossbow hit: " + damage);
+                    attacked = true;
                 }
                 else if (arrowCrit.crit)
                 {
@@ -302,6 +310,7 @@ public class JEnemy : MonoBehaviour
                     healthSystem.Damage(damage);
                     rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                     Debug.Log("Crossbow hit with crit: " + damage);
+                    attacked = true;
                 }
             }
             else if (collider.tag == "Sword")
@@ -315,6 +324,7 @@ public class JEnemy : MonoBehaviour
                     healthSystem.Damage(damage);
                     rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                     Debug.Log("Sword damaged: " + damage);
+                    attacked = true;
                 }
                 else if (swordCrit.Crit)
                 {
@@ -322,6 +332,7 @@ public class JEnemy : MonoBehaviour
                     healthSystem.Damage(damage);
                     rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                     Debug.Log("Sword damaged with crit: " + damage);
+                    attacked = true;
                 }
             }
         }

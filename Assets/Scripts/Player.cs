@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+
         debugWeaponState.text = "sword";
 
         anim = GetComponentInChildren<Animator>();
@@ -121,6 +122,16 @@ public class Player : MonoBehaviour
         speed = playerstats.MovementSpeed.Value * 5;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
+
+        if (currentHealth == maxHealth)
+        {
+            HealthSystem = new HealthSystem(playerstats.Health.Value);
+        }
+        else
+        {
+            HealthSystem.ModMaxHealth(playerstats.Health.Value);
+        }
+
         HealthSystem.ModMaxHealth(playerstats.Health.Value);
         maxHealth = playerstats.Health.Value;
         healthbar.SetMaxHealth(maxHealth);

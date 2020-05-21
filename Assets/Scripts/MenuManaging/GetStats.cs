@@ -30,8 +30,6 @@ public class GetStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
             if (player == null)
             {
                 player = GameObject.FindGameObjectWithTag("Player");
@@ -48,7 +46,4 @@ public class GetStats : MonoBehaviour
             currentLifeOnHit.text = "Life On Hit: " + currentStats.LifeOnHit.Value;
             currentPotionPotency.text = "Potion Potency: " + currentStats.PotionPotency.Value;
         }
-
-
-    }
 }

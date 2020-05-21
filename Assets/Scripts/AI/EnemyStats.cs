@@ -66,12 +66,29 @@ public class EnemyStats
             }
             if (level == 2)
             {
+                health = 100;
+                damage = 20;
+                speed = 35;
+
+                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
+                Table = table;
+                commondropRange = 20;
+                raredropRange = 10;
+                legendarydropRange = 0;
+                ancientdropRange = 0;
+                potiondropRange = 30;
+                none = 40;
+
+                blocksLight = false;
+                hidesInDark = false;
+                hidesInLight = false;
+
                 this.health = 100;
                 this.damage = 20;
                 this.speed = 35;
                 
-                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
-                this.Table = table;
+                int[] thisTable = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
+                this.Table = thisTable;
                 this.commondropRange = 20;
                 this.raredropRange = 10;
                 this.legendarydropRange = 0;
@@ -101,6 +118,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 200;
+                this.damage = 50;
+                this.speed = 30;
+
+                int[] thisTable = { potiondropRange, none, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 20;
+                this.raredropRange = 14;
+                this.legendarydropRange = 1;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 35;
+                this.none = 30;
+
+                this.blocksLight = false;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
             if (level == 4)
             {
@@ -120,6 +154,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 400;
+                this.damage = 100;
+                this.speed = 40;
+
+                int[] thisTable = { potiondropRange, raredropRange, none, commondropRange, legendarydropRange, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 13;
+                this.raredropRange = 25;
+                this.legendarydropRange = 2;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 40;
+                this.none = 20;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 5)
             {
@@ -139,6 +190,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = true;
+
+                this.health = 600;
+                this.damage = 200;
+                this.speed = 35;
+
+                int[] thisTable = { potiondropRange, raredropRange, commondropRange, none, legendarydropRange, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 12;
+                this.raredropRange = 30;
+                this.legendarydropRange = 3;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 45;
+                this.none = 10;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = true;
             }
         }
         if (thisType == EnemyType.melee)
@@ -161,6 +229,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 100;
+                this.damage = 20;
+                this.speed = 30;
+
+                int[] thisTable = { potiondropRange, commondropRange, raredropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 30;
+                this.raredropRange = 19;
+                this.legendarydropRange = 1;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 50;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 2)
             {
@@ -180,6 +265,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 400;
+                this.damage = 40;
+                this.speed = 35;
+
+                int[] thisTable = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 25;
+                this.raredropRange = 28;
+                this.legendarydropRange = 2;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 45;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 3)
             {
@@ -199,6 +301,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 600;
+                this.damage = 80;
+                this.speed = 40;
+
+                int[] thisTable = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 20;
+                this.raredropRange = 37;
+                this.legendarydropRange = 3;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 40;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
             if (level == 4)
             {
@@ -218,6 +337,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 1200;
+                this.damage = 100;
+                this.speed = 35;
+
+                int[] thisTable = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
+                this.Table = thisTable;
+                this.commondropRange = 15;
+                this.raredropRange = 45;
+                this.legendarydropRange = 4;
+                this.ancientdropRange = 1;
+                this.potiondropRange = 35;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 5)
             {
@@ -237,6 +373,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 1500;
+                this.damage = 150;
+                this.speed = 40;
+
+                int[] thisTable = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
+                this.Table = thisTable;
+                this.commondropRange = 10;
+                this.raredropRange = 54;
+                this.legendarydropRange = 5;
+                this.ancientdropRange = 1;
+                this.potiondropRange = 30;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
         }
         if (thisType == EnemyType.ranged)
@@ -259,6 +412,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 75;
+                this.damage = 25;
+                this.speed = 30;
+
+                int[] thisTable = { potiondropRange, commondropRange, raredropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 30;
+                this.raredropRange = 19;
+                this.legendarydropRange = 1;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 50;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 2)
             {
@@ -278,6 +448,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 300;
+                this.damage = 40;
+                this.speed = 25;
+
+                int[] thisTable = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 25;
+                this.raredropRange = 28;
+                this.legendarydropRange = 2;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 45;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 3)
             {
@@ -297,6 +484,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 400;
+                this.damage = 90;
+                this.speed = 30;
+
+                int[] thisTable = { potiondropRange, raredropRange, commondropRange, legendarydropRange, none, ancientdropRange };
+                this.Table = thisTable;
+                this.commondropRange = 20;
+                this.raredropRange = 37;
+                this.legendarydropRange = 3;
+                this.ancientdropRange = 0;
+                this.potiondropRange = 40;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
             if (level == 4)
             {
@@ -316,6 +520,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 1000;
+                this.damage = 120;
+                this.speed = 25;
+
+                int[] thisTable = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
+                this.Table = thisTable;
+                this.commondropRange = 15;
+                this.raredropRange = 45;
+                this.legendarydropRange = 4;
+                this.ancientdropRange = 1;
+                this.potiondropRange = 35;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 5)
             {
@@ -335,6 +556,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = true;
+
+                this.health = 1300;
+                this.damage = 180;
+                this.speed = 30;
+
+                int[] thisTable = { raredropRange, potiondropRange, commondropRange, legendarydropRange, ancientdropRange, none };
+                this.Table = thisTable;
+                this.commondropRange = 10;
+                this.raredropRange = 54;
+                this.legendarydropRange = 5;
+                this.ancientdropRange = 1;
+                this.potiondropRange = 30;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = true;
             }
         }
         if (thisType == EnemyType.elite)
@@ -357,6 +595,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 125;
+                this.damage = 30;
+                this.speed = 30;
+
+                int[] thisTable = { raredropRange, legendarydropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 50;
+                this.legendarydropRange = 44;
+                this.ancientdropRange = 6;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 2)
             {
@@ -376,6 +631,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 300;
+                this.damage = 60;
+                this.speed = 35;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 45;
+                this.legendarydropRange = 48;
+                this.ancientdropRange = 7;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 3)
             {
@@ -395,6 +667,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 700;
+                this.damage = 100;
+                this.speed = 40;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 40;
+                this.legendarydropRange = 52;
+                this.ancientdropRange = 8;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
             if (level == 4)
             {
@@ -414,6 +703,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 1400;
+                this.damage = 120;
+                this.speed = 35;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 35;
+                this.legendarydropRange = 56;
+                this.ancientdropRange = 9;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 5)
             {
@@ -433,6 +739,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 1800;
+                this.damage = 180;
+                this.speed = 40;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 30;
+                this.legendarydropRange = 60;
+                this.ancientdropRange = 10;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
         }
         if (thisType == EnemyType.boss)
@@ -455,6 +778,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 250;
+                this.damage = 50;
+                this.speed = 30;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 35;
+                this.legendarydropRange = 50;
+                this.ancientdropRange = 15;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 2)
             {
@@ -474,6 +814,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 1000;
+                this.damage = 100;
+                this.speed = 35;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 35;
+                this.legendarydropRange = 45;
+                this.ancientdropRange = 20;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 3)
             {
@@ -493,6 +850,23 @@ public class EnemyStats
                 blocksLight = false;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 2000;
+                this.damage = 150;
+                this.speed = 35;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 30;
+                this.legendarydropRange = 45;
+                this.ancientdropRange = 25;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = false;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 4)
             {
@@ -512,6 +886,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = false;
                 hidesInLight = false;
+
+                this.health = 3500;
+                this.damage = 200;
+                this.speed = 40;
+
+                int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 35;
+                this.legendarydropRange = 40;
+                this.ancientdropRange = 30;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = false;
+                this.hidesInLight = false;
             }
             if (level == 5)
             {
@@ -531,6 +922,23 @@ public class EnemyStats
                 blocksLight = true;
                 hidesInDark = true;
                 hidesInLight = false;
+
+                this.health = 7000;
+                this.damage = 500;
+                this.speed = 45;
+
+                int[] thisTable = { ancientdropRange, none, commondropRange, raredropRange, legendarydropRange, potiondropRange };
+                this.Table = thisTable;
+                this.commondropRange = 0;
+                this.raredropRange = 0;
+                this.legendarydropRange = 0;
+                this.ancientdropRange = 100;
+                this.potiondropRange = 0;
+                this.none = 0;
+
+                this.blocksLight = true;
+                this.hidesInDark = true;
+                this.hidesInLight = false;
             }
         }
     }
