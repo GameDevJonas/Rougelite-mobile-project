@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
 
     public void Anims()
     {
-        //Anim set
+        #region Walking directions
         anim.SetInteger("X_Input", Mathf.RoundToInt(xInput));
         anim.SetInteger("Y_Input", Mathf.RoundToInt(yInput));
         if (xInput == 0 && yInput == 0)
@@ -183,7 +183,9 @@ public class Player : MonoBehaviour
             anim.SetBool("IsIdle", true);
         }
         else anim.SetBool("IsIdle", false);
+        #endregion
 
+        #region States based on what weapon player is using
         if (weaponInUse == WeaponState.sword)
         {
             weaponState = 1;
@@ -193,8 +195,13 @@ public class Player : MonoBehaviour
             weaponState = 2;
         }
 
+        //Weapon switch button
         Animator switchAnim = GameObject.FindGameObjectWithTag("WeaponSwitchButton").GetComponent<Animator>();
         switchAnim.SetInteger("WeaponState", weaponState);
+
+        //Player animation states
+        anim.SetInteger("WeaponState", weaponState);
+        #endregion
     }
 
     void ApplyMovement()
@@ -275,8 +282,11 @@ public class Player : MonoBehaviour
     public void SwordAttack()
     {
         if ((canAttack == true))
-
         {
+            //SETS ANIMATOR TRIGGER
+            anim.SetTrigger("DoAttack");
+            anim.SetBool("InAttackAnim", true);
+            //---------------------
             GameObject clonedObject = Instantiate(sword, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z), transform);
             canMove = false;
             canAttack = false;
@@ -294,6 +304,10 @@ public class Player : MonoBehaviour
     {
         if (canAttack)
         {
+            //SETS ANIMATOR TRIGGER
+            anim.SetTrigger("DoFire");
+            anim.SetBool("InAttackAnim", true);
+            //---------------------
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
             arrowClone.GetComponent<Arrow>().ShootyShoot(dir);
             canMove = false;
@@ -309,6 +323,9 @@ public class Player : MonoBehaviour
 
     void MovementLock()
     {
+        anim.ResetTrigger("DoAttack");
+        anim.ResetTrigger("DoFire");
+        anim.SetBool("InAttackAnim", false);
         canMove = true;
     }
     void AttackLock()
