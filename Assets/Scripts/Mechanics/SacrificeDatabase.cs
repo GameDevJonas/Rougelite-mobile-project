@@ -7,6 +7,7 @@ using System;
 public class SacrificeDatabase : MonoBehaviour
 {
     public List<Sacrifice> sacrifices = new List<Sacrifice>();
+
     public SacrificeType loot;
     public SacrificeType consumable;
     public SacrificeType mechanic;

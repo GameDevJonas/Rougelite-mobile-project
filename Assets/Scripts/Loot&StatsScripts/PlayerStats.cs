@@ -115,7 +115,7 @@ public class PlayerStats : MonoBehaviour
 
         player.UpdateStats();
 
-        UpdateItemInfo();
+        UpdateStatsInfo();
 
     }
     public void GiveItem(int id)
@@ -166,7 +166,7 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
-    private void UpdateItemInfo()
+    private void UpdateStatsInfo()
     {
         _ = Health.Value;
         _ = Strength.Value;
@@ -248,19 +248,19 @@ public class PlayerStats : MonoBehaviour
     {
         flat = new StatModifier(statValue, StatModType.Flat, this);
         statType.AddModifier(flat);
-        UpdateItemInfo();
+        UpdateStatsInfo();
     }
     public void AddPercentModifier(CharacterStat statType, float statValue)
     {
         percent = new StatModifier(statValue, StatModType.Percent, this);
         statType.AddModifier(percent);
-        UpdateItemInfo();
+        UpdateStatsInfo();
     }
     public void AddPercentMultModifier(CharacterStat statType, float statValue)
     {
         mult = new StatModifier(statValue, StatModType.PercentMult, this);
         statType.AddModifier(mult);
-        UpdateItemInfo();
+        UpdateStatsInfo();
     }
 
     public void RemoveItem(int id)
@@ -277,7 +277,7 @@ public class PlayerStats : MonoBehaviour
             statType.RemoveModifier(flat);
             statType.RemoveModifier(percent);
             statType.RemoveModifier(mult);
-            UpdateItemInfo();
+            UpdateStatsInfo();
         }
     }
 }

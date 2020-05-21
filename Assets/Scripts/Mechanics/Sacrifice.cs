@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
 public enum SacrificeType { loot, consumable, mechanic, debuff}
+[Serializable]
 public class Sacrifice
 {
     public int id;
@@ -19,11 +19,11 @@ public class Sacrifice
         this.description = description;
         this.type = type;
     }
-    public Sacrifice(Sacrifice sacrifices)
+    public Sacrifice(Sacrifice sacrifice)
     {
-        this.id = sacrifices.id;
-        this.level = sacrifices.id;
-        this.description = sacrifices.description;
-        this.type = sacrifices.type;
+        this.id = sacrifice.id;
+        this.level = sacrifice.level;
+        this.description = sacrifice.description;
+        this.type = sacrifice.type;
     }
 }

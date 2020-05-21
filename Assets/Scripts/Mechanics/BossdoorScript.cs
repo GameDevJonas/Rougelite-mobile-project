@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BossdoorScript : MonoBehaviour
 {
     public GameObject confirmation;
-    public GameObject sacrifice;
+    public GameObject sacrificing;
     public GameObject player;
+
+    public List<Sacrifice> sacrifice = new List<Sacrifice>();
+    public SacrificeDatabase SacrificeDatabase;
+
+    public int level;
+
     public bool IsInRange;
     public bool PromptReady = true;
     public bool SacrificeMade = false;
@@ -15,6 +23,8 @@ public class BossdoorScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        level = SceneManager.GetActiveScene().buildIndex;
+        GiveSacrifice(1);
     }
     private void Update()
     {
@@ -40,16 +50,16 @@ public class BossdoorScript : MonoBehaviour
         {
             confirmation.GetComponent<ConfirmationScript>().choiceMade = 0;
             confirmation.SetActive(false);
-            sacrifice.SetActive(true);
+            sacrificing.SetActive(true);
         }
 
-        if (sacrifice.GetComponent<SacrificeScript>().choiceMade == 1 && SacrificeMade == false)
+        if (sacrificing.GetComponent<SacrificeScript>().choiceMade == 1 && SacrificeMade == false)
         {
             Time.timeScale = 1;
 
             Sacrifice01();
         }
-        if (sacrifice.GetComponent<SacrificeScript>().choiceMade == 2 && SacrificeMade == false)
+        if (sacrificing.GetComponent<SacrificeScript>().choiceMade == 2 && SacrificeMade == false)
         {
             Time.timeScale = 1;
 
@@ -58,8 +68,8 @@ public class BossdoorScript : MonoBehaviour
     }
     private void TextboxGone()
     {
-        sacrifice.GetComponent<SacrificeScript>().choiceMade = 0;
-        sacrifice.SetActive(false);
+        sacrificing.GetComponent<SacrificeScript>().choiceMade = 0;
+        sacrificing.SetActive(false);
     }
     private void Sacrifice01()
     {
@@ -101,5 +111,18 @@ public class BossdoorScript : MonoBehaviour
             IsInRange = false;
             PromptReady = true;
         }
+    }
+
+    public void GiveSacrifice(int id)
+    {
+        Sacrifice sacrificeToAdd = SacrificeDatabase.GetSacrifice(id);
+        sacrifice.Add(sacrificeToAdd);
+
+        Sacrifice sacrificeCheck = CheckforSacrifice(sacrificeToAdd.id);
+    }
+
+    public Sacrifice CheckforSacrifice(int id)
+    {
+        return sacrifice.Find(sacrifice => sacrifice.id == id);
     }
 }
