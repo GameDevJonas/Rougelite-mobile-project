@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeons/AlphaScene05.unity
     guid: 2b5bf0a2efd459841912f9203830ee55
   - enabled: 1
-    path: Assets/Scenes/Bosses/AlphaBoss.unity
+    path: Assets/Scenes/Bosses/Boss1.unity
     guid: 6a09627be64d7634aa287f74a549e921
   - enabled: 0
     path: Assets/Scenes/Old/Player stats.unity

@@ -119,6 +119,7 @@ public class BossdoorScript : MonoBehaviour
         sacrifice.Add(sacrificeToAdd);
 
         Sacrifice sacrificeCheck = CheckforSacrifice(sacrificeToAdd.id);
+        Debug.Log(sacrificeCheck);
     }
 
     public Sacrifice CheckforSacrifice(int id)
