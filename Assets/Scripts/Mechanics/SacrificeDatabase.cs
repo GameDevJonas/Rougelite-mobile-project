@@ -22,9 +22,26 @@ public class SacrificeDatabase : MonoBehaviour
         BuildDataBase();
     }
     
-    public Sacrifice GetSacrifice(int id)
+    public List<Sacrifice> GetSacrifice(int level)
     {
-        return sacrifices.Find(sacrifices => sacrifices.id == id);
+        List<Sacrifice> sacList = new List<Sacrifice>();
+
+        foreach (var item in sacrifices)
+        {
+            for (int i = 0; i < sacrifices.Count; i++)
+            {
+                if (sacrifices[i].level == level)
+                {
+                    sacList.Add(sacrifices[i]);
+                }
+                else
+                {
+                    return sacList;
+                }
+            }
+            return sacList;
+        }
+        return sacList;
     }
 
     void BuildDataBase()
@@ -73,8 +90,8 @@ public class SacrificeDatabase : MonoBehaviour
             new Sacrifice(39, 5, "Sacrifice ", loot), //Sacrifice legendary item and ancient item
             new Sacrifice(40, 5, "Sacrifice your sword.", mechanic),
             new Sacrifice(41, 5, "Sacrifice your crossbow.", mechanic),
-            new Sacrifice(42, 4, "Suffer the curse of weakness.", debuff),
-            new Sacrifice(43, 4, "Suffer the curse of frailty.", debuff)
+            new Sacrifice(42, 5, "Suffer the curse of weakness.", debuff),
+            new Sacrifice(43, 5, "Suffer the curse of frailty.", debuff)
         };
 
     }

@@ -30,7 +30,7 @@ public class BossdoorScript : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
             SacrificeDatabase = player.GetComponentInChildren<SacrificeDatabase>();
-            GiveSacrifice(1);
+            GiveSacrifice(level);
             return;
         }
         if (IsInRange == true && PromptReady == true)
@@ -118,17 +118,16 @@ public class BossdoorScript : MonoBehaviour
         }
     }
 
-    public void GiveSacrifice(int id)
+    public void GiveSacrifice(int level)
     {
-        Sacrifice sacrificeToAdd = SacrificeDatabase.GetSacrifice(id);
-        sacrifice.Add(sacrificeToAdd);
+        List<Sacrifice> sacrificeToAdd = SacrificeDatabase.GetSacrifice(level);
+        sacrifice = sacrificeToAdd;
 
-        Sacrifice sacrificeCheck = CheckforSacrifice(sacrificeToAdd.id);
-        Debug.Log(sacrificeCheck);
+        List<Sacrifice> sacrificeCheck = CheckforSacrifice(sacrificeToAdd);
     }
 
-    public Sacrifice CheckforSacrifice(int id)
+   public List<Sacrifice> CheckforSacrifice(List<Sacrifice> sacrifice)
     {
-        return sacrifice.Find(sacrifice => sacrifice.id == id);
+        return sacrifice;
     }
 }
