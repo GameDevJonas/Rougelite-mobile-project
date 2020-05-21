@@ -24,13 +24,11 @@ public class MenuManager : MonoBehaviour
     public bool fromStartMenu;
     public bool toBoss;
     public bool fromBoss;
-    public bool lootFound;
 
     void Awake()
     {
         isPaused = false;
         toBoss = false;
-        lootFound = false;
         otherCanvas.SetActive(true);
         pauseButton.SetActive(true);
         DontDestroyOnLoad(this);
@@ -100,11 +98,6 @@ public class MenuManager : MonoBehaviour
             StartCoroutine(StartLoad(1));
         }
     }
-
-    /*public void LootAccept()
-    {
-
-    }*/
 
     public IEnumerator StartLoad(int buildIndex)
     {

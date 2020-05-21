@@ -26,13 +26,11 @@ public class LootFound : MonoBehaviour
     void Update()
     {
 
-        //if (SceneManager.GetActiveScene().buildIndex == 1)
-
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
-
+            return;
         }
 
         if (Loot.Count > 0 && MenuManager.isPaused && AcceptLoot.Loot.Count == 0)

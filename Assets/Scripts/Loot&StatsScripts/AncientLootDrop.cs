@@ -84,7 +84,6 @@ public class AncientLootDrop : MonoBehaviour
         if (IsInRange == true && AvailableLoot.Count > 0)
         {
             drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)];
-            //print(drop);
             GiveItem();
         }
     }
