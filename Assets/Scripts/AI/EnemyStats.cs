@@ -28,7 +28,7 @@ public class EnemyStats
     {
         if (enemyType == EnemyType.trash)
         {
-            if (level == 1)
+            if (level == 1 || level == 6)
             {
                 health = 50;
                 damage = 10;
@@ -64,7 +64,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 2)
+            if (level == 2 || level == 7)
             {
                 health = 100;
                 damage = 20;
@@ -100,7 +100,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 3)
+            if (level == 3 || level == 8)
             {
                 health = 200;
                 damage = 50;
@@ -136,7 +136,7 @@ public class EnemyStats
                 this.hidesInDark = true;
                 this.hidesInLight = false;
             }
-            if (level == 4)
+            if (level == 4 || level == 9)
             {
                 health = 400;
                 damage = 100;
@@ -172,7 +172,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 5)
+            if (level == 5 || level == 10)
             {
                 health = 600;
                 damage = 200;
@@ -211,7 +211,7 @@ public class EnemyStats
         }
         if (thisType == EnemyType.melee)
         {
-            if (level == 1)
+            if (level == 1 || level == 6)
             {
                 health = 100;
                 damage = 20;
@@ -247,7 +247,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 2)
+            if (level == 2 || level == 7)
             {
                 health = 400;
                 damage = 40;
@@ -283,7 +283,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 3)
+            if (level == 3 || level == 8)
             {
                 health = 600;
                 damage = 80;
@@ -319,7 +319,7 @@ public class EnemyStats
                 this.hidesInDark = true;
                 this.hidesInLight = false;
             }
-            if (level == 4)
+            if (level == 4 || level == 9)
             {
                 health = 1200;
                 damage = 100;
@@ -355,7 +355,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 5)
+            if (level == 5 || level == 10)
             {
                 health = 1500;
                 damage = 150;
@@ -394,7 +394,7 @@ public class EnemyStats
         }
         if (thisType == EnemyType.ranged)
         {
-            if (level == 1)
+            if (level == 1 || level == 6)
             {
                 health = 75;
                 damage = 25;
@@ -430,7 +430,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 2)
+            if (level == 2 || level == 7)
             {
                 health = 300;
                 damage = 40;
@@ -466,7 +466,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 3)
+            if (level == 3 || level == 8)
             {
                 health = 400;
                 damage = 90;
@@ -502,7 +502,7 @@ public class EnemyStats
                 this.hidesInDark = true;
                 this.hidesInLight = false;
             }
-            if (level == 4)
+            if (level == 4 || level == 9)
             {
                 health = 1000;
                 damage = 120;
@@ -538,7 +538,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 5)
+            if (level == 5 || level == 10)
             {
                 health = 1300;
                 damage = 180;
@@ -577,7 +577,7 @@ public class EnemyStats
         }
         if (thisType == EnemyType.elite)
         {
-            if (level == 1)
+            if (level == 1 || level == 6)
             {
                 health = 125;
                 damage = 30;
@@ -613,7 +613,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 2)
+            if (level == 2 || level == 7)
             {
                 health = 300;
                 damage = 60;
@@ -649,7 +649,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 3)
+            if (level == 3 || level == 8)
             {
                 health = 700;
                 damage = 100;
@@ -685,7 +685,7 @@ public class EnemyStats
                 this.hidesInDark = true;
                 this.hidesInLight = false;
             }
-            if (level == 4)
+            if (level == 4 || level == 9)
             {
                 health = 1400;
                 damage = 120;
@@ -721,7 +721,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 5)
+            if (level == 5 || level == 10)
             {
                 health = 1800;
                 damage = 180;
@@ -760,7 +760,7 @@ public class EnemyStats
         }
         if (thisType == EnemyType.boss)
         {
-            if (level == 1)
+            if (level == 1 || level == 6)
             {
                 health = 250;
                 damage = 50;
@@ -796,7 +796,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 2)
+            if (level == 2 || level == 7)
             {
                 health = 1000;
                 damage = 100;
@@ -832,7 +832,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 3)
+            if (level == 3 || level == 8)
             {
                 health = 2000;
                 damage = 150;
@@ -868,7 +868,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 4)
+            if (level == 4 || level == 9)
             {
                 health = 3500;
                 damage = 200;
@@ -904,7 +904,7 @@ public class EnemyStats
                 this.hidesInDark = false;
                 this.hidesInLight = false;
             }
-            if (level == 5)
+            if (level == 5 || level == 10)
             {
                 health = 7000;
                 damage = 500;
