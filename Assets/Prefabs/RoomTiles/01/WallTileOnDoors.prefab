@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9800eb9738a0f4d92bd606610ed5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notDoorSprite: {fileID: 21300000, guid: e06fecfa418cc0243a1fcd29f2915f4d, type: 3}
-  doorSprite: {fileID: 21300000, guid: a3bde85ed513bb2468114249877304db, type: 3}
+  notDoorSprite: {fileID: 21300000, guid: 4574b9ede97a12c489fab9c8764d4b52, type: 3}
+  doorSprite: {fileID: -833398980232921613, guid: 0aa342ba526925a4e9a7d41aded59b40,
+    type: 3}
   isThereDoor: 0
