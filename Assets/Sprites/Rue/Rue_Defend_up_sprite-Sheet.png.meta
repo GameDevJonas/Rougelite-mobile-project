@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 5f1960622656b894c8b08b546c84547d
+guid: a57072dd155869c42a4183d448ec2706
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8661635036796993503
+    second: Rue_Defend_up_sprite-Sheet_0
+  - first:
+      213: 541871489596723511
+    second: Rue_Defend_up_sprite-Sheet_1
+  - first:
+      213: -9052348454401115255
+    second: Rue_Defend_up_sprite-Sheet_2
+  - first:
+      213: 8224111757575112638
+    second: Rue_Defend_up_sprite-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,11 +109,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rue_Defend_up_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12043a943d0bbc780800000000000000
+      internalID: -8661635036796993503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Defend_up_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7311353bf3d158700800000000000000
+      internalID: 541871489596723511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Defend_up_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b7d58ca099f5280800000000000000
+      internalID: -9052348454401115255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Defend_up_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 23
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7c06ff11ae12270800000000000000
+      internalID: 8224111757575112638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5c1d7d26a8c422f45825c7d8976842da
     internalID: 0
     vertices: []
     indices: 

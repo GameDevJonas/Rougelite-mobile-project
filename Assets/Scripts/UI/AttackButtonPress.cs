@@ -25,7 +25,7 @@ public class AttackButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (button.interactable)
         {
-            Debug.Log("Button is held down");
+            //Debug.Log("Button is held down");
         }
     }
 
@@ -33,7 +33,7 @@ public class AttackButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (button.interactable)
         {
-            Debug.Log("Button is released");
+            //Debug.Log("Button is released");
         }
     }
 }

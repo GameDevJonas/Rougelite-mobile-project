@@ -9,6 +9,8 @@ using TMPro;
 [Serializable]
 public class Player : MonoBehaviour
 {
+    public float knockBackDebug;
+
     public enum WeaponState { sword, bow };
     public WeaponState weaponInUse = WeaponState.sword;
     public TextMeshProUGUI debugWeaponState;
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
     public bool canMove = true;
     public bool canAttack = true;
     public bool canHeal = true;
+    public bool canTakeDamage = true;
+    public bool shieldIsUp = false;
 
     public MenuManager menuManager;
 
@@ -57,7 +61,6 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-
         debugWeaponState.text = "sword";
 
         anim = GetComponentInChildren<Animator>();
@@ -73,7 +76,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
-        dir = "U";
+        dir = "L";
+
 #if UNITY_EDITOR
         useTouch = false;
 #else
@@ -90,32 +94,74 @@ public class Player : MonoBehaviour
     void Update()
     {
         CheckInput();
-        ApplyRotation();
+        DirectionManaging();
         //SwordAttack();
         Anims();
         currentHealth = HealthSystem.GetHealth();
         healthbar.SetHealth(currentHealth);
 
 
-        if (canMove == false)
+        if (canMove == false && !shieldIsUp)
         {
             Invoke("MovementLock", 0.2f);
         }
         if (currentHealth <= 0)
         {
+            //TRIGGER DEATH ANIM AND THEN LOAD PERHAPS USE COROUTINE
             if (menuManager != null)
             {
                 menuManager.ToAlphaLevel();
             }
-            //RestartScene();
         }
 
     }
+
+    public void TakeDamage(float dmg, string dir)
+    {
+        //HURT ANIM
+        if (canTakeDamage)
+        {
+            HealthSystem.Damage(dmg);
+        }
+        else
+        {
+            //Knockback
+            if (dir == "U")
+            {
+                rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Impulse);
+                //rb.velocity = new Vector2(0, knockBackDebug);
+
+                //ANIMATION
+            }
+            else if (dir == "D")
+            {
+                rb.AddForce(new Vector2(0, -knockBackDebug), ForceMode2D.Impulse);
+                //rb.velocity = new Vector2(0, -knockBackDebug);
+
+                //ANIMATION
+            }
+            else if (dir == "L")
+            {
+                rb.AddForce(new Vector2(-knockBackDebug, 0), ForceMode2D.Impulse);
+                //rb.velocity = new Vector2(-knockBackDebug, 0);
+
+                //ANIMATION
+            }
+            else if (dir == "R")
+            {
+                rb.AddForce(new Vector2(knockBackDebug, 0), ForceMode2D.Impulse);
+                //rb.velocity = new Vector2(knockBackDebug, 0);
+
+                //ANIMATION
+            }
+        }
+    }
+
+
     private void FixedUpdate()
     {
         ApplyMovement();
     }
-
     public void UpdateStats()
     {
         PlayerStats playerstats = GetComponent<PlayerStats>();
@@ -142,9 +188,11 @@ public class Player : MonoBehaviour
     {
         if (potion > 0 && canHeal == true)
         {
+            //TRIGGER ANIMATION HERE
+            anim.SetBool("DoHeal", true);
             canMove = false;
             canHeal = false;
-            Invoke("MovementLock", 0.2f);
+            Invoke("MovementLock", 0.3f);
             Invoke("CanHeal", 0.3f);
             potion -= 1;
             HealthSystem.Heal((maxHealth / 2.5f) + potionPotency);
@@ -167,10 +215,37 @@ public class Player : MonoBehaviour
             xInput = Input.GetAxisRaw("Horizontal");
             yInput = Input.GetAxisRaw("Vertical");
         }
+
+        #region Non-Touch Controls
+        //Attack
         if (Input.GetKey(KeyCode.Space) && !useTouch)
         {
             DoAnAttack();
         }
+
+        //Shield up
+        if (Input.GetKey(KeyCode.Mouse1) && !useTouch)
+        {
+            shieldIsUp = true;
+            StartCoroutine(ShieldUp());
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && !useTouch)
+        {
+            shieldIsUp = false;
+        }
+
+        //Potion
+        if (Input.GetKeyDown(KeyCode.E) && !useTouch)
+        {
+            UsePotion();
+        }
+
+        //Switch weapons
+        if (Input.GetKeyDown(KeyCode.Q) && !useTouch)
+        {
+            SwitchWeapon();
+        }
+        #endregion
     }
 
     public void Anims()
@@ -202,6 +277,9 @@ public class Player : MonoBehaviour
         //Player animation states
         anim.SetInteger("WeaponState", weaponState);
         #endregion
+
+        //Shield
+        anim.SetBool("ShieldUp", shieldIsUp);
     }
 
     void ApplyMovement()
@@ -216,39 +294,79 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ApplyRotation()
+    public IEnumerator ShieldUp()
+    {
+        shieldIsUp = true;
+
+
+        while (shieldIsUp)
+        {
+            yield return new WaitForSeconds(0.1f);
+            canTakeDamage = false;
+            canMove = false;
+            canAttack = false;
+            canHeal = false;
+        }
+
+        /*if(weaponInUse == WeaponState.sword)
+        {
+
+        }
+        else
+        {
+
+        }*/
+
+        shieldIsUp = false;
+        canMove = true;
+        canAttack = true;
+        canHeal = true;
+        canTakeDamage = true;
+
+        yield return null;
+    }
+
+    void DirectionManaging()
     {
         if (xInput == 1 && (canMove == true)) //Right
         {
             dir = "R";
+            shootPoint.localPosition = new Vector2(0.25f, 0.9f);
         }
         else if (xInput == -1 && (canMove == true)) //Left
         {
             dir = "L";
+            shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
         }
         if (yInput == 1 && (canMove == true)) //Up
         {
             dir = "U";
+            shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
         else if (yInput == -1 && (canMove == true)) //Down
         {
             dir = "D";
+            shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
         if ((xInput == 1 && yInput == 1) && (canMove == true)) //Up right
         {
             dir = "UR";
+            shootPoint.localPosition = new Vector2(0.1f, 0.9f);
         }
         else if ((xInput == -1 && yInput == -1) && (canMove == true)) //Down left
         {
             dir = "DL";
+            shootPoint.localPosition = new Vector2(-0.3f, 0.6f);
         }
         if ((xInput == 1 && yInput == -1) && (canMove == true)) //Down right
         {
             dir = "DR";
+            shootPoint.localPosition = new Vector2(0.1f, 0.6f);
         }
         if ((xInput == -1 && yInput == 1) && (canMove == true)) //Up left
         {
             dir = "UL";
+            shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
         }
     }
 
@@ -287,7 +405,8 @@ public class Player : MonoBehaviour
             anim.SetTrigger("DoAttack");
             anim.SetBool("InAttackAnim", true);
             //---------------------
-            GameObject clonedObject = Instantiate(sword, transform.position, Quaternion.Euler(0, 0, transform.eulerAngles.z), transform);
+            GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
+            clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir);
             canMove = false;
             canAttack = false;
             Destroy(clonedObject, 0.2f);
@@ -326,6 +445,7 @@ public class Player : MonoBehaviour
         anim.ResetTrigger("DoAttack");
         anim.ResetTrigger("DoFire");
         anim.SetBool("InAttackAnim", false);
+        anim.SetBool("DoHeal", false);
         canMove = true;
     }
     void AttackLock()
@@ -335,6 +455,7 @@ public class Player : MonoBehaviour
     }
     void CanHeal()
     {
+
         canHeal = true;
     }
     public void RestartScene()

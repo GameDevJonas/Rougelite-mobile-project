@@ -20,7 +20,7 @@ public class Arrow : MonoBehaviour
         stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         critRoll = Random.Range(0, 101);
         critChance = stats.CritChance.Value;
-        Destroy(gameObject, 5f);
+        //Destroy(gameObject, 5f);
         //Debug.Log(critRoll);
         //Debug.Log(critChance);
     }
@@ -51,7 +51,7 @@ public class Arrow : MonoBehaviour
     {
         if (dir == "UL")
         {
-            transform.Rotate(0, 0, 30);
+            transform.Rotate(0, 0, 45);
         }
         else if (dir == "U")
         {
@@ -59,7 +59,7 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "UR")
         {
-            transform.Rotate(0, 0, -30);
+            transform.Rotate(0, 0, -45);
         }
         else if (dir == "R")
         {
@@ -67,7 +67,7 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "DR")
         {
-            transform.Rotate(0, 0, -120);
+            transform.Rotate(0, 0, -135);
         }
         else if (dir == "D")
         {
@@ -75,7 +75,7 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "DL")
         {
-            transform.Rotate(0, 0, 120);
+            transform.Rotate(0, 0, 135);
         }
         else if (dir == "L")
         {

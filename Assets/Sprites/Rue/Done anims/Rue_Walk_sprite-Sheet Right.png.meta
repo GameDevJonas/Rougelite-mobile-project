@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: dc5e941a28f4b334a891c18931e92acd
+guid: 5f1960622656b894c8b08b546c84547d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4613935807379338823
-    second: R_sprite-Sheet_0
+      213: 1380720779561521502
+    second: Rue_Walk_sprite-Sheet LEFT_0
   - first:
-      213: -1574667658636149769
-    second: R_sprite-Sheet_1
+      213: 8477866765105214986
+    second: Rue_Walk_sprite-Sheet LEFT_1
   - first:
-      213: 3539025490107082527
-    second: R_sprite-Sheet_2
+      213: -1208466092546455547
+    second: Rue_Walk_sprite-Sheet LEFT_2
   - first:
-      213: -1086469730154002786
-    second: R_sprite-Sheet_3
+      213: 7046766227065282830
+    second: Rue_Walk_sprite-Sheet LEFT_3
   - first:
-      213: 8042217043473234657
-    second: R_sprite-Sheet_4
+      213: -4619007319543765888
+    second: Rue_Walk_sprite-Sheet LEFT_4
+  - first:
+      213: 6749520530277221758
+    second: Rue_Walk_sprite-Sheet LEFT_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,106 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: R_sprite-Sheet_0
+      name: Rue_Walk_sprite-Sheet LEFT_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 12
         y: 125
         width: 26
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b903b034d108ffb0800000000000000
-      internalID: -4613935807379338823
+      spriteID: e51d3cfcb3e492310800000000000000
+      internalID: 1380720779561521502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: R_sprite-Sheet_1
+      name: Rue_Walk_sprite-Sheet LEFT_1
       rect:
         serializedVersion: 2
-        x: 104
+        x: 111
         y: 125
         width: 26
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb32bf7b18a52ae0800000000000000
-      internalID: -1574667658636149769
+      spriteID: a06bf2bb7ee67a570800000000000000
+      internalID: 8477866765105214986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: R_sprite-Sheet_2
+      name: Rue_Walk_sprite-Sheet LEFT_2
       rect:
         serializedVersion: 2
-        x: 206
-        y: 124
+        x: 210
+        y: 125
         width: 26
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f17a2e4cee42d1130800000000000000
-      internalID: 3539025490107082527
+      spriteID: 5080aa6dd7aaa3fe0800000000000000
+      internalID: -1208466092546455547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: R_sprite-Sheet_3
+      name: Rue_Walk_sprite-Sheet LEFT_3
       rect:
         serializedVersion: 2
-        x: 4
+        x: 11
         y: 25
         width: 26
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e96c4fa69851ce0f0800000000000000
-      internalID: -1086469730154002786
+      spriteID: e0122735c842bc160800000000000000
+      internalID: 7046766227065282830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: R_sprite-Sheet_4
+      name: Rue_Walk_sprite-Sheet LEFT_4
       rect:
         serializedVersion: 2
-        x: 105
+        x: 112
         y: 25
         width: 26
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ea70d2aac1bb9f60800000000000000
-      internalID: 8042217043473234657
+      spriteID: 0842aafb05df5efb0800000000000000
+      internalID: -4619007319543765888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_sprite-Sheet LEFT_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 25
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75416b692d1bad50800000000000000
+      internalID: 6749520530277221758
       vertices: []
       indices: 
       edges: []
@@ -221,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d453accbaf4bf04409f0f85c80c7df23
+    spriteID: 41380244b099979449f4297aab33fdb5
     internalID: 0
     vertices: []
     indices: 

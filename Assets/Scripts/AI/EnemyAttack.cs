@@ -10,19 +10,18 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = 10;
+        damage = GetComponentInParent<JEnemy>().damage;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.CompareTag("Player"))
         {
             player = GameObject.FindGameObjectWithTag("Player");
 
             Player Player = player.GetComponent<Player>();
 
-            Player.HealthSystem.Damage(damage);
+            Player.TakeDamage(damage, GetComponentInParent<JEnemy>().direction);
         }
     }
 }

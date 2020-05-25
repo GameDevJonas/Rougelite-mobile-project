@@ -170,6 +170,7 @@ MonoBehaviour:
   blocksLight: 0
   hidesInDark: 0
   hidesInLight: 0
+  attacked: 0
   level: 0
   Table: 
   commondropRange: 0
@@ -201,7 +202,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

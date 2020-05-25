@@ -1,18 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DefendButton : MonoBehaviour
+public class DefendButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    private Button button;
+
+    private Player player;
+
+    void Awake()
     {
-        
+        button = GetComponent<Button>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        
+        if (button.interactable)
+        {
+            //Debug.Log("Button is held down");
+            player.shieldIsUp = true;
+            player.StartCoroutine(player.ShieldUp());
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (button.interactable)
+        {
+            //Debug.Log("Button is released");
+            player.shieldIsUp = false;
+        }
     }
 }

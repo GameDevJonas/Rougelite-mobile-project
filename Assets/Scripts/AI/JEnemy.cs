@@ -35,8 +35,8 @@ public class JEnemy : MonoBehaviour
     public float damage;
 
 
-    public Vector2 dir;
-    public float stringDir;
+    public float dirRotation;
+    public string direction;
     public Vector2 walkPoint;
     public Vector3 startPos;
     public GameObject startPosO;
@@ -155,18 +155,58 @@ public class JEnemy : MonoBehaviour
             case EnemyState.attack:
                 AttackState();
                 break;
-                
+
         }
 
-        if(myHealth <= 0 && !dropping)
+        GetDirFromPlayer();
+
+        if (myHealth <= 0 && !dropping)
         {
             DropLootAndDie();
         } //ded
     }
 
+    public void GetDirFromPlayer()
+    {
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        int dirTwo = Mathf.RoundToInt(dir.x);
+        int dirThree = Mathf.RoundToInt(dir.y);
+        Vector2 dirVector = new Vector2(dirTwo, dirThree);
+        //Debug.Log("OG number = " + dir.x + " normalized number = " + dirTwo + ", " + "OG number = " + dir.y + " normalized number = " + + dirThree);
+        //Debug.Log("x: " + dirTwo + " y: " + dirThree);
+        if (myState != EnemyState.attack)
+        {
+            if (dirVector == new Vector2(0f, 1f))
+            {
+                direction = "U";
+                dirRotation = 0;
+            }
+            else if (dirVector == new Vector2(0f, -1f))
+            {
+                direction = "D";
+                dirRotation = 180;
+            }
+            else if (dirVector == new Vector2(1f, 0f))
+            {
+                direction = "R";
+                dirRotation = 270;
+            }
+            else if (dirVector == new Vector2(-1f, 0f))
+            {
+                direction = "L";
+                dirRotation = 90;
+            }
+        }
+    }
+
     public void AttackState()
     {
-
+        StopAllCoroutines();
+        aIPath.enabled = false;
+        aIPath.canMove = false;
+        GameObject attackClone = Instantiate(attackPrefab, transform.position, Quaternion.Euler(0, 0, dirRotation), transform); //Add an attackPoint
+        Destroy(attackClone, 0.3f);
+        myState = EnemyState.idle;
     }
 
     private void DropLootAndDie()
@@ -242,6 +282,7 @@ public class JEnemy : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
 
+        yield return new WaitForSeconds(3f);
         myState = EnemyState.walking;
 
         yield return null;
@@ -249,6 +290,7 @@ public class JEnemy : MonoBehaviour
 
     public IEnumerator WalkState()
     {
+        StopCoroutine(IdleState());
         yield return new WaitForSeconds(Random.Range(0, 3));
         aIPath.enabled = true;
         aIPath.canMove = true;
@@ -260,6 +302,7 @@ public class JEnemy : MonoBehaviour
             destination.target = player.transform;
             if (aIPath.reachedEndOfPath)
             {
+                yield return new WaitForSeconds(3f);
                 myState = EnemyState.attack;
             }
         }
@@ -276,8 +319,8 @@ public class JEnemy : MonoBehaviour
         }
 
         Debug.Log("Walkstate is fin");
-        myState = EnemyState.idle;
         aIPath.canMove = false;
+        myState = EnemyState.idle;
 
         yield return null;
     }

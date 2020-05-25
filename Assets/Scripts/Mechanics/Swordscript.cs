@@ -23,6 +23,43 @@ public class Swordscript : MonoBehaviour
     {
         critChance = playerstats.CritChance.Value;
     }
+
+    public void RotateMeBaby(string dir)
+    {
+        if (dir == "UL")
+        {
+            transform.Rotate(0, 0, 45);
+        }
+        else if (dir == "U")
+        {
+            transform.Rotate(0, 0, 0);
+        }
+        else if (dir == "UR")
+        {
+            transform.Rotate(0, 0, -45);
+        }
+        else if (dir == "R")
+        {
+            transform.Rotate(0, 0, -90);
+        }
+        else if (dir == "DR")
+        {
+            transform.Rotate(0, 0, -135);
+        }
+        else if (dir == "D")
+        {
+            transform.Rotate(0, 0, -180);
+        }
+        else if (dir == "DL")
+        {
+            transform.Rotate(0, 0, 135);
+        }
+        else if (dir == "L")
+        {
+            transform.Rotate(0, 0, 90);
+        }
+    }
+
     public void CritCheck()
     {
         

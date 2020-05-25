@@ -1393,33 +1393,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1319412735, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 130.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319412736, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1814065025, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070419410, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -129.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070419410, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 42.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -1484,12 +1464,7 @@ PrefabInstance:
     - target: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161558041841118977, guid: 02c39016bbff67a46a3e8d87e29468fd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 58.75
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
