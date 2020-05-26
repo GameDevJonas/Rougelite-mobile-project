@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 //ADD 2 SPRITES, ONE LOCKED AND ONE OPEN
 public class BossdoorScript : MonoBehaviour
 {
     public GameObject confirmation;
     public GameObject sacrificing;
-    public GameObject player;
+    public GameObject rue;
+    public Player player;
+    public PlayerStats playerStats;
 
     public List<Sacrifice> sacrifice = new List<Sacrifice>();
     public SacrificeDatabase SacrificeDatabase;
@@ -19,26 +22,39 @@ public class BossdoorScript : MonoBehaviour
     public bool IsInRange;
     public bool PromptReady = true;
     public bool SacrificeMade = false;
+    public bool gotSac = false;
+    public bool remove = false;
 
+    public SacrificeType loot;
+    public SacrificeType consumable;
+    public SacrificeType mechanic;
+    public SacrificeType debuff;
     private void Start()
     {
-        level = SceneManager.GetActiveScene().buildIndex;
+        loot = SacrificeType.loot;
+        consumable = SacrificeType.consumable;
+        mechanic = SacrificeType.mechanic;
+        debuff = SacrificeType.debuff;
     }
     private void Update()
     {
-        if (player == null)
+        
+        if (rue == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            SacrificeDatabase = player.GetComponentInChildren<SacrificeDatabase>();
-            GiveSacrifice(level);
-            return;
+            rue = GameObject.FindGameObjectWithTag("Player");
+            player = rue.GetComponent<Player>();
+            playerStats = rue.GetComponent<PlayerStats>();
+            SacrificeDatabase = rue.GetComponentInChildren<SacrificeDatabase>();
+            level = SceneManager.GetActiveScene().buildIndex;
         }
+        /*AddSacrifices();
+        RemoveSacrifices();*/
+
         if (IsInRange == true && PromptReady == true)
         {
             if (!SacrificeMade)
             {
                 Time.timeScale = 0;
-
             }
             PromptReady = false;
             confirmation.SetActive(true);
@@ -118,16 +134,50 @@ public class BossdoorScript : MonoBehaviour
         }
     }
 
-    public void GiveSacrifice(int level)
+    /*public void AddSacrifices()
     {
-        List<Sacrifice> sacrificeToAdd = SacrificeDatabase.GetSacrifice(level);
-        sacrifice = sacrificeToAdd;
+        var Playercommon = playerStats.Loot.Any(des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) && des.collection.Equals(3));
+        var Sacrificecommon = sacrifice.Any(des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
+        if (player.potion >= 2 )
+        {
+            GetSacrifice(consumable, 0, level);
+        }
 
-        List<Sacrifice> sacrificeCheck = CheckforSacrifice(sacrificeToAdd);
+        if (Playercommon && !Sacrificecommon)
+        {
+            GetSacrifice(loot, 0, level);
+        }
     }
-
-   public List<Sacrifice> CheckforSacrifice(List<Sacrifice> sacrifice)
+    public void GetSacrifice(SacrificeType type, int intensity, int level)
     {
-        return sacrifice;
+        Sacrifice sacrificeToAdd = SacrificeDatabase.GetSacrifice(type, intensity, level);
+        sacrifice.Add(sacrificeToAdd);
     }
+    public void RemoveSacrifices()
+    {
+        var Playercommon = playerStats.Loot.Any(des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) && des.collection.Equals(3));
+        var Sacrificecommon = sacrifice.Any(des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
+
+        if (player.potion >= 2)
+        {
+            RemoveSacrifice(consumable, 0);
+        }
+        if (!Playercommon && Sacrificecommon)
+        {
+            RemoveSacrifice(loot, 0);
+        }
+    }
+    public void RemoveSacrifice(SacrificeType type, int intensity)
+    {
+        Sacrifice item = CheckforSacrifice(type, intensity);
+        if (item != null)
+        {
+            sacrifice.Remove(item);
+        }
+    }
+    public Sacrifice CheckforSacrifice(SacrificeType type, int intensity)
+    {
+        return sacrifice.Find(item => (item.type == type) && (item.intensity == intensity));
+    }*/
+
 }
