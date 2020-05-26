@@ -16,7 +16,8 @@ public class Item
     //public Sprite icon;
     public float statValue;
     public int amount;
-    public Item(int id, string tier, string title, string lore, string description, /*icon,*/ CharacterStat statType, string modType, float statValue, int amount)
+    public int collection;
+    public Item(int id, string tier, string title, string lore, string description, /*icon,*/ CharacterStat statType, string modType, float statValue, int amount, int collection)
     {
         this.id = id;
         this.tier = tier;
@@ -28,6 +29,7 @@ public class Item
         this.modType = modType;
         this.statValue = statValue;
         this.amount = amount;
+        this.collection = collection;
     }
     public Item(Item item)
     {
@@ -41,5 +43,6 @@ public class Item
         this.modType = item.modType;
         this.statValue = item.statValue;
         this.amount = item.amount;
+        this.collection = item.collection;
     }
 }

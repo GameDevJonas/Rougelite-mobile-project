@@ -22,17 +22,13 @@ public class AcceptLoot : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (player == null)
         {
-            if (player == null)
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-                ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
-                PlayerStats = player.GetComponent<PlayerStats>();
-            }
+            player = GameObject.FindGameObjectWithTag("Player");
+            ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
+            PlayerStats = player.GetComponent<PlayerStats>();
         }
     }
-
     // Update is called once per frame
     public void GiveItem(int id, int amount)
     {
@@ -58,20 +54,26 @@ public class AcceptLoot : MonoBehaviour
     {
         return Loot.Find(item => item.id == id);
     }
+    
     public void LootAccepted()
     {
-        while (Loot[0].amount > 1)
+        int differencial = Loot[0].amount / 2;
+        int oldLoot = Loot[0].amount + differencial;
+        int newloot = oldLoot;
+
+        while (oldLoot > differencial)
         {
-            LootAmount = Loot[0].amount - 1;
-            PlayerStats.GiveItem(Loot[0].id);
-            Loot[0].amount = LootAmount;
+            newloot = oldLoot - 1;
+            while (oldLoot > newloot)
+            {
+                PlayerStats.GiveItem(Loot[0].id);
+                oldLoot = newloot;
+                break;
+            }
         }
-        if (Loot[0].amount <= 1)
-        {
-            PlayerStats.GiveItem(Loot[0].id);
-            RemoveItem(Loot[0].id);
-            AcceptButton.SetActive(false);
-        }
+        Loot[0].amount = 1;
+        RemoveItem(Loot[0].id);
+        AcceptButton.SetActive(false);
     }
     public void RemoveItem(int id)
     {
