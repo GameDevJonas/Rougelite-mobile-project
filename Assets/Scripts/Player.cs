@@ -125,34 +125,34 @@ public class Player : MonoBehaviour
         }
         else
         {
-            //Knockback
+            //Knockback w/ shield
             if (dir == "U")
             {
-                rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Impulse);
-                //rb.velocity = new Vector2(0, knockBackDebug);
+                rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Force);
 
                 //ANIMATION
+                anim.SetTrigger("ShieldHit");
             }
             else if (dir == "D")
             {
-                rb.AddForce(new Vector2(0, -knockBackDebug), ForceMode2D.Impulse);
-                //rb.velocity = new Vector2(0, -knockBackDebug);
+                rb.AddForce(new Vector2(0, -knockBackDebug), ForceMode2D.Force);
 
                 //ANIMATION
+                anim.SetTrigger("ShieldHit");
             }
             else if (dir == "L")
             {
-                rb.AddForce(new Vector2(-knockBackDebug, 0), ForceMode2D.Impulse);
-                //rb.velocity = new Vector2(-knockBackDebug, 0);
+                rb.AddForce(new Vector2(-knockBackDebug, 0), ForceMode2D.Force);
 
                 //ANIMATION
+                anim.SetTrigger("ShieldHit");
             }
             else if (dir == "R")
             {
-                rb.AddForce(new Vector2(knockBackDebug, 0), ForceMode2D.Impulse);
-                //rb.velocity = new Vector2(knockBackDebug, 0);
+                rb.AddForce(new Vector2(knockBackDebug, 0), ForceMode2D.Force);
 
                 //ANIMATION
+                anim.SetTrigger("ShieldHit");
             }
         }
     }
@@ -298,7 +298,6 @@ public class Player : MonoBehaviour
     {
         shieldIsUp = true;
 
-
         while (shieldIsUp)
         {
             yield return new WaitForSeconds(0.1f);
@@ -307,15 +306,6 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
         }
-
-        /*if(weaponInUse == WeaponState.sword)
-        {
-
-        }
-        else
-        {
-
-        }*/
 
         shieldIsUp = false;
         canMove = true;
