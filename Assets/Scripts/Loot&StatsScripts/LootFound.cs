@@ -26,7 +26,7 @@ public class LootFound : MonoBehaviour
     void Update()
     {
 
-        if (player == null)
+        if (player == null && SceneManager.GetActiveScene().buildIndex != 0)
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();

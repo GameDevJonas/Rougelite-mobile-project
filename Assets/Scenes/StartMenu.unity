@@ -420,7 +420,8 @@ AudioSource:
   m_GameObject: {fileID: 1687875456}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7060552429869455105, guid: 7d6feec88bf135c4296629701bfc9eb3,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4c8e1ff320c83064db3c3e396ad1bfe5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -528,19 +529,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 750010033889884020, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20
+    - target: {fileID: 600792093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 750010033889884020, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
+    - target: {fileID: 600792093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4926919477536543583, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+    - target: {fileID: 600792093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521603578, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521603578, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646660607, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646660607, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703841684, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703841684, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703841684, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667959521534646473, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4926919477902615528, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
@@ -603,25 +634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4926919477902615530, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-        type: 3}
-      propertyPath: m_TagString
-      value: MenuManager
-      objectReference: {fileID: 0}
     - target: {fileID: 4926919477902615531, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
       propertyPath: alphaAudio
       value: 
       objectReference: {fileID: 1687875456}
-    - target: {fileID: 5372811635944419547, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5372811635944419547, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}

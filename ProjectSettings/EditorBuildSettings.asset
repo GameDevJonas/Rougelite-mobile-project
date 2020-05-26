@@ -23,19 +23,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/AlphaScene05.unity
     guid: 2b5bf0a2efd459841912f9203830ee55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss1.unity
     guid: 6a09627be64d7634aa287f74a549e921
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss2.unity
     guid: a0d57dadd0fabde428bf2a69bd92a10b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss3.unity
     guid: ae11a7bc2c24b004f9308cb8668689ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss4.unity
     guid: 1d0ab9b50976e0e449bf06709e014c78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss5.unity
     guid: 9deb6e80dad53794289c8d687b81fd78
   m_configObjects: {}

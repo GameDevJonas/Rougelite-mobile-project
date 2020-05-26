@@ -382,6 +382,8 @@ public class Player : MonoBehaviour
             debugWeaponState.text = "sword";
             weaponInUse = WeaponState.sword;
         }
+        anim.SetTrigger("SwitchWeapons");
+        //anim.ResetTrigger("SwitchWeapons");
     }
 
     public void DoAnAttack()

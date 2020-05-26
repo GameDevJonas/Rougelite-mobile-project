@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject alphaAudio;
     public GameObject startButton;
     public GameObject pauseMenu;
+    //public GameObject mainMenuPause;
     public GameObject pauseButton;
     public GameObject otherCanvas;
 
@@ -29,6 +30,7 @@ public class MenuManager : MonoBehaviour
     {
         isPaused = false;
         toBoss = false;
+        //mainMenuPause.SetActive(false);
         otherCanvas.SetActive(true);
         pauseButton.SetActive(true);
         DontDestroyOnLoad(this);
@@ -58,10 +60,24 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1;
             otherCanvas.SetActive(true);
             pauseMenu.SetActive(false);
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+            }
+            else
+            {
+                //mainMenuPause.SetActive(false);
+            }
         }
         else if (!isPaused)
         {
             pauseMenu.SetActive(true);
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+            }
+            else
+            {
+                //mainMenuPause.SetActive(true);
+            }
             otherCanvas.SetActive(false);
             Time.timeScale = 0;
         }
@@ -75,10 +91,15 @@ public class MenuManager : MonoBehaviour
 
     public void ToAlphaBoss()
     {
+        int currenctScene = SceneManager.GetActiveScene().buildIndex;
+        if(currenctScene == 5)
+        {
+            currenctScene = 0;
+        }
         toBoss = true;
         startButton.SetActive(false);
         loadingThing.SetActive(true);
-        StartCoroutine(StartLoad(2));
+        StartCoroutine(StartLoad(currenctScene + 1));
     }
 
     public void ToAlphaLevel()
@@ -126,7 +147,7 @@ public class MenuManager : MonoBehaviour
                         DontDestroyOnLoad(player);
                         fromStartMenu = false;
                     }
-                    else if(toBoss)
+                    else if (toBoss)
                     {
                         GameObject player = GameObject.FindGameObjectWithTag("Player");
                         player.transform.position = new Vector3(0, 0, 0);
