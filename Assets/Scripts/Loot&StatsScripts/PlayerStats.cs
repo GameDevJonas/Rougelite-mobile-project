@@ -124,10 +124,11 @@ public class PlayerStats : MonoBehaviour
         bool AlreadyinInventory = false;
         foreach (Item item in Loot)
         {
-            if (itemToAdd.id == item.id)
+            if (item.id == itemToAdd.id)
             {
-                itemToAdd.amount += item.amount;
+                item.collection += 1;
                 AlreadyinInventory = true;
+                Item itemCheck = CheckforItems(id);
 
                 Debug.Log("Got another " + itemToAdd.title + itemToAdd.description);
                 if (itemToAdd.modType == "flat")
@@ -142,12 +143,12 @@ public class PlayerStats : MonoBehaviour
                 {
                     AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
-                Item itemCheck = CheckforItems(id);
             }
         }
         if (!AlreadyinInventory)
         {
             Loot.Add(itemToAdd);
+            Item itemCheck = CheckforItems(id);
 
             Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
             if (itemToAdd.modType == "flat")
@@ -162,7 +163,6 @@ public class PlayerStats : MonoBehaviour
             {
                 AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
             }
-            Item itemCheck = CheckforItems(id);
         }
         
     }

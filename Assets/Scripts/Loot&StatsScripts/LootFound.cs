@@ -44,7 +44,6 @@ public class LootFound : MonoBehaviour
     public void GiveItem(int id)
     {
         Item itemToAdd = ItemDatabase.GetItem(id);
-        //itemToAdd.amount = 1;
         bool AlreadyinInventory = false;
         foreach (Item item in Loot)
         {
