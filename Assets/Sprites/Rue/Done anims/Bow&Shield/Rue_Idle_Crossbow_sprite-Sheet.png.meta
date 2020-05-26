@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 1c4819496aea33f43bc203e1f86fa66c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8469300272444273690
+    second: Rue_Idle_Crossbow_sprite-Sheet_0
+  - first:
+      213: 2904957105016348951
+    second: Rue_Idle_Crossbow_sprite-Sheet_1
+  - first:
+      213: 5424257396695811355
+    second: Rue_Idle_Crossbow_sprite-Sheet_2
+  - first:
+      213: 6404599483802660829
+    second: Rue_Idle_Crossbow_sprite-Sheet_3
+  - first:
+      213: -1187027361674384658
+    second: Rue_Idle_Crossbow_sprite-Sheet_4
+  - first:
+      213: -8809914147933374249
+    second: Rue_Idle_Crossbow_sprite-Sheet_5
+  - first:
+      213: 1068565313825283036
+    second: Rue_Idle_Crossbow_sprite-Sheet_6
+  - first:
+      213: 6474542198480445448
+    second: Rue_Idle_Crossbow_sprite-Sheet_7
+  - first:
+      213: -9154601418675127924
+    second: Rue_Idle_Crossbow_sprite-Sheet_8
+  - first:
+      213: 2674002176856736935
+    second: Rue_Idle_Crossbow_sprite-Sheet_9
+  - first:
+      213: -5623386160461792670
+    second: Rue_Idle_Crossbow_sprite-Sheet_10
+  - first:
+      213: -5071755900354574777
+    second: Rue_Idle_Crossbow_sprite-Sheet_11
+  - first:
+      213: 2948017871325966889
+    second: Rue_Idle_Crossbow_sprite-Sheet_12
+  - first:
+      213: 8606006417479228408
+    second: Rue_Idle_Crossbow_sprite-Sheet_13
+  - first:
+      213: 4437128665591247261
+    second: Rue_Idle_Crossbow_sprite-Sheet_14
+  - first:
+      213: -7088092048952725082
+    second: Rue_Idle_Crossbow_sprite-Sheet_15
+  - first:
+      213: 602258203983344485
+    second: Rue_Idle_Crossbow_sprite-Sheet_16
+  - first:
+      213: 1853402584127324925
+    second: Rue_Idle_Crossbow_sprite-Sheet_17
+  - first:
+      213: 2063653106884064142
+    second: Rue_Idle_Crossbow_sprite-Sheet_18
+  - first:
+      213: -3429002353082979338
+    second: Rue_Idle_Crossbow_sprite-Sheet_19
+  - first:
+      213: 8970945726653096979
+    second: Rue_Idle_Crossbow_sprite-Sheet_20
+  - first:
+      213: -1445239674636113058
+    second: Rue_Idle_Crossbow_sprite-Sheet_21
+  - first:
+      213: -4680312624312406638
+    second: Rue_Idle_Crossbow_sprite-Sheet_22
+  - first:
+      213: 5758037437669555746
+    second: Rue_Idle_Crossbow_sprite-Sheet_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb07d44640077a80800000000000000
+      internalID: -8469300272444273690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7112f3c881b705820800000000000000
+      internalID: 2904957105016348951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15c6540d55d64b40800000000000000
+      internalID: 5424257396695811355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf25b82c45b1e850800000000000000
+      internalID: 6404599483802660829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeaaab857e4d68fe0800000000000000
+      internalID: -1187027361674384658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d83eb662c5ecb580800000000000000
+      internalID: -8809914147933374249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb1cddcd7e44de00800000000000000
+      internalID: 1068565313825283036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80024bf63d13ad950800000000000000
+      internalID: 6474542198480445448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89f49b438254f080800000000000000
+      internalID: -9154601418675127924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4ca28ffc6fb1520800000000000000
+      internalID: 2674002176856736935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ab3deb418b5f1b0800000000000000
+      internalID: -5623386160461792670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746cfd341e08d99b0800000000000000
+      internalID: -5071755900354574777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92233eb72a679e820800000000000000
+      internalID: 2948017871325966889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbd4987d3dae6770800000000000000
+      internalID: 8606006417479228408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91f44f2309d39d30800000000000000
+      internalID: 4437128665591247261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1f6e6f5d902ad90800000000000000
+      internalID: -7088092048952725082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563fd7745a6ab5800800000000000000
+      internalID: 602258203983344485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df243bc94db98b910800000000000000
+      internalID: 1853402584127324925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83b477219193ac10800000000000000
+      internalID: 2063653106884064142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fba28a078cb960d0800000000000000
+      internalID: -3429002353082979338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3146778bb933f7c70800000000000000
+      internalID: 8970945726653096979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b63025c2a71fbe0800000000000000
+      internalID: -1445239674636113058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d251e27703c0fb0800000000000000
+      internalID: -4680312624312406638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Crossbow_sprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22eb1bbca88a8ef40800000000000000
+      internalID: 5758037437669555746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 40309da6a8916b649ae69a398f5d91c8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

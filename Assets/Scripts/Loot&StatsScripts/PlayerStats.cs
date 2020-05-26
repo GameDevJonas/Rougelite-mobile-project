@@ -120,10 +120,13 @@ public class PlayerStats : MonoBehaviour
     }
     public void GiveItem(int id)
     {
+        //Debug.Log("GiveItem() started");
         Item itemToAdd = ItemDatabase.GetItem(id);
         bool AlreadyinInventory = false;
+        int i = 0;
         foreach (Item item in Loot)
         {
+            //Debug.Log((i++) + " counts in foreach loop");
             if (item.id == itemToAdd.id)
             {
                 item.collection += 1;
@@ -168,6 +171,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void UpdateStatsInfo()
     {
+        //Debug.Log("Updated stats");
         _ = Health.Value;
         _ = Strength.Value;
         _ = Dexterity.Value;
@@ -240,6 +244,7 @@ public class PlayerStats : MonoBehaviour
     }
     public Item CheckforItems(int id)
     {
+        //Debug.Log("CheckForItems()");
         return Loot.Find(item => item.id == id);
     }
     

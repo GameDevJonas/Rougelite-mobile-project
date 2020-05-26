@@ -51,7 +51,8 @@ public class Arrow : MonoBehaviour
     {
         if (dir == "UL")
         {
-            transform.Rotate(0, 0, 45);
+            //transform.Rotate(0, 0, 45);
+            transform.Rotate(0, 0, 0);
         }
         else if (dir == "U")
         {
@@ -59,7 +60,8 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "UR")
         {
-            transform.Rotate(0, 0, -45);
+            //transform.Rotate(0, 0, -45);
+            transform.Rotate(0, 0, 0);
         }
         else if (dir == "R")
         {
@@ -67,7 +69,8 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "DR")
         {
-            transform.Rotate(0, 0, -135);
+            //transform.Rotate(0, 0, -135);
+            transform.Rotate(0, 0, -180);
         }
         else if (dir == "D")
         {
@@ -75,7 +78,8 @@ public class Arrow : MonoBehaviour
         }
         else if (dir == "DL")
         {
-            transform.Rotate(0, 0, 135);
+            //transform.Rotate(0, 0, 135);
+            transform.Rotate(0, 0, -180);
         }
         else if (dir == "L")
         {

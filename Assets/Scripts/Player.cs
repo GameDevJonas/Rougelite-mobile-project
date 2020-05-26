@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public enum WeaponState { sword, bow };
     public WeaponState weaponInUse = WeaponState.sword;
-    public TextMeshProUGUI debugWeaponState;
+    //public TextMeshProUGUI debugWeaponState;
 
     private Rigidbody2D rb;
 
@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public GameObject sword;
 
     public Button swordAttack;
+    public Button switchButton;
+    public Button shieldButton;
 
     public float maxHealth;
     public float currentHealth;
@@ -39,6 +41,8 @@ public class Player : MonoBehaviour
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
 
+    public bool hasSword, hasBow, hasShield = true;
+
     public bool useTouch;
     public bool attack;
     public bool canMove = true;
@@ -46,6 +50,7 @@ public class Player : MonoBehaviour
     public bool canHeal = true;
     public bool canTakeDamage = true;
     public bool shieldIsUp = false;
+    public bool inKnockBack = false;
 
     public MenuManager menuManager;
 
@@ -61,13 +66,17 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        debugWeaponState.text = "sword";
+        //debugWeaponState.text = "sword";
 
         anim = GetComponentInChildren<Animator>();
 
         shootPoint = GameObject.FindGameObjectWithTag("ShootPoint").transform;
 
         swordAttack = GameObject.FindGameObjectWithTag("SwordButton").GetComponent<Button>();
+
+        switchButton = GetComponentInChildren<SwitchButton>().GetComponent<Button>();
+
+        shieldButton = GetComponentInChildren<DefendButton>().GetComponent<Button>();
 
         joystick = FindObjectOfType<FixedJoystick>();
 
@@ -101,13 +110,38 @@ public class Player : MonoBehaviour
         healthbar.SetHealth(currentHealth);
 
 
-        if (canMove == false && !shieldIsUp)
+        /*if (canMove == false && !shieldIsUp)
         {
             Invoke("MovementLock", 0.2f);
+        }*/
+
+        #region Button Managing with interactables based on what the player has
+        if (hasSword && !hasBow) // Maybe call a function when sacrificed one of these
+        {
+            switchButton.interactable = false;
+            weaponInUse = WeaponState.sword;
         }
+        else if (!hasSword && hasBow)
+        {
+            switchButton.interactable = false;
+            weaponInUse = WeaponState.bow;
+        }
+        else
+        {
+            switchButton.interactable = true;
+        }
+
+        shieldButton.interactable = hasShield;
+
+        #endregion
+
         if (currentHealth <= 0)
         {
             //TRIGGER DEATH ANIM AND THEN LOAD PERHAPS USE COROUTINE
+            anim.SetTrigger("Death");
+            canMove = false;
+            canAttack = false;
+            canHeal = false;
             if (menuManager != null)
             {
                 menuManager.ToAlphaLevel();
@@ -116,9 +150,11 @@ public class Player : MonoBehaviour
 
     }
 
-    public void TakeDamage(float dmg, string dir)
+    public void TakeDamageAndKnockBack(float dmg, string dir)
     {
         //HURT ANIM
+
+
         if (canTakeDamage)
         {
             HealthSystem.Damage(dmg);
@@ -129,7 +165,7 @@ public class Player : MonoBehaviour
             if (dir == "U")
             {
                 rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Force);
-
+                
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
@@ -154,9 +190,25 @@ public class Player : MonoBehaviour
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
+            inKnockBack = true;
+            anim.SetBool("ShieldUp", true);
+            canMove = false;
+            canAttack = false;
+            canHeal = false;
+            Invoke("CanHeal", .5f);
+            Invoke("AttackLock", .5f);
+            Invoke("MovementLock", .5f);
+            Invoke("StopKnockBack", 1f);
         }
     }
 
+    void StopKnockBack()
+    {
+        anim.SetBool("ShieldUp", false);
+        rb.velocity = Vector2.zero;
+        inKnockBack = false;
+        shieldIsUp = false;
+    }
 
     private void FixedUpdate()
     {
@@ -224,12 +276,12 @@ public class Player : MonoBehaviour
         }
 
         //Shield up
-        if (Input.GetKey(KeyCode.Mouse1) && !useTouch)
+        if (Input.GetKey(KeyCode.Mouse1) && !useTouch && hasShield)
         {
             shieldIsUp = true;
             StartCoroutine(ShieldUp());
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse1) && !useTouch)
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && !useTouch && hasShield && !inKnockBack)
         {
             shieldIsUp = false;
         }
@@ -276,10 +328,14 @@ public class Player : MonoBehaviour
 
         //Player animation states
         anim.SetInteger("WeaponState", weaponState);
-        #endregion
+        anim.SetBool("HasSword", hasSword);
+        anim.SetBool("HasBow", hasBow);
+        anim.SetBool("HasShield", hasShield);
 
         //Shield
         anim.SetBool("ShieldUp", shieldIsUp);
+        #endregion
+
     }
 
     void ApplyMovement()
@@ -298,7 +354,7 @@ public class Player : MonoBehaviour
     {
         shieldIsUp = true;
 
-        while (shieldIsUp)
+        while (shieldIsUp || (shieldIsUp && inKnockBack) || inKnockBack)
         {
             yield return new WaitForSeconds(0.1f);
             canTakeDamage = false;
@@ -341,39 +397,51 @@ public class Player : MonoBehaviour
         if ((xInput == 1 && yInput == 1) && (canMove == true)) //Up right
         {
             dir = "UR";
-            shootPoint.localPosition = new Vector2(0.1f, 0.9f);
+            //shootPoint.localPosition = new Vector2(0.1f, 0.9f);
+            shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
         else if ((xInput == -1 && yInput == -1) && (canMove == true)) //Down left
         {
             dir = "DL";
-            shootPoint.localPosition = new Vector2(-0.3f, 0.6f);
+            //shootPoint.localPosition = new Vector2(-0.3f, 0.6f);
+            shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
         if ((xInput == 1 && yInput == -1) && (canMove == true)) //Down right
         {
             dir = "DR";
-            shootPoint.localPosition = new Vector2(0.1f, 0.6f);
+            //shootPoint.localPosition = new Vector2(0.1f, 0.6f);
+            shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
         if ((xInput == -1 && yInput == 1) && (canMove == true)) //Up left
         {
             dir = "UL";
-            shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
+            //shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
+            shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
     }
 
     public void SwitchWeapon()
     {
-        if (weaponInUse == WeaponState.sword)
+        if (hasSword && hasBow)
         {
-            debugWeaponState.text = "bow";
-            weaponInUse = WeaponState.bow;
+            if (weaponInUse == WeaponState.sword)
+            {
+                //debugWeaponState.text = "bow";
+                weaponInUse = WeaponState.bow;
+            }
+            else if (weaponInUse == WeaponState.bow)
+            {
+                //debugWeaponState.text = "sword";
+                weaponInUse = WeaponState.sword;
+            }
+            anim.SetTrigger("SwitchWeapons");
+            Invoke("ResetWeaponSwitchTrigger", .1f);
         }
-        else if (weaponInUse == WeaponState.bow)
-        {
-            debugWeaponState.text = "sword";
-            weaponInUse = WeaponState.sword;
-        }
-        anim.SetTrigger("SwitchWeapons");
-        //anim.ResetTrigger("SwitchWeapons");
+    }
+
+    void ResetWeaponSwitchTrigger()
+    {
+        anim.ResetTrigger("SwitchWeapons");
     }
 
     public void DoAnAttack()
@@ -397,6 +465,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("DoAttack");
             anim.SetBool("InAttackAnim", true);
             //---------------------
+            canHeal = false;
             GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
             clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir);
             canMove = false;
@@ -406,7 +475,8 @@ public class Player : MonoBehaviour
             if (canAttack == false)
             {
                 Invoke("AttackLock", attackspeed);
-                Invoke("MovementLock", attackspeed);
+                Invoke("MovementLock", attackspeed / 2);
+                Invoke("CanHeal", attackspeed / 2);
             }
         }
     }
@@ -416,18 +486,20 @@ public class Player : MonoBehaviour
         if (canAttack)
         {
             //SETS ANIMATOR TRIGGER
-            anim.SetTrigger("DoFire");
             anim.SetBool("InAttackAnim", true);
+            anim.SetTrigger("DoFire");
             //---------------------
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
             arrowClone.GetComponent<Arrow>().ShootyShoot(dir);
             canMove = false;
             canAttack = false;
+            canHeal = false;
             //Destroy(arrowClone, 5f);
             if (canAttack == false)
             {
                 Invoke("AttackLock", shootSpeed);
-                Invoke("MovementLock", attackspeed);
+                Invoke("MovementLock", shootSpeed);
+                Invoke("CanHeal", shootSpeed);
             }
         }
     }
@@ -447,7 +519,6 @@ public class Player : MonoBehaviour
     }
     void CanHeal()
     {
-
         canHeal = true;
     }
     public void RestartScene()

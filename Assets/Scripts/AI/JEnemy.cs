@@ -290,23 +290,23 @@ public class JEnemy : MonoBehaviour
 
     public IEnumerator WalkState()
     {
-        StopCoroutine(IdleState());
+        //StopCoroutine(IdleState());
         yield return new WaitForSeconds(Random.Range(0, 3));
         aIPath.enabled = true;
         aIPath.canMove = true;
+        destination.target = player.transform;
         while (myRoom.bounds.Contains(player.transform.position)) //Go to player
         {
             yield return new WaitForSeconds(.1f);
             /*walkPoint = (player.transform.position - transform.position).normalized * speed;
             rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
-            destination.target = player.transform;
             if (aIPath.reachedEndOfPath)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(2f);
                 myState = EnemyState.attack;
             }
         }
-        while (!myRoom.bounds.Contains(player.transform.position) && !aIPath.isStopped) //Return to startPos
+        if (!myRoom.bounds.Contains(player.transform.position)) //Return to startPos
         {
             yield return new WaitForSeconds(.2f);
             /*walkPoint = (startPos - transform.position).normalized * speed;
@@ -318,7 +318,7 @@ public class JEnemy : MonoBehaviour
             myState = EnemyState.idle;
         }
 
-        Debug.Log("Walkstate is fin");
+        //Debug.Log("Walkstate is fin");
         aIPath.canMove = false;
         myState = EnemyState.idle;
 

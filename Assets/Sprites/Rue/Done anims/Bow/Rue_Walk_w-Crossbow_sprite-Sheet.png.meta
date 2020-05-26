@@ -1,0 +1,668 @@
+fileFormatVersion: 2
+guid: 9f0ba485ef2d0e041ba35a80af7588ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2309272348586145754
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_0
+  - first:
+      213: -4642485983560209812
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_1
+  - first:
+      213: 9178060576398261066
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_2
+  - first:
+      213: 4082978422856037801
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_3
+  - first:
+      213: -8733481960638360460
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_4
+  - first:
+      213: 228785386763023022
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_5
+  - first:
+      213: 4927686061043034078
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_6
+  - first:
+      213: 530702720840740807
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_7
+  - first:
+      213: 8481368752027163175
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_8
+  - first:
+      213: -4600149349459434653
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_9
+  - first:
+      213: 1565804841541523455
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_10
+  - first:
+      213: -3429336892199750912
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_11
+  - first:
+      213: 8469588551548000479
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_12
+  - first:
+      213: -2763149614769434981
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_13
+  - first:
+      213: 2594149204707587035
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_14
+  - first:
+      213: -392542217852175714
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_15
+  - first:
+      213: -8640572650761538630
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_16
+  - first:
+      213: -8526067180879304021
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_17
+  - first:
+      213: 8935261058070247368
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_18
+  - first:
+      213: -2913410119943813104
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_19
+  - first:
+      213: 5933068947868986537
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_20
+  - first:
+      213: -1540906965572923048
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_21
+  - first:
+      213: 1973418837084482067
+    second: Rue_Walk_w-Crossbow_sprite-Sheet_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62804e4b801d3ffd0800000000000000
+      internalID: -2309272348586145754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ae92b4893929fb0800000000000000
+      internalID: -4642485983560209812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b3c3f77750f5f70800000000000000
+      internalID: 9178060576398261066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a53be73e37a9a830800000000000000
+      internalID: 4082978422856037801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4745ed3cd607cc680800000000000000
+      internalID: -8733481960638360460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 325
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea27fcbd81fcc2300800000000000000
+      internalID: 228785386763023022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed72d115d58a26440800000000000000
+      internalID: 4927686061043034078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfab05105f6d5700800000000000000
+      internalID: 530702720840740807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a5da991ffd3b570800000000000000
+      internalID: 8481368752027163175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363e9bf0a8cf820c0800000000000000
+      internalID: -4600149349459434653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff75ba7153bdab510800000000000000
+      internalID: 1565804841541523455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003ba45144c8860d0800000000000000
+      internalID: -3429336892199750912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8dbb0f9e50a8570800000000000000
+      internalID: 8469588551548000479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e096ea01257a9d0800000000000000
+      internalID: -2763149614769434981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 223
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd335f015f4400420800000000000000
+      internalID: 2594149204707587035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ab391cee86d8af0800000000000000
+      internalID: -392542217852175714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3376f24f4861880800000000000000
+      internalID: -8640572650761538630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 123
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baaa29072135da980800000000000000
+      internalID: -8526067180879304021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c778ad579c600c70800000000000000
+      internalID: 8935261058070247368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01888bb8eec7197d0800000000000000
+      internalID: -2913410119943813104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 24
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aca1a9f5ce765250800000000000000
+      internalID: 5933068947868986537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851d91567499d9ae0800000000000000
+      internalID: -1540906965572923048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Walk_w-Crossbow_sprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a2c790afdf26b10800000000000000
+      internalID: 1973418837084482067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 17cc18aed873e74449377a40a8dad58a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
