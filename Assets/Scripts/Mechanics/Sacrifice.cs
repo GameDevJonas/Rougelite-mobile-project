@@ -11,13 +11,15 @@ public class Sacrifice
     public int level;
     public string description;
     public SacrificeType type;
+    public int intensity;
 
-    public Sacrifice (int id, int level, string description, SacrificeType type)
+    public Sacrifice (int id, int level, string description, SacrificeType type, int intensity)
     {
         this.id = id;
         this.level = level;
         this.description = description;
         this.type = type;
+        this.intensity = intensity;
     }
     public Sacrifice(Sacrifice sacrifice)
     {
@@ -25,5 +27,6 @@ public class Sacrifice
         this.level = sacrifice.level;
         this.description = sacrifice.description;
         this.type = sacrifice.type;
+        this.intensity = sacrifice.intensity;
     }
 }
