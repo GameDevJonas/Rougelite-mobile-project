@@ -5,7 +5,7 @@ using System;
 
 public enum SacrificeType { loot, consumable, mechanic, debuff}
 [Serializable]
-public class Sacrifice
+public class Sacrifice //the sacrifice class which sacrifices are made of and used in other scripts.
 {
     public int id;
     public int level;

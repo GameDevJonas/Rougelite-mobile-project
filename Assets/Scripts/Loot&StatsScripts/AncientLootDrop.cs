@@ -14,7 +14,7 @@ public class AncientLootDrop : MonoBehaviour
     public GameObject MenuManager;
     public GameObject LegendaryLoot;
     public PlayerStats PlayerStats;
-    public List<int> AvailableLoot = new List<int>(new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 });
+    public List<int> AvailableLoot = new List<int>(new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }); //list of database id's
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class AncientLootDrop : MonoBehaviour
     }
     private void Update()
     {
-        if (PlayerStats.ShieldReflectsDmg.Value >= 1 || PlayerStats.ShieldArm.Value >= 1)
+        if (PlayerStats.ShieldReflectsDmg.Value >= 1 || PlayerStats.ShieldArm.Value >= 1) //if already found or debuff makes it useless, remove from table
         {
             AvailableLoot.Remove(25);
         }
@@ -75,7 +75,7 @@ public class AncientLootDrop : MonoBehaviour
         }
 
 
-        if (AvailableLoot.Count == 0)
+        if (AvailableLoot.Count == 0) //if nothing available, spawn another item one tier lower.
         {
             Instantiate(LegendaryLoot, transform.position, Quaternion.identity);
             Destroy(gameObject, 0);
@@ -83,13 +83,13 @@ public class AncientLootDrop : MonoBehaviour
 
         if (IsInRange == true && AvailableLoot.Count > 0)
         {
-            drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)];
-            GiveItem();
+            drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)]; //pull a random range based on the list items left.
+            GiveItem(); //and give item.
         }
     }
     private void GiveItem()
     {
-        MenuManager.GetComponent<LootFound>().GiveItem(drop);
+        MenuManager.GetComponent<LootFound>().GiveItem(drop); //send to loot found script.
         Destroy(gameObject, 0);
     }
     private void OnTriggerEnter2D(Collider2D collider)

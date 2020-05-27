@@ -15,7 +15,9 @@ public class BossdoorScript : MonoBehaviour
     public PlayerStats playerStats;
 
     public List<Sacrifice> sacrifice = new List<Sacrifice>();
+    public List<Item> commonsac = new List<Item>();
     public SacrificeDatabase SacrificeDatabase;
+    public ItemDatabase ItemDatabase;
 
     public int level;
 
@@ -45,10 +47,15 @@ public class BossdoorScript : MonoBehaviour
             player = rue.GetComponent<Player>();
             playerStats = rue.GetComponent<PlayerStats>();
             SacrificeDatabase = rue.GetComponentInChildren<SacrificeDatabase>();
+            ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
             level = SceneManager.GetActiveScene().buildIndex;
+            if (level > 5)
+            {
+                level -= 5;
+            }
         }
-        /*AddSacrifices();
-        RemoveSacrifices();*/
+        AddSacrifices();
+        RemoveSacrifices();
 
         if (IsInRange == true && PromptReady == true)
         {
@@ -134,18 +141,30 @@ public class BossdoorScript : MonoBehaviour
         }
     }
 
-    /*public void AddSacrifices()
+    public void AddSacrifices()
     {
-        var Playercommon = playerStats.Loot.Any(des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) && des.collection.Equals(3));
-        var Sacrificecommon = sacrifice.Any(des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
+        var Playercommon = playerStats.Loot.Any
+            (des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) 
+            && playerStats.Loot.Any(r => r.collection >= 3));
+        var Sacrificecommon = sacrifice.Any
+            (des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
+        List<Item> commonitem = playerStats.Loot.FindAll((des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase)
+            && playerStats.Loot.Any(r => r.collection >= 3)));
+
         if (player.potion >= 2 )
         {
             GetSacrifice(consumable, 0, level);
         }
 
-        if (Playercommon && !Sacrificecommon)
+        if (commonsac != commonitem)
         {
-            GetSacrifice(loot, 0, level);
+            commonsac.RemoveRange(0, commonsac.Count);
+            commonsac.AddRange(commonitem);
+            if (Playercommon && !Sacrificecommon)
+            {
+                GetSacrifice(loot, 0, level);
+            }
+            
         }
     }
     public void GetSacrifice(SacrificeType type, int intensity, int level)
@@ -155,14 +174,19 @@ public class BossdoorScript : MonoBehaviour
     }
     public void RemoveSacrifices()
     {
-        var Playercommon = playerStats.Loot.Any(des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) && des.collection.Equals(3));
-        var Sacrificecommon = sacrifice.Any(des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
+        Item Sacrificecommon = commonsac.Find(des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase)
+        && commonsac.Any(r => r.collection < 3));
+        var commonitem = commonsac.Any(r => r.collection <= 3);
 
         if (player.potion >= 2)
         {
             RemoveSacrifice(consumable, 0);
         }
-        if (!Playercommon && Sacrificecommon)
+        if (commonitem)
+        {
+            commonsac.Remove(Sacrificecommon);
+        }
+        if (commonsac.Count == 0)
         {
             RemoveSacrifice(loot, 0);
         }
@@ -178,6 +202,6 @@ public class BossdoorScript : MonoBehaviour
     public Sacrifice CheckforSacrifice(SacrificeType type, int intensity)
     {
         return sacrifice.Find(item => (item.type == type) && (item.intensity == intensity));
-    }*/
+    }
 
 }

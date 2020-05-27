@@ -19,14 +19,13 @@ public class LootFound : MonoBehaviour
     void Start()
     {
         MenuManager = gameObject.GetComponent<MenuManager>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (player == null && SceneManager.GetActiveScene().buildIndex != 0)
+        if (player == null && SceneManager.GetActiveScene().buildIndex != 0) //gets current player and itemdatabase
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
@@ -35,7 +34,8 @@ public class LootFound : MonoBehaviour
 
         if (Loot.Count > 0 && MenuManager.isPaused && AcceptLoot.Loot.Count == 0)
         {
-            AcceptLoot.GiveItem(Loot[0].id, Loot[0].amount);
+            AcceptLoot.GiveItem(Loot[0].id, Loot[0].amount); //if this script has item in list and game is paused and nothing is in acceptloot. 
+            //The first item in the list is sent to acceptloot script and removed from this one. The button is turned on as well.
             Button.SetActive(true);
             RemoveItem(Loot[0].id);
         }
@@ -45,15 +45,12 @@ public class LootFound : MonoBehaviour
     {
         Item itemToAdd = ItemDatabase.GetItem(id);
         bool AlreadyinInventory = false;
-        foreach (Item item in Loot)
+        foreach (Item item in Loot) //items are given here from loot drop prefabs, and are checked if there's copies or not.
         {
             if (item.id == itemToAdd.id)
             {
                 item.amount += 1;
                 AlreadyinInventory = true;
-
-                Debug.Log("Got another " + itemToAdd.title + itemToAdd.description);
-
                 Item itemCheck = CheckforItems(id);
             }
         }

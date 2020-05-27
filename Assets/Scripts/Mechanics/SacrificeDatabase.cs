@@ -21,30 +21,8 @@ public class SacrificeDatabase : MonoBehaviour
         debuff = SacrificeType.debuff;
         BuildDataBase();
     }
-    
-    /*public List<Sacrifice> GetSacrifice(int level)
-    {
-        List<Sacrifice> sacList = new List<Sacrifice>();
 
-        foreach (var item in sacrifices)
-        {
-            for (int i = 0; i < sacrifices.Count; i++)
-            {
-                if (sacrifices[i].level == level)
-                {
-                    sacList.Add(sacrifices[i]);
-                }
-                else
-                {
-                    return sacList;
-                }
-            }
-            return sacList;
-        }
-        return sacList;
-    }*/
-
-    public Sacrifice GetSacrifice(SacrificeType type, int intensity, int level)
+    public Sacrifice GetSacrifice(SacrificeType type, int intensity, int level) //specify item wanted and get it from database.
     {
         return sacrifices.Find(item => (item.type == type) && (item.intensity == intensity) && (item.level == level));
     }

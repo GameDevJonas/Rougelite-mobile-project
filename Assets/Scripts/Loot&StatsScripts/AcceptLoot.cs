@@ -22,17 +22,17 @@ public class AcceptLoot : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (player == null)
+        if (player == null) //finds player and scripts after load.
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
             PlayerStats = player.GetComponent<PlayerStats>();
         }
     }
-    // Update is called once per frame
+
     public void GiveItem(int id, int amount)
     {
-        Item item = ItemDatabase.GetItem(id);
+        Item item = ItemDatabase.GetItem(id); //gets item from lootfound and prints information on accept button.
         item.amount = amount;
         itemTier.text = item.tier;
         if (item.amount <= 1)
@@ -61,7 +61,7 @@ public class AcceptLoot : MonoBehaviour
         int oldLoot = Loot[0].amount + differencial;
         int newloot = oldLoot;
 
-        while (oldLoot > differencial)
+        while (oldLoot > differencial) // I don't know how this works. I just brute forced it and slammed my head against it until it did.
         {
             newloot = oldLoot - 1;
             while (oldLoot > newloot)
@@ -71,7 +71,7 @@ public class AcceptLoot : MonoBehaviour
                 break;
             }
         }
-        Loot[0].amount = 1;
+        Loot[0].amount = 1; //resets loot amount, so that it doesn't carry over next time loot of the same time is picked up.
         RemoveItem(Loot[0].id);
         AcceptButton.SetActive(false);
     }
@@ -80,7 +80,7 @@ public class AcceptLoot : MonoBehaviour
         Item item = CheckforItems(id);
         if (item != null)
         {
-            Loot.Remove(item);
+            Loot.Remove(item); //if item in list, remove it.
         }
     }
 }

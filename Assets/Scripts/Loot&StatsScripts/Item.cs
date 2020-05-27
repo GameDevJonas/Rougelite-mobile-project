@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class Item
+public class Item //the public item class which items are made from and used.
 {
     public int id;
     public string tier;

@@ -10,10 +10,10 @@ public class CharacterStat
     public float BaseValue;
     protected float lastBaseValue = float.MinValue;
     protected readonly List<StatModifier> statModifiers;
-    public readonly ReadOnlyCollection<StatModifier> StatModifiers; // Add this variable
+    public readonly ReadOnlyCollection<StatModifier> StatModifiers;
 
    
-    protected virtual int CompareModifierOrder(StatModifier a, StatModifier b)
+    protected virtual int CompareModifierOrder(StatModifier a, StatModifier b) //sorts order so flat, percent and multiplicative values are calculated correctly
     {
         if (a.Order < b.Order)
             return -1;
@@ -24,35 +24,35 @@ public class CharacterStat
     public CharacterStat()
     {
         statModifiers = new List<StatModifier>();
-        StatModifiers = statModifiers.AsReadOnly();
+        StatModifiers = statModifiers.AsReadOnly(); //read only, so they're not tampered with. It poops itself if modified after a bunch of calculations.
     }
 
     public CharacterStat(float baseValue) : this()
     {
-        BaseValue = baseValue;
+        BaseValue = baseValue; //sets base value either in scripts or inspector.
     }
     public virtual float Value
     {
         get
         {
-            if (isDirty || lastBaseValue != BaseValue)
+            if (isDirty || lastBaseValue != BaseValue) //only updates when changed, instead of constantly
             {
                 lastBaseValue = BaseValue;
-                _value = CalculateFinalValue();
+                _value = CalculateFinalValue(); 
                 isDirty = false;
             }
             return _value;
         }
     }
 
-    public virtual void AddModifier(StatModifier mod)
+    public virtual void AddModifier(StatModifier mod) //method to add modifiers in other scripts.
     {
         isDirty = true;
         statModifiers.Add(mod);
         statModifiers.Sort(CompareModifierOrder);
     }
 
-    public virtual bool RemoveModifier(StatModifier mod)
+    public virtual bool RemoveModifier(StatModifier mod) //method to remove modifiers in other scripts.
     {
         if (statModifiers.Remove(mod))
         {
@@ -61,7 +61,7 @@ public class CharacterStat
         }
         return false;
     }
-    public virtual bool RemoveAllModifiersFromSource(object source)
+    public virtual bool RemoveAllModifiersFromSource(object source) //method to remove specific item modifiers in other scripts.
     {
         bool didRemove = false;
 
@@ -107,7 +107,7 @@ public class CharacterStat
             }
         }
 
-        return (float)Math.Round(finalValue, 4);
+        return (float)Math.Round(finalValue, 4); //rounds floats to be more comprehensible.
     }
 }
 

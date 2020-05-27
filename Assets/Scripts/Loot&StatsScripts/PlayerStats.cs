@@ -62,11 +62,10 @@ public class PlayerStats : MonoBehaviour
     private StatModifier flat;
     private StatModifier percent;
     private StatModifier mult;
-    
-    public bool Fixed = true;
 
     private void Start()
     {
+        //Sets basevalues on stats, and updates the player script to use these stats.
         Health.BaseValue = 50;
         Strength.BaseValue = 10;
         Dexterity.BaseValue = 10;
@@ -118,11 +117,11 @@ public class PlayerStats : MonoBehaviour
         UpdateStatsInfo();
 
     }
-    public void GiveItem(int id)
+    public void GiveItem(int id) //the method used in other scripts to transfer the correct item from the ItemDatabase to this script. This is called in Accept Loot script.
     {
         Item itemToAdd = ItemDatabase.GetItem(id);
         bool AlreadyinInventory = false;
-        foreach (Item item in Loot)
+        foreach (Item item in Loot) //Checks if already in inventory, and if it is, it adds a higher number to collection instead of copies within the list.
         {
             if (item.id == itemToAdd.id)
             {
@@ -130,16 +129,15 @@ public class PlayerStats : MonoBehaviour
                 AlreadyinInventory = true;
                 Item itemCheck = CheckforItems(id);
 
-                Debug.Log("Got another " + itemToAdd.title + itemToAdd.description);
-                if (itemToAdd.modType == "flat")
+                if (itemToAdd.modType == "flat") //adds additive flat number increases / decreases. 10 + 10 = 20
                 {
                     AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
-                if (itemToAdd.modType == "percent")
+                if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
                 {
                     AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
-                if (itemToAdd.modType == "multpercent")
+                if (itemToAdd.modType == "multpercent") //adds multiplicative percent increases. (10 + 10%) 11 + (10% + 10%) 11% = 22.21
                 {
                     AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
@@ -148,9 +146,8 @@ public class PlayerStats : MonoBehaviour
         if (!AlreadyinInventory)
         {
             Loot.Add(itemToAdd);
-            Item itemCheck = CheckforItems(id);
+            Item itemCheck = CheckforItems(id); //checks if item id is in list.
 
-            Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
             if (itemToAdd.modType == "flat")
             {
                 AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
@@ -176,7 +173,7 @@ public class PlayerStats : MonoBehaviour
         if (CritChance.Value > 100)
         {
             RemoveAllModifiers(CritChance);
-            if (CritChance.Value == CritChance.BaseValue)
+            if (CritChance.Value == CritChance.BaseValue) //if value above max, remove modifiers and set to max.
             {
                 AddFlatModifier(CritChance, 100);
                 return;
@@ -240,13 +237,13 @@ public class PlayerStats : MonoBehaviour
     }
     public Item CheckforItems(int id)
     {
-        return Loot.Find(item => item.id == id);
+        return Loot.Find(item => item.id == id); //finds and returns id.
     }
     
     
     public void AddFlatModifier(CharacterStat statType, float statValue)
     {
-        flat = new StatModifier(statValue, StatModType.Flat, this);
+        flat = new StatModifier(statValue, StatModType.Flat, this); //input desired stat modifier and stat will be modified and updated.
         statType.AddModifier(flat);
         UpdateStatsInfo();
     }
@@ -268,10 +265,10 @@ public class PlayerStats : MonoBehaviour
         Item item = CheckforItems(id);
         if (item != null)
         {
-            Loot.Remove(item);
+            Loot.Remove(item); //removes item from inventory
         }
     }
-    public void RemoveAllModifiers(CharacterStat statType)
+    public void RemoveAllModifiers(CharacterStat statType) //removes modifiers from items. (All at once at the moment.)
     {
         {
             statType.RemoveModifier(flat);

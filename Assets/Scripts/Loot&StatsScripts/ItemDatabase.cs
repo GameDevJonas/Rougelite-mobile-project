@@ -114,7 +114,7 @@ public class ItemDatabase : MonoBehaviour
 
     public Item GetItem(int id)
     {
-        return items.Find(item => item.id == id);
+        return items.Find(item => item.id == id); //find item by ID and give to the script using this function
     }
 
     void BuildDatabase()

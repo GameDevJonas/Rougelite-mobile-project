@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
 
-        if (currentHealth == maxHealth)
+        if (HealthSystem.GetHealth() == maxHealth)
         {
             HealthSystem = new HealthSystem(playerstats.Health.Value);
         }
@@ -366,11 +366,13 @@ public class Player : MonoBehaviour
         {
             debugWeaponState.text = "bow";
             weaponInUse = WeaponState.bow;
+            PlayerStats playerstats = GetComponent<PlayerStats>();
         }
         else if (weaponInUse == WeaponState.bow)
         {
             debugWeaponState.text = "sword";
             weaponInUse = WeaponState.sword;
+            PlayerStats playerstats = GetComponent<PlayerStats>();
         }
         anim.SetTrigger("SwitchWeapons");
         //anim.ResetTrigger("SwitchWeapons");

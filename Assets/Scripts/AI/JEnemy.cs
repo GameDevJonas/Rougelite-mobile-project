@@ -211,20 +211,20 @@ public class JEnemy : MonoBehaviour
 
     private void DropLootAndDie()
     {
-        foreach (var item in Table)
+        foreach (var item in Table) //checks table
         {
             lootTotal += item;
             dropping = true;
         }
-        float randomNumber = Random.Range(0, (lootTotal + 1));
+        float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
 
-        foreach (var weight in Table)
+        foreach (var weight in Table) //weight, is the number listed in the table of drop chance.
         {
-            if (randomNumber <= weight)
+            if (randomNumber <= weight) //if less or equal to a weight, give item
             {
 
 
-                if (weight == commondropRange)
+                if (weight == commondropRange) 
                 {
                     Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
@@ -267,7 +267,7 @@ public class JEnemy : MonoBehaviour
                 }
             }
 
-            else
+            else //if not, roll -= highest value weight.
 
             {
                 randomNumber -= weight;
@@ -341,13 +341,13 @@ public class JEnemy : MonoBehaviour
                 Arrow arrowCrit = collider.GetComponent<Arrow>();
                 if (!arrowCrit.crit)
                 {
-                    float damage = playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value;
+                    float damage = playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value; //deals damage to this enemy and heals player.
                     healthSystem.Damage(damage);
                     rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                     Debug.Log("Crossbow hit: " + damage);
                     attacked = true;
                 }
-                else if (arrowCrit.crit)
+                else if (arrowCrit.crit) //same but critically striked for more damage.
                 {
                     float damage = (playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
                     healthSystem.Damage(damage);

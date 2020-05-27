@@ -24,7 +24,7 @@ public class EnemyStats
 
     public EnemyType thisType;
 
-    public EnemyStats(EnemyType enemyType, int level)
+    public EnemyStats(EnemyType enemyType, int level) //By using this public class, through inputting enemy type, stats are given to enemy scripts.
     {
         if (enemyType == EnemyType.trash)
         {
@@ -34,8 +34,8 @@ public class EnemyStats
                 damage = 10;
                 speed = 30;
 
-                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
-                Table = table;
+                int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange }; //available items to drop.
+                Table = table; //chance to drop.
                 commondropRange = 20;
                 raredropRange = 5;
                 legendarydropRange = 0;

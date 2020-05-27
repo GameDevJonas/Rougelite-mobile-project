@@ -3,7 +3,7 @@
     public readonly float Value;
     public readonly StatModType Type;
     public readonly int Order;
-    public readonly object Source; // Added this variable
+    public readonly object Source;
 
 
     // "Main" constructor. Requires all variables.
