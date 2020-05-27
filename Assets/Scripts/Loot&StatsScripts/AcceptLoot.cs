@@ -32,6 +32,7 @@ public class AcceptLoot : MonoBehaviour
 
     public void GiveItem(int id, int amount)
     {
+        Debug.Log(id);
         Item item = ItemDatabase.GetItem(id); //gets item from lootfound and prints information on accept button.
         item.amount = amount;
         itemTier.text = item.tier;

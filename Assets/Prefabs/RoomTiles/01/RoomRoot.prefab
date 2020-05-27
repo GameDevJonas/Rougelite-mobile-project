@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: 66991220ac46c564fa52cf9c93486d4f, type: 3}
-  m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b3cb3d54ce4d2664095474536bbe8fbc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   - color: {r: 0, g: 0, b: 1, a: 1}
     prefab: {fileID: 1132586047390324, guid: d19f5808b3e53ac40b15db7587807cbc, type: 3}
   - color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 6429758075927487342, guid: 414e621c93069bb4e8fff0887d883d79,
+    prefab: {fileID: 6429758075927487342, guid: 5e5e0c8bff0b73146a67ee9e0558ad10,
       type: 3}
   - color: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 44572211779749757, guid: 5e08b1999d80d1a4a9e5267574b31409, type: 3}
@@ -124,7 +124,6 @@ MonoBehaviour:
     prefab: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2, type: 3}
   - color: {r: 1, g: 1, b: 1, a: 1}
     prefab: {fileID: 1348133729177994, guid: 6563d0b76516a724986f0acabf0e5857, type: 3}
-  enemySpawns: []
   theGen: {fileID: 0}
 --- !u!61 &6089493492130043892
 BoxCollider2D:

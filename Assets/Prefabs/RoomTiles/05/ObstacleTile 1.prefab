@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212986427594164532}
   - component: {fileID: 61055580650241214}
   - component: {fileID: 1770193117645420551}
+  - component: {fileID: 4333305442959267497}
   m_Layer: 10
   m_Name: ObstacleTile 1
   m_TagString: Untagged
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f5c7025affed1634eb3e0f6cb8dc2e02, type: 3}
+  m_Sprite: {fileID: -8493071338603864884, guid: cf273222b6575d349bb4a8ecfbabf55e,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,3 +125,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCol: {fileID: 0}
   myRend: {fileID: 0}
+--- !u!114 &4333305442959267497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132586047390324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919f5fc142f605647ad8d74f447fef66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleSprites:
+  - {fileID: -8493071338603864884, guid: cf273222b6575d349bb4a8ecfbabf55e, type: 3}
+  - {fileID: -2001126191710807234, guid: cf273222b6575d349bb4a8ecfbabf55e, type: 3}
+  - {fileID: -4716070987222481008, guid: cf273222b6575d349bb4a8ecfbabf55e, type: 3}
+  - {fileID: -8086065000658564810, guid: cf273222b6575d349bb4a8ecfbabf55e, type: 3}

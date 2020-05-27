@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour
     //public GameObject mainMenuPause;
     public GameObject pauseButton;
     public GameObject otherCanvas;
+    public GameObject menuLogo;
+
+    GameObject playerCanvas;
 
     #region Main Menu loadingBar
     public GameObject loadingThing;
@@ -32,6 +35,7 @@ public class MenuManager : MonoBehaviour
         isPaused = false;
         toBoss = false;
         //mainMenuPause.SetActive(false);
+        menuLogo.SetActive(true);
         otherCanvas.SetActive(true);
         pauseButton.SetActive(true);
         DontDestroyOnLoad(this);
@@ -43,6 +47,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        menuLogo.SetActive(false);
         fromStartMenu = true;
         startButton.SetActive(false);
         loadingThing.SetActive(true);
@@ -59,6 +64,10 @@ public class MenuManager : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 1;
+            if (playerCanvas != null)
+            {
+                playerCanvas.SetActive(true);
+            }
             otherCanvas.SetActive(true);
             pauseMenu.SetActive(false);
             if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -71,6 +80,10 @@ public class MenuManager : MonoBehaviour
         }
         else if (!isPaused)
         {
+            if (playerCanvas != null)
+            {
+                playerCanvas.SetActive(false);
+            }
             pauseMenu.SetActive(true);
             if (SceneManager.GetActiveScene().buildIndex != 0)
             {
@@ -107,11 +120,11 @@ public class MenuManager : MonoBehaviour
     public void ToAlphaLevel()
     {
         //wait for player animations
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
-            //fromStartMenu = true;
-            startButton.SetActive(false);
-            loadingThing.SetActive(true);
-            StartCoroutine(StartLoad(0));
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        //fromStartMenu = true;
+        startButton.SetActive(false);
+        loadingThing.SetActive(true);
+        StartCoroutine(StartLoad(0));
 
     }
 
@@ -148,6 +161,7 @@ public class MenuManager : MonoBehaviour
                     if (fromStartMenu)
                     {
                         GameObject player = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+                        playerCanvas = player.GetComponentInChildren<Canvas>().gameObject;
                         DontDestroyOnLoad(player);
                         fromStartMenu = false;
                     }

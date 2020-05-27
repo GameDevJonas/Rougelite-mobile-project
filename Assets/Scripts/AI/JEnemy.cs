@@ -12,8 +12,8 @@ public class JEnemy : MonoBehaviour
     //private enum WhatTypeOfEnemy { weak, normal, strong };
     //private WhatTypeOfEnemy myType;
 
-    public enum EnemyState { idle, backOff, walking, attack };
-    public EnemyState myState = EnemyState.idle;
+    public enum EnemyState { non, idle, backOff, walking, attack, damage, dead };
+    public EnemyState myState = EnemyState.non;
 
     public Collider2D myHitbox;
     public Collider2D myRoom;
@@ -45,8 +45,13 @@ public class JEnemy : MonoBehaviour
     public bool hidesInDark;
     public bool hidesInLight;
     public bool attacked;
+    public bool hasAttacked = false;
+    public bool isDead = false;
+    bool nonStateChecker = true;
 
     public int level;
+
+    public Transform pointA, pointB, pointC, pointD;
 
     #region Loot drops
     [Header("Loot dropping")]
@@ -69,6 +74,11 @@ public class JEnemy : MonoBehaviour
     public bool dropping = false;
     #endregion
 
+    #region Animation
+    Animator anim;
+    bool isIdle;
+    bool isWalking;
+    #endregion
 
     void Start()
     {
@@ -81,6 +91,11 @@ public class JEnemy : MonoBehaviour
 
         aIPath = GetComponent<AIPath>();
         destination = GetComponent<AIDestinationSetter>();
+
+        pointA = GetComponentInChildren<Animation>().transform;
+        pointB = GetComponentInChildren<BoxCollider>().transform;
+        pointC = GetComponentInChildren<MeshFilter>().transform;
+        pointD = GetComponentInChildren<SphereCollider>().transform;
 
         //DecideEnemyType();
 
@@ -110,6 +125,8 @@ public class JEnemy : MonoBehaviour
         hidesInLight = EnemyStats.hidesInLight;
 
         aIPath.maxSpeed = speed;
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     /*public void DecideEnemyType()
@@ -135,42 +152,6 @@ public class JEnemy : MonoBehaviour
             GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }*/
-
-    // Update is called once per frame
-    void Update()
-    {
-        myHealth = healthSystem.GetHealth();
-
-        attacked = false;
-        switch (myState)
-        {
-            case EnemyState.idle:
-                destination.enabled = false;
-                StartCoroutine(IdleState());
-                break;
-            case EnemyState.walking:
-                destination.enabled = true;
-                StartCoroutine(WalkState());
-                break;
-            case EnemyState.attack:
-                AttackState();
-                break;
-
-        }
-
-        GetDirFromPlayer();
-
-        if (myHealth <= 0 && !dropping)
-        {
-            DropLootAndDie();
-        } //ded
-
-        if(player == null)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void GetDirFromPlayer()
     {
         Vector3 dir = (player.transform.position - transform.position).normalized;
@@ -179,7 +160,7 @@ public class JEnemy : MonoBehaviour
         Vector2 dirVector = new Vector2(dirTwo, dirThree);
         //Debug.Log("OG number = " + dir.x + " normalized number = " + dirTwo + ", " + "OG number = " + dir.y + " normalized number = " + + dirThree);
         //Debug.Log("x: " + dirTwo + " y: " + dirThree);
-        if (myState != EnemyState.attack)
+        if (myState != EnemyState.attack && !isDead)
         {
             if (dirVector == new Vector2(0f, 1f))
             {
@@ -204,17 +185,289 @@ public class JEnemy : MonoBehaviour
         }
     }
 
-    public void AttackState()
+    void Anims()
     {
-        StopAllCoroutines();
-        aIPath.enabled = false;
-        aIPath.canMove = false;
-        GameObject attackClone = Instantiate(attackPrefab, transform.position, Quaternion.Euler(0, 0, dirRotation), transform); //Add an attackPoint
-        Destroy(attackClone, 0.3f);
-        myState = EnemyState.idle;
+        anim.SetBool("IsWalking", isWalking);
+        anim.SetBool("IsIdle", isIdle);
+
+        if (direction == "L")
+        {
+            Transform animScale = anim.gameObject.transform;
+            animScale.localScale = new Vector3(-1, 1, 1);
+        }
+        if (direction == "R")
+        {
+            Transform animScale = anim.gameObject.transform;
+            animScale.localScale = new Vector3(1, 1, 1);
+        }
     }
 
-    private void DropLootAndDie()
+    // Update is called once per frame
+    void Update()
+    {
+        myHealth = healthSystem.GetHealth();
+
+        attacked = false;
+        switch (myState)
+        {
+            case EnemyState.non:
+                NonState();
+                break;
+            case EnemyState.idle:
+                destination.enabled = false;
+                isIdle = true;
+                isWalking = false;
+                StartCoroutine(IdleState());
+                break;
+            case EnemyState.walking:
+                destination.enabled = true;
+                isWalking = true;
+                isIdle = false;
+                StartCoroutine(WalkState());
+                break;
+            case EnemyState.attack:
+                StartCoroutine(AttackState());
+                break;
+            case EnemyState.backOff:
+                BackOffState();
+                break;
+            case EnemyState.damage:
+                StartCoroutine(DamageState());
+                break;
+            case EnemyState.dead:
+                DeathState();
+                break;
+
+        }
+
+        GetDirFromPlayer();
+
+        if (myHealth <= 0 && !dropping)
+        {
+            //DropLootAndDie();
+            myState = EnemyState.dead;
+        } //ded
+
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
+
+        Anims();
+    }
+
+    void NonState()
+    {
+        if (nonStateChecker)
+        {
+            StopAllCoroutines();
+            nonStateChecker = true;
+        }
+        if (myRoom.bounds.Contains(player.transform.position))
+        {
+            myState = EnemyState.idle;
+        }
+    }
+
+    IEnumerator IdleState()
+    {
+        StopCoroutine(WalkState());
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
+        else if (!myRoom.bounds.Contains(player.transform.position))
+        {
+            myState = EnemyState.non;
+        }
+
+        yield return new WaitForSeconds(2f);
+        myState = EnemyState.walking;
+
+        yield return null;
+    }
+
+    IEnumerator WalkState()
+    {
+        StopCoroutine(IdleState());
+        StopCoroutine(AttackState());
+        //StopCoroutine(IdleState());
+        //yield return new WaitForSeconds(Random.Range(0, 3));
+        aIPath.enabled = true;
+        aIPath.canMove = true;
+        destination.target = player.transform;
+        aIPath.maxSpeed = speed;
+        while (myRoom.bounds.Contains(player.transform.position)) //Go to player
+        {
+            yield return new WaitForSeconds(.1f);
+            /*walkPoint = (player.transform.position - transform.position).normalized * speed;
+            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
+            if (aIPath.reachedEndOfPath)
+            {
+                yield return new WaitForSeconds(2f);
+                myState = EnemyState.attack;
+            }
+        }
+        if (!myRoom.bounds.Contains(player.transform.position)) //Return to startPos
+        {
+            yield return new WaitForSeconds(.2f);
+            /*walkPoint = (startPos - transform.position).normalized * speed;
+            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
+            //destination.target = startPosO.transform;
+            transform.position = startPosO.transform.position;
+            aIPath.canMove = false;
+            aIPath.enabled = false;
+            myState = EnemyState.idle;
+        }
+
+        //Debug.Log("Walkstate is fin");
+        aIPath.canMove = false;
+        myState = EnemyState.idle;
+
+        yield return null;
+    }
+
+    IEnumerator AttackState()
+    {
+        StopCoroutine(WalkState());
+        aIPath.enabled = false;
+        aIPath.canMove = false;
+        if (!hasAttacked)
+        {
+            InstanstiateAttack();
+            hasAttacked = true;
+        }
+        yield return new WaitForSeconds(.5f);
+        myState = EnemyState.backOff;
+        yield return null;
+    }
+
+    void InstanstiateAttack()
+    {
+        anim.SetTrigger("DoAttack");
+        GameObject attackClone = Instantiate(attackPrefab, transform.position, Quaternion.Euler(0, 0, dirRotation), transform); //Add an attackPoint
+        Destroy(attackClone, 0.3f);
+    }
+
+    void BackOffState()
+    {
+        StopAllCoroutines();
+        aIPath.enabled = true;
+        aIPath.canMove = true;
+        destination.enabled = true;
+        if (direction == "U")
+        {
+            destination.target = pointC;
+        }
+        else if (direction == "D")
+        {
+            destination.target = pointD;
+        }
+        else if (direction == "L")
+        {
+            destination.target = pointB;
+        }
+        else if (direction == "R")
+        {
+            destination.target = pointA;
+        }
+
+        aIPath.maxSpeed = speed * 2;
+
+
+        hasAttacked = false;
+        Invoke("BackToWalk", 2f);
+    }
+
+    void BackToWalk()
+    {
+        myState = EnemyState.walking;
+    }
+
+    IEnumerator DamageState()
+    {
+        aIPath.enabled = false;
+        destination.enabled = false;
+        anim.SetTrigger("TakeDamage");
+        yield return new WaitForSeconds(.01f);
+        anim.ResetTrigger("TakeDamage");
+        yield return new WaitForSeconds(.9f);
+        myState = EnemyState.walking;
+        yield return null;
+    }
+
+    void DeathState()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        isDead = true;
+        StopAllCoroutines();
+        aIPath.enabled = false;
+        destination.enabled = false;
+        anim.SetTrigger("Dead");
+        GetComponent<Collider2D>().enabled = false;
+        //this.enabled = false;
+        //DropLootAndDie();
+        Invoke("DropLootAndDie", 2f);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+
+        if (collider.tag == "Sword" && !isDead || collider.tag == "Arrow" && !isDead)
+        {
+            if (attacked)
+            {
+                return;
+            }
+            myState = EnemyState.damage;
+            if (collider.tag == "Arrow")
+            {
+                PlayerStats playerstats = player.GetComponent<PlayerStats>();
+                Player rue = player.GetComponent<Player>();
+                Arrow arrowCrit = collider.GetComponent<Arrow>();
+                if (!arrowCrit.crit)
+                {
+                    float damage = playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value; //deals damage to this enemy and heals player.
+                    healthSystem.Damage(damage);
+                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                    Debug.Log("Crossbow hit: " + damage);
+                    attacked = true;
+                }
+                else if (arrowCrit.crit) //same but critically striked for more damage.
+                {
+                    float damage = (playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
+                    healthSystem.Damage(damage);
+                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                    Debug.Log("Crossbow hit with crit: " + damage);
+                    attacked = true;
+                }
+            }
+            else if (collider.tag == "Sword")
+            {
+                PlayerStats playerstats = player.GetComponent<PlayerStats>();
+                Player rue = player.GetComponent<Player>();
+                Swordscript swordCrit = collider.GetComponent<Swordscript>();
+                if (!swordCrit.Crit)
+                {
+                    float damage = playerstats.Strength.Value * playerstats.SwordAttackModifier.Value;
+                    healthSystem.Damage(damage);
+                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                    Debug.Log("Sword damaged: " + damage);
+                    attacked = true;
+                }
+                else if (swordCrit.Crit)
+                {
+                    float damage = (playerstats.Strength.Value * playerstats.SwordAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
+                    healthSystem.Damage(damage);
+                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                    Debug.Log("Sword damaged with crit: " + damage);
+                    attacked = true;
+                }
+            }
+        }
+    } //Deal damage to enemy
+
+    void DropLootAndDie()
     {
         foreach (var item in Table) //checks table
         {
@@ -229,7 +482,7 @@ public class JEnemy : MonoBehaviour
             {
 
 
-                if (weight == commondropRange) 
+                if (weight == commondropRange)
                 {
                     Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
@@ -280,116 +533,13 @@ public class JEnemy : MonoBehaviour
         }
     }
 
-    public IEnumerator IdleState()
+    private void OnBecameVisible()
     {
-        if (player == null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            while (!myRoom.bounds.Contains(player.transform.position))
-            {
-                yield return new WaitForSeconds(2f);
-            }
-        }
-
-        yield return new WaitForSeconds(3f);
-        myState = EnemyState.walking;
-
-        yield return null;
+        this.enabled = true;
     }
 
-    public IEnumerator WalkState()
+    private void OnBecameInvisible()
     {
-        //StopCoroutine(IdleState());
-        yield return new WaitForSeconds(Random.Range(0, 3));
-        aIPath.enabled = true;
-        aIPath.canMove = true;
-        destination.target = player.transform;
-        while (myRoom.bounds.Contains(player.transform.position)) //Go to player
-        {
-            yield return new WaitForSeconds(.1f);
-            /*walkPoint = (player.transform.position - transform.position).normalized * speed;
-            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
-            if (aIPath.reachedEndOfPath)
-            {
-                yield return new WaitForSeconds(2f);
-                myState = EnemyState.attack;
-            }
-        }
-        if (!myRoom.bounds.Contains(player.transform.position)) //Return to startPos
-        {
-            yield return new WaitForSeconds(.2f);
-            /*walkPoint = (startPos - transform.position).normalized * speed;
-            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
-            //destination.target = startPosO.transform;
-            transform.position = startPosO.transform.position;
-            aIPath.canMove = false;
-            aIPath.enabled = false;
-            myState = EnemyState.idle;
-        }
-
-        //Debug.Log("Walkstate is fin");
-        aIPath.canMove = false;
-        myState = EnemyState.idle;
-
-        yield return null;
+        this.enabled = false;
     }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-
-        if (collider.tag == "Sword" || collider.tag == "Arrow")
-        {
-            if (attacked)
-            {
-                return;
-            }
-            if (collider.tag == "Arrow")
-            {
-                PlayerStats playerstats = player.GetComponent<PlayerStats>();
-                Player rue = player.GetComponent<Player>();
-                Arrow arrowCrit = collider.GetComponent<Arrow>();
-                if (!arrowCrit.crit)
-                {
-                    float damage = playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value; //deals damage to this enemy and heals player.
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Crossbow hit: " + damage);
-                    attacked = true;
-                }
-                else if (arrowCrit.crit) //same but critically striked for more damage.
-                {
-                    float damage = (playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Crossbow hit with crit: " + damage);
-                    attacked = true;
-                }
-            }
-            else if (collider.tag == "Sword")
-            {
-                PlayerStats playerstats = player.GetComponent<PlayerStats>();
-                Player rue = player.GetComponent<Player>();
-                Swordscript swordCrit = collider.GetComponent<Swordscript>();
-                if (!swordCrit.Crit)
-                {
-                    float damage = playerstats.Strength.Value * playerstats.SwordAttackModifier.Value;
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Sword damaged: " + damage);
-                    attacked = true;
-                }
-                else if (swordCrit.Crit)
-                {
-                    float damage = (playerstats.Strength.Value * playerstats.SwordAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Sword damaged with crit: " + damage);
-                    attacked = true;
-                }
-            }
-        }
-    } //Deal damage to enemy
 }

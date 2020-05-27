@@ -164,12 +164,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &277364675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671866788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &280548008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1192,12 @@ MonoBehaviour:
   slider: {fileID: 408347338}
   sliderText: {fileID: 280548010}
   vCam: {fileID: 2043898293}
+--- !u!1 &1357556412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671866788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402635084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,11 +1395,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1814065025, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1408,7 +1408,7 @@ PrefabInstance:
     - target: {fileID: 1652288003210735213, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -1473,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myVCam: {fileID: 2043898293}
-  player: {fileID: 277364675}
+  player: {fileID: 1357556412}
 --- !u!1 &2049483392
 GameObject:
   m_ObjectHideFlags: 0

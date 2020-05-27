@@ -50,13 +50,15 @@ public class BossdoorScript : MonoBehaviour
                 level -= 5;
             }
         }
-        AddSacrifices();
-        RemoveSacrifices();
-
+    }
+    private void Update()
+    {
         if (IsInRange == true && PromptReady == true)
         {
             if (!SacrificeMade)
             {
+                AddSacrifices();
+                RemoveSacrifices();
                 Time.timeScale = 0;
             }
             PromptReady = false;
@@ -90,6 +92,7 @@ public class BossdoorScript : MonoBehaviour
             Sacrifice02();
         }
     }
+
     private void TextboxGone()
     {
         sacrificing.GetComponent<SacrificeScript>().choiceMade = 0;
@@ -140,14 +143,14 @@ public class BossdoorScript : MonoBehaviour
     public void AddSacrifices()
     {
         var Playercommon = playerStats.Loot.Any
-            (des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase) 
+            (des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase)
             && playerStats.Loot.Any(r => r.collection >= 3));
         var Sacrificecommon = sacrifice.Any
             (des => des.description.Equals("common", System.StringComparison.InvariantCultureIgnoreCase));
         List<Item> commonitem = playerStats.Loot.FindAll((des => des.tier.Equals("Common Loot", System.StringComparison.InvariantCultureIgnoreCase)
             && playerStats.Loot.Any(r => r.collection >= 3)));
 
-        if (player.potion >= 2 )
+        if (player.potion >= 2)
         {
             GetSacrifice(consumable, 0, level);
         }
@@ -160,7 +163,7 @@ public class BossdoorScript : MonoBehaviour
             {
                 GetSacrifice(loot, 0, level);
             }
-            
+
         }
     }
     public void GetSacrifice(SacrificeType type, int intensity, int level)
