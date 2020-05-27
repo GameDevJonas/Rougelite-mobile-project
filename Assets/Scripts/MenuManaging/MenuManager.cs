@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour
 
     void Awake()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         isPaused = false;
         toBoss = false;
         //mainMenuPause.SetActive(false);

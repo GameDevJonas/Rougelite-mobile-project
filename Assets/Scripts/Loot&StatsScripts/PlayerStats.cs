@@ -119,10 +119,12 @@ public class PlayerStats : MonoBehaviour
     }
     public void GiveItem(int id) //the method used in other scripts to transfer the correct item from the ItemDatabase to this script. This is called in Accept Loot script.
     {
+        //Debug.Log("GiveItem() started");
         Item itemToAdd = ItemDatabase.GetItem(id);
         bool AlreadyinInventory = false;
         foreach (Item item in Loot) //Checks if already in inventory, and if it is, it adds a higher number to collection instead of copies within the list.
         {
+            //Debug.Log((i++) + " counts in foreach loop");
             if (item.id == itemToAdd.id)
             {
                 item.collection += 1;
@@ -165,6 +167,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void UpdateStatsInfo()
     {
+        //Debug.Log("Updated stats");
         _ = Health.Value;
         _ = Strength.Value;
         _ = Dexterity.Value;

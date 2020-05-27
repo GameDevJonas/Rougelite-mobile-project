@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6dc7ad6dd8cc7ce4094a024756c965a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19a579e4f5bd4bc47ac27bc4343dc012, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9800eb9738a0f4d92bd606610ed5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notDoorSprite: {fileID: 21300000, guid: 6dc7ad6dd8cc7ce4094a024756c965a5, type: 3}
-  doorSprite: {fileID: 21300000, guid: f77418ef2c876144e9b40add17105c1e, type: 3}
+  notDoorSprite: {fileID: 716550560483012945, guid: 0aa342ba526925a4e9a7d41aded59b40,
+    type: 3}
+  doorSprite: {fileID: -2325212765313284558, guid: 0aa342ba526925a4e9a7d41aded59b40,
+    type: 3}
   isThereDoor: 0

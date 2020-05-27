@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
 
             Player Player = player.GetComponent<Player>();
 
-            Player.TakeDamage(damage, GetComponentInParent<JEnemy>().direction);
+            Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JEnemy>().direction);
         }
     }
 }

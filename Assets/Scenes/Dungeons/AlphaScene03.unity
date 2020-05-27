@@ -654,7 +654,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7060552429869455105, guid: 7d6feec88bf135c4296629701bfc9eb3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: fe4f7d0b3826ef14cb23649638a0fb53, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 138429a662d38504599d56e32f8bd978, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.829
   m_Pitch: 1
@@ -1380,12 +1380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1648097989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671866788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1671866788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1861,7 +1855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myVCam: {fileID: 2043898293}
-  player: {fileID: 1648097989}
+  player: {fileID: 0}
 --- !u!1 &2049483392
 GameObject:
   m_ObjectHideFlags: 0

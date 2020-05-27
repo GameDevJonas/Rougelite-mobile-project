@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: e715d80b410196a429f58374c9948b84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6187361795549898658
+    second: Crossbow_Idle_sprite-Sheet_0
+  - first:
+      213: 7169416290199366908
+    second: Crossbow_Idle_sprite-Sheet_1
+  - first:
+      213: -845315047023891976
+    second: Crossbow_Idle_sprite-Sheet_2
+  - first:
+      213: 4277598003168074227
+    second: Crossbow_Idle_sprite-Sheet_3
+  - first:
+      213: 2813995320844754278
+    second: Crossbow_Idle_sprite-Sheet_4
+  - first:
+      213: 795677642148826573
+    second: Crossbow_Idle_sprite-Sheet_5
+  - first:
+      213: -4686074251065824517
+    second: Crossbow_Idle_sprite-Sheet_6
+  - first:
+      213: 5387440540306975708
+    second: Crossbow_Idle_sprite-Sheet_7
+  - first:
+      213: 8839175844406245073
+    second: Crossbow_Idle_sprite-Sheet_8
+  - first:
+      213: -2920170171076600352
+    second: Crossbow_Idle_sprite-Sheet_9
+  - first:
+      213: -6414294213750940840
+    second: Crossbow_Idle_sprite-Sheet_10
+  - first:
+      213: -3267240794114560460
+    second: Crossbow_Idle_sprite-Sheet_11
+  - first:
+      213: 3129203554043110075
+    second: Crossbow_Idle_sprite-Sheet_12
+  - first:
+      213: 561739905440910737
+    second: Crossbow_Idle_sprite-Sheet_13
+  - first:
+      213: 1352318440039658191
+    second: Crossbow_Idle_sprite-Sheet_14
+  - first:
+      213: 3056956632238063370
+    second: Crossbow_Idle_sprite-Sheet_15
+  - first:
+      213: -5062269092415198487
+    second: Crossbow_Idle_sprite-Sheet_16
+  - first:
+      213: -2169105894937679984
+    second: Crossbow_Idle_sprite-Sheet_17
+  - first:
+      213: 3807682593255272989
+    second: Crossbow_Idle_sprite-Sheet_18
+  - first:
+      213: 3712847333947933998
+    second: Crossbow_Idle_sprite-Sheet_19
+  - first:
+      213: -855435699041547839
+    second: Crossbow_Idle_sprite-Sheet_20
+  - first:
+      213: 5488905658294950416
+    second: Crossbow_Idle_sprite-Sheet_21
+  - first:
+      213: 2693176971960528387
+    second: Crossbow_Idle_sprite-Sheet_22
+  - first:
+      213: -2168379082848244067
+    second: Crossbow_Idle_sprite-Sheet_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58dc6f9a33122aa0800000000000000
+      internalID: -6187361795549898658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc6b387122ee7360800000000000000
+      internalID: 7169416290199366908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f929d28176d444f0800000000000000
+      internalID: -845315047023891976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9d0ce58b41d5b30800000000000000
+      internalID: 4277598003168074227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d109ac5d15d0720800000000000000
+      internalID: 2813995320844754278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd40009990da0b00800000000000000
+      internalID: 795677642148826573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfaed1aeb48b7feb0800000000000000
+      internalID: -4686074251065824517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb2985a0a804ca40800000000000000
+      internalID: 5387440540306975708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d63c09399f0baa70800000000000000
+      internalID: 8839175844406245073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed994d73b87977d0800000000000000
+      internalID: -2920170171076600352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b1880a569dbf6a0800000000000000
+      internalID: -6414294213750940840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ee22feecd68a2d0800000000000000
+      internalID: -3267240794114560460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb221ac9d0a2d6b20800000000000000
+      internalID: 3129203554043110075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d87ffb773bbc700800000000000000
+      internalID: 561739905440910737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc236c1d47664c210800000000000000
+      internalID: 1352318440039658191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ff25e4cdd7c6a20800000000000000
+      internalID: 3056956632238063370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea272dd4153fb9b0800000000000000
+      internalID: -5062269092415198487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097a8045ea9c5e1e0800000000000000
+      internalID: -2169105894937679984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d123b64052b97d430800000000000000
+      internalID: 3807682593255272989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25093d8afea68330800000000000000
+      internalID: 3712847333947933998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9c07693c1e024f0800000000000000
+      internalID: -855435699041547839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a5d406d928c2c40800000000000000
+      internalID: 5488905658294950416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e28fadf26106520800000000000000
+      internalID: 2693176971960528387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow_Idle_sprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e617476be58e1e0800000000000000
+      internalID: -2168379082848244067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1afe1c4c782b42e44a71741c310e5087
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

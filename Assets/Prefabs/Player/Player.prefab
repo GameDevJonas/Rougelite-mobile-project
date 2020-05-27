@@ -890,9 +890,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 1000000
-  m_AngularDrag: 1000000
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -927,12 +927,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3834e9e19810b9948978946cd45abb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockBackDebug: 1000
   weaponInUse: 0
-  debugWeaponState: {fileID: 1077603113941958413}
   anim: {fileID: 0}
   joystick: {fileID: 4541764480379956512}
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
   swordAttack: {fileID: 1317067018}
+  switchButton: {fileID: 0}
+  shieldButton: {fileID: 0}
   maxHealth: 0
   currentHealth: 0
   speed: 0
@@ -944,11 +946,16 @@ MonoBehaviour:
   yInput: 0
   weaponState: 0
   healthbar: {fileID: 1319494376}
+  hasSword: 1
+  hasBow: 1
+  hasShield: 1
   useTouch: 1
   attack: 0
   canMove: 1
   canAttack: 1
   canHeal: 1
+  canTakeDamage: 1
+  shieldIsUp: 0
   menuManager: {fileID: 0}
   dir: 
   arrow: {fileID: 4594174622735884533, guid: c7e6d0a8fca52784cbed1a20bc1d531d, type: 3}
@@ -1605,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3184186109896508589
 RectTransform:
   m_ObjectHideFlags: 0
