@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 0751efd2a055b9c418ab5282541c7880
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8305381127688239095
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_0"
+  - first:
+      213: 8436510066410684554
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_1"
+  - first:
+      213: -3584942914679036340
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_2"
+  - first:
+      213: -2284779088927227911
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_3"
+  - first:
+      213: 3402887545663299278
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_4"
+  - first:
+      213: 714254313767570503
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_5"
+  - first:
+      213: -1741103740815131672
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_6"
+  - first:
+      213: 6564355607909064636
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_7"
+  - first:
+      213: 8795946682290395411
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_8"
+  - first:
+      213: -1310271156500884499
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_9"
+  - first:
+      213: -5074738535171273644
+    second: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_10"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_0"
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908c8ef3edb5dbc80800000000000000
+      internalID: -8305381127688239095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_1"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a808a64f431841570800000000000000
+      internalID: 8436510066410684554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_2"
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46a086b969bf3ec0800000000000000
+      internalID: -3584942914679036340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_3"
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff704e1685da40e0800000000000000
+      internalID: -2284779088927227911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_4"
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece9cd9813c793f20800000000000000
+      internalID: 3402887545663299278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_5"
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 325
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c086b938a89e900800000000000000
+      internalID: 714254313767570503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_6"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3c9b5f5b56d7e0800000000000000
+      internalID: -1741103740815131672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_7"
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf53cc55a6491b50800000000000000
+      internalID: 6564355607909064636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_8"
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 25
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319d13597ea711a70800000000000000
+      internalID: 8795946682290395411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_9"
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de31355435bf0dde0800000000000000
+      internalID: -1310271156500884499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Rue_Walk_Sword_sprite-Sheet \u2013 L a UR_10"
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 24
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c412b7038e299b0800000000000000
+      internalID: -5074738535171273644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d43a327c14a79b43a41cc49fa103f87
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

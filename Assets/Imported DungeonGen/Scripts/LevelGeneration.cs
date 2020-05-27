@@ -32,6 +32,12 @@ public class LevelGeneration : MonoBehaviour
         GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
         //Invoke("ApplyBossDoor", .2f);
         Invoke("AssignPlayerPos", 0);
+        Invoke("TurnMeOff", .5f);
+    }
+
+    void TurnMeOff()
+    {
+        Destroy(gameObject);
     }
 
     public void AssignPlayerPos()

@@ -17,7 +17,7 @@ public class RoomInstance : MonoBehaviour
     float tileSize = 16;
     Vector2 roomSizeInTiles = new Vector2(9, 17);
 
-    public GameObject[] enemySpawns;
+    //public GameObject[] enemySpawns;
 
     public LevelGeneration theGen;
 
@@ -25,8 +25,14 @@ public class RoomInstance : MonoBehaviour
     {
         theGen = FindObjectOfType<LevelGeneration>();
         theGen.roomList.Add(gameObject);
-        enemySpawns = theGen.enemySpawns;
+        //enemySpawns = theGen.enemySpawns;
         //Instantiate(enemySpawns[Random.Range(0, enemySpawns.Length)], transform.position, Quaternion.identity, transform);
+        Invoke("TurnMeOff", .5f);
+    }
+
+    void TurnMeOff()
+    {
+        this.enabled = false;
     }
 
     public void Setup(Texture2D _tex, Vector2 _gridPos, int _type, bool _doorTop, bool _doorBot, bool _doorLeft, bool _doorRight)

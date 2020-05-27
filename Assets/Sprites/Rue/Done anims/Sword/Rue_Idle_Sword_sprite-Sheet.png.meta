@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: 933f9406517024245b11b345a01f9984
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2360449845467621207
+    second: Rue_Idle_Sword_sprite-Sheet_0
+  - first:
+      213: -5924188539438968538
+    second: Rue_Idle_Sword_sprite-Sheet_1
+  - first:
+      213: 1255617715115810683
+    second: Rue_Idle_Sword_sprite-Sheet_2
+  - first:
+      213: -7662851267627550776
+    second: Rue_Idle_Sword_sprite-Sheet_3
+  - first:
+      213: -2099317040036812209
+    second: Rue_Idle_Sword_sprite-Sheet_4
+  - first:
+      213: 5282753898057716306
+    second: Rue_Idle_Sword_sprite-Sheet_5
+  - first:
+      213: 5471794996557879352
+    second: Rue_Idle_Sword_sprite-Sheet_6
+  - first:
+      213: 3599950696667644242
+    second: Rue_Idle_Sword_sprite-Sheet_7
+  - first:
+      213: -5745825789941622067
+    second: Rue_Idle_Sword_sprite-Sheet_8
+  - first:
+      213: 4702899188396953292
+    second: Rue_Idle_Sword_sprite-Sheet_9
+  - first:
+      213: 735509340073975217
+    second: Rue_Idle_Sword_sprite-Sheet_10
+  - first:
+      213: 868257289131775773
+    second: Rue_Idle_Sword_sprite-Sheet_11
+  - first:
+      213: -1919775633670583046
+    second: Rue_Idle_Sword_sprite-Sheet_12
+  - first:
+      213: 3724764739145867229
+    second: Rue_Idle_Sword_sprite-Sheet_13
+  - first:
+      213: -6042406118186008055
+    second: Rue_Idle_Sword_sprite-Sheet_14
+  - first:
+      213: -5274357358781073628
+    second: Rue_Idle_Sword_sprite-Sheet_15
+  - first:
+      213: 2471631195826279218
+    second: Rue_Idle_Sword_sprite-Sheet_16
+  - first:
+      213: 5120375972606895494
+    second: Rue_Idle_Sword_sprite-Sheet_17
+  - first:
+      213: -347537684168441921
+    second: Rue_Idle_Sword_sprite-Sheet_18
+  - first:
+      213: 3050879364219142627
+    second: Rue_Idle_Sword_sprite-Sheet_19
+  - first:
+      213: 8714201825075679156
+    second: Rue_Idle_Sword_sprite-Sheet_20
+  - first:
+      213: -3188461395473407171
+    second: Rue_Idle_Sword_sprite-Sheet_21
+  - first:
+      213: -6661815902245492172
+    second: Rue_Idle_Sword_sprite-Sheet_22
+  - first:
+      213: 5350661688047872017
+    second: Rue_Idle_Sword_sprite-Sheet_23
+  - first:
+      213: 6992985228656241877
+    second: Rue_Idle_Sword_sprite-Sheet_0
+  - first:
+      213: -156439711827528675
+    second: Rue_Idle_Sword_sprite-Sheet_1
+  - first:
+      213: 3917942606381387927
+    second: Rue_Idle_Sword_sprite-Sheet_2
+  - first:
+      213: -7440990696790679528
+    second: Rue_Idle_Sword_sprite-Sheet_3
+  - first:
+      213: -7314062660290644721
+    second: Rue_Idle_Sword_sprite-Sheet_4
+  - first:
+      213: 3182550898203267648
+    second: Rue_Idle_Sword_sprite-Sheet_5
+  - first:
+      213: 6974018407148123076
+    second: Rue_Idle_Sword_sprite-Sheet_6
+  - first:
+      213: -2727129344694978708
+    second: Rue_Idle_Sword_sprite-Sheet_7
+  - first:
+      213: 2235106206853696918
+    second: Rue_Idle_Sword_sprite-Sheet_8
+  - first:
+      213: -6207505179136615642
+    second: Rue_Idle_Sword_sprite-Sheet_9
+  - first:
+      213: 6185019850650614595
+    second: Rue_Idle_Sword_sprite-Sheet_10
+  - first:
+      213: 8837805455536144583
+    second: Rue_Idle_Sword_sprite-Sheet_11
+  - first:
+      213: 1618114950919250153
+    second: Rue_Idle_Sword_sprite-Sheet_12
+  - first:
+      213: -7966276628231017762
+    second: Rue_Idle_Sword_sprite-Sheet_13
+  - first:
+      213: 4923884887098282028
+    second: Rue_Idle_Sword_sprite-Sheet_14
+  - first:
+      213: -998000421319224797
+    second: Rue_Idle_Sword_sprite-Sheet_15
+  - first:
+      213: -5416628761925384351
+    second: Rue_Idle_Sword_sprite-Sheet_16
+  - first:
+      213: -6192308056477189057
+    second: Rue_Idle_Sword_sprite-Sheet_17
+  - first:
+      213: 5613379024642132471
+    second: Rue_Idle_Sword_sprite-Sheet_18
+  - first:
+      213: -444398593809262668
+    second: Rue_Idle_Sword_sprite-Sheet_19
+  - first:
+      213: 7604320478585683240
+    second: Rue_Idle_Sword_sprite-Sheet_20
+  - first:
+      213: 4962068866234987778
+    second: Rue_Idle_Sword_sprite-Sheet_21
+  - first:
+      213: -6952474603216818561
+    second: Rue_Idle_Sword_sprite-Sheet_22
+  - first:
+      213: -5697953447791110347
+    second: Rue_Idle_Sword_sprite-Sheet_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dceb99d3031c0160800000000000000
+      internalID: 2360449845467621207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1471c339e634ddf0800000000000000
+      internalID: -5924188539438968538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7901bb7da045f5630800000000000000
+      internalID: 1255617715115810683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8102ec4a26a4cb890800000000000000
+      internalID: -7662851267627550776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 425
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f057d6413ca3f7a90800000000000000
+      internalID: -2099317040036812209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04291071e21ba2c20800000000000000
+      internalID: 5282753898057716306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c379179ac0b8c060800000000000000
+      internalID: 5471794996557879352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6779e85f4a472ad0800000000000000
+      internalID: 3599950696667644242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d09c6c041b40f10800000000000000
+      internalID: -5745825789941622067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 325
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b1a28ade28ad9a0800000000000000
+      internalID: 4702899188396953292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34bf4c6d8ca95d550800000000000000
+      internalID: 735509340073975217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0cd33bc3136aa70800000000000000
+      internalID: 868257289131775773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e06a4789f2b47610800000000000000
+      internalID: -1919775633670583046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda2bcf1d99127190800000000000000
+      internalID: 3724764739145867229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 225
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20586a8737255440800000000000000
+      internalID: -6042406118186008055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322d39987e36622f0800000000000000
+      internalID: -5274357358781073628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167064de6d444d4b0800000000000000
+      internalID: 2471631195826279218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c33e181a0801aa0800000000000000
+      internalID: 5120375972606895494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f94c616b7ab6ed40800000000000000
+      internalID: -347537684168441921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 125
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7d05d55dd25d9f0800000000000000
+      internalID: 3050879364219142627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82df3549f29f78960800000000000000
+      internalID: 8714201825075679156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20536faf75fccd440800000000000000
+      internalID: -3188461395473407171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e26552f29d38f90800000000000000
+      internalID: -6661815902245492172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rue_Idle_Sword_sprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 25
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537d2bd378dcce0b0800000000000000
+      internalID: 5350661688047872017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7d02c217ed8cbdf48b0e5c306b594f25
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

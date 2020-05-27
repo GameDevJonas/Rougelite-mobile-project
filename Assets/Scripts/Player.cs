@@ -213,6 +213,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyMovement();
+        //Resources.UnloadUnusedAssets();
     }
     public void UpdateStats()
     {

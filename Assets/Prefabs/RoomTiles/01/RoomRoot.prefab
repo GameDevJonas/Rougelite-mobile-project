@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212522987513716332}
   - component: {fileID: 114554197803855032}
   - component: {fileID: 6089493492130043892}
+  - component: {fileID: -8741125786505348021}
   m_Layer: 0
   m_Name: RoomRoot
   m_TagString: RoomRoot
@@ -151,3 +152,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 272, y: 144}
   m_EdgeRadius: 0
+--- !u!114 &-8741125786505348021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038065722679700}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa1ea8e919cf2f48821c2d41987e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCol: {fileID: 0}
+  myRend: {fileID: 0}

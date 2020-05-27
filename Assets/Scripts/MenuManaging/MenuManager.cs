@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
     public void ToAlphaBoss()
     {
         int currenctScene = SceneManager.GetActiveScene().buildIndex;
-        if(currenctScene == 5)
+        if (currenctScene == 5)
         {
             currenctScene = 0;
         }
@@ -101,24 +101,18 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(currenctScene + 1));
+        Debug.Log(SceneManager.sceneCount);
     }
 
     public void ToAlphaLevel()
     {
-        if (fromBoss)
-        {
-            startButton.SetActive(false);
-            loadingThing.SetActive(true);
-            StartCoroutine(StartLoad(1));
-        }
-        else
-        {
+        //wait for player animations
             Destroy(GameObject.FindGameObjectWithTag("Player"));
-            fromStartMenu = true;
+            //fromStartMenu = true;
             startButton.SetActive(false);
             loadingThing.SetActive(true);
-            StartCoroutine(StartLoad(1));
-        }
+            StartCoroutine(StartLoad(0));
+
     }
 
     public IEnumerator StartLoad(int buildIndex)
@@ -134,9 +128,18 @@ public class MenuManager : MonoBehaviour
             loadingSlider.value = Mathf.RoundToInt(progress);
             progressText.text = "Progress: " + progress * 100 + "%";
 
+            if ((buildIndex - 1) != 0 && buildIndex != 0)
+            {
+                //Debug.Log(buildIndex - 1);
+                //Debug.Log("Startet unload");
+                SceneManager.UnloadSceneAsync(buildIndex - 1);
+                //destroyPrev.priority = 10;
+            }
+
             // Loading completed
             if (loadStart.progress == 0.9f)
             {
+                Resources.UnloadUnusedAssets();
                 progressText.text = "Done! Touch anywhere to begin!";
                 Debug.Log("Press a key to start");
                 if (Input.anyKeyDown)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4549992716659162}
   - component: {fileID: 212837628303806704}
   - component: {fileID: 61342844830375196}
+  - component: {fileID: 834191152254834829}
   m_Layer: 10
   m_Name: WallTileUp
   m_TagString: Untagged
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 48, y: 48}
+    oldSize: {x: 16, y: 16}
     newSize: {x: 48, y: 48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!114 &834191152254834829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348133729177994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa1ea8e919cf2f48821c2d41987e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -164,6 +164,11 @@ public class JEnemy : MonoBehaviour
         {
             DropLootAndDie();
         } //ded
+
+        if(player == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void GetDirFromPlayer()
@@ -277,9 +282,16 @@ public class JEnemy : MonoBehaviour
 
     public IEnumerator IdleState()
     {
-        while (!myRoom.bounds.Contains(player.transform.position))
+        if (player == null)
         {
-            yield return new WaitForSeconds(2f);
+            Destroy(gameObject);
+        }
+        else
+        {
+            while (!myRoom.bounds.Contains(player.transform.position))
+            {
+                yield return new WaitForSeconds(2f);
+            }
         }
 
         yield return new WaitForSeconds(3f);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212837628303806704}
   - component: {fileID: 61342844830375196}
   - component: {fileID: 6712723713139459590}
+  - component: {fileID: 3521210310022823253}
   m_Layer: 8
   m_Name: WallTileOnDoors
   m_TagString: Untagged
@@ -126,3 +127,17 @@ MonoBehaviour:
   doorSprite: {fileID: -833398980232921613, guid: 0aa342ba526925a4e9a7d41aded59b40,
     type: 3}
   isThereDoor: 0
+--- !u!114 &3521210310022823253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348133729177994}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa1ea8e919cf2f48821c2d41987e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCol: {fileID: 0}
+  myRend: {fileID: 0}

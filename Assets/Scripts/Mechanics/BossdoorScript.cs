@@ -37,10 +37,6 @@ public class BossdoorScript : MonoBehaviour
         consumable = SacrificeType.consumable;
         mechanic = SacrificeType.mechanic;
         debuff = SacrificeType.debuff;
-    }
-    private void Update()
-    {
-        
         if (rue == null)
         {
             rue = GameObject.FindGameObjectWithTag("Player");

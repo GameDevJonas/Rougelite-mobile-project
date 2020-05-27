@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4549992716659162}
   - component: {fileID: 212837628303806704}
   - component: {fileID: 61342844830375196}
+  - component: {fileID: 9115863884458904693}
   m_Layer: 10
   m_Name: WallTileUp 1
   m_TagString: Untagged
@@ -109,3 +110,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!114 &9115863884458904693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348133729177994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa1ea8e919cf2f48821c2d41987e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCol: {fileID: 0}
+  myRend: {fileID: 0}

@@ -9,19 +9,30 @@ public class Door : MonoBehaviour
     public float length;
 
     public LayerMask whatLayer;
+
+    private RaycastHit2D upRay, leftRay, rightRay, downRay;
+
     void Start()
     {
         length = 6f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        RaycastHit2D upRay = Physics2D.Raycast(upStartDir.position, Vector2.right, length, whatLayer);
-        RaycastHit2D leftRay = Physics2D.Raycast(leftStartDir.position, Vector2.up, length, whatLayer);
-        RaycastHit2D rightRay = Physics2D.Raycast(rightStartDir.position, Vector2.down, length, whatLayer);
-        RaycastHit2D downRay = Physics2D.Raycast(downStartDir.position, Vector2.left, length, whatLayer);
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        upRay = Physics2D.Raycast(upStartDir.position, Vector2.right, length, whatLayer);
+        leftRay = Physics2D.Raycast(leftStartDir.position, Vector2.up, length, whatLayer);
+        rightRay = Physics2D.Raycast(rightStartDir.position, Vector2.down, length, whatLayer);
+        downRay = Physics2D.Raycast(downStartDir.position, Vector2.left, length, whatLayer);
         if (upRay)
         {
             //Debug.Log(upRay.collider.gameObject + " upRay", gameObject);
@@ -65,6 +76,7 @@ public class Door : MonoBehaviour
             }
         }
     }
+
 
     private void OnDrawGizmos()
     {
