@@ -803,6 +803,11 @@ PrefabInstance:
       propertyPath: alphaAudio
       value: 
       objectReference: {fileID: 1687875456}
+    - target: {fileID: 4926919478041552831, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4926919478384781370, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
       propertyPath: m_AnchorMax.y
