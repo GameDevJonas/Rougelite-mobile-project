@@ -11,6 +11,7 @@ public class LootFound : MonoBehaviour
     public GameObject AcceptObject;
     public GameObject Button;
     public MenuManager MenuManager;
+    public GameObject notification;
     public AcceptLoot AcceptLoot => AcceptObject.GetComponent<AcceptLoot>();
 
 
@@ -32,12 +33,22 @@ public class LootFound : MonoBehaviour
             return;
         }
 
+        if (Loot.Count > 0)
+        {
+            notification.SetActive(true);
+        }
+
         if (Loot.Count > 0 && MenuManager.isPaused && AcceptLoot.Loot.Count == 0)
         {
             AcceptLoot.GiveItem(Loot[0].id, Loot[0].amount); //if this script has item in list and game is paused and nothing is in acceptloot. 
             //The first item in the list is sent to acceptloot script and removed from this one. The button is turned on as well.
             Button.SetActive(true);
             RemoveItem(Loot[0].id);
+        }
+
+        if (Loot.Count <= 0 && AcceptLoot.Loot.Count <= 0)
+        {
+            notification.SetActive(false);
         }
     }
 

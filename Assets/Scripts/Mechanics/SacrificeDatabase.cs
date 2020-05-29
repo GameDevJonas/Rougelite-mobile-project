@@ -31,50 +31,56 @@ public class SacrificeDatabase : MonoBehaviour
     {
         sacrifices = new List<Sacrifice>()
         {
-            new Sacrifice(0, 1, "common", loot, 0), //sacrifice 3 common items
-            new Sacrifice(1, 1, "rare", loot, 0), //sacrifice a rare item
-            new Sacrifice(2, 1, "Sacrifice half of your potions.", consumable, 0), //Sacrifice half of your potions.
-            new Sacrifice(3, 1, "Sacrifice your eye, reduces vision and impairs aiming.", mechanic, 1), //Sacrifice your eye, reduces vision and impairs aiming.
-            new Sacrifice(4, 1, "Sacrifice a tendon, can no longer dodge.", mechanic, 1),
-            new Sacrifice(5, 1, "Sacrifice your health.", debuff, 1),
-            new Sacrifice(6, 1, "Sacrifice your swiftness.", debuff, 1),
-            new Sacrifice(7, 2, "Sacrifice 3", loot, 0), //sacrifice 3 rare items
-            new Sacrifice(8, 2, "Sacrifice half of your", loot, 1), //sacrifice half of your common item
-            new Sacrifice(9, 2, "Sacrifice your White light particle.", loot, 2),
-            new Sacrifice(10, 2, "Sacrifice your Purple light particle", loot,3),
-            new Sacrifice(11, 2, "Sacrifice all of your potions.", consumable, 0),
-            new Sacrifice(12, 2, "Sacrifice half of your potions.", consumable, 1),
-            new Sacrifice(13, 2, "Sacrifice your arm, can no longer use shield.", mechanic, 0),
-            new Sacrifice(14, 2, "Sacrifice your eye, reduces vision and impairs aiming.", mechanic, 1),
-            new Sacrifice(15, 2, "Sacrifice a tendon, can no longer dodge.", mechanic, 2),
-            new Sacrifice(16, 2, "Sacrifice your strength.", debuff, 0),
-            new Sacrifice(17, 2, "Sacrifice your dexterity.", debuff, 1),
-            new Sacrifice(18, 2, "Sacrifice your health.", debuff, 2),
-            new Sacrifice(19, 2, "Sacrifice your swiftness", debuff, 3),
-            new Sacrifice(20, 3, "Sacrifice 3 ", loot, 0), //sacrifice 3 rare items
-            new Sacrifice(21, 3, "Sacrifice your White light particle.", loot, 1),
-            new Sacrifice(22, 3, "Sacrifice your Purple light particle", loot, 2),
-            new Sacrifice(23, 3, "Sacrifice all of your potions.", consumable, 3),
-            new Sacrifice(24, 3, "Sacrifice your sword.", mechanic, 4),
-            new Sacrifice(25, 3, "Sacrifice your crossbow.", mechanic, 5),
-            new Sacrifice(26, 3, "Sacrifice your arm, can no longer use shield.", mechanic, 6),
-            new Sacrifice(27, 3, "Sacrifice your strength.", debuff, 0),
-            new Sacrifice(28, 3, "Sacrifice your dexterity.", debuff, 1),
-            new Sacrifice(29, 3, "Sacrifice your health.", debuff, 2),
-            new Sacrifice(30, 3, "Sacrifice your swiftness", debuff,3),
-            new Sacrifice(31, 4, "Sacrifice seven ", loot, 0), //sacrifice 7 rare items
-            new Sacrifice(32, 4, "Sacrifice ", loot, 1), // sacrifice legendary item
-            new Sacrifice(33, 4, "Sacrifice all of your potions.", consumable, 0),
-            new Sacrifice(34, 4, "Sacrifice your sword.", mechanic, 1),
-            new Sacrifice(35, 4, "Suffer the curse of weakness.", debuff, 2),
-            new Sacrifice(36, 4, "Suffer the curse of frailty.", debuff, 3),
-            new Sacrifice(37, 5, "Sacrifice all legendary items.", loot, 4),
-            new Sacrifice(38, 5, "Sacrifice ", loot, 5), //Sacrifice ancient item
-            new Sacrifice(39, 5, "Sacrifice ", loot, 6), //Sacrifice legendary item and ancient item
-            new Sacrifice(40, 5, "Sacrifice your sword.", mechanic, 0),
-            new Sacrifice(41, 5, "Sacrifice your crossbow.", mechanic, 1),
-            new Sacrifice(42, 5, "Suffer the curse of weakness.", debuff, 2),
-            new Sacrifice(43, 5, "Suffer the curse of frailty.", debuff, 3)
+            new Sacrifice(1, "common", loot, 0), //sacrifice 3 common items
+            new Sacrifice(1, "rare", loot, 1), //sacrifice a rare item
+            new Sacrifice(1, "potion", consumable, 0), //Sacrifice half of your potions.
+            new Sacrifice(1, "mechanic", mechanic, 0), //Sacrifice your eye, reduces vision and impairs aiming.
+            new Sacrifice(1, "mechanic", mechanic, 1), //Sacrifice a tendon, can no longer dodge.
+            new Sacrifice(1, "debuff", debuff, 0), //Sacrifice your health.
+            new Sacrifice(1, "debuff", debuff, 1), //Sacrifice your swiftness.
+
+            new Sacrifice(2, "common", loot, 2), //sacrifice half of your common item
+            new Sacrifice(2, "rare", loot, 3), //sacrifice 3 rare items
+            new Sacrifice(2, "white", loot, 5), //sacrifice white light particle
+            new Sacrifice(2, "purple", loot, 6), //sacrifice purple light particle
+            new Sacrifice(2, "potion", consumable, 0), //Sacrifice half of your potions.
+            new Sacrifice(2, "potion", consumable, 1), //Sacrifice all of your potions.
+            new Sacrifice(2, "mechanic", mechanic, 0), //Sacrifice your eye, reduces vision and impairs aiming.
+            new Sacrifice(2, "mechanic", mechanic, 1), //Sacrifice a tendon, can no longer dodge.
+            new Sacrifice(2, "mechanic", mechanic, 2), //Sacrifice your arm, can no longer use shield.
+            new Sacrifice(2, "debuff", debuff, 0), //Sacrifice your health.
+            new Sacrifice(2, "debuff", debuff, 1), //Sacrifice your swiftness.
+            new Sacrifice(2, "debuff", debuff, 2), //Sacrifice your strength.
+            new Sacrifice(2, "debuff", debuff, 3), //Sacrifice your dexterity.
+
+            new Sacrifice(3, "rare", loot, 3), //sacrifice 3 rare items
+            new Sacrifice(3, "white", loot, 5), //Sacrifice your White light particle.
+            new Sacrifice(3, "purple", loot, 6), //Sacrifice your Purple light particle
+            new Sacrifice(3, "potion", consumable, 1),
+            new Sacrifice(3, "mechanic", mechanic, 2), //Sacrifice your arm, can no longer use shield.
+            new Sacrifice(3, "mechanic", mechanic, 3), //Sacrifice your sword.
+            new Sacrifice(3, "mechanic", mechanic, 4), //Sacrifice your crossbow.
+            new Sacrifice(3, "debuff", debuff, 0), //Sacrifice your health.
+            new Sacrifice(3, "debuff", debuff, 1), //Sacrifice your swiftness
+            new Sacrifice(3, "debuff", debuff, 2), //Sacrifice your strength.
+            new Sacrifice(3, "debuff", debuff, 3), //Sacrifice your dexterity.
+            
+
+            new Sacrifice(4, "rare", loot, 4), //sacrifice 7 rare items
+            new Sacrifice(4, "legendary", loot, 7), // sacrifice legendary item
+            new Sacrifice(4, "potion", consumable, 1),
+            new Sacrifice(4, "mechanic", mechanic, 3), //Sacrifice your sword.
+            new Sacrifice(4, "mechanic", mechanic, 4), //Sacrifice your crossbow.
+            new Sacrifice(4, "debuff", debuff, 4), //Suffer the curse of weakness.
+            new Sacrifice(4, "debuff", debuff, 5), //Suffer the curse of frailty.
+
+            new Sacrifice(5, "legendary", loot, 8), //sacrifice 2 legendary items
+            new Sacrifice(5, "ancient", loot, 9), //Sacrifice ancient item
+            new Sacrifice(5, "legendary ancient", loot, 10), //Sacrifice legendary item and ancient item
+            new Sacrifice(5, "mechanic", mechanic, 3), //Sacrifice your sword.
+            new Sacrifice(5, "mechanic", mechanic, 4), //Sacrifice your crossbow.
+            new Sacrifice(5, "debuff", debuff, 4), //Suffer the curse of weakness.
+            new Sacrifice(5, "debuff", debuff, 5) //Suffer the curse of frailty.
         };
 
     }

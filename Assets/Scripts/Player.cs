@@ -499,8 +499,8 @@ public class Player : MonoBehaviour
             if (canAttack == false)
             {
                 Invoke("AttackLock", shootSpeed);
-                Invoke("MovementLock", shootSpeed);
-                Invoke("CanHeal", shootSpeed);
+                Invoke("MovementLock", shootSpeed / 2);
+                Invoke("CanHeal", shootSpeed / 2);
             }
         }
     }
