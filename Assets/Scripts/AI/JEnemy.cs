@@ -400,6 +400,7 @@ public class JEnemy : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         isDead = true;
+        dropping = true;
         StopAllCoroutines();
         aIPath.enabled = false;
         destination.enabled = false;
@@ -472,7 +473,7 @@ public class JEnemy : MonoBehaviour
         foreach (var item in Table) //checks table
         {
             lootTotal += item;
-            dropping = true;
+            
         }
         float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
 

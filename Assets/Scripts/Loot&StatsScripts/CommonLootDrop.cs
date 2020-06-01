@@ -11,17 +11,25 @@ public class CommonLootDrop : MonoBehaviour
     private CharacterStat type;
     public GameObject player;
     public GameObject MenuManager;
+    public PlayerStats PlayerStats;
+
+    public List<int> AvailableLoot = new List<int>(new int[] { 0, 1, 2, 3, 4 });
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        PlayerStats = player.GetComponent<PlayerStats>();
     }
     private void Update()
     {
+        if (PlayerStats.PotionPotency.Value >= PlayerStats.Health.Value / 10)
+        {
+            AvailableLoot.Remove(4);
+        }
         if (IsInRange == true)
         {
-            drop = Random.Range(0, 5);
+            drop = AvailableLoot[Random.Range(0, AvailableLoot.Count)];
             GiveItem();
         }
     }

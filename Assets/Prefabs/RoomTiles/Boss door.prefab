@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 44572210981775100}
   - component: {fileID: 44572210981775103}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Option 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,10 +73,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sacrifice 50% strength
+  m_Text: 
 --- !u!1 &44572211237458027
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 44572211237458025}
   - component: {fileID: 44572211237458024}
   m_Layer: 5
-  m_Name: HP Button
+  m_Name: Option 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,8 +409,13 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   sacrifice: []
   commonsac: []
+  raresac: []
+  legendarysac: []
+  ancientsac: []
+  legendaryancientsac: []
   SacrificeDatabase: {fileID: 0}
   ItemDatabase: {fileID: 0}
+  SacrificeScript: {fileID: 0}
   level: 0
   IsInRange: 0
   PromptReady: 1
@@ -693,10 +698,126 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7414f822d5f013c4d9ea97e7fdc93916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 44572212646114944}
+  textbox: {fileID: 44572212646114945}
   choice01: {fileID: 44572211237458027}
+  option01text: {fileID: 44572212762640086}
   choice02: {fileID: 44572212145228581}
+  option02text: {fileID: 44572210981775103}
+  SacrificeDatabase: {fileID: 0}
+  BossDoor: {fileID: 0}
+  PlayerStats: {fileID: 0}
+  rue: {fileID: 0}
+  sacrifice: []
+  commontosac:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  raretosac:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  white:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  purple:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  legendarytosac:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  legendarytosac2:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
+  ancienttosac:
+    id: 0
+    tier: 
+    title: 
+    plural: 
+    lore: 
+    description: 
+    statType:
+      _value: 0
+      BaseValue: 0
+    statString: 
+    modType: 
+    statValue: 0
+    amount: 0
+    collection: 0
   choiceMade: 0
+  level: 0
+  sacsize: 0
+  sacroll1: 0
+  sacroll2: 0
 --- !u!1 &44572212136216139
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +908,7 @@ GameObject:
   - component: {fileID: 44572212145228576}
   - component: {fileID: 44572212145228579}
   m_Layer: 5
-  m_Name: Dmg Button
+  m_Name: Option 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,7 +1243,7 @@ GameObject:
   - component: {fileID: 44572212646114958}
   - component: {fileID: 44572212646114945}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1368,7 @@ GameObject:
   - component: {fileID: 44572212762640087}
   - component: {fileID: 44572212762640086}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Option 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,10 +1429,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sacrifice 50% health
+  m_Text: 
 --- !u!1 &44572212806517016
 GameObject:
   m_ObjectHideFlags: 0

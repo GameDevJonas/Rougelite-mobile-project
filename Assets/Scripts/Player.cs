@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
 
-        if (HealthSystem.GetHealth() == maxHealth)
+        if (HealthSystem.GetHealth() >= maxHealth)
         {
             HealthSystem = new HealthSystem(playerstats.Health.Value);
         }

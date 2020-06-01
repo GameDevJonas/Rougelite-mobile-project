@@ -18,8 +18,9 @@ public class Arrow : MonoBehaviour
         isParented = false;
         rb = GetComponent<Rigidbody2D>();
         stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-        critRoll = Random.Range(0, 101);
+        critRoll = Random.Range(1, 101);
         critChance = stats.CritChance.Value;
+        CritCheck();
         //Destroy(gameObject, 5f);
         //Debug.Log(critRoll);
         //Debug.Log(critChance);

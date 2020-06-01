@@ -43,6 +43,11 @@ public class RareLootDrop : MonoBehaviour
             AvailableLoot.Remove(11);
         }
 
+        if (PlayerStats.CritDamage.Value >= (PlayerStats.CritChance.Value * 2.5f) + 200 && PlayerStats.CritChance.Value != 100)
+        {
+            AvailableLoot.Remove(12);
+        }
+
 
         if (IsInRange == true)
         {

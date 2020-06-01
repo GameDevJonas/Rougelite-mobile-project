@@ -14,7 +14,7 @@ public class Swordscript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerstats = player.GetComponent<PlayerStats>();
-        critRoll = Random.Range(0, 100);
+        critRoll = Random.Range(1, 101);
         critChance = playerstats.CritChance.Value;
 
         CritCheck();

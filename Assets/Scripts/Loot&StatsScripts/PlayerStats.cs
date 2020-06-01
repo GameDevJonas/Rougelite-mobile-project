@@ -243,6 +243,21 @@ public class PlayerStats : MonoBehaviour
         return Loot.Find(item => item.id == id); //finds and returns id.
     }
     
+    public void AddModifier(CharacterStat statType, float statValue, string modType)
+    {
+        if (modType == "flat")
+        {
+            AddFlatModifier(statType, statValue);
+        }
+        if (modType == "percent")
+        {
+            AddFlatModifier(statType, statValue);
+        }
+        if (modType == "mult")
+        {
+            AddFlatModifier(statType, statValue);
+        }
+    }
     
     public void AddFlatModifier(CharacterStat statType, float statValue)
     {
