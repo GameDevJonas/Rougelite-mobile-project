@@ -39,7 +39,7 @@ public class AncientLootDrop : MonoBehaviour
             AvailableLoot.Remove(27);
         }
 
-        if (PlayerStats.IncreasedLifeOnHit.Value >= 1)
+        if (PlayerStats.IncreasedLifeOnHit.Value >= 1 && PlayerStats.LifeOnHit.Value < 1)
         {
             AvailableLoot.Remove(28);
         }

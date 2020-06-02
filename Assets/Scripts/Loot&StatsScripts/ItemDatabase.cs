@@ -93,6 +93,7 @@ public class ItemDatabase : MonoBehaviour
         ShieldReflectsDmg = playerstats.ShieldReflectsDmg;
         NoSacrifice = playerstats.NoSacrifice;
         RueHPDmgOnHit = playerstats.RueHPDmgOnHit;
+        IncreasedLifeOnHit = playerstats.IncreasedLifeOnHit;
         PercentHpDmg = playerstats.PercentHpDmg;
         ExtraLife = playerstats.ExtraLife;
         DropGarantueed = playerstats.DropGarantueed;
