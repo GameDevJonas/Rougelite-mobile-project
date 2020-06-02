@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
     {
         damage = GetComponentInParent<JEnemy>().damage;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -21,7 +22,15 @@ public class EnemyAttack : MonoBehaviour
 
             Player Player = player.GetComponent<Player>();
 
+            PlayerStats playerStats = player.GetComponentInChildren<PlayerStats>();
+
             Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JEnemy>().direction);
+
+            if (playerStats.ShieldReflectsDmg.Value > 0 && Player.canTakeDamage == false)
+            {
+                GetComponentInParent<JEnemy>().healthSystem.Damage(damage);
+                print(damage);
+            }
         }
     }
 }
