@@ -23,7 +23,6 @@ public class JEnemy : MonoBehaviour
     public AIDestinationSetter destination;
 
     public HealthSystem healthSystem;
-    public PlayerStats pStats;
 
     public GameObject attackPrefab;
     public GameObject loot;
@@ -409,6 +408,7 @@ public class JEnemy : MonoBehaviour
         //this.enabled = false;
         //DropLootAndDie();
         Invoke("DropLootAndDie", 2f);
+        return;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -473,7 +473,7 @@ public class JEnemy : MonoBehaviour
             else if (collider.tag == "Sword")
             {
                 float damage = str * swordmod;
-                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.1))
+                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
                 {
                     damage = myHealth;
                 }
@@ -500,68 +500,139 @@ public class JEnemy : MonoBehaviour
 
     void DropLootAndDie()
     {
-        foreach (var item in Table) //checks table
+        PlayerStats playerstats = player.GetComponent<PlayerStats>();
+        if (playerstats.DropGarantueed.Value == 0)
         {
-            lootTotal += item;
-            
-        }
-        float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
-
-        foreach (var weight in Table) //weight, is the number listed in the table of drop chance.
-        {
-            if (randomNumber <= weight) //if less or equal to a weight, give item
+            foreach (var item in Table) //checks table
             {
+                lootTotal += item;
+
+            }
+            float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
 
 
-                if (weight == commondropRange)
+            foreach (var weight in Table) //weight, is the number listed in the table of drop chance.
+            {
+                if (randomNumber <= weight) //if less or equal to a weight, give item
+                {
+
+
+                    if (weight == commondropRange)
+                    {
+                        Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                        Destroy(gameObject);
+                        return;
+
+                    }
+
+                    if (weight == raredropRange)
+                    {
+                        Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                        Destroy(gameObject);
+                        return;
+                    }
+
+                    if (weight == legendarydropRange)
+                    {
+                        Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                        Destroy(gameObject);
+                        return;
+                    }
+
+                    if (weight == ancientdropRange)
+                    {
+                        Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                        Destroy(gameObject);
+                        return;
+                    }
+
+                    if (weight == potiondropRange)
+                    {
+                        Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
+                        Destroy(gameObject);
+                        return;
+                    }
+
+                    if (weight == none)
+                    {
+                        Destroy(gameObject);
+                        return;
+                    }
+                }
+
+                else //if not, roll -= highest value weight.
+
+                {
+                    randomNumber -= weight;
+                }
+            }
+        }
+
+        if (playerstats.DropGarantueed.Value > 0)
+        {
+            float randomNumberDrop = Random.Range(0, 2);
+            if (randomNumberDrop == 0)
+            {
+                float randomnumberLoot = Random.Range(0, 4);
+                if (randomnumberLoot == 0)
                 {
                     Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                     return;
-
                 }
-
-                if (weight == raredropRange)
+                if (randomnumberLoot == 1)
                 {
                     Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                     return;
                 }
-
-                if (weight == legendarydropRange)
+                if (randomnumberLoot == 2)
                 {
                     Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                     return;
                 }
-
-                if (weight == ancientdropRange)
+                if (randomnumberLoot == 3)
                 {
                     Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                     return;
                 }
-
-                if (weight == potiondropRange)
-                {
-                    Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                    return;
-                }
-
-                if (weight == none)
-                {
-                    Destroy(gameObject);
-                    return;
-                }
             }
-
-            else //if not, roll -= highest value weight.
-
+            if (randomNumberDrop == 1)
             {
-                randomNumber -= weight;
+                float randomnumberLoot = Random.Range(0, 4);
+                if (randomnumberLoot == 0)
+                {
+                    Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Destroy(gameObject);
+                    return;
+                }
+                if (randomnumberLoot == 1)
+                {
+                    Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Destroy(gameObject);
+                    return;
+                }
+                if (randomnumberLoot == 2)
+                {
+                    Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Destroy(gameObject);
+                    return;
+                }
+                if (randomnumberLoot == 3)
+                {
+                    Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Destroy(gameObject);
+                    return;
+                }
             }
         }
+        
     }
 
     private void OnBecameVisible()
