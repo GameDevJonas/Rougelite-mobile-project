@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     public bool canTakeDamage = true;
     public bool shieldIsUp = false;
     public bool inKnockBack = false;
+    public bool ignore = false;
+    public bool potionsIncreaseStr = false;
 
     public MenuManager menuManager;
 
@@ -64,8 +66,6 @@ public class Player : MonoBehaviour
     public GameObject currentRoom;
 
     public AstarStarter aStarManager;
-
-    private bool potionsIncreaseStr = false;
 
     void Awake()
     {
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
-        
+
 
         dir = "L";
 
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
             if (dir == "U")
             {
                 rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Force);
-                
+
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
@@ -264,7 +264,16 @@ public class Player : MonoBehaviour
         {
             hasBow = false;
         }
-        
+        if (playerstats.IgnoreUnitCollision.Value > 0 && ignore == false)
+        {
+            ignore = true;
+            Physics2D.IgnoreLayerCollision(9, 12, ignore: true);
+        }
+        if (playerstats.IgnoreUnitCollision.Value == 0 && ignore == true)
+        {
+            ignore = false;
+            Physics2D.IgnoreLayerCollision(9, 12, ignore: false);
+        }
     }
 
     public void UsePotion()

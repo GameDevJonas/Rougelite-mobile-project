@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699479585841816944}
   - component: {fileID: 3472447497642765730}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: RoomRoot
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62578936599298293}
   - component: {fileID: 4474717706930098346}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PointD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4914718155285235749}
   - component: {fileID: 8686421929835895339}
   - component: {fileID: 6424679039065116004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7880419972021938311}
   - component: {fileID: 7635196096007370204}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PointC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150357635412302352}
   - component: {fileID: 8881762986999403010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PointB
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 3927777676682513477}
   - component: {fileID: 61905399360452084}
   - component: {fileID: 5316993722340905310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GhostTrash
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9086558799280209770}
   - component: {fileID: 4640319469301907445}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PointA
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
