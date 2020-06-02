@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1051231341548899016}
   m_Layer: 0
   m_Name: RareLootDrop
-  m_TagString: Untagged
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,14 +113,17 @@ MonoBehaviour:
     id: 0
     tier: 
     title: 
+    plural: 
     lore: 
     description: 
     statType:
       _value: 0
       BaseValue: 0
+    statString: 
     modType: 
     statValue: 0
     amount: 0
+    collection: 0
   player: {fileID: 0}
   MenuManager: {fileID: 0}
   PlayerStats: {fileID: 0}

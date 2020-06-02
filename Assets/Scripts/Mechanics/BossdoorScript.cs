@@ -87,19 +87,12 @@ public class BossdoorScript : MonoBehaviour
             sacrificing.SetActive(true);
         }
 
-        if (sacrificing.GetComponent<SacrificeScript>().choiceMade == 1 && SacrificeMade == false)
+        if (sacrificing.GetComponent<SacrificeScript>().choiceMade > 0 && SacrificeMade == false)
         {
             RemoveSacrifices();
             Time.timeScale = 1;
 
-            Sacrifice01();
-        }
-        if (sacrificing.GetComponent<SacrificeScript>().choiceMade == 2 && SacrificeMade == false)
-        {
-            RemoveSacrifices();
-            Time.timeScale = 1;
-
-            Sacrifice02();
+            Sacrifice();
         }
     }
 
@@ -108,13 +101,7 @@ public class BossdoorScript : MonoBehaviour
         sacrificing.GetComponent<SacrificeScript>().choiceMade = 0;
         sacrificing.SetActive(false);
     }
-    private void Sacrifice01()
-    {
-        SacrificeMade = true;
-
-        Invoke("TextboxGone", 3f);
-    }
-    private void Sacrifice02()
+    private void Sacrifice()
     {
         SacrificeMade = true;
 

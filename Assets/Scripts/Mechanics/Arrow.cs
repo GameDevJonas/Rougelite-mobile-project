@@ -9,9 +9,11 @@ public class Arrow : MonoBehaviour
     public bool isParented;
 
     public PlayerStats stats;
+    public GameObject fire;
     public int critRoll;
     public float critChance;
     public bool crit;
+    public bool burn = true;
 
     void Awake()
     {
@@ -28,7 +30,10 @@ public class Arrow : MonoBehaviour
 
     void Update()
     {
-        //critChance = stats.CritChance.Value;
+        if (stats.FireArrows.Value > 0 && burn == true && GetComponent<Collider2D>().enabled == true)
+        {
+            fire.SetActive(true);
+        }
     }
 
     public void CritCheck()
@@ -91,7 +96,7 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player" && collision.tag != "RoomRoot")
+        if (collision.tag != "Player" && collision.tag != "RoomRoot" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value == 0)
         {
             //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);
@@ -103,6 +108,16 @@ public class Arrow : MonoBehaviour
                 isParented = false;
             }
             GetComponent<Collider2D>().enabled = false;
+        }
+
+        if (collision.tag != "Player" && collision.tag != "Enemy" && collision.tag != "RoomRoot" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value > 0)
+        {
+            //Debug.Log(collision.gameObject.name, collision.gameObject);
+            rb.velocity = new Vector2(0, 0);
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            GetComponent<Collider2D>().enabled = false;
+            burn = false;
+            fire.SetActive(false);
         }
     }
 }

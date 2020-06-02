@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4477100206276600599}
   m_Layer: 0
   m_Name: BossAttack
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,4 +150,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   player: {fileID: 0}
-  Enemy: {fileID: 0}

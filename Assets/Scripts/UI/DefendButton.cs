@@ -18,7 +18,7 @@ public class DefendButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (button.interactable)
+        if (button.interactable && player.playerstats.ShieldArm.Value == 0)
         {
             //Debug.Log("Button is held down");
             player.shieldIsUp = true;

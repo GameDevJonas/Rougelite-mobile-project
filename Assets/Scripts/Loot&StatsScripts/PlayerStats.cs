@@ -63,6 +63,8 @@ public class PlayerStats : MonoBehaviour
     private StatModifier percent;
     private StatModifier mult;
 
+    public bool power = false;
+
     private void Start()
     {
         //Sets basevalues on stats, and updates the player script to use these stats.
@@ -216,6 +218,26 @@ public class PlayerStats : MonoBehaviour
         _ = SwordRangeIncreased.Value;
         _ = SwordArcIncreased.Value;
         _ = Power.Value;
+        if (Power.Value > 0 && !power)
+        {
+            power = true;
+            AddPercentMultModifier(Health, 0.25f);
+            AddPercentMultModifier(Strength, 0.25f);
+            AddPercentMultModifier(Dexterity, 0.25f);
+            AddPercentMultModifier(LifeOnHit, 0.25f);
+            AddPercentMultModifier(SwordAttackModifier, 0.25f);
+            AddPercentMultModifier(CrossbowAttackModifier, 0.25f);
+        }
+        if (Power.Value <= 0 && power)
+        {
+            power = false;
+            AddPercentMultModifier(Health, -0.25f);
+            AddPercentMultModifier(Strength, -0.25f);
+            AddPercentMultModifier(Dexterity, -0.25f);
+            AddPercentMultModifier(LifeOnHit, -0.25f);
+            AddPercentMultModifier(SwordAttackModifier, -0.25f);
+            AddPercentMultModifier(CrossbowAttackModifier, -0.25f);
+        }
         _ = ShieldReflectsDmg.Value;
         _ = NoSacrifice.Value;
         _ = RueHPDmgOnHit.Value;

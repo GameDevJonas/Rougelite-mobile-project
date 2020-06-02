@@ -13,6 +13,7 @@ public class SacrificeScript : MonoBehaviour
     public Text option01text;
     public GameObject choice02;
     public Text option02text;
+    public GameObject choice03;
     public SacrificeDatabase SacrificeDatabase;
     public BossdoorScript BossDoor;
     public GameObject rue;
@@ -624,6 +625,11 @@ public class SacrificeScript : MonoBehaviour
 
         choiceMade = 2;
     }
+
+    public void Option03()
+    {
+        choiceMade = 3;
+    }
     public void GetSacrifice(SacrificeType type, int intensity, int level)
     {
         Sacrifice sacrificeToAdd = SacrificeDatabase.GetSacrifice(type, intensity, level);
@@ -648,6 +654,16 @@ public class SacrificeScript : MonoBehaviour
             if (level > 5)
             {
                 level -= 5;
+            }
+            if (PlayerStats.NoSacrifice.Value > 0)
+            {
+                choice03.SetActive(true);
+                textbox.text = "You have enough guilt and regret...";
+            }
+            if (PlayerStats.NoSacrifice.Value == 0)
+            {
+                choice01.SetActive(true);
+                choice02.SetActive(true);
             }
             return;
         }
@@ -1146,6 +1162,7 @@ public class SacrificeScript : MonoBehaviour
         {
             choice01.SetActive(false);
             choice02.SetActive(false);
+            choice03.SetActive(false);
         }
     }
 }

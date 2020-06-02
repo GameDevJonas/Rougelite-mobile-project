@@ -420,50 +420,80 @@ public class JEnemy : MonoBehaviour
             {
                 return;
             }
+            PlayerStats playerstats = player.GetComponent<PlayerStats>();
+            Player rue = player.GetComponent<Player>();
+            Arrow arrowCrit = collider.GetComponent<Arrow>();
+            Swordscript swordCrit = collider.GetComponent<Swordscript>();
+            float str = playerstats.Strength.Value;
+            float dex = playerstats.Dexterity.Value;
+            float critdmg = playerstats.CritDamage.Value / 100;
+            float crithpdmg = playerstats.PercentHpDmg.Value;
+            float ruehpdmg = playerstats.RueHPDmgOnHit.Value;
+            float bowmod = playerstats.CrossbowAttackModifier.Value;
+            float swordmod = playerstats.SwordAttackModifier.Value;
+            float rapidfire = playerstats.RapidFire.Value;
+            float firearrow = playerstats.FireArrows.Value;
+            float swordexecute = playerstats.SwordExecute.Value;
+
+
+
             myState = EnemyState.damage;
             if (collider.tag == "Arrow")
             {
-                PlayerStats playerstats = player.GetComponent<PlayerStats>();
-                Player rue = player.GetComponent<Player>();
-                Arrow arrowCrit = collider.GetComponent<Arrow>();
-                if (!arrowCrit.crit)
+                float damage = 0;
+                if (rapidfire > 0)
                 {
-                    float damage = playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value; //deals damage to this enemy and heals player.
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Crossbow hit: " + damage);
-                    attacked = true;
+                    damage = ((str / 10) + dex) * bowmod;
                 }
-                else if (arrowCrit.crit) //same but critically striked for more damage.
+                if (rapidfire == 0)
                 {
-                    float damage = (playerstats.Strength.Value * playerstats.CrossbowAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Crossbow hit with crit: " + damage);
-                    attacked = true;
+                    damage = str * bowmod;
                 }
+                if (firearrow > 0)
+                {
+                    damage *= 2;
+                }
+                if (arrowCrit.crit && crithpdmg == 0)
+                {
+                    damage *= critdmg;
+                }
+                if (arrowCrit.crit && crithpdmg > 0)
+                {
+                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+                Debug.Log(damage);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                attacked = true;
             }
             else if (collider.tag == "Sword")
             {
-                PlayerStats playerstats = player.GetComponent<PlayerStats>();
-                Player rue = player.GetComponent<Player>();
-                Swordscript swordCrit = collider.GetComponent<Swordscript>();
-                if (!swordCrit.Crit)
+                float damage = str * swordmod;
+                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.1))
                 {
-                    float damage = playerstats.Strength.Value * playerstats.SwordAttackModifier.Value;
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Sword damaged: " + damage);
-                    attacked = true;
+                    damage = myHealth;
                 }
-                else if (swordCrit.Crit)
+                if (swordCrit.Crit && crithpdmg == 0)
                 {
-                    float damage = (playerstats.Strength.Value * playerstats.SwordAttackModifier.Value) * (playerstats.CritDamage.Value / 100);
-                    healthSystem.Damage(damage);
-                    rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                    Debug.Log("Sword damaged with crit: " + damage);
-                    attacked = true;
+                    damage *= critdmg;
                 }
+                if (swordCrit.Crit && crithpdmg > 0)
+                {
+                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+
+                Debug.Log(damage);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                attacked = true;
             }
         }
     } //Deal damage to enemy

@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
+    public PlayerStats playerstats;
 
     public bool hasSword, hasBow, hasShield = true;
 
@@ -64,8 +65,11 @@ public class Player : MonoBehaviour
 
     public AstarStarter aStarManager;
 
+    private bool potionsIncreaseStr = false;
+
     void Awake()
     {
+        playerstats = GetComponent<PlayerStats>();
         //debugWeaponState.text = "sword";
 
         anim = GetComponentInChildren<Animator>();
@@ -80,11 +84,13 @@ public class Player : MonoBehaviour
 
         joystick = FindObjectOfType<FixedJoystick>();
 
-        PlayerStats playerstats = GetComponent<PlayerStats>();
+        playerstats = GetComponent<PlayerStats>();
 
         rb = GetComponent<Rigidbody2D>();
         menuManager = FindObjectOfType<MenuManager>();
         UpdateStats();
+        
+
         dir = "L";
 
 #if UNITY_EDITOR
@@ -217,24 +223,48 @@ public class Player : MonoBehaviour
     }
     public void UpdateStats()
     {
-        PlayerStats playerstats = GetComponent<PlayerStats>();
         speed = playerstats.MovementSpeed.Value * 5;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
-        shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
+        if (playerstats.RapidFire.Value > 0)
+        {
+            shootSpeed = 0.25f;
+        }
+        else
+        {
+            shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
+        }
 
         if (HealthSystem.GetHealth() >= maxHealth)
         {
             HealthSystem = new HealthSystem(playerstats.Health.Value);
+            currentHealth = HealthSystem.GetHealth();
         }
         else
         {
             HealthSystem.ModMaxHealth(playerstats.Health.Value);
+            currentHealth = HealthSystem.GetHealth();
         }
-
-        HealthSystem.ModMaxHealth(playerstats.Health.Value);
         maxHealth = playerstats.Health.Value;
         healthbar.SetMaxHealth(maxHealth);
         potionPotency = playerstats.PotionPotency.Value;
+
+        if (playerstats.PotsIncreaseStr.Value > 0 && potionsIncreaseStr == false)
+        {
+            potionsIncreaseStr = true;
+        }
+        else
+        {
+            potionsIncreaseStr = false;
+        }
+        if (playerstats.HasSword.Value > 0 && hasSword == true)
+        {
+            hasSword = false;
+        }
+        if (playerstats.HasCrossbow.Value > 0 && hasBow == true)
+        {
+            hasBow = false;
+        }
+        
     }
 
     public void UsePotion()
@@ -249,6 +279,10 @@ public class Player : MonoBehaviour
             Invoke("CanHeal", 0.3f);
             potion -= 1;
             HealthSystem.Heal((maxHealth / 2.5f) + potionPotency);
+            if (potionsIncreaseStr == true)
+            {
+                playerstats.AddFlatModifier(playerstats.Strength, 5);
+            }
         }
         else
         {
@@ -331,7 +365,14 @@ public class Player : MonoBehaviour
         anim.SetInteger("WeaponState", weaponState);
         anim.SetBool("HasSword", hasSword);
         anim.SetBool("HasBow", hasBow);
-        anim.SetBool("HasShield", hasShield);
+        if (playerstats.ShieldArm.Value > 0)
+        {
+            anim.SetBool("HasShield", !hasShield);
+        }
+        else
+        {
+            anim.SetBool("HasShield", hasShield);
+        }
 
         //Shield
         anim.SetBool("ShieldUp", shieldIsUp);

@@ -38,7 +38,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200578576645217852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -87,7 +87,7 @@ SphereCollider:
   m_GameObject: {fileID: 1618496574271908874}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -272,7 +272,7 @@ BoxCollider:
   m_GameObject: {fileID: 3741321236975740647}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 4419357252784391619}
   - component: {fileID: 3927777676682513477}
   - component: {fileID: 61905399360452084}
-  - component: {fileID: 5316993722340905310}
+  - component: {fileID: 2032340285171937336}
   m_Layer: 0
   m_Name: ZombieTrash
   m_TagString: Enemy
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!58 &5316993722340905310
+--- !u!58 &2032340285171937336
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

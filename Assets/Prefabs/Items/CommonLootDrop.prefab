@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4633701987345043096}
   m_Layer: 0
   m_Name: CommonLootDrop
-  m_TagString: Untagged
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,16 +97,21 @@ MonoBehaviour:
     id: 0
     tier: 
     title: 
+    plural: 
     lore: 
     description: 
     statType:
       _value: 0
       BaseValue: 0
+    statString: 
     modType: 
     statValue: 0
     amount: 0
+    collection: 0
   player: {fileID: 0}
   MenuManager: {fileID: 0}
+  PlayerStats: {fileID: 0}
+  AvailableLoot: 0000000001000000020000000300000004000000
 --- !u!58 &4633701987345043096
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ TagManager:
   - RoomRoot
   - MenuManager
   - WeaponSwitchButton
+  - Loot
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
