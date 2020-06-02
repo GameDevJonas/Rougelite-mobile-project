@@ -501,7 +501,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -5.799988, y: 5.1}
   m_SizeDelta: {x: 0.000076294, y: -0.000019073}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1665562176945504412
 Transform:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3834e9e19810b9948978946cd45abb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackDebug: 1000
+  knockBackDebug: 20
   weaponInUse: 0
   anim: {fileID: 0}
   joystick: {fileID: 4541764480379956512}
@@ -956,6 +956,7 @@ MonoBehaviour:
   canHeal: 1
   canTakeDamage: 1
   shieldIsUp: 0
+  inKnockBack: 0
   menuManager: {fileID: 0}
   dir: 
   arrow: {fileID: 4594174622735884533, guid: c7e6d0a8fca52784cbed1a20bc1d531d, type: 3}
@@ -1107,7 +1108,6 @@ MonoBehaviour:
     BaseValue: 0
   Loot: []
   ItemDatabase: {fileID: 496618011368227173}
-  Fixed: 1
 --- !u!1 &1665562177985097422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,13 +1410,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4094390542437932738}
-    characterCount: 6
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1727,13 +1727,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1077603113941958413}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

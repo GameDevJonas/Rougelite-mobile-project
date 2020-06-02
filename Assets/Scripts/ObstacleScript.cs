@@ -10,7 +10,7 @@ public class ObstacleScript : MonoBehaviour
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        int randNumb = Random.Range(0, 5);
+        int randNumb = Random.Range(0, 4);
         rend.sprite = obstacleSprites[randNumb];
     }
 

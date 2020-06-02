@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4205649482228934}
   - component: {fileID: 212522987513716332}
   - component: {fileID: 114554197803855032}
-  - component: {fileID: 6425552302331347744}
+  - component: {fileID: 9175695990498608418}
   m_Layer: 0
-  m_Name: RoomRoot 1
+  m_Name: RoomRoot 2
   m_TagString: RoomRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0a8c2bf99f24d174ca30f11a1b6ecb0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: 1c62ae29394fec04b8e22f8fe7103b2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d995b8aa87ce0564fb5d36f45e85a64d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,29 +102,29 @@ MonoBehaviour:
   doorBot: 0
   doorLeft: 0
   doorRight: 0
-  doorU: {fileID: 1152370622949468, guid: 54915205d9cde1c419e27d26d598291b, type: 3}
-  doorD: {fileID: 1152370622949468, guid: 54915205d9cde1c419e27d26d598291b, type: 3}
-  doorL: {fileID: 1152370622949468, guid: 54915205d9cde1c419e27d26d598291b, type: 3}
-  doorR: {fileID: 1152370622949468, guid: 54915205d9cde1c419e27d26d598291b, type: 3}
-  doorUpWall: {fileID: 1348133729177994, guid: 5581122bf4e65e84b87c6dab0d727c3e, type: 3}
-  doorOtherWall: {fileID: 1348133729177994, guid: 4f3b7eb31c758664ea4599d2335ec2dc,
+  doorU: {fileID: 1152370622949468, guid: 68ac3f6fbac5bc64cb79c7c3622e8a5b, type: 3}
+  doorD: {fileID: 1152370622949468, guid: 68ac3f6fbac5bc64cb79c7c3622e8a5b, type: 3}
+  doorL: {fileID: 1152370622949468, guid: 68ac3f6fbac5bc64cb79c7c3622e8a5b, type: 3}
+  doorR: {fileID: 1152370622949468, guid: 68ac3f6fbac5bc64cb79c7c3622e8a5b, type: 3}
+  doorUpWall: {fileID: 1348133729177994, guid: 59a5751bb6ae41c4b90b1590d1e8e363, type: 3}
+  doorOtherWall: {fileID: 1348133729177994, guid: e8b6f5fab59784b4a9a711937f031835,
     type: 3}
   mappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 1348133729177994, guid: 5581122bf4e65e84b87c6dab0d727c3e, type: 3}
+    prefab: {fileID: 1348133729177994, guid: 59a5751bb6ae41c4b90b1590d1e8e363, type: 3}
   - color: {r: 0, g: 0, b: 1, a: 1}
-    prefab: {fileID: 1132586047390324, guid: 91acb416fd944f44f9f10d66d6a756a0, type: 3}
+    prefab: {fileID: 1132586047390324, guid: fbd19558c68939c47a524b614e7c8063, type: 3}
   - color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 6429758075927487342, guid: 39bb7527b6b186448809c72e429149ab,
+    prefab: {fileID: 6429758075927487342, guid: 86854ef7415056442b32211778e16140,
       type: 3}
   - color: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 44572211779749757, guid: 5e08b1999d80d1a4a9e5267574b31409, type: 3}
   - color: {r: 1, g: 0, b: 1, a: 1}
-    prefab: {fileID: 1348133729177994, guid: 4f3b7eb31c758664ea4599d2335ec2dc, type: 3}
+    prefab: {fileID: 1348133729177994, guid: e8b6f5fab59784b4a9a711937f031835, type: 3}
   - color: {r: 1, g: 1, b: 1, a: 1}
-    prefab: {fileID: 1348133729177994, guid: 5e868d3e4bdc5f54b9fccfff0b728f54, type: 3}
+    prefab: {fileID: 1348133729177994, guid: 56130a5c98190674fa31e012fb5fbc24, type: 3}
   theGen: {fileID: 0}
---- !u!61 &6425552302331347744
+--- !u!61 &9175695990498608418
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

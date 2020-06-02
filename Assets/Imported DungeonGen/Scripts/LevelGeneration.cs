@@ -28,7 +28,7 @@ public class LevelGeneration : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(worldSize.y);
         CreateRooms(); //lays out the actual map
         SetRoomDoors(); //assigns the doors where rooms would connect
-        DrawMap(); //instantiates objects to make up a map
+        //DrawMap(); //instantiates objects to make up a map
         GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
         //Invoke("ApplyBossDoor", .2f);
         Invoke("AssignPlayerPos", 0);
