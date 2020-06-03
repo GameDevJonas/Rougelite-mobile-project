@@ -31,7 +31,6 @@ public class JEnemy : MonoBehaviour
     public GameObject attackPrefab;
     public GameObject loot;
     public GameObject player;
-    public GameObject damagePopup;
 
     public float speed = 30f;
     public float myHealth;
@@ -504,10 +503,6 @@ public class JEnemy : MonoBehaviour
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                //Spawn damage popup
-                GameObject popup = Instantiate(damagePopup, transform.position, Quaternion.identity);
-                Debug.Log(arrowCrit.crit);
-                popup.GetComponent<DamagePopup>().OnPopup(arrowCrit.crit, damage);
 
                 attacked = true;
             }
@@ -536,10 +531,6 @@ public class JEnemy : MonoBehaviour
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                //Spawn damage popup
-                GameObject popup = Instantiate(damagePopup, transform.position, Quaternion.identity);
-                Debug.Log(swordCrit.Crit);
-                popup.GetComponent<DamagePopup>().OnPopup(swordCrit.Crit, damage);
                 attacked = true;
             }
         }
