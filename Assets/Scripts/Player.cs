@@ -114,7 +114,14 @@ public class Player : MonoBehaviour
         Anims();
         currentHealth = HealthSystem.GetHealth();
         healthbar.SetHealth(currentHealth);
-
+        if (currentHealth == maxHealth && playerstats.PotsIncreaseStr.Value == 0)
+        {
+            canHeal = false;
+        }
+        else
+        {
+            canHeal = true;
+        }
 
         /*if (canMove == false && !shieldIsUp)
         {

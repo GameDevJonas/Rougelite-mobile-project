@@ -506,7 +506,6 @@ public class JEnemy : MonoBehaviour
             foreach (var item in Table) //checks table
             {
                 lootTotal += item;
-
             }
             float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
 
@@ -632,7 +631,7 @@ public class JEnemy : MonoBehaviour
                 }
             }
         }
-        
+        return;
     }
 
     private void OnBecameVisible()
