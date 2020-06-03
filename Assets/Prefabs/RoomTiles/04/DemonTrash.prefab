@@ -337,7 +337,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   aIPath: {fileID: 0}
   destination: {fileID: 0}
-  pStats: {fileID: 0}
+  damagePopup: {fileID: 7557401448817280372, guid: 516877f9991ec8546b438d94a854bad4,
+    type: 3}
   attackPrefab: {fileID: 1986842023111703662, guid: 0d694c0c783051541af74d062da9445b,
     type: 3}
   loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}

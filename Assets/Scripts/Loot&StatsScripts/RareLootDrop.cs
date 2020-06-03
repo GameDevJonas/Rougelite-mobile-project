@@ -9,6 +9,7 @@ public class RareLootDrop : MonoBehaviour
 
     private bool IsInRange;
     private int drop;
+    private bool pickup;
     private CharacterStat type;
     public GameObject player;
     public GameObject MenuManager;
@@ -62,8 +63,9 @@ public class RareLootDrop : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && !pickup)
         {
+            pickup = true;
             IsInRange = true;
         }
     }

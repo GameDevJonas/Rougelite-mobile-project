@@ -8,6 +8,7 @@ public class AncientLootDrop : MonoBehaviour
     [SerializeField] Item item;
 
     private bool IsInRange;
+    private bool pickup = false;
     private int drop;
     private CharacterStat type;
     public GameObject player;
@@ -94,8 +95,9 @@ public class AncientLootDrop : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && !pickup)
         {
+            pickup = true;
             IsInRange = true;
         }
     }

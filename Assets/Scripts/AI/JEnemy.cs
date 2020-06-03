@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class JEnemy : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class JEnemy : MonoBehaviour
 
     public HealthSystem healthSystem;
 
+    public GameObject damagePopup;
+    public TextMeshProUGUI dmgtext;
     public GameObject attackPrefab;
     public GameObject loot;
     public GameObject player;
@@ -411,6 +415,29 @@ public class JEnemy : MonoBehaviour
         return;
     }
 
+    void DamagePopUp(float damage, bool crit)
+    {
+        float fadetime = 0.7f;
+        GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
+        dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+        double dmgprint = System.Math.Round(damage, 2);
+        if (!crit)
+        {
+            dmgtext.CrossFadeAlpha(0, fadetime, false);
+            dmgtext.text = dmgprint.ToString();
+        }
+        else
+        {
+            dmgtext.color = Color.red;
+            dmgtext.fontSize = 42;
+            dmgtext.CrossFadeAlpha(0, fadetime, false);
+            dmgtext.text = dmgprint.ToString();
+        }
+        
+        dmgpopupclone.SetActive(true);
+        Destroy(dmgpopupclone, fadetime);
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
 
@@ -434,6 +461,7 @@ public class JEnemy : MonoBehaviour
             float rapidfire = playerstats.RapidFire.Value;
             float firearrow = playerstats.FireArrows.Value;
             float swordexecute = playerstats.SwordExecute.Value;
+            bool crit = false;
 
 
 
@@ -456,16 +484,19 @@ public class JEnemy : MonoBehaviour
                 if (arrowCrit.crit && crithpdmg == 0)
                 {
                     damage *= critdmg;
+                    crit = true;
                 }
                 if (arrowCrit.crit && crithpdmg > 0)
                 {
                     damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
+                    crit = true;
                 }
                 if (ruehpdmg > 0)
                 {
                     damage += (playerstats.Health.Value * 0.1f);
                 }
                 Debug.Log(damage);
+                DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                 attacked = true;
@@ -480,10 +511,12 @@ public class JEnemy : MonoBehaviour
                 if (swordCrit.Crit && crithpdmg == 0)
                 {
                     damage *= critdmg;
+                    crit = true;
                 }
                 if (swordCrit.Crit && crithpdmg > 0)
                 {
                     damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
+                    crit = true;
                 }
                 if (ruehpdmg > 0)
                 {
@@ -491,6 +524,7 @@ public class JEnemy : MonoBehaviour
                 }
 
                 Debug.Log(damage);
+                DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                 attacked = true;
@@ -631,7 +665,6 @@ public class JEnemy : MonoBehaviour
                 }
             }
         }
-        return;
     }
 
     private void OnBecameVisible()

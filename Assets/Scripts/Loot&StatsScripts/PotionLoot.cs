@@ -5,6 +5,7 @@ using UnityEngine;
 public class PotionLoot : MonoBehaviour
 {
     private bool IsInRange;
+    private bool pickup = false;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,9 @@ public class PotionLoot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && !pickup)
         {
+            pickup = true;
             IsInRange = true;
         }
     }
