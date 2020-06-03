@@ -343,6 +343,8 @@ MonoBehaviour:
     type: 3}
   loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}
   player: {fileID: 0}
+  damagePopup: {fileID: 7214184224290010066, guid: 8df6667cc28bdbe43a1741723ec82672,
+    type: 3}
   speed: 30
   myHealth: 0
   debugHealth: 0
