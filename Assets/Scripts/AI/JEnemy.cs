@@ -418,24 +418,28 @@ public class JEnemy : MonoBehaviour
     void DamagePopUp(float damage, bool crit)
     {
         float fadetime = 0.7f;
-        GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
-        dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+        
         double dmgprint = System.Math.Round(damage, 2);
         if (!crit)
         {
+            GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
+            dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
             dmgtext.CrossFadeAlpha(0, fadetime, false);
             dmgtext.text = dmgprint.ToString();
+            dmgpopupclone.SetActive(true);
+            Destroy(dmgpopupclone, fadetime);
         }
         else
         {
+            GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 18, Quaternion.identity);
+            dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
             dmgtext.color = Color.red;
             dmgtext.fontSize = 42;
             dmgtext.CrossFadeAlpha(0, fadetime, false);
             dmgtext.text = dmgprint.ToString();
+            dmgpopupclone.SetActive(true);
+            Destroy(dmgpopupclone, fadetime);
         }
-        
-        dmgpopupclone.SetActive(true);
-        Destroy(dmgpopupclone, fadetime);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

@@ -33,6 +33,7 @@ public class LootFound : MonoBehaviour
             GiveItem(11);
             GiveItem(11);
             GiveItem(15);
+            GiveItem(21);
             GiveItem(22);
             GiveItem(23);
             GiveItem(25);

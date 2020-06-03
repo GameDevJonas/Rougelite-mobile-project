@@ -93,10 +93,90 @@ public class Arrow : MonoBehaviour
         }
         AddForce();
     }
+    public void ShootyShoot1(string dir)
+    {
+        if (dir == "UL")
+        {
+            //transform.Rotate(0, 0, 45);
+            transform.Rotate(0, 0, 10);
+        }
+        else if (dir == "U")
+        {
+            transform.Rotate(0, 0, 10);
+        }
+        else if (dir == "UR")
+        {
+            //transform.Rotate(0, 0, -45);
+            transform.Rotate(0, 0, 10);
+        }
+        else if (dir == "R")
+        {
+            transform.Rotate(0, 0, -100);
+        }
+        else if (dir == "DR")
+        {
+            //transform.Rotate(0, 0, -135);
+            transform.Rotate(0, 0, -190);
+        }
+        else if (dir == "D")
+        {
+            transform.Rotate(0, 0, -190);
+        }
+        else if (dir == "DL")
+        {
+            //transform.Rotate(0, 0, 135);
+            transform.Rotate(0, 0, -190);
+        }
+        else if (dir == "L")
+        {
+            transform.Rotate(0, 0, 100);
+        }
+        AddForce();
+    }
+    public void ShootyShoot2(string dir)
+    {
+        if (dir == "UL")
+        {
+            //transform.Rotate(0, 0, 45);
+            transform.Rotate(0, 0, -10);
+        }
+        else if (dir == "U")
+        {
+            transform.Rotate(0, 0, -10);
+        }
+        else if (dir == "UR")
+        {
+            //transform.Rotate(0, 0, -45);
+            transform.Rotate(0, 0, -10);
+        }
+        else if (dir == "R")
+        {
+            transform.Rotate(0, 0, -80);
+        }
+        else if (dir == "DR")
+        {
+            //transform.Rotate(0, 0, -135);
+            transform.Rotate(0, 0, -170);
+        }
+        else if (dir == "D")
+        {
+            transform.Rotate(0, 0, -170);
+        }
+        else if (dir == "DL")
+        {
+            //transform.Rotate(0, 0, 135);
+            transform.Rotate(0, 0, -170);
+        }
+        else if (dir == "L")
+        {
+            transform.Rotate(0, 0, 80);
+        }
+        AddForce();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player" && collision.tag != "RoomRoot" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value == 0)
+        if (collision.tag != "Player" && collision.tag != "RoomRoot" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value == 0)
         {
             //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);
@@ -110,7 +190,7 @@ public class Arrow : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
         }
 
-        if (collision.tag != "Player" && collision.tag != "Enemy" && collision.tag != "RoomRoot" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value > 0)
+        if (collision.tag != "Player" && collision.tag != "Enemy" && collision.tag != "RoomRoot" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value > 0)
         {
             //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);

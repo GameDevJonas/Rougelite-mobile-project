@@ -549,6 +549,13 @@ public class Player : MonoBehaviour
             //---------------------
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
             arrowClone.GetComponent<Arrow>().ShootyShoot(dir);
+            if (playerstats.TripleArrow.Value > 0)
+            {
+                GameObject arrowClone2 = Instantiate(arrow, shootPoint.position, Quaternion.identity);
+                arrowClone2.GetComponent<Arrow>().ShootyShoot1(dir);
+                GameObject arrowClone3 = Instantiate(arrow, shootPoint.position, Quaternion.identity);
+                arrowClone3.GetComponent<Arrow>().ShootyShoot2(dir);
+            }
             canMove = false;
             canAttack = false;
             canHeal = false;
