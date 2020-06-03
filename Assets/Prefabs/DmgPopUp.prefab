@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2325227234755732460}
   m_Layer: 0
-  m_Name: DamagePopUp
+  m_Name: DmgPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
