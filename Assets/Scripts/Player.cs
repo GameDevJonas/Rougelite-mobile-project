@@ -525,7 +525,7 @@ public class Player : MonoBehaviour
             //---------------------
             canHeal = false;
             GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
-            clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir);
+            clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
             canMove = false;
             canAttack = false;
             Destroy(clonedObject, 0.2f);
@@ -548,7 +548,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("DoFire");
             //---------------------
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
-            arrowClone.GetComponent<Arrow>().ShootyShoot(dir);
+            arrowClone.GetComponent<Arrow>().ShootyShoot(dir, playerstats.HasEye.Value);
             if (playerstats.TripleArrow.Value > 0)
             {
                 GameObject arrowClone2 = Instantiate(arrow, shootPoint.position, Quaternion.identity);

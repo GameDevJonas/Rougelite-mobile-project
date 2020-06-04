@@ -9,6 +9,7 @@ public class Swordscript : MonoBehaviour
     public int critRoll;
     public float critChance;
     public bool Crit;
+    public float HasEye;
 
     private void Start()
     {
@@ -24,39 +25,71 @@ public class Swordscript : MonoBehaviour
         critChance = playerstats.CritChance.Value;
     }
 
-    public void RotateMeBaby(string dir)
+    public void RotateMeBaby(string dir, float HasEye)
     {
-        if (dir == "UL")
+        if (dir == "UL" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, 45);
+                transform.Rotate(0, 0, 45);
         }
-        else if (dir == "U")
+        else if (dir == "U" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, 0);
+                transform.Rotate(0, 0, 0);
         }
-        else if (dir == "UR")
+        else if (dir == "UR" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, -45);
+                transform.Rotate(0, 0, -45);
         }
-        else if (dir == "R")
+        else if (dir == "R" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, -90);
+                transform.Rotate(0, 0, -90);
         }
-        else if (dir == "DR")
+        else if (dir == "DR" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, -135);
+                transform.Rotate(0, 0, -135);
         }
-        else if (dir == "D")
+        else if (dir == "D" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, -180);
+                transform.Rotate(0, 0, -180);
         }
-        else if (dir == "DL")
+        else if (dir == "DL" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, 135);
+                transform.Rotate(0, 0, 135);
         }
-        else if (dir == "L")
+        else if (dir == "L" && HasEye <= 0)
         {
-            transform.Rotate(0, 0, 90);
+                transform.Rotate(0, 0, 90);
+        }
+        else if (dir == "UL" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, 60);
+        }
+        else if (dir == "U" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, 15);
+        }
+        else if (dir == "UR" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, -20);
+        }
+        else if (dir == "R" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, -75);
+        }
+        else if (dir == "DR" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, -120);
+        }
+        else if (dir == "D" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, -165);
+        }
+        else if (dir == "DL" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, 150);
+        }
+        else if (dir == "L" && HasEye > 0)
+        {
+                transform.Rotate(0, 0, 105);
         }
     }
 

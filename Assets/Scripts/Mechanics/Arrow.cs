@@ -53,43 +53,79 @@ public class Arrow : MonoBehaviour
         rb.AddRelativeForce(transform.up * 6500);
     }
 
-    public void ShootyShoot(string dir)
+    public void ShootyShoot(string dir, float HasEye)
     {
-        if (dir == "UL")
+        if (dir == "UL" && HasEye <= 0)
         {
             //transform.Rotate(0, 0, 45);
             transform.Rotate(0, 0, 0);
         }
-        else if (dir == "U")
+        else if (dir == "U" && HasEye <= 0)
         {
             transform.Rotate(0, 0, 0);
         }
-        else if (dir == "UR")
+        else if (dir == "UR" && HasEye <= 0)
         {
             //transform.Rotate(0, 0, -45);
             transform.Rotate(0, 0, 0);
         }
-        else if (dir == "R")
+        else if (dir == "R" && HasEye <= 0)
         {
             transform.Rotate(0, 0, -90);
         }
-        else if (dir == "DR")
+        else if (dir == "DR" && HasEye <= 0)
         {
             //transform.Rotate(0, 0, -135);
             transform.Rotate(0, 0, -180);
         }
-        else if (dir == "D")
+        else if (dir == "D" && HasEye <= 0)
         {
             transform.Rotate(0, 0, -180);
         }
-        else if (dir == "DL")
+        else if (dir == "DL" && HasEye <= 0)
         {
             //transform.Rotate(0, 0, 135);
             transform.Rotate(0, 0, -180);
         }
-        else if (dir == "L")
+        else if (dir == "L" && HasEye <= 0)
         {
             transform.Rotate(0, 0, 90);
+        }
+        else if (dir == "UL" && HasEye > 0)
+        {
+            //transform.Rotate(0, 0, 45);
+            transform.Rotate(0, 0, 15);
+        }
+        else if (dir == "U" && HasEye > 0)
+        {
+            transform.Rotate(0, 0, 15);
+        }
+        else if (dir == "UR" && HasEye > 0)
+        {
+            //transform.Rotate(0, 0, -45);
+            transform.Rotate(0, 0, 15);
+        }
+        else if (dir == "R" && HasEye > 0)
+        {
+            transform.Rotate(0, 0, -85);
+        }
+        else if (dir == "DR" && HasEye > 0)
+        {
+            //transform.Rotate(0, 0, -135);
+            transform.Rotate(0, 0, -175);
+        }
+        else if (dir == "D" && HasEye > 0)
+        {
+            transform.Rotate(0, 0, -175);
+        }
+        else if (dir == "DL" && HasEye > 0)
+        {
+            //transform.Rotate(0, 0, 135);
+            transform.Rotate(0, 0, -175);
+        }
+        else if (dir == "L" && HasEye > 0)
+        {
+            transform.Rotate(0, 0, 105);
         }
         AddForce();
     }
