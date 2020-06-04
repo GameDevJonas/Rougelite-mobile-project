@@ -49,7 +49,7 @@ public class JEnemy : MonoBehaviour
     public bool hidesInLight;
     public bool attacked;
     public bool hasAttacked = false;
-    public bool isDead = false;
+    private bool isDead = false;
     bool nonStateChecker = true;
 
     public int level;
@@ -67,14 +67,13 @@ public class JEnemy : MonoBehaviour
     public int potiondropRange;
     public int none;
     public int lootTotal;
+    public bool dropping;
 
     public GameObject commonLoot;
     public GameObject rareLoot;
     public GameObject legendaryLoot;
     public GameObject ancientLoot;
     public GameObject potion;
-
-    public bool dropping = false;
     #endregion
 
     #region Animation
@@ -245,7 +244,7 @@ public class JEnemy : MonoBehaviour
 
         GetDirFromPlayer();
 
-        if (myHealth <= 0 && !dropping)
+        if (myHealth <= 0 && !isDead)
         {
             //DropLootAndDie();
             myState = EnemyState.dead;
@@ -402,17 +401,19 @@ public class JEnemy : MonoBehaviour
     void DeathState()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        isDead = true;
-        dropping = true;
         StopAllCoroutines();
+        isDead = true;
         aIPath.enabled = false;
         destination.enabled = false;
         anim.SetTrigger("Dead");
         GetComponent<Collider2D>().enabled = false;
         //this.enabled = false;
         //DropLootAndDie();
-        Invoke("DropLootAndDie", 2f);
-        return;
+        if (!dropping)
+        {
+            dropping = true;
+            Invoke("DropLootAndDie", 2f);
+        }
     }
 
     void DamagePopUp(float damage, bool crit)
@@ -499,7 +500,6 @@ public class JEnemy : MonoBehaviour
                 {
                     damage += (playerstats.Health.Value * 0.1f);
                 }
-                Debug.Log(damage);
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
@@ -527,7 +527,6 @@ public class JEnemy : MonoBehaviour
                 {
                     damage += (playerstats.Health.Value * 0.1f);
                 }
-                Debug.Log(damage);
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
