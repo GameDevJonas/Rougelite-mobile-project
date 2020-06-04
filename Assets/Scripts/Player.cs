@@ -9,7 +9,7 @@ using TMPro;
 [Serializable]
 public class Player : MonoBehaviour
 {
-    public float knockBackDebug;
+    //public float knockBackDebug;
 
     public enum WeaponState { sword, bow };
     public WeaponState weaponInUse = WeaponState.sword;
@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     public float xInput;
     public float yInput;
     public int weaponState;
+    public float knockBack;
+    public float shieldKnockBack;
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
@@ -168,41 +170,77 @@ public class Player : MonoBehaviour
         //HURT ANIM
 
 
-        if (canTakeDamage)
+        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0)
+        {
+            HealthSystem.Damage(dmg);
+            if (dir == "U")
+            {
+                rb.AddForce(new Vector2(0, knockBack), ForceMode2D.Force);
+
+                //ANIMATION
+            }
+            else if (dir == "D")
+            {
+                rb.AddForce(new Vector2(0, -knockBack), ForceMode2D.Force);
+
+                //ANIMATION
+            }
+            else if (dir == "L")
+            {
+                rb.AddForce(new Vector2(-knockBack, 0), ForceMode2D.Force);
+
+                //ANIMATION
+            }
+            else if (dir == "R")
+            {
+                rb.AddForce(new Vector2(knockBack, 0), ForceMode2D.Force);
+
+                //ANIMATION
+            }
+            inKnockBack = true;
+            canMove = false;
+            canAttack = false;
+            canHeal = false;
+            Invoke("CanHeal", .75f);
+            Invoke("AttackLock", .75f);
+            Invoke("MovementLock", .75f);
+            Invoke("StopKnockBack", .75f);
+        }
+        else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0)
         {
             HealthSystem.Damage(dmg);
         }
-        else
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0)
         {
-            //Knockback w/ shield
             if (dir == "U")
             {
-                rb.AddForce(new Vector2(0, knockBackDebug), ForceMode2D.Force);
+                rb.AddForce(new Vector2(0, shieldKnockBack), ForceMode2D.Force);
 
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
             else if (dir == "D")
             {
-                rb.AddForce(new Vector2(0, -knockBackDebug), ForceMode2D.Force);
+                rb.AddForce(new Vector2(0, -shieldKnockBack), ForceMode2D.Force);
 
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
             else if (dir == "L")
             {
-                rb.AddForce(new Vector2(-knockBackDebug, 0), ForceMode2D.Force);
+                rb.AddForce(new Vector2(-shieldKnockBack, 0), ForceMode2D.Force);
 
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
             else if (dir == "R")
             {
-                rb.AddForce(new Vector2(knockBackDebug, 0), ForceMode2D.Force);
+                rb.AddForce(new Vector2(shieldKnockBack, 0), ForceMode2D.Force);
 
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
+            
             inKnockBack = true;
             anim.SetBool("ShieldUp", true);
             canMove = false;
@@ -211,7 +249,32 @@ public class Player : MonoBehaviour
             Invoke("CanHeal", .5f);
             Invoke("AttackLock", .5f);
             Invoke("MovementLock", .5f);
-            Invoke("StopKnockBack", 1f);
+            Invoke("StopKnockBack", .5f);
+        }
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0)
+        {
+            //Knockback w/ shield
+            if (dir == "U")
+            {
+                //ANIMATION
+                anim.SetTrigger("ShieldHit");
+            }
+            else if (dir == "D")
+            {
+                //ANIMATION
+                anim.SetTrigger("ShieldHit");
+            }
+            else if (dir == "L")
+            {
+                //ANIMATION
+                anim.SetTrigger("ShieldHit");
+            }
+            else if (dir == "R")
+            {
+                //ANIMATION
+                anim.SetTrigger("ShieldHit");
+            }
+            anim.SetBool("ShieldUp", true);
         }
     }
 
@@ -274,12 +337,12 @@ public class Player : MonoBehaviour
         if (playerstats.IgnoreUnitCollision.Value > 0 && ignore == false)
         {
             ignore = true;
-            Physics2D.IgnoreLayerCollision(9, 12, ignore: true);
+            Physics2D.IgnoreLayerCollision(9, 11, ignore: true);
         }
         if (playerstats.IgnoreUnitCollision.Value == 0 && ignore == true)
         {
             ignore = false;
-            Physics2D.IgnoreLayerCollision(9, 12, ignore: false);
+            Physics2D.IgnoreLayerCollision(9, 11, ignore: false);
         }
     }
 

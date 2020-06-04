@@ -359,7 +359,6 @@ MonoBehaviour:
   hidesInLight: 0
   attacked: 0
   hasAttacked: 0
-  isDead: 0
   level: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
@@ -373,6 +372,7 @@ MonoBehaviour:
   potiondropRange: 0
   none: 0
   lootTotal: 0
+  dropping: 0
   commonLoot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
     type: 3}
   rareLoot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d,
@@ -382,7 +382,6 @@ MonoBehaviour:
   ancientLoot: {fileID: 4633701987345043094, guid: 6c47138bba0d6524cbb2f5ca63bceb9d,
     type: 3}
   potion: {fileID: 4633701987345043094, guid: e690ca87d66d61542b99fcd3395f16ee, type: 3}
-  dropping: 0
 --- !u!50 &3962052271877654383
 Rigidbody2D:
   serializedVersion: 4
@@ -395,7 +394,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

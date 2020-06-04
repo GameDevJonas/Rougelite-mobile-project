@@ -890,9 +890,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 0.01
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -927,7 +927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3834e9e19810b9948978946cd45abb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackDebug: 20
   weaponInUse: 0
   anim: {fileID: 0}
   joystick: {fileID: 4541764480379956512}
@@ -945,6 +944,8 @@ MonoBehaviour:
   xInput: 0
   yInput: 0
   weaponState: 0
+  knockBack: 100
+  shieldKnockBack: 75
   healthbar: {fileID: 1319494376}
   playerstats: {fileID: 0}
   hasSword: 1
@@ -958,6 +959,8 @@ MonoBehaviour:
   canTakeDamage: 1
   shieldIsUp: 0
   inKnockBack: 0
+  ignore: 0
+  potionsIncreaseStr: 0
   menuManager: {fileID: 0}
   dir: 
   arrow: {fileID: 4594174622735884533, guid: c7e6d0a8fca52784cbed1a20bc1d531d, type: 3}
@@ -1110,6 +1113,7 @@ MonoBehaviour:
   Loot: []
   ItemDatabase: {fileID: 496618011368227173}
   power: 0
+  lifeonhit: 0
 --- !u!1 &1665562177985097422
 GameObject:
   m_ObjectHideFlags: 0

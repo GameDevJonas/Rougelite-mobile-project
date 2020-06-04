@@ -30,10 +30,11 @@ public class LootFound : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
-            GiveItem(11);
-            GiveItem(11);
+            /*GiveItem(11);
+            GiveItem(11);*/
             GiveItem(15);
-            GiveItem(21);
+            GiveItem(16);
+            /*GiveItem(21);
             GiveItem(22);
             GiveItem(23);
             GiveItem(25);
@@ -44,7 +45,7 @@ public class LootFound : MonoBehaviour
             GiveItem(31);
             GiveItem(32);
             GiveItem(33);
-            GiveItem(34);
+            GiveItem(34);*/
             return;
         }
 
