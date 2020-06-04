@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 1665562177985097420}
   - component: {fileID: 1665562177985097421}
   m_Layer: 0
-  m_Name: Sprite Light 2D
+  m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

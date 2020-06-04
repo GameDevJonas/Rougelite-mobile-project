@@ -31,6 +31,7 @@ public class JEnemy : MonoBehaviour
     public GameObject attackPrefab;
     public GameObject loot;
     public GameObject player;
+    public GameObject destroyChildren;
 
     public float speed = 30f;
     public float myHealth;
@@ -583,42 +584,41 @@ public class JEnemy : MonoBehaviour
                     if (weight == commondropRange)
                     {
                         Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
-                        Destroy(gameObject);
+                        Corpse();
                         return;
-
                     }
 
                     if (weight == raredropRange)
                     {
                         Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
-                        Destroy(gameObject);
+                        Corpse();
                         return;
                     }
 
                     if (weight == legendarydropRange)
                     {
                         Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
-                        Destroy(gameObject);
+                        Corpse();
                         return;
                     }
 
                     if (weight == ancientdropRange)
                     {
                         Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
-                        Destroy(gameObject);
+                        Corpse();
                         return;
                     }
 
                     if (weight == potiondropRange)
                     {
                         Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
-                        Destroy(gameObject);
+                        Corpse();
                         return;
                     }
 
                     if (weight == none)
                     {
-                        Destroy(gameObject);
+                        Corpse();
                         return;
                     }
                 }
@@ -640,25 +640,25 @@ public class JEnemy : MonoBehaviour
                 if (randomnumberLoot == 0)
                 {
                     Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 1)
                 {
                     Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 2)
                 {
                     Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 3)
                 {
                     Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
             }
@@ -669,32 +669,39 @@ public class JEnemy : MonoBehaviour
                 {
                     Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
                     Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 1)
                 {
                     Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
                     Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 2)
                 {
                     Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
                     Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
                 if (randomnumberLoot == 3)
                 {
                     Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
                     Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
-                    Destroy(gameObject);
+                    Corpse();
                     return;
                 }
             }
         }
+    }
+    public void Corpse()
+    {
+        Destroy(destroyChildren);
+        GetComponentInChildren<Animator>().enabled = false;
+        transform.DetachChildren();
+        Destroy(gameObject);
     }
 
     private void OnBecameVisible()

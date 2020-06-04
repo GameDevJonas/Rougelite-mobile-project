@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200578576645217852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.9886, y: 4.9886, z: 4.9886}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.099976, y: 0, z: 0}
+  m_LocalScale: {x: 49.885998, y: 49.885998, z: 4.9886}
   m_Children: []
-  m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 0
+  m_Father: {fileID: 2800203112645148003}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &3472447497642765730
 CircleCollider2D:
@@ -71,12 +71,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618496574271908874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.099976, y: -15.900001, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 5
+  m_Father: {fileID: 2800203112645148003}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4474717706930098346
 SphereCollider:
@@ -121,7 +121,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8686421929835895339
 SpriteRenderer:
@@ -217,12 +217,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3523044134259826289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.099976, y: 16.8, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 4
+  m_Father: {fileID: 2800203112645148003}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7635196096007370204
 MeshFilter:
@@ -256,12 +256,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3741321236975740647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.01, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 3
+  m_Father: {fileID: 2800203112645148003}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8881762986999403010
 BoxCollider:
@@ -276,6 +276,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6164595978895949284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2800203112645148003}
+  m_Layer: 0
+  m_Name: Destroy Children
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2800203112645148003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164595978895949284}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.0099976, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children:
+  - {fileID: 9086558799280209770}
+  - {fileID: 4150357635412302352}
+  - {fileID: 7880419972021938311}
+  - {fileID: 62578936599298293}
+  - {fileID: 7699479585841816944}
+  m_Father: {fileID: 6429758075927487634}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6429758075927487342
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,12 +344,8 @@ Transform:
   m_LocalPosition: {x: -832.53345, y: 5.031991, z: -17.71875}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
-  - {fileID: 7699479585841816944}
   - {fileID: 4914718155285235749}
-  - {fileID: 9086558799280209770}
-  - {fileID: 4150357635412302352}
-  - {fileID: 7880419972021938311}
-  - {fileID: 62578936599298293}
+  - {fileID: 2800203112645148003}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -344,6 +375,7 @@ MonoBehaviour:
     type: 3}
   loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}
   player: {fileID: 0}
+  destroyChildren: {fileID: 6164595978895949284}
   speed: 30
   myHealth: 0
   debugHealth: 0
@@ -359,7 +391,6 @@ MonoBehaviour:
   hidesInLight: 0
   attacked: 0
   hasAttacked: 0
-  isDead: 0
   level: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
@@ -373,6 +404,7 @@ MonoBehaviour:
   potiondropRange: 0
   none: 0
   lootTotal: 0
+  dropping: 0
   commonLoot: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
     type: 3}
   rareLoot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d,
@@ -382,7 +414,6 @@ MonoBehaviour:
   ancientLoot: {fileID: 4633701987345043094, guid: 6c47138bba0d6524cbb2f5ca63bceb9d,
     type: 3}
   potion: {fileID: 4633701987345043094, guid: e690ca87d66d61542b99fcd3395f16ee, type: 3}
-  dropping: 0
 --- !u!50 &3962052271877654383
 Rigidbody2D:
   serializedVersion: 4
@@ -522,12 +553,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6488241941857388439}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.86, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 38.69995, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 6429758075927487634}
-  m_RootOrder: 2
+  m_Father: {fileID: 2800203112645148003}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &4640319469301907445
 Animation:
