@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     public string dir;
     public GameObject arrow;
+    public GameObject swordprojectile;
     public float shootSpeed;
     public float shootForce;
     public Transform shootPoint;
@@ -587,11 +588,42 @@ public class Player : MonoBehaviour
             anim.SetBool("InAttackAnim", true);
             //---------------------
             canHeal = false;
-            GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
-            clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
+            if (playerstats.SwordRangeIncreased.Value <= 0 && playerstats.SwordArcIncreased.Value <= 0)
+            {
+                GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
+                clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
+                Destroy(clonedObject, 0.2f);
+            }
+            if (playerstats.SwordRangeIncreased.Value > 0 && playerstats.SwordArcIncreased.Value <= 0)
+            {
+                GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
+                clonedObject.transform.localScale = new Vector3(15, 24, 15);
+                clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
+                Destroy(clonedObject, 0.2f);
+            }
+            if (playerstats.SwordRangeIncreased.Value <= 0 && playerstats.SwordArcIncreased.Value > 0)
+            {
+                GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
+                clonedObject.transform.localScale = new Vector3(24, 15, 24);
+                clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
+                Destroy(clonedObject, 0.2f);
+            }
+            if (playerstats.SwordRangeIncreased.Value > 0 && playerstats.SwordArcIncreased.Value > 0)
+            {
+                GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
+                clonedObject.transform.localScale = new Vector3(24, 24, 24);
+                clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
+                Destroy(clonedObject, 0.2f);
+            }
+            if (playerstats.SwordProjectile.Value > 0)
+            {
+                GameObject swordprojectileClone = Instantiate(swordprojectile, shootPoint.position, Quaternion.identity, transform);
+                swordprojectileClone.GetComponent<SwordProjectile>().ShootyShoot(dir, playerstats.HasEye.Value);
+            }
             canMove = false;
             canAttack = false;
-            Destroy(clonedObject, 0.2f);
+            canHeal = false;
+            
             swordAttack.interactable = false;
             if (canAttack == false)
             {

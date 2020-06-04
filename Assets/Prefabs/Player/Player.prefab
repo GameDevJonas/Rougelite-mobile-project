@@ -964,6 +964,8 @@ MonoBehaviour:
   menuManager: {fileID: 0}
   dir: 
   arrow: {fileID: 4594174622735884533, guid: c7e6d0a8fca52784cbed1a20bc1d531d, type: 3}
+  swordprojectile: {fileID: 1986842023111703662, guid: 7f091d49a72406747b3aebdd6e35ce1f,
+    type: 3}
   shootSpeed: 1
   shootForce: 1
   shootPoint: {fileID: 0}

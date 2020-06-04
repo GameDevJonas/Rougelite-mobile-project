@@ -15,6 +15,7 @@ TagManager:
   - WeaponSwitchButton
   - Loot
   - EnemyAttack
+  - SwordProjectile
   layers:
   - Default
   - TransparentFX

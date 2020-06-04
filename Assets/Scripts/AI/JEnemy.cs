@@ -446,7 +446,7 @@ public class JEnemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
 
-        if (collider.tag == "Sword" && !isDead || collider.tag == "Arrow" && !isDead)
+        if (collider.tag == "Sword" && !isDead || collider.tag == "Arrow" && !isDead || collider.tag == "SwordProjectile" && !isDead)
         {
             if (attacked)
             {
@@ -456,6 +456,7 @@ public class JEnemy : MonoBehaviour
             Player rue = player.GetComponent<Player>();
             Arrow arrowCrit = collider.GetComponent<Arrow>();
             Swordscript swordCrit = collider.GetComponent<Swordscript>();
+            SwordProjectile swordProjectileCrit = collider.GetComponent<SwordProjectile>();
             float str = playerstats.Strength.Value;
             float dex = playerstats.Dexterity.Value;
             float critdmg = playerstats.CritDamage.Value / 100;
@@ -519,6 +520,32 @@ public class JEnemy : MonoBehaviour
                     crit = true;
                 }
                 if (swordCrit.Crit && crithpdmg > 0)
+                {
+                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
+                    crit = true;
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+                DamagePopUp(damage, crit);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                attacked = true;
+            }
+            else if (collider.tag == "SwordProjectile")
+            {
+                float damage = str * swordmod;
+                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
+                {
+                    damage = myHealth;
+                }
+                if (swordProjectileCrit.crit && crithpdmg == 0)
+                {
+                    damage *= critdmg;
+                    crit = true;
+                }
+                if (swordProjectileCrit.crit && crithpdmg > 0)
                 {
                     damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
                     crit = true;
