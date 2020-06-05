@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     public bool canTakeDamage = true;
     public bool shieldIsUp = false;
     public bool inKnockBack = false;
+    public bool knockBackCooldown = false;
     public bool ignore = false;
     public bool potionsIncreaseStr = false;
 
@@ -179,7 +180,7 @@ public class Player : MonoBehaviour
         //HURT ANIM
 
 
-        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0)
+        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 && !knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
             if (dir == "U")
@@ -207,6 +208,7 @@ public class Player : MonoBehaviour
                 //ANIMATION
             }
             inKnockBack = true;
+            knockBackCooldown = true;
             canMove = false;
             canAttack = false;
             canHeal = false;
@@ -219,7 +221,7 @@ public class Player : MonoBehaviour
         {
             HealthSystem.Damage(dmg);
         }
-        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0)
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 && !knockBackCooldown)
         {
             if (dir == "U")
             {
@@ -251,6 +253,7 @@ public class Player : MonoBehaviour
             }
             
             inKnockBack = true;
+            knockBackCooldown = true;
             anim.SetBool("ShieldUp", true);
             canMove = false;
             canAttack = false;
@@ -289,12 +292,14 @@ public class Player : MonoBehaviour
 
     void StopKnockBack()
     {
-        anim.SetBool("ShieldUp", false);
         rb.velocity = Vector2.zero;
         inKnockBack = false;
-        shieldIsUp = false;
+        Invoke("KnockbackCooldown", 1.5f);
     }
-
+    void KnockbackCooldown()
+    {
+        knockBackCooldown = false;
+    }
     private void FixedUpdate()
     {
         ApplyMovement();
