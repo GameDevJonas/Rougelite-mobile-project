@@ -26,7 +26,7 @@ public class LootFound : MonoBehaviour
     void Update()
     {
 
-        if (player == null && SceneManager.GetActiveScene().buildIndex != 0) //gets current player and itemdatabase
+        /*if (player == null && SceneManager.GetActiveScene().buildIndex != 0) //gets current player and itemdatabase
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
@@ -48,9 +48,9 @@ public class LootFound : MonoBehaviour
             /*GiveItem(31);
             GiveItem(32);
             GiveItem(33);
-            GiveItem(34);*/
+            GiveItem(34);
             return;
-        }
+        }*/
 
         if (Loot.Count > 0)
         {
