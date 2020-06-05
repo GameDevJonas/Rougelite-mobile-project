@@ -823,6 +823,7 @@ public class SacrificeScript : MonoBehaviour
             if (sacrifice[0].description == "potion" && sacrifice[0].intensity == 0)
             {
                 option01text.text = "Sacrifice half of your potions";
+                BossDoor.sacrifice.RemoveAll(sac => sac.description.Equals("potion"));
                 return;
             }
 
@@ -830,6 +831,7 @@ public class SacrificeScript : MonoBehaviour
             if (sacrifice[0].description == "potion" && sacrifice[0].intensity == 1)
             {
                 option01text.text = "Sacrifice all your potions";
+                BossDoor.sacrifice.RemoveAll(sac => sac.description.Equals("potion"));
                 return;
             }
 
