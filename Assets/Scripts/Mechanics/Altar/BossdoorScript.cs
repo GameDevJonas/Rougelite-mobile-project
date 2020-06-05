@@ -358,7 +358,6 @@ public class BossdoorScript : MonoBehaviour
             GetSacrifice(loot, 8, level);
             if (legendaryitemhighintensity != legendarysac)
             {
-                legendarysac.RemoveRange(0, legendarysac.Count);
                 legendarysac.AddRange(legendaryitemhighintensity);
             }
         }
