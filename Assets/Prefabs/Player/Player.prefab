@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1
-  deadZone: 0.3
+  deadZone: 0.5
   axisOptions: 0
   snapX: 1
   snapY: 1

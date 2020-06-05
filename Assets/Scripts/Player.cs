@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public float currentHealth;
     public float speed;
     public float attackspeed;
-    public int potion = 0;
+    public int potion = 3;
     public float potionPotency;
     public float rotationSpeed = 5f;
     public float xInput;

@@ -12,7 +12,7 @@ public class LootFound : MonoBehaviour
     public GameObject Button;
     public MenuManager MenuManager;
     public GameObject notification;
-    public AcceptLoot AcceptLoot => AcceptObject.GetComponent<AcceptLoot>();
+    public AcceptLoot AcceptLoot => gameObject.GetComponent<AcceptLoot>();
 
 
     public bool poppedUp = false;
@@ -33,19 +33,19 @@ public class LootFound : MonoBehaviour
             /*GiveItem(11);
             GiveItem(11);
             GiveItem(15);
-            GiveItem(16);*/
-            //GiveItem(19);
-            //GiveItem(20);
-            /*GiveItem(21);
+            GiveItem(16);
+            GiveItem(19);
+            GiveItem(20);
+            GiveItem(21);
             GiveItem(22);
             GiveItem(23);
             GiveItem(25);*/
-            //GiveItem(26);/*
-            //GiveItem(27);
-            //GiveItem(28);
-            //GiveItem(29);*/
-            //GiveItem(30);
-            /*GiveItem(31);
+            GiveItem(26);
+            /*GiveItem(27);
+            GiveItem(28);
+            GiveItem(29);
+            GiveItem(30);
+            GiveItem(31);
             GiveItem(32);
             GiveItem(33);
             GiveItem(34);*/

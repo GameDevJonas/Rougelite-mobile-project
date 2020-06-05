@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7724135181865913754}
+      - m_Target: {fileID: 4682698698574355291}
         m_MethodName: LootAccepted
         m_Mode: 1
         m_Arguments:
@@ -3594,6 +3594,7 @@ GameObject:
   - component: {fileID: 4926919477902615528}
   - component: {fileID: 4926919477902615531}
   - component: {fileID: 733621567}
+  - component: {fileID: 4682698698574355291}
   - component: {fileID: 1119060881}
   m_Layer: 0
   m_Name: MenuManager
@@ -3666,6 +3667,28 @@ MonoBehaviour:
   MenuManager: {fileID: 0}
   notification: {fileID: 1142442865}
   poppedUp: 0
+--- !u!114 &4682698698574355291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926919477902615530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325aa1f0c25c5244dbaab0de118344b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  ItemDatabase: {fileID: 0}
+  PlayerStats: {fileID: 0}
+  Loot: []
+  LootAmount: 0
+  AcceptButton: {fileID: 1667959521534646473}
+  itemTier: {fileID: 3132316459878082207}
+  itemTitleAndAmount: {fileID: 4358372737829769041}
+  itemLore: {fileID: 5372811635944419547}
+  itemDescription: {fileID: 750010033889884020}
 --- !u!114 &1119060881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,7 +5298,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5593029640851446379}
-  - component: {fileID: 7724135181865913754}
   m_Layer: 5
   m_Name: AcceptLoot
   m_TagString: Untagged
@@ -5303,28 +5325,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7724135181865913754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7641143443249443455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325aa1f0c25c5244dbaab0de118344b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  ItemDatabase: {fileID: 0}
-  PlayerStats: {fileID: 0}
-  Loot: []
-  LootAmount: 0
-  AcceptButton: {fileID: 1667959521534646473}
-  itemTier: {fileID: 3132316459878082207}
-  itemTitleAndAmount: {fileID: 4358372737829769041}
-  itemLore: {fileID: 5372811635944419547}
-  itemDescription: {fileID: 750010033889884020}
 --- !u!1 &7687978416053198598
 GameObject:
   m_ObjectHideFlags: 0
