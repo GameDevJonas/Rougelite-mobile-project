@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
     public float shootSpeed;
     public float shootForce;
     public Transform shootPoint;
+    public LightConeScript LightCone;
 
     public GameObject currentRoom;
 
@@ -89,8 +90,12 @@ public class Player : MonoBehaviour
 
         playerstats = GetComponent<PlayerStats>();
 
+        LightCone = GetComponentInChildren<LightConeScript>();
+
         rb = GetComponent<Rigidbody2D>();
+
         menuManager = FindObjectOfType<MenuManager>();
+
         UpdateStats();
 
 
@@ -163,7 +168,10 @@ public class Player : MonoBehaviour
                 menuManager.ToAlphaLevel();
             }
         }
-
+        if (dir != LightCone.direction)
+        {
+            LightCone.RotateMeBaby(dir, playerstats.HasEye.Value);
+        }
     }
 
     public void TakeDamageAndKnockBack(float dmg, string dir)

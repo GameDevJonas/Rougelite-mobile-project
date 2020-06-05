@@ -40,7 +40,7 @@ public class LootFound : MonoBehaviour
             GiveItem(22);
             GiveItem(23);
             GiveItem(25);*/
-            GiveItem(26); //Futile Avarice gir 100% drop rate.
+            //GiveItem(26); //Futile Avarice gir 100% drop rate.
             /*GiveItem(27);
             GiveItem(28);
             GiveItem(29);
