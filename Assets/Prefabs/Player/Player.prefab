@@ -960,6 +960,7 @@ MonoBehaviour:
   canTakeDamage: 1
   shieldIsUp: 0
   inKnockBack: 0
+  knockBackCooldown: 0
   ignore: 0
   potionsIncreaseStr: 0
   menuManager: {fileID: 0}
