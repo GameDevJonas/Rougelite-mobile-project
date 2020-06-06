@@ -49,9 +49,11 @@ public class JEnemy : MonoBehaviour
     public bool hidesInDark;
     public bool hidesInLight;
     public bool attacked;
+    public bool swordprojectileattacked;
     public bool hasAttacked = false;
     private bool isDead = false;
     bool nonStateChecker = true;
+    bool arrowKnockback = false;
 
     public int level;
 
@@ -211,6 +213,7 @@ public class JEnemy : MonoBehaviour
         myHealth = healthSystem.GetHealth();
 
         attacked = false;
+        swordprojectileattacked = false;
         switch (myState)
         {
             case EnemyState.non:
@@ -389,14 +392,27 @@ public class JEnemy : MonoBehaviour
 
     IEnumerator DamageState()
     {
-        aIPath.enabled = false;
-        destination.enabled = false;
-        anim.SetTrigger("TakeDamage");
-        yield return new WaitForSeconds(.01f);
-        anim.ResetTrigger("TakeDamage");
-        yield return new WaitForSeconds(.9f);
-        myState = EnemyState.walking;
-        yield return null;
+        if (arrowKnockback)
+        {
+            anim.SetTrigger("TakeDamage");
+            yield return new WaitForSeconds(.01f);
+            anim.ResetTrigger("TakeDamage");
+            yield return new WaitForSeconds(.9f);
+            myState = EnemyState.walking;
+            arrowKnockback = false;
+            yield return null;
+        }
+        else
+        {
+            aIPath.enabled = false;
+            destination.enabled = false;
+            anim.SetTrigger("TakeDamage");
+            yield return new WaitForSeconds(.01f);
+            anim.ResetTrigger("TakeDamage");
+            yield return new WaitForSeconds(.9f);
+            myState = EnemyState.walking;
+            yield return null;
+        }
     }
 
     void DeathState()
@@ -449,10 +465,7 @@ public class JEnemy : MonoBehaviour
 
         if (collider.tag == "Sword" && !isDead || collider.tag == "Arrow" && !isDead || collider.tag == "SwordProjectile" && !isDead)
         {
-            if (attacked)
-            {
-                return;
-            }
+            
             PlayerStats playerstats = player.GetComponent<PlayerStats>();
             Player rue = player.GetComponent<Player>();
             Arrow arrowCrit = collider.GetComponent<Arrow>();
@@ -472,9 +485,13 @@ public class JEnemy : MonoBehaviour
 
 
 
-            myState = EnemyState.damage;
+            
             if (collider.tag == "Arrow")
             {
+                if (attacked)
+                {
+                    return;
+                }
                 float damage = 0;
                 if (rapidfire > 0)
                 {
@@ -505,11 +522,24 @@ public class JEnemy : MonoBehaviour
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-
                 attacked = true;
+                
+                if (playerstats.ArrowKnockback.Value > 0)
+                {
+                    arrowKnockback = true;
+                    myState = EnemyState.damage;
+                }
+                else
+                {
+                    myState = EnemyState.damage;
+                }
             }
             else if (collider.tag == "Sword")
             {
+                if (attacked)
+                {
+                    return;
+                }
                 float damage = str * swordmod;
                 if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
                 {
@@ -533,9 +563,14 @@ public class JEnemy : MonoBehaviour
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                 attacked = true;
+                myState = EnemyState.damage;
             }
             else if (collider.tag == "SwordProjectile")
             {
+                if (swordprojectileattacked)
+                {
+                    return;
+                }
                 float damage = str * swordmod;
                 if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
                 {
@@ -558,10 +593,19 @@ public class JEnemy : MonoBehaviour
                 DamagePopUp(damage, crit);
                 healthSystem.Damage(damage);
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
-                attacked = true;
+                swordprojectileattacked = true;
+                myState = EnemyState.damage;
             }
         }
     } //Deal damage to enemy
+
+    void ResetMaterial()
+    {
+        SpriteRenderer render = gameObject.GetComponentInChildren<SpriteRenderer>();
+        Shader shaderDefault = Shader.Find("SpriteUnlit/Sprite_Unlit");
+        render.material.shader = shaderDefault;
+        render.color = Color.white;
+    }
 
     void DropLootAndDie()
     {

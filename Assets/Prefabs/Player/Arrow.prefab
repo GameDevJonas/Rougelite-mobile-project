@@ -230,6 +230,7 @@ MonoBehaviour:
   critRoll: 0
   critChance: 0
   crit: 0
+  burn: 1
 --- !u!50 &2822024615637115733
 Rigidbody2D:
   serializedVersion: 4

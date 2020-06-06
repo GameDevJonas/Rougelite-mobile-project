@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 3927777676682513477}
   - component: {fileID: 61905399360452084}
   - component: {fileID: 5316993722340905310}
+  - component: {fileID: 6982195601714787734}
   m_Layer: 11
   m_Name: SkeletonTrash
   m_TagString: Enemy
@@ -355,6 +356,7 @@ MonoBehaviour:
   hidesInDark: 0
   hidesInLight: 0
   attacked: 0
+  swordprojectileattacked: 0
   hasAttacked: 0
   level: 0
   pointA: {fileID: 0}
@@ -494,6 +496,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!70 &6982195601714787734
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429758075927487342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.28872988, y: -0.27180862}
+  m_Size: {x: 0.7377869, y: 1.6795205}
+  m_Direction: 0
 --- !u!1 &6488241941857388439
 GameObject:
   m_ObjectHideFlags: 0
