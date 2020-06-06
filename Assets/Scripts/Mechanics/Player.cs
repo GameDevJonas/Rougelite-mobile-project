@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
         //HURT ANIM
 
 
-        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 && !knockBackCooldown)
+        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || canTakeDamage && !knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
             if (dir == "U")
@@ -239,11 +239,11 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", .75f);
             Invoke("StopKnockBack", .75f);
         }
-        else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0)
+        else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || canTakeDamage && knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
         }
-        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 && !knockBackCooldown)
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || !canTakeDamage && !knockBackCooldown)
         {
             if (dir == "U")
             {
@@ -285,7 +285,7 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", .5f);
             Invoke("StopKnockBack", .5f);
         }
-        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0)
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || !canTakeDamage && knockBackCooldown)
         {
             //Knockback w/ shield
             if (dir == "U")

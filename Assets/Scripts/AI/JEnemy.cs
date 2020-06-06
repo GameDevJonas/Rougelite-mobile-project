@@ -367,7 +367,7 @@ public class JEnemy : MonoBehaviour
         isAttacking = true;
         aIPath.canMove = false;
         aIPath.enabled = false;
-        if (!hasAttacked)
+        if (!hasAttacked && !isDead)
         {
             InstanstiateAttack();
             hasAttacked = true;
@@ -636,14 +636,6 @@ public class JEnemy : MonoBehaviour
             }
         }
     } //Deal damage to enemy
-
-    void ResetMaterial()
-    {
-        SpriteRenderer render = gameObject.GetComponentInChildren<SpriteRenderer>();
-        Shader shaderDefault = Shader.Find("SpriteUnlit/Sprite_Unlit");
-        render.material.shader = shaderDefault;
-        render.color = Color.white;
-    }
 
     void DropLootAndDie()
     {
