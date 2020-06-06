@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 3927777676682513477}
   - component: {fileID: 61905399360452084}
   - component: {fileID: 2032340285171937336}
+  - component: {fileID: 3860384351795780574}
   m_Layer: 11
   m_Name: ZombieTrash
   m_TagString: Enemy
@@ -375,7 +376,6 @@ MonoBehaviour:
     type: 3}
   loot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d, type: 3}
   player: {fileID: 0}
-  corpse: {fileID: 6844050355530838838, guid: 74d81523c26d32549b95b7d2b6a65bb1, type: 3}
   destroyChildren: {fileID: 4210548572228943851}
   speed: 30
   myHealth: 0
@@ -530,6 +530,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!61 &3860384351795780574
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429758075927487342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.63505423}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7841537}
+  m_EdgeRadius: 0
 --- !u!1 &6488241941857388439
 GameObject:
   m_ObjectHideFlags: 0
