@@ -65,6 +65,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool power = false;
     public bool lifeonhit = false;
+    public bool extralife = false;
 
     private void Start()
     {
@@ -243,18 +244,28 @@ public class PlayerStats : MonoBehaviour
         _ = NoSacrifice.Value;
         _ = RueHPDmgOnHit.Value;
         _ = IncreasedLifeOnHit;
-        if (IncreasedLifeOnHit.Value > 0 && lifeonhit == false)
+        if (IncreasedLifeOnHit.Value > 0 && !lifeonhit)
         {
             lifeonhit = true;
             AddPercentModifier(LifeOnHit, 3);
         }
-        if (IncreasedLifeOnHit.Value <= 0 && lifeonhit == true)
+        if (IncreasedLifeOnHit.Value <= 0 && lifeonhit)
         {
             lifeonhit = false;
             AddPercentModifier(LifeOnHit, -3);
         }
         _ = PercentHpDmg.Value;
         _ = ExtraLife.Value;
+        if (ExtraLife.Value > 0 && !extralife)
+        {
+            extralife = true;
+            player.extraLives += 1;
+        }
+        if (ExtraLife.Value <= 0 && extralife)
+        {
+            extralife = false;
+            player.extraLives -= 1;
+        }
         _ = DropGarantueed.Value;
 
         _ = ShieldArm.Value;

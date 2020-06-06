@@ -2333,7 +2333,6 @@ public class DeathScreen : MonoBehaviour
     }
     public void RemoveSacrifices()
     {
-        Destroy(this);
         possiblesacrifices.RemoveRange(0, possiblesacrifices.Count);
         chosensacrifice.RemoveRange(0, chosensacrifice.Count);
         commonsac.RemoveRange(0, commonsac.Count);
@@ -2341,22 +2340,6 @@ public class DeathScreen : MonoBehaviour
         legendarysac.RemoveRange(0, legendarysac.Count);
         ancientsac.RemoveRange(0, ancientsac.Count);
         legendaryancientsac.RemoveRange(0, legendaryancientsac.Count);
-
-        SacrificeMade = false;
-        added = false;
-        option01Done = false;
-        option02Done = false;
-        option03Done = false;
-        option04Done = false;
-
-        level = 0;
-        levelIndex = 0;
-        
-        sacsize = 0;
-        sacroll1 = 0;
-        sacroll2 = 0;
-        sacroll3 = 0;
-        sacroll4 = 0;
     }
     public Sacrifice CheckforSacrifice(SacrificeType type, int intensity)
     {
