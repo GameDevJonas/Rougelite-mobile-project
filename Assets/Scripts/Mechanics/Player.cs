@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     public GameObject sword;
 
+    public GameObject deathScreen;
+
     public Button swordAttack;
     public Button switchButton;
     public Button shieldButton;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     public int weaponState;
     public float knockBack;
     public float shieldKnockBack;
+    public int extraLives = 5;
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
     public bool knockBackCooldown = false;
     public bool ignore = false;
     public bool potionsIncreaseStr = false;
+    public bool subtractextralife = true;
+    public bool isdead = false;
 
     public MenuManager menuManager;
 
@@ -100,7 +105,7 @@ public class Player : MonoBehaviour
         UpdateStats();
 
 
-        dir = "L";
+        dir = "D";
 
 #if UNITY_EDITOR
         useTouch = false;
@@ -157,24 +162,41 @@ public class Player : MonoBehaviour
 
         #endregion
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isdead)
         {
             //TRIGGER DEATH ANIM AND THEN LOAD PERHAPS USE COROUTINE
             anim.SetTrigger("Death");
             canMove = false;
             canAttack = false;
             canHeal = false;
-            if (menuManager != null)
-            {
-                menuManager.ToAlphaLevel();
-            }
+            isdead = true;
+            DeathScreen();
+        }
+        if (currentHealth > 1 && isdead)
+        {
+            canMove = true;
+            canAttack = true;
+            canHeal = true;
+            isdead = false;
+            subtractextralife = true;
+            Destroy(deathScreen);
         }
         if (dir != LightCone.direction)
         {
             LightCone.RotateMeBaby(dir, playerstats.HasEye.Value);
         }
     }
+    void DeathScreen()
+    {
+        if (subtractextralife == true)
+        {
+            subtractextralife = false;
+            extraLives -= 1;
+        }
+        GameObject deathscreen = Instantiate(deathScreen, transform.parent);
 
+        return;
+    }
     public void TakeDamageAndKnockBack(float dmg, string dir)
     {
         //HURT ANIM
@@ -594,7 +616,7 @@ public class Player : MonoBehaviour
 
     public void SwordAttack()
     {
-        if ((canAttack == true))
+        if (canAttack)
         {
             //SETS ANIMATOR TRIGGER
             anim.SetTrigger("DoAttack");

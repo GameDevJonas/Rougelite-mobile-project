@@ -56,7 +56,7 @@ public class JEnemy : MonoBehaviour
     public bool hasAttacked = false;
     private bool isDead = false;
     bool nonStateChecker = true;
-    bool arrowKnockback = false;
+    bool arrowKnockback = true;
 
     public int level;
 
@@ -202,7 +202,7 @@ public class JEnemy : MonoBehaviour
     {
         anim.SetBool("IsWalking", isWalking);
         anim.SetBool("IsIdle", isIdle);
-        anim.SetBool("HasAttackes", hasAttacked);
+        anim.SetBool("HasAttacked", hasAttacked);
 
         if (direction == "L")
         {
@@ -426,36 +426,31 @@ public class JEnemy : MonoBehaviour
 
     IEnumerator DamageState()
     {
-        if (arrowKnockback)
+        if (!arrowKnockback)
         {
             anim.SetTrigger("TakeDamage");
-            yield return new WaitForSeconds(.01f);
+            yield return new WaitForSeconds(.1f);
             anim.ResetTrigger("TakeDamage");
+            arrowKnockback = true;
+            isHurt = true;
             yield return new WaitForSeconds(.9f);
             myState = EnemyState.walking;
-            arrowKnockback = false;
             yield return null;
         }
         else
         {
+            anim.SetTrigger("TakeDamage");
+            yield return new WaitForSeconds(.1f);
+            anim.ResetTrigger("TakeDamage");
             aIPath.enabled = false;
             destination.enabled = false;
-            anim.SetTrigger("TakeDamage");
-            yield return new WaitForSeconds(.01f);
-            anim.ResetTrigger("TakeDamage");
+            isHurt = true;
             yield return new WaitForSeconds(.9f);
             myState = EnemyState.walking;
             yield return null;
         }
-        anim.SetTrigger("TakeDamage");
-        yield return new WaitForSeconds(.1f);
-        anim.ResetTrigger("TakeDamage");
-        aIPath.enabled = false;
-        destination.enabled = false;
-        isHurt = true;
-        yield return new WaitForSeconds(.9f);
-        myState = EnemyState.walking;
-        yield return null;
+        
+
     }
 
     void DeathState()
@@ -567,9 +562,9 @@ public class JEnemy : MonoBehaviour
                 rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
                 attacked = true;
                 
-                if (playerstats.ArrowKnockback.Value > 0)
+                if (playerstats.ArrowKnockback.Value < 0)
                 {
-                    arrowKnockback = true;
+                    arrowKnockback = false;
                     myState = EnemyState.damage;
                 }
                 else

@@ -128,6 +128,13 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    public void ReloadLevel(int buildIndex)
+    {
+        startButton.SetActive(false);
+        loadingThing.SetActive(true);
+        StartCoroutine(StartLoad(buildIndex));
+    }
+
     public IEnumerator StartLoad(int buildIndex)
     {
         pauseButton.SetActive(false);

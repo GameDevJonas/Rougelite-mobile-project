@@ -16,6 +16,7 @@ TagManager:
   - Loot
   - EnemyAttack
   - SwordProjectile
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

@@ -38,6 +38,8 @@ public class SacrificeDatabase : MonoBehaviour
             new Sacrifice(1, "mechanic", mechanic, 1), //Sacrifice a tendon, can no longer dodge.
             new Sacrifice(1, "debuff", debuff, 0), //Sacrifice your health.
             new Sacrifice(1, "debuff", debuff, 1), //Sacrifice your swiftness.
+            new Sacrifice(2, "debuff", debuff, 2), //Sacrifice your strength.
+            new Sacrifice(1, "debuff", debuff, 3), //Sacrifice your dexterity.
 
             new Sacrifice(2, "common", loot, 1), //sacrifice half of your common item
             new Sacrifice(2, "rare", loot, 3), //sacrifice 3 rare items
@@ -56,7 +58,7 @@ public class SacrificeDatabase : MonoBehaviour
             new Sacrifice(3, "rare", loot, 3), //sacrifice 3 rare items
             new Sacrifice(3, "white", loot, 5), //Sacrifice your White light particle.
             new Sacrifice(3, "violet", loot, 6), //Sacrifice your Purple light particle
-            new Sacrifice(3, "potion", consumable, 1),
+            new Sacrifice(3, "potion", consumable, 1), //Sacrifice all of your potions.
             new Sacrifice(3, "mechanic", mechanic, 2), //Sacrifice your arm, can no longer use shield.
             new Sacrifice(3, "mechanic", mechanic, 3), //Sacrifice your sword.
             new Sacrifice(3, "mechanic", mechanic, 4), //Sacrifice your crossbow.
@@ -68,7 +70,7 @@ public class SacrificeDatabase : MonoBehaviour
 
             new Sacrifice(4, "rare", loot, 4), //sacrifice 7 rare items
             new Sacrifice(4, "legendary", loot, 7), // sacrifice legendary item
-            new Sacrifice(4, "potion", consumable, 1),
+            new Sacrifice(4, "potion", consumable, 1), //Sacrifice all of your potions.
             new Sacrifice(4, "mechanic", mechanic, 3), //Sacrifice your sword.
             new Sacrifice(4, "mechanic", mechanic, 4), //Sacrifice your crossbow.
             new Sacrifice(4, "debuff", debuff, 4), //Suffer the curse of weakness.

@@ -931,6 +931,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   joystick: {fileID: 4541764480379956512}
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
+  deathScreen: {fileID: 7607809124662682556, guid: ab3d47477989468498780138cbea9a6b,
+    type: 3}
   swordAttack: {fileID: 1317067018}
   switchButton: {fileID: 0}
   shieldButton: {fileID: 0}
@@ -946,6 +948,7 @@ MonoBehaviour:
   weaponState: 0
   knockBack: 100
   shieldKnockBack: 75
+  extraLives: 5
   healthbar: {fileID: 1319494376}
   playerstats: {fileID: 0}
   hasSword: 1
@@ -962,6 +965,8 @@ MonoBehaviour:
   knockBackCooldown: 0
   ignore: 0
   potionsIncreaseStr: 0
+  subtractextralife: 1
+  isdead: 0
   menuManager: {fileID: 0}
   dir: 
   arrow: {fileID: 4594174622735884533, guid: c7e6d0a8fca52784cbed1a20bc1d531d, type: 3}
