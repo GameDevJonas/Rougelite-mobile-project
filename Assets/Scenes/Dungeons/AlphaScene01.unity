@@ -173,11 +173,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504403, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -249,25 +249,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1665562177985097420, guid: 02c39016bbff67a46a3e8d87e29468fd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665562177985097421, guid: 02c39016bbff67a46a3e8d87e29468fd,
-        type: 3}
-      propertyPath: m_LightType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665562177985097421, guid: 02c39016bbff67a46a3e8d87e29468fd,
-        type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 360
-      objectReference: {fileID: 0}
     - target: {fileID: 1665562177985097421, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 30.08
+      value: 101.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
@@ -755,6 +740,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: A_ pathfinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 186205918387209433, guid: a366ded441ce3ff4da3eb8b3baa73b0f,
+        type: 3}
+      propertyPath: maxNearestNodeDistance
+      value: 69.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 186205918387209433, guid: a366ded441ce3ff4da3eb8b3baa73b0f,
+        type: 3}
+      propertyPath: heuristic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 186205918387209433, guid: a366ded441ce3ff4da3eb8b3baa73b0f,
+        type: 3}
+      propertyPath: maxFrameTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 186205918387209433, guid: a366ded441ce3ff4da3eb8b3baa73b0f,
+        type: 3}
+      propertyPath: threadCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a366ded441ce3ff4da3eb8b3baa73b0f, type: 3}
@@ -1432,6 +1437,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1625268157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1665562176945504413, guid: 02c39016bbff67a46a3e8d87e29468fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 136437847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687228383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myVCam: {fileID: 2043898293}
-  player: {fileID: 0}
+  player: {fileID: 1625268157}
 --- !u!114 &2043898296
 MonoBehaviour:
   m_ObjectHideFlags: 0

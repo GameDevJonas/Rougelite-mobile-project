@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class JEnemy : MonoBehaviour
 {
+    float overlapRange = 15f;
+    public LayerMask mask;
+
     public EnemyStats EnemyStats;
     public EnemyType thisType;
 
@@ -55,6 +58,8 @@ public class JEnemy : MonoBehaviour
 
     public int level;
 
+    public int backOffCounter = 0;
+
     public Transform pointA, pointB, pointC, pointD;
 
     #region Loot drops
@@ -81,6 +86,9 @@ public class JEnemy : MonoBehaviour
     Animator anim;
     bool isIdle;
     bool isWalking;
+    bool isHurt;
+    bool isAttacking;
+    bool playHurtAnim, playAttackAnim;
     #endregion
 
     void Start()
@@ -192,6 +200,7 @@ public class JEnemy : MonoBehaviour
     {
         anim.SetBool("IsWalking", isWalking);
         anim.SetBool("IsIdle", isIdle);
+        anim.SetBool("HasAttackes", hasAttacked);
 
         if (direction == "L")
         {
@@ -202,6 +211,18 @@ public class JEnemy : MonoBehaviour
         {
             Transform animScale = anim.gameObject.transform;
             animScale.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    void ResetAnimForAttacknHurt(int i)
+    {
+        if(i == 0) //Hurt anim
+        {
+
+        }
+        else if(1 == 1) //Attack anim
+        {
+
         }
     }
 
@@ -302,12 +323,16 @@ public class JEnemy : MonoBehaviour
         aIPath.maxSpeed = speed;
         while (myRoom.bounds.Contains(player.transform.position)) //Go to player
         {
-            yield return new WaitForSeconds(.1f);
+            Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, mask);
+            //Debug.Log("player is in room");
+            yield return new WaitForSeconds(.01f);
             /*walkPoint = (player.transform.position - transform.position).normalized * speed;
             rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
-            if (aIPath.reachedEndOfPath)
+            if (aIPath.reachedEndOfPath && overlap)
             {
-                yield return new WaitForSeconds(2f);
+                //Debug.Log("Player is here, do attack");
+                aIPath.enabled = false;
+                //yield return new WaitForSeconds(2f);
                 myState = EnemyState.attack;
             }
         }
@@ -333,8 +358,12 @@ public class JEnemy : MonoBehaviour
     IEnumerator AttackState()
     {
         StopCoroutine(WalkState());
-        aIPath.enabled = false;
+        anim.SetTrigger("DoAttack");
+        yield return new WaitForSeconds(.5f);
+        anim.ResetTrigger("DoAttack");
+        isAttacking = true;
         aIPath.canMove = false;
+        aIPath.enabled = false;
         if (!hasAttacked)
         {
             InstanstiateAttack();
@@ -347,53 +376,59 @@ public class JEnemy : MonoBehaviour
 
     void InstanstiateAttack()
     {
-        anim.SetTrigger("DoAttack");
         GameObject attackClone = Instantiate(attackPrefab, transform.position, Quaternion.Euler(0, 0, dirRotation), transform); //Add an attackPoint
         Destroy(attackClone, 0.3f);
     }
 
     void BackOffState()
     {
-        StopAllCoroutines();
-        aIPath.enabled = true;
-        aIPath.canMove = true;
-        destination.enabled = true;
-        if (direction == "U")
+            destination.enabled = true;
+            aIPath.enabled = true;
+            aIPath.canMove = true;
+        if (backOffCounter == 0)
         {
-            destination.target = pointC;
-        }
-        else if (direction == "D")
-        {
-            destination.target = pointD;
-        }
-        else if (direction == "L")
-        {
-            destination.target = pointB;
-        }
-        else if (direction == "R")
-        {
-            destination.target = pointA;
-        }
+            StopAllCoroutines();
+            if (direction == "U")
+            {
+                destination.target = pointC;
+            }
+            else if (direction == "D")
+            {
+                destination.target = pointD;
+            }
+            else if (direction == "L")
+            {
+                destination.target = pointB;
+            }
+            else if (direction == "R")
+            {
+                destination.target = pointA;
+            }
 
-        aIPath.maxSpeed = speed * 2;
+            //aIPath.maxSpeed = speed * 2;
 
 
-        hasAttacked = false;
-        Invoke("BackToWalk", 2f);
+            
+            Invoke("BackToWalk", 2f);
+            backOffCounter = 1;
+        }
     }
 
     void BackToWalk()
     {
+        hasAttacked = false;
         myState = EnemyState.walking;
+        backOffCounter = 0;
     }
 
     IEnumerator DamageState()
     {
+        anim.SetTrigger("TakeDamage");
+        yield return new WaitForSeconds(.1f);
+        anim.ResetTrigger("TakeDamage");
         aIPath.enabled = false;
         destination.enabled = false;
-        anim.SetTrigger("TakeDamage");
-        yield return new WaitForSeconds(.01f);
-        anim.ResetTrigger("TakeDamage");
+        isHurt = true;
         yield return new WaitForSeconds(.9f);
         myState = EnemyState.walking;
         yield return null;
@@ -420,7 +455,7 @@ public class JEnemy : MonoBehaviour
     void DamagePopUp(float damage, bool crit)
     {
         float fadetime = 0.7f;
-        
+
         double dmgprint = System.Math.Round(damage, 2);
         if (!crit)
         {
@@ -712,5 +747,11 @@ public class JEnemy : MonoBehaviour
     private void OnBecameInvisible()
     {
         this.enabled = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, overlapRange);
     }
 }

@@ -362,6 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ff2d493766b42449a29455a78ebd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
   thisType: 0
   myState: 0
   myHitbox: {fileID: 0}
@@ -393,6 +396,7 @@ MonoBehaviour:
   attacked: 0
   hasAttacked: 0
   level: 0
+  backOffCounter: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   pointC: {fileID: 0}
@@ -429,7 +433,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: ceac566c7fa88b942996dad4ee66c2b2, type: 2}
   m_Interpolate: 0

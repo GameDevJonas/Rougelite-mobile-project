@@ -327,6 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ff2d493766b42449a29455a78ebd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
   thisType: 0
   myState: 0
   myHitbox: {fileID: 0}
@@ -358,6 +361,7 @@ MonoBehaviour:
   attacked: 0
   hasAttacked: 0
   level: 0
+  backOffCounter: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   pointC: {fileID: 0}
