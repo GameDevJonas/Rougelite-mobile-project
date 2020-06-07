@@ -204,18 +204,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1317067019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1665562176945504407}
-        m_MethodName: DoAnAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &8953463583347263287
 Animator:
   serializedVersion: 3
@@ -956,6 +945,7 @@ MonoBehaviour:
   hasShield: 1
   useTouch: 1
   attack: 0
+  attacking: 0
   canMove: 1
   canAttack: 1
   canHeal: 1
@@ -1123,6 +1113,7 @@ MonoBehaviour:
   ItemDatabase: {fileID: 496618011368227173}
   power: 0
   lifeonhit: 0
+  extralife: 0
 --- !u!1 &1665562177985097422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1253,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32767
-  m_Sprite: {fileID: 3632902423640679932, guid: 44c97a7bca832ba49a38b07f69aed47f,
+  m_Sprite: {fileID: 5616450073383564847, guid: 44c97a7bca832ba49a38b07f69aed47f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1813,7 +1804,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.035
+  m_Intensity: 0.06
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -2010,7 +2001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1
-  deadZone: 0.5
+  deadZone: 0.4
   axisOptions: 0
   snapX: 1
   snapY: 1
@@ -2072,7 +2063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744671924446021635}
   m_LocalRotation: {x: -0, y: -0, z: 0.008726559, w: 0.9999619}
-  m_LocalPosition: {x: 0.11, y: 0.853, z: 0}
+  m_LocalPosition: {x: -0.139, y: 0.853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1665562177985097420}

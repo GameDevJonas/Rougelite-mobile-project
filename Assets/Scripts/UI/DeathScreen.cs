@@ -65,13 +65,6 @@ public class DeathScreen : MonoBehaviour
     public SacrificeType consumable;
     public SacrificeType mechanic;
     public SacrificeType debuff;
-
-    private void OnEnable()
-    {
-        choiceMade = 0;
-        AddSacrifices();
-        textbox.text = "You Perished\nCarry on?";
-    }
     void Update()
     {
         loot = SacrificeType.loot;
@@ -92,8 +85,9 @@ public class DeathScreen : MonoBehaviour
             {
                 level -= 5;
             }
-            Time.timeScale = 0;
+            choiceMade = 0;
             AddSacrifices();
+            textbox.text = "You Perished\nCarry on?";
             added = true;
             return;
         }
@@ -981,7 +975,7 @@ public class DeathScreen : MonoBehaviour
                     "Lost 3 " + commontosac.title + " and the " + (commontosac.statValue * 3) + " " + commontosac.statString + " they yielded.";
                 }
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection -= 3;
-                PlayerStats.AddModifier(commontosac.statType, -commontosac.statValue * 3, commontosac.modType);
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1003,8 +997,8 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost half of my " + commontosac.title + " and the " + ((commontosac.statValue * commontosac.collection) / 2) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -((commontosac.statValue * commontosac.collection) / 2), commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection /= 2;
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1021,14 +1015,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 100 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1045,14 +1039,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1069,14 +1063,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 7 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1090,8 +1084,13 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + white.title + " and the power it yielded.";
-                PlayerStats.AddModifier(white.statType, -white.statValue, white.modType);
-                PlayerStats.Loot.Remove(white);
+                PlayerStats.Loot.Single(x => x.id == white.id).collection -= 1;
+                PlayerStats.SacrificeModifier(white);
+                if (white.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(white);
+                    white.collection = 1;
+                }  
             }
 
             //sacrifice violet
@@ -1099,8 +1098,13 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + violet.title + " and the power it yielded.";
-                PlayerStats.AddModifier(violet.statType, -violet.statValue, violet.modType);
-                PlayerStats.Loot.Remove(violet);
+                PlayerStats.Loot.Single(x => x.id == violet.id).collection -= 1;
+                PlayerStats.SacrificeModifier(violet);
+                if (violet.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(violet);
+                    violet.collection = 1;
+                }
             }
 
             //sacrifice legendary, low intensity
@@ -1108,8 +1112,13 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and the power it yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+                if (violet.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
             }
 
             //sacrifice legendary, med intensity
@@ -1117,10 +1126,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and " + legendarytosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.AddModifier(legendarytosac2.statType, -legendarytosac2.statValue, legendarytosac2.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
-                PlayerStats.Loot.Remove(legendarytosac2);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+                PlayerStats.SacrificeModifier(legendarytosac2);
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
+                if (legendarytosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac2);
+                    legendarytosac2.collection = 1;
+                }
             }
 
             //sacrifice ancient item
@@ -1128,8 +1147,13 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + ancienttosac.title + " and the unrivaled power it yielded.";
-                PlayerStats.AddModifier(ancienttosac.statType, -ancienttosac.statValue, ancienttosac.modType);
-                PlayerStats.Loot.Remove(ancienttosac);
+                PlayerStats.Loot.Single(x => x.id == ancienttosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(ancienttosac);
+                if (ancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(ancienttosac);
+                    ancienttosac.collection = 1;
+                }
             }
 
             //sacrifice legendary and ancient item
@@ -1137,10 +1161,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendaryancienttosac.title + " and " + legendaryancienttosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendaryancienttosac.statType, -legendaryancienttosac.statValue, legendaryancienttosac.modType);
-                PlayerStats.AddModifier(legendaryancienttosac2.statType, -legendaryancienttosac2.statValue, legendaryancienttosac2.modType);
-                PlayerStats.Loot.Remove(legendaryancienttosac);
-                PlayerStats.Loot.Remove(legendaryancienttosac2);
+                PlayerStats.Loot.Single(x => x.id == legendaryancienttosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendaryancienttosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendaryancienttosac);
+                PlayerStats.SacrificeModifier(legendaryancienttosac2);
+                if (legendaryancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac);
+                    legendaryancienttosac.collection = 1;
+                }
+                if (legendaryancienttosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac2);
+                    legendaryancienttosac2.collection = 1;
+                }
             }
 
             //sacrifice potion, low intensity
@@ -1241,8 +1275,8 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + commontosac.title + " and the " + (commontosac.statValue * 3) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -commontosac.statValue * 3, commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection -= 3;
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1265,8 +1299,8 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost half of my " + commontosac.title + " and the " + ((commontosac.statValue * commontosac.collection) / 2) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -((commontosac.statValue * commontosac.collection) / 2), commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection /= 2;
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1284,7 +1318,7 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 100 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                     if (raretosac.collection <= 0)
                     {
                         PlayerStats.Loot.Remove(raretosac);
@@ -1296,7 +1330,7 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                     if (raretosac.collection <= 0)
                     {
                         PlayerStats.Loot.Remove(raretosac);
@@ -1313,14 +1347,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 3 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1337,14 +1371,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 7 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1358,8 +1392,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + white.title + " and the power it yielded.";
-                PlayerStats.AddModifier(white.statType, -white.statValue, white.modType);
-                PlayerStats.Loot.Remove(white);
+                PlayerStats.Loot.Single(x => x.id == white.id).collection -= 1;
+                PlayerStats.SacrificeModifier(white);
+
+                if (white.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(white);
+                    white.collection = 1;
+                }
             }
 
             //sacrifice violet
@@ -1367,8 +1407,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + violet.title + " and the power it yielded.";
-                PlayerStats.AddModifier(violet.statType, -violet.statValue, violet.modType);
-                PlayerStats.Loot.Remove(violet);
+                PlayerStats.Loot.Single(x => x.id == violet.id).collection -= 1;
+                PlayerStats.SacrificeModifier(violet);
+
+                if (violet.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(violet);
+                    violet.collection = 1;
+                }
             }
 
             //sacrifice legendary, low intensity
@@ -1376,8 +1422,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and the power it yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
             }
 
             //sacrifice legendary, med intensity
@@ -1385,10 +1437,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and " + legendarytosac2.title + " and the power they yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.AddModifier(legendarytosac2.statType, -legendarytosac2.statValue, legendarytosac2.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
-                PlayerStats.Loot.Remove(legendarytosac2);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+                PlayerStats.SacrificeModifier(legendarytosac2);
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
+                if (legendarytosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac2);
+                    legendarytosac2.collection = 1;
+                }
             }
 
             //sacrifice ancient item
@@ -1396,8 +1458,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + ancienttosac.title + " and the unrivaled power it yielded.";
-                PlayerStats.AddModifier(ancienttosac.statType, -ancienttosac.statValue, ancienttosac.modType);
-                PlayerStats.Loot.Remove(ancienttosac);
+                PlayerStats.Loot.Single(x => x.id == ancienttosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(ancienttosac);
+
+                if (ancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(ancienttosac);
+                    ancienttosac.collection = 1;
+                }
             }
 
             //sacrifice legendary and ancient item
@@ -1405,10 +1473,18 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendaryancienttosac.title + " and " + legendaryancienttosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendaryancienttosac.statType, -legendaryancienttosac.statValue, legendaryancienttosac.modType);
-                PlayerStats.AddModifier(legendaryancienttosac2.statType, -legendaryancienttosac2.statValue, legendaryancienttosac2.modType);
-                PlayerStats.Loot.Remove(legendaryancienttosac);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendaryancienttosac);
+                PlayerStats.SacrificeModifier(legendaryancienttosac2);
+                if (legendaryancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac);
+                }
+                if (legendaryancienttosac2.collection <= 0)
+                {
                 PlayerStats.Loot.Remove(legendaryancienttosac2);
+                }
             }
 
             //sacrifice potion, low intensity
@@ -1511,7 +1587,7 @@ public class DeathScreen : MonoBehaviour
                     "Lost 3 " + commontosac.title + " and the " + (commontosac.statValue * 3) + " " + commontosac.statString + " they yielded.";
                 }
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection -= 3;
-                PlayerStats.AddModifier(commontosac.statType, -commontosac.statValue * 3, commontosac.modType);
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1533,8 +1609,8 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost half of my " + commontosac.title + " and the " + ((commontosac.statValue * commontosac.collection) / 2) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -((commontosac.statValue * commontosac.collection) / 2), commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection /= 2;
+                PlayerStats.SacrificeModifier(commontosac);
 
                 if (commontosac.collection <= 0)
                 {
@@ -1551,14 +1627,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 100 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1575,14 +1651,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1599,14 +1675,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 7 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1620,8 +1696,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + white.title + " and the power it yielded.";
-                PlayerStats.AddModifier(white.statType, -white.statValue, white.modType);
-                PlayerStats.Loot.Remove(white);
+                PlayerStats.Loot.Single(x => x.id == white.id).collection -= 1;
+                PlayerStats.SacrificeModifier(white);
+
+                if (white.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(white);
+                    white.collection = 1;
+                }
             }
 
             //sacrifice violet
@@ -1629,8 +1711,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + violet.title + " and the power it yielded.";
-                PlayerStats.AddModifier(violet.statType, -violet.statValue, violet.modType);
-                PlayerStats.Loot.Remove(violet);
+                PlayerStats.Loot.Single(x => x.id == violet.id).collection -= 1;
+                PlayerStats.SacrificeModifier(violet);
+
+                if (violet.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(violet);
+                    violet.collection = 1;
+                }
             }
 
             //sacrifice legendary, low intensity
@@ -1638,8 +1726,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and the power it yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
             }
 
             //sacrifice legendary, med intensity
@@ -1647,10 +1741,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and " + legendarytosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.AddModifier(legendarytosac2.statType, -legendarytosac2.statValue, legendarytosac2.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
-                PlayerStats.Loot.Remove(legendarytosac2);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+                PlayerStats.SacrificeModifier(legendarytosac2);
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
+                if (legendarytosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac2);
+                    legendarytosac2.collection = 1;
+                }
             }
 
             //sacrifice ancient item
@@ -1658,8 +1762,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + ancienttosac.title + " and the unrivaled power it yielded.";
-                PlayerStats.AddModifier(ancienttosac.statType, -ancienttosac.statValue, ancienttosac.modType);
-                PlayerStats.Loot.Remove(ancienttosac);
+                PlayerStats.Loot.Single(x => x.id == ancienttosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(ancienttosac);
+
+                if (ancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(ancienttosac);
+                    ancienttosac.collection = 1;
+                }
             }
 
             //sacrifice legendary and ancient item
@@ -1667,10 +1777,18 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendaryancienttosac.title + " and " + legendaryancienttosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendaryancienttosac.statType, -legendaryancienttosac.statValue, legendaryancienttosac.modType);
-                PlayerStats.AddModifier(legendaryancienttosac2.statType, -legendaryancienttosac2.statValue, legendaryancienttosac2.modType);
-                PlayerStats.Loot.Remove(legendaryancienttosac);
-                PlayerStats.Loot.Remove(legendaryancienttosac2);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendaryancienttosac);
+                PlayerStats.SacrificeModifier(legendaryancienttosac2);
+                if (legendaryancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac);
+                }
+                if (legendaryancienttosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac2);
+                }
             }
 
             //sacrifice potion, low intensity
@@ -1773,8 +1891,9 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + commontosac.title + " and the " + (commontosac.statValue * 3) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -commontosac.statValue * 3, commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection -= 3;
+                PlayerStats.SacrificeModifier(commontosac);
+                
 
                 if (commontosac.collection <= 0)
                 {
@@ -1797,8 +1916,9 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost half of my " + commontosac.title + " and the " + ((commontosac.statValue * commontosac.collection) / 2) + " " + commontosac.statString + " they yielded.";
                 }
-                PlayerStats.AddModifier(commontosac.statType, -((commontosac.statValue * commontosac.collection) / 2), commontosac.modType);
                 PlayerStats.Loot.Single(x => x.id == commontosac.id).collection /= 2;
+                PlayerStats.SacrificeModifier(commontosac);
+                
 
                 if (commontosac.collection <= 0)
                 {
@@ -1816,7 +1936,7 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 100 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                     if (raretosac.collection <= 0)
                     {
                         PlayerStats.Loot.Remove(raretosac);
@@ -1828,7 +1948,7 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 1;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                     if (raretosac.collection <= 0)
                     {
                         PlayerStats.Loot.Remove(raretosac);
@@ -1845,14 +1965,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 3 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + raretosac.statValue * 3 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 3, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1869,14 +1989,14 @@ public class DeathScreen : MonoBehaviour
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost 7 " + raretosac.title + " and the " + ((raretosac.statValue * 100) * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
                     "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
-                    PlayerStats.AddModifier(raretosac.statType, -raretosac.statValue * 7, raretosac.modType);
+                    PlayerStats.SacrificeModifier(raretosac);
                 }
                 if (raretosac.collection <= 0)
                 {
@@ -1890,8 +2010,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + white.title + " and the power it yielded.";
-                PlayerStats.AddModifier(white.statType, -white.statValue, white.modType);
-                PlayerStats.Loot.Remove(white);
+                PlayerStats.Loot.Single(x => x.id == white.id).collection -= 1;
+                PlayerStats.SacrificeModifier(white);
+
+                if (white.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(white);
+                    white.collection = 1;
+                }
             }
 
             //sacrifice violet
@@ -1899,8 +2025,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + violet.title + " and the power it yielded.";
-                PlayerStats.AddModifier(violet.statType, -violet.statValue, violet.modType);
-                PlayerStats.Loot.Remove(violet);
+                PlayerStats.Loot.Single(x => x.id == violet.id).collection -= 1;
+                PlayerStats.SacrificeModifier(violet);
+
+                if (violet.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(violet);
+                    violet.collection = 1;
+                }
             }
 
             //sacrifice legendary, low intensity
@@ -1908,8 +2040,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and the power it yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
             }
 
             //sacrifice legendary, med intensity
@@ -1917,10 +2055,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendarytosac.title + " and " + legendarytosac2.title + " and the power they yielded.";
-                PlayerStats.AddModifier(legendarytosac.statType, -legendarytosac.statValue, legendarytosac.modType);
-                PlayerStats.AddModifier(legendarytosac2.statType, -legendarytosac2.statValue, legendarytosac2.modType);
-                PlayerStats.Loot.Remove(legendarytosac);
-                PlayerStats.Loot.Remove(legendarytosac2);
+                PlayerStats.Loot.Single(x => x.id == legendarytosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendarytosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendarytosac);
+                PlayerStats.SacrificeModifier(legendarytosac2);
+                if (legendarytosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac);
+                    legendarytosac.collection = 1;
+                }
+                if (legendarytosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendarytosac2);
+                    legendarytosac2.collection = 1;
+                }
             }
 
             //sacrifice ancient item
@@ -1928,8 +2076,14 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + ancienttosac.title + " and the unrivaled power it yielded.";
-                PlayerStats.AddModifier(ancienttosac.statType, -ancienttosac.statValue, ancienttosac.modType);
-                PlayerStats.Loot.Remove(ancienttosac);
+                PlayerStats.Loot.Single(x => x.id == ancienttosac.id).collection -= 1;
+                PlayerStats.SacrificeModifier(ancienttosac);
+
+                if (ancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(ancienttosac);
+                    ancienttosac.collection = 1;
+                }
             }
 
             //sacrifice legendary and ancient item
@@ -1937,10 +2091,20 @@ public class DeathScreen : MonoBehaviour
             {
                 textbox.text = "Sacrifice accepted... \n " +
                 "Lost " + legendaryancienttosac.title + " and " + legendaryancienttosac2.title + " and the powers they yielded.";
-                PlayerStats.AddModifier(legendaryancienttosac.statType, -legendaryancienttosac.statValue, legendaryancienttosac.modType);
-                PlayerStats.AddModifier(legendaryancienttosac2.statType, -legendaryancienttosac2.statValue, legendaryancienttosac2.modType);
-                PlayerStats.Loot.Remove(legendaryancienttosac);
-                PlayerStats.Loot.Remove(legendaryancienttosac2);
+                PlayerStats.Loot.Single(x => x.id == legendaryancienttosac.id).collection -= 1;
+                PlayerStats.Loot.Single(x => x.id == legendaryancienttosac2.id).collection -= 1;
+                PlayerStats.SacrificeModifier(legendaryancienttosac);
+                PlayerStats.SacrificeModifier(legendaryancienttosac2);
+                if (legendaryancienttosac.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac);
+                    legendaryancienttosac.collection = 1;
+                }
+                if (legendaryancienttosac2.collection <= 0)
+                {
+                    PlayerStats.Loot.Remove(legendaryancienttosac2);
+                    legendaryancienttosac2.collection = 1;
+                }
             }
 
             //sacrifice potion, low intensity

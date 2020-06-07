@@ -23,7 +23,9 @@ public class Player : MonoBehaviour
 
     public GameObject sword;
 
+    GameObject playerCanvas;
     public GameObject deathScreen;
+    GameObject deathscreenclone;
 
     public Button swordAttack;
     public Button switchButton;
@@ -51,7 +53,10 @@ public class Player : MonoBehaviour
 
     public bool useTouch;
     public bool attack;
+    public bool attacking;
+    public bool attackcooldown = false;
     public bool canMove = true;
+    public bool movementlock = false;
     public bool canAttack = true;
     public bool canHeal = true;
     public bool canTakeDamage = true;
@@ -101,6 +106,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         menuManager = FindObjectOfType<MenuManager>();
+
+        playerCanvas = gameObject.GetComponentInChildren<Canvas>().gameObject;
 
         UpdateStats();
 
@@ -170,6 +177,7 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             isdead = true;
+            Time.timeScale = 0;
             DeathScreen();
         }
         if (currentHealth > 1 && isdead)
@@ -179,7 +187,16 @@ public class Player : MonoBehaviour
             canHeal = true;
             isdead = false;
             subtractextralife = true;
-            Destroy(deathScreen);
+            Destroy(deathscreenclone);
+            Time.timeScale = 1;
+        }
+        if (playerCanvas != null && !isdead)
+        {
+            playerCanvas.SetActive(true);
+        }
+        if (playerCanvas == null && isdead)
+        {
+            playerCanvas.SetActive(false);
         }
         if (dir != LightCone.direction)
         {
@@ -190,12 +207,10 @@ public class Player : MonoBehaviour
     {
         if (subtractextralife == true)
         {
+            deathscreenclone = Instantiate(deathScreen, transform.parent);
             subtractextralife = false;
             extraLives -= 1;
-        }
-        GameObject deathscreen = Instantiate(deathScreen, transform.parent);
-
-        return;
+        } 
     }
     public void TakeDamageAndKnockBack(float dmg, string dir)
     {
@@ -235,7 +250,10 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             Invoke("CanHeal", .75f);
-            Invoke("AttackLock", .75f);
+            if (!attackcooldown)
+            {
+                Invoke("AttackLock", .75f);
+            }
             Invoke("MovementLock", .75f);
             Invoke("StopKnockBack", .75f);
         }
@@ -281,7 +299,10 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             Invoke("CanHeal", .5f);
-            Invoke("AttackLock", .5f);
+            if (!attackcooldown)
+            {
+                Invoke("AttackLock", .5f);
+            }
             Invoke("MovementLock", .5f);
             Invoke("StopKnockBack", .5f);
         }
@@ -531,45 +552,45 @@ public class Player : MonoBehaviour
 
     void DirectionManaging()
     {
-        if (xInput == 1 && (canMove == true)) //Right
+        if (xInput == 1) //Right
         {
             dir = "R";
             shootPoint.localPosition = new Vector2(0.25f, 0.9f);
         }
-        else if (xInput == -1 && (canMove == true)) //Left
+        else if (xInput == -1) //Left
         {
             dir = "L";
             shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
         }
-        if (yInput == 1 && (canMove == true)) //Up
+        if (yInput == 1) //Up
         {
             dir = "U";
             shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
-        else if (yInput == -1 && (canMove == true)) //Down
+        else if (yInput == -1 &&canMove == true) //Down
         {
             dir = "D";
             shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
-        if ((xInput == 1 && yInput == 1) && (canMove == true)) //Up right
+        if (xInput == 1 && yInput == 1) //Up right
         {
             dir = "UR";
             //shootPoint.localPosition = new Vector2(0.1f, 0.9f);
             shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
-        else if ((xInput == -1 && yInput == -1) && (canMove == true)) //Down left
+        else if (xInput == -1 && yInput == -1) //Down left
         {
             dir = "DL";
             //shootPoint.localPosition = new Vector2(-0.3f, 0.6f);
             shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
-        if ((xInput == 1 && yInput == -1) && (canMove == true)) //Down right
+        if (xInput == 1 && yInput == -1) //Down right
         {
             dir = "DR";
             //shootPoint.localPosition = new Vector2(0.1f, 0.6f);
             shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
         }
-        if ((xInput == -1 && yInput == 1) && (canMove == true)) //Up left
+        if (xInput == -1 && yInput == 1) //Up left
         {
             dir = "UL";
             //shootPoint.localPosition = new Vector2(-0.5f, 0.9f);
@@ -601,17 +622,28 @@ public class Player : MonoBehaviour
         anim.ResetTrigger("SwitchWeapons");
     }
 
-    public void DoAnAttack()
+    public IEnumerator DoAnAttack()
     {
-        switch (weaponInUse)
+        while (attacking)
         {
-            case WeaponState.sword:
-                SwordAttack();
-                break;
-            case WeaponState.bow:
-                BowAttack();
-                break;
+            canMove = false;
+            switch (weaponInUse)
+            {
+                case WeaponState.sword:
+                    SwordAttack();
+                    break;
+                case WeaponState.bow:
+                    BowAttack();
+                    break;
+            }
+            yield return new WaitForSeconds(0.1f);
         }
+        if (!movementlock)
+        {
+            canMove = true;
+        }
+        attacking = false;
+        yield return null;
     }
 
     public void SwordAttack()
@@ -659,12 +691,14 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             
-            swordAttack.interactable = false;
+            //swordAttack.interactable = false;
             if (canAttack == false)
             {
+                attackcooldown = true;
                 Invoke("AttackLock", attackspeed);
                 Invoke("MovementLock", attackspeed / 2);
                 Invoke("CanHeal", attackspeed / 2);
+                movementlock = true;
             }
         }
     }
@@ -692,24 +726,31 @@ public class Player : MonoBehaviour
             //Destroy(arrowClone, 5f);
             if (canAttack == false)
             {
+                attackcooldown = true;
                 Invoke("AttackLock", shootSpeed);
                 Invoke("MovementLock", shootSpeed / 2);
                 Invoke("CanHeal", shootSpeed / 2);
+                movementlock = true;
             }
         }
     }
 
     void MovementLock()
     {
+        movementlock = false;
         anim.ResetTrigger("DoAttack");
         anim.ResetTrigger("DoFire");
         anim.SetBool("InAttackAnim", false);
         anim.SetBool("DoHeal", false);
-        canMove = true;
+        if (!attacking)
+        {
+            canMove = true;
+        }
     }
     void AttackLock()
     {
         canAttack = true;
+        attackcooldown = false;
         swordAttack.interactable = true;
     }
     void CanHeal()

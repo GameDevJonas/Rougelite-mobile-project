@@ -38,7 +38,7 @@ public class SacrificeDatabase : MonoBehaviour
             new Sacrifice(1, "mechanic", mechanic, 1), //Sacrifice a tendon, can no longer dodge.
             new Sacrifice(1, "debuff", debuff, 0), //Sacrifice your health.
             new Sacrifice(1, "debuff", debuff, 1), //Sacrifice your swiftness.
-            new Sacrifice(2, "debuff", debuff, 2), //Sacrifice your strength.
+            new Sacrifice(1, "debuff", debuff, 2), //Sacrifice your strength.
             new Sacrifice(1, "debuff", debuff, 3), //Sacrifice your dexterity.
 
             new Sacrifice(2, "common", loot, 1), //sacrifice half of your common item
