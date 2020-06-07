@@ -137,14 +137,17 @@ public class PlayerStats : MonoBehaviour
 
                 if (itemToAdd.modType == "flat") //adds additive flat number increases / decreases. 10 + 10 = 20
                 {
+                    itemToAdd.statType.RemoveModifier(flat);
                     AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
                 if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
                 {
-                    AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+                    itemToAdd.statType.RemoveModifier(percent);
+                    AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
                 }
                 if (itemToAdd.modType == "multpercent") //adds multiplicative percent increases. (10 + 10%) 11 + (10% + 10%) 11% = 22.21
                 {
+                    itemToAdd.statType.RemoveModifier(mult);
                     AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
             }
@@ -156,14 +159,17 @@ public class PlayerStats : MonoBehaviour
 
             if (itemToAdd.modType == "flat")
             {
+                itemToAdd.statType.RemoveModifier(flat);
                 AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
             }
             if (itemToAdd.modType == "percent")
             {
-                AddPercentModifier(itemToAdd.statType, itemToAdd.statValue);
+                itemToAdd.statType.RemoveModifier(percent);
+                AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
             }
             if (itemToAdd.modType == "multpercent")
             {
+                itemToAdd.statType.RemoveModifier(mult);
                 AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
             }
         }
@@ -233,12 +239,21 @@ public class PlayerStats : MonoBehaviour
         if (Power.Value <= 0 && power)
         {
             power = false;
-            AddPercentMultModifier(Health, -0.25f);
-            AddPercentMultModifier(Strength, -0.25f);
-            AddPercentMultModifier(Dexterity, -0.25f);
-            AddPercentMultModifier(LifeOnHit, -0.25f);
-            AddPercentMultModifier(SwordAttackModifier, -0.25f);
-            AddPercentMultModifier(CrossbowAttackModifier, -0.25f);
+            Health.RemoveModifier(mult);
+            if (FrailtyCurse.Value > 0)
+            {
+                AddPercentMultModifier(Health, -0.25f);
+            }
+            Strength.RemoveModifier(mult);
+            if (WeaknessCurse.Value > 0)
+            {
+                AddPercentMultModifier(Strength, -0.25f);
+            }
+            Dexterity.RemoveModifier(mult);
+            LifeOnHit.RemoveModifier(mult);
+            SwordArcIncreased.RemoveModifier(mult);
+            CrossbowAttackModifier.RemoveModifier(mult);
+
         }
         _ = ShieldReflectsDmg.Value;
         _ = NoSacrifice.Value;
@@ -252,7 +267,7 @@ public class PlayerStats : MonoBehaviour
         if (IncreasedLifeOnHit.Value <= 0 && lifeonhit)
         {
             lifeonhit = false;
-            AddPercentModifier(LifeOnHit, -3);
+            LifeOnHit.RemoveModifier(percent);
         }
         _ = PercentHpDmg.Value;
         _ = ExtraLife.Value;
@@ -287,19 +302,25 @@ public class PlayerStats : MonoBehaviour
         return Loot.Find(item => item.id == id); //finds and returns id.
     }
     
-    public void AddModifier(CharacterStat statType, float statValue, string modType)
+    public void SacrificeModifier(Item item)
     {
-        if (modType == "flat")
+        if (item.modType == "flat")
         {
-            AddFlatModifier(statType, statValue);
+            item.statType.RemoveModifier(flat);
+            AddFlatModifier(item.statType, (item.statValue * item.collection));
+            UpdateStatsInfo();
         }
-        if (modType == "percent")
+        if (item.modType == "percent")
         {
-            AddFlatModifier(statType, statValue);
+            item.statType.RemoveModifier(percent);
+            AddPercentModifier(item.statType, (item.statValue * item.collection));
+            UpdateStatsInfo();
         }
-        if (modType == "mult")
+        if (item.modType == "mult")
         {
-            AddFlatModifier(statType, statValue);
+            item.statType.RemoveModifier(mult);
+            AddPercentMultModifier(item.statType, item.statValue * item.collection);
+            UpdateStatsInfo();
         }
     }
     

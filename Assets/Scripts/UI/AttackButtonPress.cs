@@ -6,26 +6,23 @@ using UnityEngine.UI;
 
 public class AttackButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    private Animator anim;
     private Button button;
+
+    private Player player;
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
         button = GetComponent<Button>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (button.interactable)
+        if (!player.attacking)
         {
             //Debug.Log("Button is held down");
+            player.attacking = true;
+            player.StartCoroutine(player.DoAnAttack());
         }
     }
 
@@ -33,6 +30,7 @@ public class AttackButtonPress : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (button.interactable)
         {
+            player.attacking = false;
             //Debug.Log("Button is released");
         }
     }
