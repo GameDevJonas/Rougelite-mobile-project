@@ -688,13 +688,13 @@ public class Player : MonoBehaviour
                 swordprojectileClone.GetComponent<SwordProjectile>().ShootyShoot(dir, playerstats.HasEye.Value);
             }
             canMove = false;
-            canAttack = false;
             canHeal = false;
-            
+            attackcooldown = true;
+
             //swordAttack.interactable = false;
-            if (canAttack == false)
+            if (attackcooldown)
             {
-                attackcooldown = true;
+                canAttack = false;
                 Invoke("AttackLock", attackspeed);
                 Invoke("MovementLock", attackspeed / 2);
                 Invoke("CanHeal", attackspeed / 2);
@@ -721,11 +721,12 @@ public class Player : MonoBehaviour
                 arrowClone3.GetComponent<Arrow>().ShootyShoot2(dir);
             }
             canMove = false;
-            canAttack = false;
+            attackcooldown = true;
             canHeal = false;
             //Destroy(arrowClone, 5f);
-            if (canAttack == false)
+            if (attackcooldown)
             {
+                canAttack = false;
                 attackcooldown = true;
                 Invoke("AttackLock", shootSpeed);
                 Invoke("MovementLock", shootSpeed / 2);
