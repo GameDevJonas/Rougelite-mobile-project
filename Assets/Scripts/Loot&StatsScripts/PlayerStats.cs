@@ -69,7 +69,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        //Sets basevalues on stats, and updates the player script to use these stats.
+        //Sets basevalues on stats, and updates the rue script to use these stats.
         Health.BaseValue = 50;
         Strength.BaseValue = 10;
         Dexterity.BaseValue = 10;

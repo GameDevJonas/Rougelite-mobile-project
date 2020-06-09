@@ -119,7 +119,7 @@ public class MenuManager : MonoBehaviour
 
     public void ToAlphaLevel()
     {
-        //wait for player animations
+        //wait for rue animations
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         //fromStartMenu = true;
         startButton.SetActive(false);

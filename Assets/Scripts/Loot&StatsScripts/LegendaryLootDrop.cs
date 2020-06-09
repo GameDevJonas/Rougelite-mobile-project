@@ -12,19 +12,21 @@ public class LegendaryLootDrop : MonoBehaviour
     private int drop;
     private bool pickup = false;
     private CharacterStat type;
-    public GameObject player;
+    public GameObject rue;
     public GameObject MenuManager;
     public GameObject RareLoot;
     public PlayerStats PlayerStats;
+    public Player player;
     public LootFound LootFound;
     public AcceptLoot AcceptLoot;
     public List<int> AvailableLoot = new List<int>(new int[] { 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 });
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        rue = GameObject.FindGameObjectWithTag("Player");
         MenuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        PlayerStats = player.GetComponent<PlayerStats>();
+        PlayerStats = rue.GetComponent<PlayerStats>();
+        player = rue.GetComponent<Player>();
         LootFound = MenuManager.GetComponent<LootFound>();
         AcceptLoot = MenuManager.GetComponent<AcceptLoot>();
     }
@@ -85,7 +87,7 @@ public class LegendaryLootDrop : MonoBehaviour
         {
             AvailableLoot.Remove(23);
         }
-        if (PlayerStats.ExtraLife.Value >= 1 
+        if (PlayerStats.ExtraLife.Value >= 1 || player.extraLives == 5
             || LootFound.Loot.Any(des => des.id.Equals(24)) || AcceptLoot.Loot.Any(des => des.id.Equals(24)))
         {
             AvailableLoot.Remove(24);

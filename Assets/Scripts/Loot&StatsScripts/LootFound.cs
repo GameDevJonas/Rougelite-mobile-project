@@ -26,34 +26,30 @@ public class LootFound : MonoBehaviour
     void Update()
     {
 
-        if (player == null && SceneManager.GetActiveScene().buildIndex != 0) //gets current player and itemdatabase
+        if (player == null && SceneManager.GetActiveScene().buildIndex != 0) //gets current rue and itemdatabase
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
-            /*GiveItem(7);
-            GiveItem(7);
-            GiveItem(7);
-            GiveItem(7);/*
-            /*GiveItem(11);
-            GiveItem(11);
-            GiveItem(14);
-            GiveItem(15);
-            GiveItem(16);
-            GiveItem(19);
-            GiveItem(20);
-            GiveItem(21);
-            GiveItem(22);
-            GiveItem(23);
-            GiveItem(25);*/
-            //GiveItem(26); //Futile Avarice gir 100% drop rate.
-            /*GiveItem(27);
-            GiveItem(28);
-            GiveItem(29);
-            GiveItem(30);
-            GiveItem(31);
-            GiveItem(32);
-            GiveItem(33);
-            GiveItem(34);*/
+            //GiveItem(7);
+            //GiveItem(11);
+            //GiveItem(14);
+            //GiveItem(15);
+            //GiveItem(16);
+            //GiveItem(19);
+            //GiveItem(20);
+            //GiveItem(21);
+            //GiveItem(22);
+            //GiveItem(23);
+            //GiveItem(25);
+            GiveItem(26); //Futile Avarice gir 100% drop rate.
+            //GiveItem(27);
+            //GiveItem(28);
+            //GiveItem(29);
+            //GiveItem(30);
+            //GiveItem(31);
+            //GiveItem(32);
+            //GiveItem(33);
+            //GiveItem(34);
             return;
         }
 

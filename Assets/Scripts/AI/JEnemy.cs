@@ -324,12 +324,12 @@ public class JEnemy : MonoBehaviour
         aIPath.canMove = true;
         destination.target = player.transform;
         aIPath.maxSpeed = speed;
-        while (myRoom.bounds.Contains(player.transform.position)) //Go to player
+        while (myRoom.bounds.Contains(player.transform.position)) //Go to rue
         {
             Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, mask);
-            //Debug.Log("player is in room");
+            //Debug.Log("rue is in room");
             yield return new WaitForSeconds(.01f);
-            /*walkPoint = (player.transform.position - transform.position).normalized * speed;
+            /*walkPoint = (rue.transform.position - transform.position).normalized * speed;
             rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
             if (aIPath.reachedEndOfPath && overlap)
             {
