@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -178,6 +178,26 @@ PrefabInstance:
     - target: {fileID: 1433626308, guid: 02c39016bbff67a46a3e8d87e29468fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441966562276581097, guid: 02c39016bbff67a46a3e8d87e29468fd,
+        type: 3}
+      propertyPath: footStepSounds.Array.data[0].stepSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441966562276581097, guid: 02c39016bbff67a46a3e8d87e29468fd,
+        type: 3}
+      propertyPath: footStepSounds.Array.data[0].stepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 76881ccafd8e73542b70057a815b393d, type: 3}
+    - target: {fileID: 1441966562276581097, guid: 02c39016bbff67a46a3e8d87e29468fd,
+        type: 3}
+      propertyPath: footStepSounds.Array.data[0].stepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c3aec2671823bf4ca221e480353f635, type: 3}
+    - target: {fileID: 1441966562276581097, guid: 02c39016bbff67a46a3e8d87e29468fd,
+        type: 3}
+      propertyPath: stepSoundTimerSet
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504403, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}

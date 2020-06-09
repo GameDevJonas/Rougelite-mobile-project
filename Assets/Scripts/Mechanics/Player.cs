@@ -82,8 +82,12 @@ public class Player : MonoBehaviour
 
     public AstarStarter aStarManager;
 
+    public bool isMoving;
+
     void Awake()
     {
+        isMoving = false;
+
         playerstats = GetComponent<PlayerStats>();
         //debugWeaponState.text = "sword";
 
@@ -202,7 +206,22 @@ public class Player : MonoBehaviour
         {
             LightCone.RotateMeBaby(dir, playerstats.HasEye.Value);
         }
+
+        CheckForMovement();
     }
+
+    void CheckForMovement()
+    {
+        if((xInput != 0 || yInput != 0) && canMove)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+    }
+
     void DeathScreen()
     {
         if (subtractextralife == true)
