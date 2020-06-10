@@ -180,23 +180,29 @@ public class Player : MonoBehaviour
             canMove = false;
             canAttack = false;
             canHeal = false;
-            isdead = true;
             menuManager.pauseButton.SetActive(false);
             Time.timeScale = 0.000000000001f;
             DeathScreen();
+            isdead = true;
         }
         if (currentHealth > 1 && isdead)
         {
             canMove = true;
             canAttack = true;
             canHeal = true;
-            isdead = false;
             subtractextralife = true;
             Time.timeScale = 1;
+            isdead = false;
         }
-        if (playerCanvas != null && isdead)
+        if (playerCanvas.activeSelf == true && isdead)
         {
             playerCanvas.SetActive(false);
+            menuManager.pauseButton.SetActive(false);
+        }
+        if (playerCanvas.activeSelf == false && !isdead)
+        {
+            playerCanvas.SetActive(true);
+            menuManager.pauseButton.SetActive(true);
         }
         if (dir != LightCone.direction)
         {
