@@ -118,10 +118,10 @@ public class Player : MonoBehaviour
 
         dir = "D";
 
-#if UNITY_EDITOR
-        useTouch = false;
-#else
+#if UNITY_ANDROID
         useTouch = true;
+#else
+        useTouch = false;
 #endif
     }
 
