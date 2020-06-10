@@ -972,6 +972,7 @@ MonoBehaviour:
   LightCone: {fileID: 0}
   currentRoom: {fileID: 0}
   aStarManager: {fileID: 0}
+  isMoving: 0
 --- !u!114 &1643031055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,7 +1312,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1fd4975f9114b7743b5e4752faca85cb, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

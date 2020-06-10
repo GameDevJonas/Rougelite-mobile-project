@@ -123,6 +123,7 @@ public class AncientLootDrop : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             IsInRange = false;
+            pickup = false;
         }
     }
 }

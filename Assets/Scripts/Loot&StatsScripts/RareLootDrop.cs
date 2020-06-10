@@ -74,6 +74,7 @@ public class RareLootDrop : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            pickup = false;
             IsInRange = false;
         }
     }

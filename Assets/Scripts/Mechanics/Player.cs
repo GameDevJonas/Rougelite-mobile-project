@@ -181,7 +181,8 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             isdead = true;
-            Time.timeScale = 0;
+            menuManager.pauseButton.SetActive(false);
+            Time.timeScale = 0.000000000001f;
             DeathScreen();
         }
         if (currentHealth > 1 && isdead)
@@ -191,14 +192,9 @@ public class Player : MonoBehaviour
             canHeal = true;
             isdead = false;
             subtractextralife = true;
-            Destroy(deathscreenclone);
             Time.timeScale = 1;
         }
-        if (playerCanvas != null && !isdead)
-        {
-            playerCanvas.SetActive(true);
-        }
-        if (playerCanvas == null && isdead)
+        if (playerCanvas != null && isdead)
         {
             playerCanvas.SetActive(false);
         }

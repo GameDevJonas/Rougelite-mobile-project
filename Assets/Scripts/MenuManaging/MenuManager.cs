@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject otherCanvas;
     public GameObject menuLogo;
+    public GameObject deathscreen;
 
     GameObject playerCanvas;
 
@@ -58,7 +59,6 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Hei");
     }
-
     public void PauseMenu()
     {
         if (isPaused)
@@ -160,33 +160,28 @@ public class MenuManager : MonoBehaviour
             if (loadStart.progress == 0.9f)
             {
                 Resources.UnloadUnusedAssets();
-                progressText.text = "Done! Touch anywhere to begin!";
-                Debug.Log("Press a key to start");
-                if (Input.anyKeyDown)
+                loadStart.allowSceneActivation = true;
+                if (fromStartMenu)
                 {
-                    loadStart.allowSceneActivation = true;
-                    if (fromStartMenu)
-                    {
-                        GameObject player = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-                        playerCanvas = player.GetComponentInChildren<Canvas>().gameObject;
-                        DontDestroyOnLoad(player);
-                        fromStartMenu = false;
-                    }
-                    else if (toBoss)
-                    {
-                        GameObject player = GameObject.FindGameObjectWithTag("Player");
-                        player.transform.position = new Vector3(0, 0, 0);
-                        toBoss = false;
-                    }
-                    else if (fromBoss)
-                    {
-                        GameObject player = GameObject.FindGameObjectWithTag("Player");
-                        player.transform.position = new Vector3(0, 0, 0);
-                        fromBoss = false;
-                    }
-                    loadingThing.SetActive(false);
-                    pauseButton.SetActive(true);
+                    GameObject player = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+                    playerCanvas = player.GetComponentInChildren<Canvas>().gameObject;
+                    DontDestroyOnLoad(player);
+                    fromStartMenu = false;
                 }
+                else if (toBoss)
+                {
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    player.transform.position = new Vector3(0, 0, 0);
+                    toBoss = false;
+                }
+                else if (fromBoss)
+                {
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    player.transform.position = new Vector3(0, 0, 0);
+                    fromBoss = false;
+                }
+                loadingThing.SetActive(false);
+                pauseButton.SetActive(true);
             }
             yield return null;
         }

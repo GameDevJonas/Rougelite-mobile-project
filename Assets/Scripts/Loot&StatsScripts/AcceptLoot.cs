@@ -32,28 +32,29 @@ public class AcceptLoot : MonoBehaviour
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
             PlayerStats = player.GetComponent<PlayerStats>();
         }
-        if (Loot[0].tier == "Legendary Loot" && Legendary.isPlaying == false && itemready)
+        if (Loot.Count > 0)
         {
-            Legendary.GetComponent<AudioSource>().Play();
-            AcceptButton.GetComponent<Button>().interactable = false;
-            itemready = false;
-        }
-        
-        if (Loot[0].tier == "Ancient Loot" && Ancient.isPlaying == false && itemready)
-        {
-            Ancient.GetComponent<AudioSource>().Play();
-            AcceptButton.GetComponent<Button>().interactable = false;
-            itemready = false;
-        }
-        if (Legendary.isPlaying == true || Ancient.isPlaying == true)
-        {
-            print("not ready");
-            AcceptButton.GetComponent<Button>().interactable = false;
-        }
-        if (Legendary.isPlaying == false && Ancient.isPlaying == false)
-        {
-            print("ready");
-            AcceptButton.GetComponent<Button>().interactable = true;
+            if (Loot[0].tier == "Legendary Loot" && Legendary.isPlaying == false && itemready)
+            {
+                Legendary.GetComponent<AudioSource>().Play();
+                AcceptButton.GetComponent<Button>().interactable = false;
+                itemready = false;
+            }
+
+            if (Loot[0].tier == "Ancient Loot" && Ancient.isPlaying == false && itemready)
+            {
+                Ancient.GetComponent<AudioSource>().Play();
+                AcceptButton.GetComponent<Button>().interactable = false;
+                itemready = false;
+            }
+            if (Legendary.isPlaying == true || Ancient.isPlaying == true)
+            {
+                AcceptButton.GetComponent<Button>().interactable = false;
+            }
+            if (Legendary.isPlaying == false && Ancient.isPlaying == false)
+            {
+                AcceptButton.GetComponent<Button>().interactable = true;
+            }
         }
     }
 

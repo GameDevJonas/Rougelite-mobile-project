@@ -137,7 +137,6 @@ public class PlayerStats : MonoBehaviour
 
                 if (itemToAdd.modType == "flat") //adds additive flat number increases / decreases. 10 + 10 = 20
                 {
-                    itemToAdd.statType.RemoveModifier(flat);
                     AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
                 }
                 if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
@@ -159,13 +158,31 @@ public class PlayerStats : MonoBehaviour
 
             if (itemToAdd.modType == "flat")
             {
-                itemToAdd.statType.RemoveModifier(flat);
                 AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
             }
             if (itemToAdd.modType == "percent")
             {
                 itemToAdd.statType.RemoveModifier(percent);
-                AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                if (itemToAdd.statType == Health &&  LessHP.Value > 0)
+                {
+                    AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                }
+                if (itemToAdd.statType == Strength && LessStr.Value > 0)
+                {
+                    AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                }
+                if (itemToAdd.statType == Dexterity && LessDex.Value > 0)
+                {
+                    AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                }
+                if (itemToAdd.statType == MovementSpeed && LessMS.Value > 0)
+                {
+                    AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                }
+                else
+                {
+                    AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                }
             }
             if (itemToAdd.modType == "multpercent")
             {
@@ -230,7 +247,15 @@ public class PlayerStats : MonoBehaviour
         {
             power = true;
             AddPercentMultModifier(Health, 0.25f);
+            if (FrailtyCurse.Value > 0)
+            {
+                AddPercentMultModifier(Health, -0.25f);
+            }
             AddPercentMultModifier(Strength, 0.25f);
+            if (WeaknessCurse.Value > 0)
+            {
+                AddPercentMultModifier(Strength, -0.25f);
+            }
             AddPercentMultModifier(Dexterity, 0.25f);
             AddPercentMultModifier(LifeOnHit, 0.25f);
             AddPercentMultModifier(SwordAttackModifier, 0.25f);
@@ -306,7 +331,6 @@ public class PlayerStats : MonoBehaviour
     {
         if (item.modType == "flat")
         {
-            item.statType.RemoveModifier(flat);
             AddFlatModifier(item.statType, (item.statValue * item.collection));
             UpdateStatsInfo();
         }

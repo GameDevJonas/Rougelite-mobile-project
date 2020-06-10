@@ -123,6 +123,7 @@ public class LegendaryLootDrop : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            pickup = false;
             IsInRange = false;
         }
     }

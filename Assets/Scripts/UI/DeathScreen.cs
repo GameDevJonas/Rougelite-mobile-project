@@ -80,6 +80,7 @@ public class DeathScreen : MonoBehaviour
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
             MenuManager = FindObjectOfType<MenuManager>();
             levelIndex = SceneManager.GetActiveScene().buildIndex;
+            DontDestroyOnLoad(this);
             level = levelIndex;
             if (level > 5)
             {
@@ -2206,8 +2207,8 @@ public class DeathScreen : MonoBehaviour
             MenuManager.ReloadLevel(levelIndex);
             RemoveSacrifices();
         }
+        Destroy(gameObject, 2f);
     }
-
     public void AddSacrifices()
     {
         var q = PlayerStats.Loot.GroupBy(x => x)

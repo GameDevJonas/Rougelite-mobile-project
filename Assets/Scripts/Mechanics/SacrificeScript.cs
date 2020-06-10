@@ -747,17 +747,18 @@ public class SacrificeScript : MonoBehaviour
             {
                 level -= 5;
             }
-            if (PlayerStats.NoSacrifice.Value > 0)
-            {
-                choice03.SetActive(true);
-                textbox.text = "You have enough guilt and regret...";
-            }
-            if (PlayerStats.NoSacrifice.Value == 0)
-            {
-                choice01.SetActive(true);
-                choice02.SetActive(true);
-            }
+            
             return;
+        }
+        if (PlayerStats.NoSacrifice.Value > 0 && choice03.activeSelf == false)
+        {
+            choice03.SetActive(true);
+            textbox.text = "You have enough guilt and regret...";
+        }
+        if (PlayerStats.NoSacrifice.Value <= 0 && choice01.activeSelf == false)
+        {
+            choice01.SetActive(true);
+            choice02.SetActive(true);
         }
 
         //option01
