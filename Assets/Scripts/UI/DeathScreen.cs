@@ -11,6 +11,7 @@ public class DeathScreen : MonoBehaviour
     public GameObject rue;
     public Player player;
     public PlayerStats PlayerStats;
+    GameObject playercanvas;
 
     public Text textbox;
     public GameObject choice01;
@@ -1256,7 +1257,6 @@ public class DeathScreen : MonoBehaviour
     {
         if (player.extraLives < 2)
         {
-            Time.timeScale = 1;
             textbox.text = "Game Over";
             choiceMade = 5;
             Invoke("RestartGame", 3f);
@@ -1567,7 +1567,6 @@ public class DeathScreen : MonoBehaviour
     {
         if (player.extraLives < 3)
         {
-            Time.timeScale = 1;
             textbox.text = "Game Over";
             choiceMade = 5;
             Invoke("RestartGame", 3f);
@@ -1872,7 +1871,6 @@ public class DeathScreen : MonoBehaviour
     {
         if (player.extraLives < 4)
         {
-            Time.timeScale = 1;
             textbox.text = "Game Over";
             choiceMade = 5;
             Invoke("RestartGame", 3f);
@@ -2185,7 +2183,6 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option05()
     {
-        Time.timeScale = 1;
         textbox.text = "Game Over";
         choiceMade = 5;
         Invoke("RestartGame", 3f);

@@ -130,6 +130,7 @@ public class MenuManager : MonoBehaviour
 
     public void ReloadLevel(int buildIndex)
     {
+        playerCanvas.SetActive(true);
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(buildIndex));
