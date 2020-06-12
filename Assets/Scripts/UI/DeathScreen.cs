@@ -1254,6 +1254,7 @@ public class DeathScreen : MonoBehaviour
             RestartScene();
         }
         choiceMade = 1;
+        return;
     }
     public void Option02()
     {
@@ -1560,11 +1561,10 @@ public class DeathScreen : MonoBehaviour
                 PlayerStats.AddFlatModifier(PlayerStats.WeaknessCurse, 1);
                 PlayerStats.AddPercentMultModifier(PlayerStats.Strength, -0.25f);
             }
-            player.currentHealth = player.maxHealth;
             RestartScene();
         }
-
         choiceMade = 2;
+        return;
     }
     public void Option03()
     {
@@ -1864,12 +1864,10 @@ public class DeathScreen : MonoBehaviour
                 PlayerStats.AddFlatModifier(PlayerStats.WeaknessCurse, 1);
                 PlayerStats.AddPercentMultModifier(PlayerStats.Strength, -0.25f);
             }
-
-            player.currentHealth = player.maxHealth;
-            choiceMade = 3;
             RestartScene();
         }
-        
+        choiceMade = 3;
+        return;
     }
     public void Option04()
     {
@@ -2181,10 +2179,10 @@ public class DeathScreen : MonoBehaviour
                 PlayerStats.AddPercentMultModifier(PlayerStats.Strength, -0.25f);
             }
 
-            player.currentHealth = player.maxHealth;
             RestartScene();
         }
         choiceMade = 4;
+        return;
     }
     public void Option05()
     {
@@ -2192,7 +2190,7 @@ public class DeathScreen : MonoBehaviour
         textbox.text = "Game Over";
         choiceMade = 5;
         Invoke("RestartGame", 0.013f);
-
+        return;
     }
 
     void RestartGame()

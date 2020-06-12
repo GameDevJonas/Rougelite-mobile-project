@@ -93,6 +93,7 @@ public class BossdoorScript : MonoBehaviour
             Time.timeScale = 1;
 
             Invoke("Sacrifice", 3f);
+            return;
         }
     }
 
@@ -106,6 +107,7 @@ public class BossdoorScript : MonoBehaviour
         SacrificeMade = true;
         MenuManager menu = FindObjectOfType<MenuManager>();
         menu.ToAlphaBoss();
+        return;
     }
     private void OnCollisionEnter2D(Collision2D collider)
     {
