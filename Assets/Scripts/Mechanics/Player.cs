@@ -84,8 +84,11 @@ public class Player : MonoBehaviour
 
     public bool isMoving;
 
+    OtherPlayerSounds otherSFX;
+
     void Awake()
     {
+        otherSFX = GetComponentInChildren<OtherPlayerSounds>();
         isMoving = false;
 
         playerstats = GetComponent<PlayerStats>();
@@ -120,9 +123,11 @@ public class Player : MonoBehaviour
 
 #if UNITY_ANDROID
         useTouch = true;
-#else
+#endif
+#if UNITY_EDITOR
         useTouch = false;
 #endif
+
     }
 
     public void StartPosition(Vector3 startPos)
@@ -153,7 +158,7 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", 0.2f);
         }*/
 
-        #region Button Managing with interactables based on what the player has
+#region Button Managing with interactables based on what the player has
         if (hasSword && !hasBow) // Maybe call a function when sacrificed one of these
         {
             switchButton.interactable = false;
@@ -171,7 +176,7 @@ public class Player : MonoBehaviour
 
         shieldButton.interactable = hasShield;
 
-        #endregion
+#endregion
 
         if (currentHealth <= 0 && !isdead)
         {
@@ -241,6 +246,7 @@ public class Player : MonoBehaviour
         if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || canTakeDamage && !knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
+            otherSFX.PlayDamageSound();
             if (dir == "U")
             {
                 rb.AddForce(new Vector2(0, knockBack), ForceMode2D.Force);
@@ -460,7 +466,7 @@ public class Player : MonoBehaviour
             yInput = Input.GetAxisRaw("Vertical");
         }
 
-        #region Non-Touch Controls
+#region Non-Touch Controls
         //Attack
         if (Input.GetKey(KeyCode.Space) && !useTouch)
         {
@@ -489,12 +495,12 @@ public class Player : MonoBehaviour
         {
             SwitchWeapon();
         }
-        #endregion
+#endregion
     }
 
     public void Anims()
     {
-        #region Walking directions
+#region Walking directions
         anim.SetInteger("X_Input", Mathf.RoundToInt(xInput));
         anim.SetInteger("Y_Input", Mathf.RoundToInt(yInput));
         if (xInput == 0 && yInput == 0)
@@ -502,9 +508,9 @@ public class Player : MonoBehaviour
             anim.SetBool("IsIdle", true);
         }
         else anim.SetBool("IsIdle", false);
-        #endregion
+#endregion
 
-        #region States based on what weapon player is using
+#region States based on what weapon player is using
         if (weaponInUse == WeaponState.sword)
         {
             weaponState = 1;
@@ -533,7 +539,7 @@ public class Player : MonoBehaviour
 
         //Shield
         anim.SetBool("ShieldUp", shieldIsUp);
-        #endregion
+#endregion
 
     }
 
