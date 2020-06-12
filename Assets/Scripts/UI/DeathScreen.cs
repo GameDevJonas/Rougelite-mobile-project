@@ -13,6 +13,9 @@ public class DeathScreen : MonoBehaviour
     public Player player;
     public PlayerStats PlayerStats;
     GameObject playercanvas;
+    public AudioSource sacsound;
+    public GameObject otherAudioObject;
+    public AudioSource[] otherAudio;
 
     public TextMeshProUGUI textbox;
     public GameObject choice01;
@@ -81,6 +84,9 @@ public class DeathScreen : MonoBehaviour
             SacrificeDatabase = rue.GetComponentInChildren<SacrificeDatabase>();
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();
             MenuManager = FindObjectOfType<MenuManager>();
+            otherAudioObject = GameObject.Find("Audioes");
+            otherAudio = otherAudioObject.GetComponentsInChildren<AudioSource>();
+            sacsound = gameObject.GetComponentInChildren<AudioSource>();
             levelIndex = SceneManager.GetActiveScene().buildIndex;
             DontDestroyOnLoad(this);
             level = levelIndex;
@@ -90,8 +96,13 @@ public class DeathScreen : MonoBehaviour
             }
             choiceMade = 0;
             AddSacrifices();
+            foreach (AudioSource audio in otherAudio)
+            {
+                audio.Stop();
+            }
             textbox.text = "You Perished\nCarry on?";
             added = true;
+            
             return;
         }
 
@@ -1254,6 +1265,7 @@ public class DeathScreen : MonoBehaviour
             RestartScene();
         }
         choiceMade = 1;
+        sacsound.Play();
         return;
     }
     public void Option02()
@@ -1564,6 +1576,7 @@ public class DeathScreen : MonoBehaviour
             RestartScene();
         }
         choiceMade = 2;
+        sacsound.Play();
         return;
     }
     public void Option03()
@@ -1867,6 +1880,7 @@ public class DeathScreen : MonoBehaviour
             RestartScene();
         }
         choiceMade = 3;
+        sacsound.Play();
         return;
     }
     public void Option04()
@@ -2182,6 +2196,7 @@ public class DeathScreen : MonoBehaviour
             RestartScene();
         }
         choiceMade = 4;
+        sacsound.Play();
         return;
     }
     public void Option05()
@@ -2207,11 +2222,15 @@ public class DeathScreen : MonoBehaviour
     {
         if (MenuManager != null)
         {
+            foreach (AudioSource audio in otherAudio)
+            {
+                audio.Play();
+            }
             player.HealthSystem.Heal(PlayerStats.Health.Value);
             MenuManager.ReloadLevel(levelIndex);
             RemoveSacrifices();
         }
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 4f);
     }
     public void AddSacrifices()
     {

@@ -92,8 +92,9 @@ public class BossdoorScript : MonoBehaviour
             SacrificeMade = true;
             RemoveSacrifices();
             Time.timeScale = 1;
-
-            Invoke("Sacrifice", 3f);
+            AudioSource sacmade = GetComponentInChildren<AudioSource>();
+            sacmade.Play();
+            Invoke("Sacrifice", 5f);
             return;
         }
     }

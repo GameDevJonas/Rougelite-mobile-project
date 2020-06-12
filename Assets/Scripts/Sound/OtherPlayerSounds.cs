@@ -9,6 +9,7 @@ public class OtherPlayerSounds : MonoBehaviour
     public ShieldSounds shield;
     public DamageSounds damage;
     public PotionSounds potion;
+    public GameOverSound gameoversound;
 
     #region Weapon Sounds
     public void PlayAttackSound(int weaponState)
@@ -71,6 +72,19 @@ public class OtherPlayerSounds : MonoBehaviour
         damage.mySource.pitch = 1f;
         damage.mySource.Play();
     }
+
+    public void PlayGameOverSound()
+    {
+        gameoversound.mySource.clip = gameoversound.gameoverSound;
+        gameoversound.mySource.pitch = 1f;
+        gameoversound.mySource.Play();
+    }
+    public void StopGameOverSound()
+    {
+        gameoversound.mySource.clip = gameoversound.gameoverSound;
+        gameoversound.mySource.pitch = 1f;
+        gameoversound.mySource.Stop();
+    }
     #endregion
 
     #region Potion sound
@@ -119,6 +133,13 @@ public class DamageSounds
 public class PotionSounds
 {
     public AudioClip potionSound;
+    public AudioSource mySource;
+}
+
+[System.Serializable]
+public class GameOverSound
+{
+    public AudioClip gameoverSound;
     public AudioSource mySource;
 }
 #endregion

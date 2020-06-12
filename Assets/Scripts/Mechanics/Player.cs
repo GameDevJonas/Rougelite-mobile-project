@@ -188,6 +188,7 @@ public class Player : MonoBehaviour
             canHeal = false;
             menuManager.pauseButton.SetActive(false);
             Time.timeScale = 0.003f;
+            otherSFX.PlayGameOverSound();
             DeathScreen();
             isdead = true;
         }
@@ -198,6 +199,7 @@ public class Player : MonoBehaviour
             canHeal = true;
             subtractextralife = true;
             Time.timeScale = 1;
+            otherSFX.StopGameOverSound();
             isdead = false;
         }
         if (playerCanvas.activeSelf == true && isdead)

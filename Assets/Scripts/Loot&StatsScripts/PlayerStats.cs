@@ -158,6 +158,7 @@ public class PlayerStats : MonoBehaviour
 
             if (itemToAdd.modType == "flat")
             {
+                itemToAdd.statType.RemoveModifier(flat);
                 AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
             }
             if (itemToAdd.modType == "percent")
@@ -331,13 +332,33 @@ public class PlayerStats : MonoBehaviour
     {
         if (item.modType == "flat")
         {
+            item.statType.RemoveModifier(flat);
             AddFlatModifier(item.statType, (item.statValue * item.collection));
             UpdateStatsInfo();
         }
         if (item.modType == "percent")
         {
             item.statType.RemoveModifier(percent);
-            AddPercentModifier(item.statType, (item.statValue * item.collection));
+            if (item.statType == Health && LessHP.Value > 0)
+            {
+                AddPercentModifier(item.statType, (item.statValue * item.collection) - 0.25f);
+            }
+            if (item.statType == Strength && LessStr.Value > 0)
+            {
+                AddPercentModifier(item.statType, (item.statValue * item.collection) - 0.25f);
+            }
+            if (item.statType == Dexterity && LessDex.Value > 0)
+            {
+                AddPercentModifier(item.statType, (item.statValue * item.collection) - 0.25f);
+            }
+            if (item.statType == MovementSpeed && LessMS.Value > 0)
+            {
+                AddPercentModifier(item.statType, (item.statValue * item.collection) - 0.25f);
+            }
+            else
+            {
+                AddPercentModifier(item.statType, (item.statValue * item.collection));
+            }
             UpdateStatsInfo();
         }
         if (item.modType == "mult")
