@@ -954,12 +954,12 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option01()
     {
+        textbox.transform.localPosition = new Vector2(0, 0);
         if (player.extraLives < 1)
         {
-            Time.timeScale = 1;
             textbox.text = "Game Over";
             choiceMade = 5;
-            Invoke("RestartGame", 3f);
+            Invoke("RestartGame", 0.013f);
         }
         else
         {
@@ -1243,6 +1243,7 @@ public class DeathScreen : MonoBehaviour
             //sacrifice debuff, galaxy intensity
             if (chosensacrifice[0].description == "debuff" && chosensacrifice[0].intensity == 5)
             {
+                textbox.transform.position = new Vector2(0, 95);
                 textbox.text = "Sacrifice accepted... \n " +
                 "Cursed with weakness, my strength is forever reduced.";
                 PlayerStats.AddFlatModifier(PlayerStats.WeaknessCurse, 1);
@@ -1255,11 +1256,12 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option02()
     {
+        textbox.transform.localPosition = new Vector2(0, 0);
         if (player.extraLives < 2)
         {
             textbox.text = "Game Over";
             choiceMade = 5;
-            Invoke("RestartGame", 3f);
+            Invoke("RestartGame", 0.013f);
         }
         else
         {
@@ -1565,11 +1567,12 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option03()
     {
+        textbox.transform.localPosition = new Vector2(0, 0);
         if (player.extraLives < 3)
         {
             textbox.text = "Game Over";
             choiceMade = 5;
-            Invoke("RestartGame", 3f);
+            Invoke("RestartGame", 0.013f);
         }
         else
         {
@@ -1869,11 +1872,12 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option04()
     {
+        textbox.transform.localPosition = new Vector2(0, 0);
         if (player.extraLives < 4)
         {
             textbox.text = "Game Over";
             choiceMade = 5;
-            Invoke("RestartGame", 3f);
+            Invoke("RestartGame", 0.013f);
         }
         else
         {
@@ -2183,16 +2187,20 @@ public class DeathScreen : MonoBehaviour
     }
     public void Option05()
     {
+        textbox.transform.localPosition = new Vector2(0, 0);
         textbox.text = "Game Over";
         choiceMade = 5;
-        Invoke("RestartGame", 3f);
+        Invoke("RestartGame", 0.013f);
+
     }
 
     void RestartGame()
     {
         if (MenuManager != null)
         {
+            Time.timeScale = 1;
             MenuManager.ToAlphaLevel();
+            Destroy(gameObject);
         }
     }
 

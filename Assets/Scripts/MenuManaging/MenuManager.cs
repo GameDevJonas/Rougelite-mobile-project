@@ -125,7 +125,6 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(0));
-
     }
 
     public void ReloadLevel(int buildIndex)

@@ -46,8 +46,8 @@ public class GetStats : MonoBehaviour
             currentStrength.text = "Strength: " + currentStats.Strength.Value;
             currentDexterity.text = "Dexterity: " + currentStats.Dexterity.Value;
             currentMovementSpeed.text = "Movement Speed: " + currentStats.MovementSpeed.Value;
-            currentCritChance.text = "Critical Strike Chance: " + currentStats.CritChance.Value;
-            currentCritDamage.text = "Critical Strike Damage: " + currentStats.CritDamage.Value;
+            currentCritChance.text = "Critical Chance: " + currentStats.CritChance.Value + "%";
+            currentCritDamage.text = "Critical Damage: " + currentStats.CritDamage.Value + "%";
             currentLifeOnHit.text = "Life On Hit: " + currentStats.LifeOnHit.Value;
             currentPotionPotency.text = "Potion Potency: " + currentStats.PotionPotency.Value;
         }
