@@ -89,6 +89,7 @@ public class BossdoorScript : MonoBehaviour
 
         if (sacrificing.GetComponent<SacrificeScript>().choiceMade > 0 && SacrificeMade == false)
         {
+            SacrificeMade = true;
             RemoveSacrifices();
             Time.timeScale = 1;
 
@@ -107,7 +108,6 @@ public class BossdoorScript : MonoBehaviour
         SacrificeMade = true;
         MenuManager menu = FindObjectOfType<MenuManager>();
         menu.ToAlphaBoss();
-        return;
     }
     private void OnCollisionEnter2D(Collision2D collider)
     {
