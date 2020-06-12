@@ -92,7 +92,7 @@ public class BossdoorScript : MonoBehaviour
             RemoveSacrifices();
             Time.timeScale = 1;
 
-            Sacrifice();
+            Invoke("Sacrifice", 3f);
         }
     }
 
@@ -104,8 +104,8 @@ public class BossdoorScript : MonoBehaviour
     private void Sacrifice()
     {
         SacrificeMade = true;
-
-        Invoke("TextboxGone", 3f);
+        MenuManager menu = FindObjectOfType<MenuManager>();
+        menu.ToAlphaBoss();
     }
     private void OnCollisionEnter2D(Collision2D collider)
     {
@@ -114,12 +114,6 @@ public class BossdoorScript : MonoBehaviour
             if (!SacrificeMade)
             {
                 IsInRange = true;
-            }
-            else
-            {
-                Time.timeScale = 1;
-                MenuManager menu = FindObjectOfType<MenuManager>();
-                menu.ToAlphaBoss();
             }
         }
     }

@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
             canAttack = false;
             canHeal = false;
             menuManager.pauseButton.SetActive(false);
-            Time.timeScale = 0.000000000001f;
+            Time.timeScale = 0.003f;
             DeathScreen();
             isdead = true;
         }
