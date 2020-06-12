@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -13,17 +14,17 @@ public class DeathScreen : MonoBehaviour
     public PlayerStats PlayerStats;
     GameObject playercanvas;
 
-    public Text textbox;
+    public TextMeshProUGUI textbox;
     public GameObject choice01;
-    public Text option01text;
+    public TextMeshProUGUI option01text;
     public GameObject choice02;
-    public Text option02text;
+    public TextMeshProUGUI option02text;
     public GameObject choice03;
-    public Text option03text;
+    public TextMeshProUGUI option03text;
     public GameObject choice04;
-    public Text option04text;
+    public TextMeshProUGUI option04text;
     public GameObject choice05;
-    public Text option05text;
+    public TextMeshProUGUI option05text;
 
     public List<Sacrifice> possiblesacrifices = new List<Sacrifice>();
     public List<Sacrifice> chosensacrifice = new List<Sacrifice>();

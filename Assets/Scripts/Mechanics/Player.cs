@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", 0.2f);
         }*/
 
-#region Button Managing with interactables based on what the player has
+        #region Button Managing with interactables based on what the player has
         if (hasSword && !hasBow) // Maybe call a function when sacrificed one of these
         {
             switchButton.interactable = false;
@@ -176,12 +176,13 @@ public class Player : MonoBehaviour
 
         shieldButton.interactable = hasShield;
 
-#endregion
+        #endregion
 
         if (currentHealth <= 0 && !isdead)
         {
             //TRIGGER DEATH ANIM AND THEN LOAD PERHAPS USE COROUTINE
             anim.SetTrigger("Death");
+            otherSFX.PlayDeathSound(); //DEATH SOUND
             canMove = false;
             canAttack = false;
             canHeal = false;
@@ -219,7 +220,7 @@ public class Player : MonoBehaviour
 
     void CheckForMovement()
     {
-        if((xInput != 0 || yInput != 0) && canMove)
+        if ((xInput != 0 || yInput != 0) && canMove)
         {
             isMoving = true;
         }
@@ -236,8 +237,9 @@ public class Player : MonoBehaviour
             deathscreenclone = Instantiate(deathScreen, transform.parent);
             subtractextralife = false;
             extraLives -= 1;
-        } 
+        }
     }
+
     public void TakeDamageAndKnockBack(float dmg, string dir)
     {
         //HURT ANIM
@@ -246,7 +248,7 @@ public class Player : MonoBehaviour
         if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || canTakeDamage && !knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
-            otherSFX.PlayDamageSound();
+            otherSFX.PlayDamageSound(); //DAMAGE SOUND
             if (dir == "U")
             {
                 rb.AddForce(new Vector2(0, knockBack), ForceMode2D.Force);
@@ -287,9 +289,11 @@ public class Player : MonoBehaviour
         else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || canTakeDamage && knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
+            otherSFX.PlayDamageSound(); //DAMAGE SOUND
         }
         else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || !canTakeDamage && !knockBackCooldown)
         {
+            otherSFX.PlayShieldSound(); //SHIELD BLOCK SOUND
             if (dir == "U")
             {
                 rb.AddForce(new Vector2(0, shieldKnockBack), ForceMode2D.Force);
@@ -318,7 +322,7 @@ public class Player : MonoBehaviour
                 //ANIMATION
                 anim.SetTrigger("ShieldHit");
             }
-            
+
             inKnockBack = true;
             knockBackCooldown = true;
             anim.SetBool("ShieldUp", true);
@@ -336,6 +340,7 @@ public class Player : MonoBehaviour
         else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || !canTakeDamage && knockBackCooldown)
         {
             //Knockback w/ shield
+            otherSFX.PlayShieldSound(); //SHIELD BLOCK SOUND
             if (dir == "U")
             {
                 //ANIMATION
@@ -366,15 +371,18 @@ public class Player : MonoBehaviour
         inKnockBack = false;
         Invoke("KnockbackCooldown", 1.5f);
     }
+
     void KnockbackCooldown()
     {
         knockBackCooldown = false;
     }
+
     private void FixedUpdate()
     {
         ApplyMovement();
         //Resources.UnloadUnusedAssets();
     }
+
     public void UpdateStats()
     {
         speed = playerstats.MovementSpeed.Value * 5;
@@ -434,6 +442,7 @@ public class Player : MonoBehaviour
     {
         if (potion > 0 && canHeal == true)
         {
+            otherSFX.PlayPotionSound(); //POTION SOUND
             //TRIGGER ANIMATION HERE
             anim.SetBool("DoHeal", true);
             canMove = false;
@@ -466,7 +475,7 @@ public class Player : MonoBehaviour
             yInput = Input.GetAxisRaw("Vertical");
         }
 
-#region Non-Touch Controls
+        #region Non-Touch Controls
         //Attack
         if (Input.GetKey(KeyCode.Space) && !useTouch)
         {
@@ -495,12 +504,12 @@ public class Player : MonoBehaviour
         {
             SwitchWeapon();
         }
-#endregion
+        #endregion
     }
 
     public void Anims()
     {
-#region Walking directions
+        #region Walking directions
         anim.SetInteger("X_Input", Mathf.RoundToInt(xInput));
         anim.SetInteger("Y_Input", Mathf.RoundToInt(yInput));
         if (xInput == 0 && yInput == 0)
@@ -508,9 +517,9 @@ public class Player : MonoBehaviour
             anim.SetBool("IsIdle", true);
         }
         else anim.SetBool("IsIdle", false);
-#endregion
+        #endregion
 
-#region States based on what weapon player is using
+        #region States based on what weapon player is using
         if (weaponInUse == WeaponState.sword)
         {
             weaponState = 1;
@@ -521,8 +530,11 @@ public class Player : MonoBehaviour
         }
 
         //Weapon switch button
-        Animator switchAnim = GameObject.FindGameObjectWithTag("WeaponSwitchButton").GetComponent<Animator>();
-        switchAnim.SetInteger("WeaponState", weaponState);
+        if (GameObject.FindGameObjectWithTag("WeaponSwitchButton").GetComponent<Animator>())
+        {
+            Animator switchAnim = GameObject.FindGameObjectWithTag("WeaponSwitchButton").GetComponent<Animator>();
+            switchAnim.SetInteger("WeaponState", weaponState);
+        }
 
         //Player animation states
         anim.SetInteger("WeaponState", weaponState);
@@ -539,7 +551,7 @@ public class Player : MonoBehaviour
 
         //Shield
         anim.SetBool("ShieldUp", shieldIsUp);
-#endregion
+        #endregion
 
     }
 
@@ -594,7 +606,7 @@ public class Player : MonoBehaviour
             dir = "U";
             shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
-        else if (yInput == -1 &&canMove == true) //Down
+        else if (yInput == -1 && canMove == true) //Down
         {
             dir = "D";
             shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
@@ -629,6 +641,7 @@ public class Player : MonoBehaviour
     {
         if (hasSword && hasBow)
         {
+            otherSFX.PlaySwitchSound(weaponState); //SWITCH WEAPON SOUND
             if (weaponInUse == WeaponState.sword)
             {
                 //debugWeaponState.text = "bow";
@@ -677,6 +690,7 @@ public class Player : MonoBehaviour
     {
         if (canAttack)
         {
+            otherSFX.PlayAttackSound(weaponState); //ATTACK SOUND
             //SETS ANIMATOR TRIGGER
             anim.SetTrigger("DoAttack");
             anim.SetBool("InAttackAnim", true);
@@ -734,6 +748,7 @@ public class Player : MonoBehaviour
     {
         if (canAttack)
         {
+            otherSFX.PlayAttackSound(weaponState); //ATTACK SOUND
             //SETS ANIMATOR TRIGGER
             anim.SetBool("InAttackAnim", true);
             anim.SetTrigger("DoFire");
