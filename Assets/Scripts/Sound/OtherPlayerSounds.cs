@@ -13,13 +13,19 @@ public class OtherPlayerSounds : MonoBehaviour
     #region Weapon Sounds
     public void PlayAttackSound(int weaponState)
     {
-        if(weaponState == 1) //Sword
+        if (weaponState == 1) //Sword
         {
-            Debug.Log("Played sword attack sound");
+            int rand = Random.Range(0, sword.attackSounds.Length);
+            sword.mySource.clip = sword.attackSounds[rand];
+            sword.mySource.pitch = Random.Range(.8f, 1.1f);
+            sword.mySource.Play();
         }
         else if(weaponState == 2) //Bow
         {
-            Debug.Log("Played bow attack sound");
+            int rand = Random.Range(0, bow.attackSounds.Length);
+            bow.mySource.clip = bow.attackSounds[rand];
+            bow.mySource.pitch = Random.Range(.8f, 1.1f);
+            bow.mySource.Play();
         }
     }
     
@@ -27,11 +33,15 @@ public class OtherPlayerSounds : MonoBehaviour
     {
         if (weaponState == 1) //Switch to bow
         {
-            Debug.Log("Played switch to bow sound");
+            bow.mySource.clip = bow.swapSound;
+            bow.mySource.pitch = Random.Range(.8f, 1.1f);
+            bow.mySource.Play();
         }
         else if (weaponState == 2) //Switch to sword
         {
-            Debug.Log("Played switch to sword sound");
+            sword.mySource.clip = sword.swapSound;
+            sword.mySource.pitch = Random.Range(.8f, 1.1f);
+            sword.mySource.Play();
         }
     }
     #endregion
@@ -39,26 +49,36 @@ public class OtherPlayerSounds : MonoBehaviour
     #region Shield sounds
     public void PlayShieldSound()
     {
-        Debug.Log("Played shield block sound");
+        int rand = Random.Range(0, shield.blockSounds.Length);
+        shield.mySource.clip = shield.blockSounds[rand];
+        shield.mySource.pitch = Random.Range(.8f, 1.1f);
+        shield.mySource.Play();
     }
     #endregion
 
     #region Damage sounds
     public void PlayDamageSound()
     {
-        Debug.Log("Played damage sound");
+        int rand = Random.Range(0, damage.damageSounds.Length);
+        damage.mySource.clip = damage.damageSounds[rand];
+        damage.mySource.pitch = Random.Range(.8f, 1.1f);
+        damage.mySource.Play();
     }
 
     public void PlayDeathSound()
     {
-        Debug.Log("Played death sound");
+        damage.mySource.clip = damage.deathSound;
+        damage.mySource.pitch = 1;
+        damage.mySource.Play();
     }
     #endregion
 
     #region Potion sound
     public void PlayPotionSound()
     {
-        Debug.Log("Played potion sound");
+        potion.mySource.clip = potion.potionSound;
+        potion.mySource.pitch = Random.Range(.8f, 1.1f);
+        potion.mySource.Play();
     }
     #endregion
 }
