@@ -1,0 +1,620 @@
+fileFormatVersion: 2
+guid: 253090902f926054fa4e9104cfd67c80
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6870957751454196337
+    second: Belial Telegraphed melee_0
+  - first:
+      213: 4135794359656674050
+    second: Belial Telegraphed melee_1
+  - first:
+      213: -6807768204128038286
+    second: Belial Telegraphed melee_2
+  - first:
+      213: 5834993650344613691
+    second: Belial Telegraphed melee_3
+  - first:
+      213: 381881725874046051
+    second: Belial Telegraphed melee_4
+  - first:
+      213: 9001960950714613191
+    second: Belial Telegraphed melee_5
+  - first:
+      213: -4068375668877816943
+    second: Belial Telegraphed melee_6
+  - first:
+      213: -5220027993932158727
+    second: Belial Telegraphed melee_7
+  - first:
+      213: 7926356847413321284
+    second: Belial Telegraphed melee_8
+  - first:
+      213: -6622018534527988334
+    second: Belial Telegraphed melee_9
+  - first:
+      213: -6172707712015553746
+    second: Belial Telegraphed melee_10
+  - first:
+      213: 6202265335730360418
+    second: Belial Telegraphed melee_11
+  - first:
+      213: -4595111380645617835
+    second: Belial Telegraphed melee_12
+  - first:
+      213: 9221939928439730134
+    second: Belial Telegraphed melee_13
+  - first:
+      213: -2489129170922322134
+    second: Belial Telegraphed melee_14
+  - first:
+      213: -496089439528292550
+    second: Belial Telegraphed melee_15
+  - first:
+      213: 785812564876229308
+    second: Belial Telegraphed melee_16
+  - first:
+      213: -5637953098301941817
+    second: Belial Telegraphed melee_17
+  - first:
+      213: 5209026357008457198
+    second: Belial Telegraphed melee_18
+  - first:
+      213: -2492793194649617727
+    second: Belial Telegraphed melee_19
+  - first:
+      213: 3084457843581926265
+    second: Belial Telegraphed melee_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 561
+        width: 123
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172e42acbab8a5f50800000000000000
+      internalID: 6870957751454196337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 559
+        width: 123
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2037667ce0b456930800000000000000
+      internalID: 4135794359656674050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_2
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 560
+        width: 113
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272dfbf23e2f581a0800000000000000
+      internalID: -6807768204128038286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 561
+        width: 91
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3753735fcf0af050800000000000000
+      internalID: 5834993650344613691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 452
+        width: 77
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3648fe80867bc4500800000000000000
+      internalID: 381881725874046051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 453
+        width: 67
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd384d4ac36dec70800000000000000
+      internalID: 9001960950714613191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_6
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 453
+        width: 69
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b02b362e93a87c0800000000000000
+      internalID: -4068375668877816943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 453
+        width: 67
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f82418423cbe87b0800000000000000
+      internalID: -5220027993932158727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_8
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 342
+        width: 69
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e5e0d9e83100e60800000000000000
+      internalID: 7926356847413321284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_9
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 341
+        width: 69
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d08615a3dd914a0800000000000000
+      internalID: -6622018534527988334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_10
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 340
+        width: 91
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2baff25a03265aa0800000000000000
+      internalID: -6172707712015553746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_11
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 339
+        width: 131
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2605dea367fd21650800000000000000
+      internalID: 6202265335730360418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 231
+        width: 117
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f53459b82ea30c0800000000000000
+      internalID: -4595111380645617835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 231
+        width: 117
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df24a64189eaff70800000000000000
+      internalID: 9221939928439730134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 231
+        width: 115
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27cc1ff436d47dd0800000000000000
+      internalID: -2489129170922322134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 229
+        width: 115
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fe71c78498d19f0800000000000000
+      internalID: -496089439528292550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 119
+        width: 115
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba7c754d54c7ea00800000000000000
+      internalID: 785812564876229308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_17
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 119
+        width: 121
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7566b3787f1c1b0800000000000000
+      internalID: -5637953098301941817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_18
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 119
+        width: 133
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedd2238fdd2a4840800000000000000
+      internalID: 5209026357008457198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_19
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 119
+        width: 133
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caf56efbc1d76dd0800000000000000
+      internalID: -2492793194649617727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed melee_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 11
+        width: 123
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b3e5b01123eca20800000000000000
+      internalID: 3084457843581926265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

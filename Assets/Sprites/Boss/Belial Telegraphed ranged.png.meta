@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: d3b34c8feec43934b8c3ebc71668bec8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1268730583630678012
+    second: Belial Telegraphed ranged_0
+  - first:
+      213: -7901581388730469747
+    second: Belial Telegraphed ranged_1
+  - first:
+      213: 2574837445867293465
+    second: Belial Telegraphed ranged_2
+  - first:
+      213: -2121456203595141230
+    second: Belial Telegraphed ranged_3
+  - first:
+      213: 4173816729578565074
+    second: Belial Telegraphed ranged_4
+  - first:
+      213: -1714384806989479143
+    second: Belial Telegraphed ranged_5
+  - first:
+      213: -146187202089942682
+    second: Belial Telegraphed ranged_6
+  - first:
+      213: 6313302509976455884
+    second: Belial Telegraphed ranged_7
+  - first:
+      213: -4905117719954923712
+    second: Belial Telegraphed ranged_8
+  - first:
+      213: -6235500311337145887
+    second: Belial Telegraphed ranged_9
+  - first:
+      213: -7956722482500162469
+    second: Belial Telegraphed ranged_10
+  - first:
+      213: 2367323527647373444
+    second: Belial Telegraphed ranged_11
+  - first:
+      213: -3353588465702872454
+    second: Belial Telegraphed ranged_12
+  - first:
+      213: -4946919876744944854
+    second: Belial Telegraphed ranged_13
+  - first:
+      213: -231136358607496246
+    second: Belial Telegraphed ranged_14
+  - first:
+      213: 6919713498801962017
+    second: Belial Telegraphed ranged_15
+  - first:
+      213: 490309752910035043
+    second: Belial Telegraphed ranged_16
+  - first:
+      213: -6832646245467094168
+    second: Belial Telegraphed ranged_17
+  - first:
+      213: -2641582331925350038
+    second: Belial Telegraphed ranged_18
+  - first:
+      213: -8605637959214678695
+    second: Belial Telegraphed ranged_19
+  - first:
+      213: -562666778521359365
+    second: Belial Telegraphed ranged_20
+  - first:
+      213: -7403406908383600935
+    second: Belial Telegraphed ranged_21
+  - first:
+      213: -1164645756984700063
+    second: Belial Telegraphed ranged_22
+  - first:
+      213: -4159971146613475715
+    second: Belial Telegraphed ranged_23
+  - first:
+      213: 8495730382020569058
+    second: Belial Telegraphed ranged_24
+  - first:
+      213: 2739348482720592443
+    second: Belial Telegraphed ranged_25
+  - first:
+      213: 4742894428697671984
+    second: Belial Telegraphed ranged_26
+  - first:
+      213: -6546932707733204080
+    second: Belial Telegraphed ranged_27
+  - first:
+      213: -4989233951532141439
+    second: Belial Telegraphed ranged_28
+  - first:
+      213: -8794580052197986155
+    second: Belial Telegraphed ranged_29
+  - first:
+      213: 1009357984122437105
+    second: Belial Telegraphed ranged_30
+  - first:
+      213: -11528701990403966
+    second: Belial Telegraphed ranged_31
+  - first:
+      213: 5204297576064093452
+    second: Belial Telegraphed ranged_32
+  - first:
+      213: 28252938478912104
+    second: Belial Telegraphed ranged_33
+  - first:
+      213: -6495039809978428512
+    second: Belial Telegraphed ranged_34
+  - first:
+      213: -506105826569393835
+    second: Belial Telegraphed ranged_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 781
+        width: 123
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf70bf86ebf6b9110800000000000000
+      internalID: 1268730583630678012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 781
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82f1e06791f75290800000000000000
+      internalID: -7901581388730469747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 781
+        width: 111
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b4b43d309abb320800000000000000
+      internalID: 2574837445867293465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 781
+        width: 91
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fa922a2d21f82e0800000000000000
+      internalID: -2121456203595141230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_4
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 781
+        width: 79
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddec14a3306ce930800000000000000
+      internalID: 4173816729578565074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 671
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913c01be9184538e0800000000000000
+      internalID: -1714384806989479143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_6
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 671
+        width: 67
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66188b4a383a8fdf0800000000000000
+      internalID: -146187202089942682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_7
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 671
+        width: 61
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca8abafe2b5d9750800000000000000
+      internalID: 6313302509976455884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_8
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 671
+        width: 59
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fdc901c658debb0800000000000000
+      internalID: -4905117719954923712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_9
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 671
+        width: 59
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e969e1018d0779a0800000000000000
+      internalID: -6235500311337145887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 561
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca6360f0b049190800000000000000
+      internalID: -7956722482500162469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_11
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 561
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488a8dda43c6ad020800000000000000
+      internalID: 2367323527647373444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_12
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 561
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7adeeafe09a571d0800000000000000
+      internalID: -3353588465702872454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_13
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 561
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a236c4ef492095bb0800000000000000
+      internalID: -4946919876744944854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_14
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 561
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbd58ad4b6daccf0800000000000000
+      internalID: -231136358607496246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_15
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 451
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cf093d3c2c70060800000000000000
+      internalID: 6919713498801962017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_16
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 451
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368bc1c5f1eedc600800000000000000
+      internalID: 490309752910035043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_17
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 451
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863070fc0709d21a0800000000000000
+      internalID: -6832646245467094168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_18
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 451
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6934a46dd6375bd0800000000000000
+      internalID: -2641582331925350038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_19
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 451
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d3467eed1a29880800000000000000
+      internalID: -8605637959214678695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_20
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 341
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb225bcb810138f0800000000000000
+      internalID: -562666778521359365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_21
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 341
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de5f1a44a0d14990800000000000000
+      internalID: -7403406908383600935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_22
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 341
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163d2c5cad856dfe0800000000000000
+      internalID: -1164645756984700063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_23
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 341
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76ba3a5840d446c0800000000000000
+      internalID: -4159971146613475715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_24
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 341
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e764d725c5e6e570800000000000000
+      internalID: 8495730382020569058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 231
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32f09c6eee140620800000000000000
+      internalID: 2739348482720592443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_26
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 231
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03934bd9a5522d140800000000000000
+      internalID: 4742894428697671984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_27
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 231
+        width: 59
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0931d23b36f9425a0800000000000000
+      internalID: -6546932707733204080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_28
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 231
+        width: 59
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184bb99b72ea2cab0800000000000000
+      internalID: -4989233951532141439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_29
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 231
+        width: 61
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590b008c90063f580800000000000000
+      internalID: -8794580052197986155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 121
+        width: 67
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd72de1db5f10e00800000000000000
+      internalID: 1009357984122437105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_31
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 121
+        width: 71
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2800425e4ba07dff0800000000000000
+      internalID: -11528701990403966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_32
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 121
+        width: 79
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d0ab66211693840800000000000000
+      internalID: 5204297576064093452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_33
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 121
+        width: 91
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86285e9d5ef546000800000000000000
+      internalID: 28252938478912104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 121
+        width: 111
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3173c74bbfcd5a0800000000000000
+      internalID: -6495039809978428512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial Telegraphed ranged_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 11
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5596394ae63f9f8f0800000000000000
+      internalID: -506105826569393835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
