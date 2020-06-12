@@ -836,7 +836,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1276,8 +1276,6 @@ MonoBehaviour:
   - stepSounds:
     - {fileID: 8300000, guid: b9d7eba12bd2ae3448148eb2693709b1, type: 3}
     - {fileID: 8300000, guid: 33e7884de0591294cac73e2c52df79cd, type: 3}
-  stepSoundTimerSet: 1
-  stepSoundTimer: 0
 --- !u!114 &3491342594060338652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,7 +1735,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2463,7 +2461,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2591,7 +2589,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
