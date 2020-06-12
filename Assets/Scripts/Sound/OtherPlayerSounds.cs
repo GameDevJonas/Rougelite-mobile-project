@@ -61,14 +61,14 @@ public class OtherPlayerSounds : MonoBehaviour
     {
         int rand = Random.Range(0, damage.damageSounds.Length);
         damage.mySource.clip = damage.damageSounds[rand];
-        damage.mySource.pitch = Random.Range(.8f, 1.1f);
+        damage.mySource.pitch = 1f;
         damage.mySource.Play();
     }
 
     public void PlayDeathSound()
     {
         damage.mySource.clip = damage.deathSound;
-        damage.mySource.pitch = 1;
+        damage.mySource.pitch = 1f;
         damage.mySource.Play();
     }
     #endregion
