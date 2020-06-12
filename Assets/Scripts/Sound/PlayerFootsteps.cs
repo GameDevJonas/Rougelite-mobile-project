@@ -11,8 +11,8 @@ public class PlayerFootsteps : MonoBehaviour
 
     int currentScene;
 
-    public float stepSoundTimerSet;
-    public float stepSoundTimer;
+    float stepSoundTimerSet;
+    float stepSoundTimer;
 
     Player player;
 

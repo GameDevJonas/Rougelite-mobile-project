@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 61905399360452084}
   - component: {fileID: 2032340285171937336}
   - component: {fileID: 3860384351795780574}
+  - component: {fileID: 1429880517590737215}
   m_Layer: 11
   m_Name: ZombieTrash
   m_TagString: Enemy
@@ -347,6 +348,7 @@ Transform:
   m_Children:
   - {fileID: 4914718155285235749}
   - {fileID: 2804021404626149093}
+  - {fileID: 7432417803307187383}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -420,6 +422,7 @@ MonoBehaviour:
   ancientLoot: {fileID: 4633701987345043094, guid: 6c47138bba0d6524cbb2f5ca63bceb9d,
     type: 3}
   potion: {fileID: 4633701987345043094, guid: e690ca87d66d61542b99fcd3395f16ee, type: 3}
+  isWalking: 0
 --- !u!50 &3962052271877654383
 Rigidbody2D:
   serializedVersion: 4
@@ -561,6 +564,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.7841537}
   m_EdgeRadius: 0
+--- !u!114 &1429880517590737215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6429758075927487342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ed1b693677d98469dfe579d36f7c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footsteps:
+    footstepSounds:
+    - {fileID: 8300000, guid: 2f8d463b97ad0274facee9597ca40b8f, type: 3}
+    - {fileID: 8300000, guid: 72271de7264323541bfde8c82ffbfde4, type: 3}
+    myStepRatio: 0.6
+    mySource: {fileID: 4079015267795522905}
+  voice:
+    voiceSounds:
+    - {fileID: 8300000, guid: 8ad28ea88311ae649973ff3787ebd6fd, type: 3}
+    - {fileID: 8300000, guid: b580f23a744048046a11ec4c10b712ac, type: 3}
+    - {fileID: 8300000, guid: 8ac472ccd7ff03640bace9cabdb11541, type: 3}
+    mySource: {fileID: 5550567488918702802}
+  damage:
+    damageSounds:
+    - {fileID: 8300000, guid: 06c20fc4d77a658439a4b553b6b1bb84, type: 3}
+    - {fileID: 8300000, guid: 1b567a36b9877444f890a07e2bee1d60, type: 3}
+    deathSound: {fileID: 8300000, guid: 031ddf0eb9adf2c4a85bdc7bba1c5c6f, type: 3}
+    mySource: {fileID: 5550567488918702802}
+  attack:
+    attackSounds:
+    - {fileID: 8300000, guid: f4dcbe6596faf9845bd4c606272bb3dd, type: 3}
+    - {fileID: 8300000, guid: 0996b3bb2493a3546bde01d7e4250540, type: 3}
+    - {fileID: 8300000, guid: f6d04f97b59911d47afed77e3ff7913e, type: 3}
+    mySource: {fileID: 29127402954250794}
 --- !u!1 &6488241941857388439
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,3 +646,96 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1001 &8762185423524572765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6429758075927487634}
+    m_Modifications:
+    - target: {fileID: 2209776812476093784, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_Name
+      value: Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb29ed91aa1e4a24d89a3a2c17158b79, type: 3}
+--- !u!4 &7432417803307187383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2214866852853601002, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+    type: 3}
+  m_PrefabInstance: {fileID: 8762185423524572765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4079015267795522905 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4684337287525399300, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+    type: 3}
+  m_PrefabInstance: {fileID: 8762185423524572765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5550567488918702802 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3791497137500284047, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+    type: 3}
+  m_PrefabInstance: {fileID: 8762185423524572765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &29127402954250794 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8790729604539675767, guid: eb29ed91aa1e4a24d89a3a2c17158b79,
+    type: 3}
+  m_PrefabInstance: {fileID: 8762185423524572765}
+  m_PrefabAsset: {fileID: 0}

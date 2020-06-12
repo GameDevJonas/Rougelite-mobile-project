@@ -87,14 +87,16 @@ public class JEnemy : MonoBehaviour
     #region Animation
     Animator anim;
     bool isIdle;
-    bool isWalking;
+    public bool isWalking;
     bool isHurt;
     bool isAttacking;
     bool playHurtAnim, playAttackAnim;
     #endregion
 
+    EnemySound mySounds;
     void Start()
     {
+        mySounds = GetComponent<EnemySound>();
         GameObject newStartPosO = Instantiate(startPosO, transform.position, Quaternion.identity, transform.parent);
         startPosO = newStartPosO;
         rb = GetComponent<Rigidbody2D>();
@@ -271,6 +273,7 @@ public class JEnemy : MonoBehaviour
 
         if (myHealth <= 0 && !isDead)
         {
+            mySounds.PlayDeathSound();
             //DropLootAndDie();
             myState = EnemyState.dead;
         } //ded
@@ -307,8 +310,8 @@ public class JEnemy : MonoBehaviour
         {
             myState = EnemyState.non;
         }
-
         yield return new WaitForSeconds(2f);
+        mySounds.PlayVoiceSound(); //VOICE SOUND
         myState = EnemyState.walking;
 
         yield return null;
@@ -333,6 +336,11 @@ public class JEnemy : MonoBehaviour
             rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
             if (aIPath.reachedEndOfPath && overlap)
             {
+                mySounds.PlayVoiceSound(); //VOICE SOUND
+                if (!hasAttacked && !isDead)
+                {
+                    mySounds.PlayAttackSound();
+                }
                 //Debug.Log("Player is here, do attack");
                 aIPath.enabled = false;
                 //yield return new WaitForSeconds(2f);
@@ -369,6 +377,7 @@ public class JEnemy : MonoBehaviour
         aIPath.enabled = false;
         if (!hasAttacked && !isDead)
         {
+            mySounds.PlayAttackSound();
             InstanstiateAttack();
             hasAttacked = true;
         }
@@ -449,7 +458,6 @@ public class JEnemy : MonoBehaviour
             myState = EnemyState.walking;
             yield return null;
         }
-        
 
     }
 
@@ -478,6 +486,7 @@ public class JEnemy : MonoBehaviour
         double dmgprint = System.Math.Round(damage, 2);
         if (!crit)
         {
+            mySounds.PlayDamageSound();
             GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
             dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
             dmgtext.CrossFadeAlpha(0, fadetime, false);
@@ -487,6 +496,7 @@ public class JEnemy : MonoBehaviour
         }
         else
         {
+            mySounds.PlayDamageSound();
             GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 18, Quaternion.identity);
             dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
             dmgtext.color = Color.red;
