@@ -278,6 +278,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: b7958e8ecd9581d448dda34873404eea
+    name: EnemyVoice
   - guid: a3ebcacd6f9b0334886098f64771335b
     name: MainMusic
   - guid: f8d7e954408866e418d84ffd011e3320
@@ -287,10 +289,11 @@ AudioMixerController:
     - 4c409fa270b1b8a4496ba15a521f2a6c
     - 0898dd6f8d90cea479ef20c1a596a561
     - 9d3332902be62aa4687056dfd3bef4e9
-    - 62aece1e618572947a588dfd711daf38
-    - f3affa768995e4041a73420f18fe3164
     - e11fc3b6f823f16408c0c6640a33ad4a
     - 3a17f4385b5956d44940cbd074df73e6
+    - 62aece1e618572947a588dfd711daf38
+    - f3affa768995e4041a73420f18fe3164
+    - 1b59c5403651cca428f8c7f202a313e1
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -349,6 +352,7 @@ AudioMixerSnapshotController:
     d766bd8974a3e664c8c9b2706a4c74e8: -15
     5b255eca5c52743438a952cde40d94dd: 0
     a3ebcacd6f9b0334886098f64771335b: 0.04171297
+    b7958e8ecd9581d448dda34873404eea: 0.025578514
   m_TransitionOverrides: {}
 --- !u!244 &2032090185536764461
 AudioMixerEffectController:

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: c9a7b38fb756dc641b861d8e11eb5254
+guid: 25334795fd5323d4f8b6cf5984b6c990
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6036412932839737644
-    second: Belial walk_0
-  - first:
-      213: -33488217258235526
-    second: Belial walk_1
-  - first:
-      213: -7602855160745688733
-    second: Belial walk_2
-  - first:
-      213: -1066578853035137764
-    second: Belial walk_3
+      213: -5787719293474464681
+    second: Belial Dead_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -57,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +91,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial walk_0
+      name: Belial Dead_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 127
-        width: 84
-        height: 69
+        x: 432
+        y: 7
+        width: 99
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,71 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c298c738495a5c350800000000000000
-      internalID: 6036412932839737644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial walk_1
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 127
-        width: 81
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a796922d4a6098ff0800000000000000
-      internalID: -33488217258235526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial walk_2
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 15
-        width: 80
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3610201538b3d7690800000000000000
-      internalID: -7602855160745688733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial walk_3
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 16
-        width: 79
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c15a5e32f20c231f0800000000000000
-      internalID: -1066578853035137764
+      spriteID: 75c97cc97f3edafa0800000000000000
+      internalID: -5787719293474464681
       vertices: []
       indices: 
       edges: []

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 99f86271d03d7d14e9496cd1ea9c9a36
+guid: c9a7b38fb756dc641b861d8e11eb5254
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4371791842834444414
-    second: Belial stagger_0
+      213: 6036412932839737644
+    second: Belial walk_0
   - first:
-      213: 2075914545531515120
-    second: Belial stagger_1
+      213: -33488217258235526
+    second: Belial walk_1
   - first:
-      213: 7899989491456633207
-    second: Belial stagger_2
+      213: -7602855160745688733
+    second: Belial walk_2
   - first:
-      213: 6194860425896477800
-    second: Belial stagger_3
+      213: -1066578853035137764
+    second: Belial walk_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,55 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial stagger_0
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 115
-        width: 82
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e70f810b489bbac30800000000000000
-      internalID: 4371791842834444414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial stagger_1
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 115
-        width: 82
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f0f87ec7412fcc10800000000000000
-      internalID: 2075914545531515120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial stagger_2
+      name: Belial walk_0
       rect:
         serializedVersion: 2
         x: 25
-        y: 9
-        width: 82
-        height: 71
+        y: 127
+        width: 84
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7796797269662ad60800000000000000
-      internalID: 7899989491456633207
+      spriteID: c298c738495a5c350800000000000000
+      internalID: 6036412932839737644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial stagger_3
+      name: Belial walk_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 9
-        width: 82
-        height: 70
+        x: 164
+        y: 127
+        width: 81
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +146,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8644fae4cb098f550800000000000000
-      internalID: 6194860425896477800
+      spriteID: a796922d4a6098ff0800000000000000
+      internalID: -33488217258235526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial walk_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 15
+        width: 80
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3610201538b3d7690800000000000000
+      internalID: -7602855160745688733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial walk_3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 16
+        width: 79
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15a5e32f20c231f0800000000000000
+      internalID: -1066578853035137764
       vertices: []
       indices: 
       edges: []

@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 3908b8468ec463246b57b9c6aaaf6457
+guid: 99f86271d03d7d14e9496cd1ea9c9a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1473574547098222952
-    second: Belial cheap attack_0
+      213: 4371791842834444414
+    second: Belial stagger_0
   - first:
-      213: -403018914376322308
-    second: Belial cheap attack_1
+      213: 2075914545531515120
+    second: Belial stagger_1
   - first:
-      213: 3108744074805987400
-    second: Belial cheap attack_2
+      213: 7899989491456633207
+    second: Belial stagger_2
   - first:
-      213: -1445109986430992756
-    second: Belial cheap attack_3
-  - first:
-      213: 2518255623643927012
-    second: Belial cheap attack_4
-  - first:
-      213: 5985634214199926403
-    second: Belial cheap attack_5
+      213: 6194860425896477800
+    second: Belial stagger_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -63,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -82,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,12 +111,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial cheap attack_0
+      name: Belial stagger_0
       rect:
         serializedVersion: 2
         x: 27
-        y: 233
-        width: 71
+        y: 115
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70f810b489bbac30800000000000000
+      internalID: 4371791842834444414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belial stagger_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 115
+        width: 82
         height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 861c8d54e30337410800000000000000
-      internalID: 1473574547098222952
+      spriteID: 0f0f87ec7412fcc10800000000000000
+      internalID: 2075914545531515120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap attack_1
+      name: Belial stagger_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 233
-        width: 65
-        height: 83
+        x: 25
+        y: 9
+        width: 82
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,83 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf2f5d2ce60386af0800000000000000
-      internalID: -403018914376322308
+      spriteID: 7796797269662ad60800000000000000
+      internalID: 7899989491456633207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap attack_2
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 123
-        width: 80
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8484964e34a742b20800000000000000
-      internalID: 3108744074805987400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial cheap attack_3
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 123
-        width: 72
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8e3965bf10f1fbe0800000000000000
-      internalID: -1445109986430992756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial cheap attack_4
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 13
-        width: 69
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e11decb524a2f220800000000000000
-      internalID: 2518255623643927012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Belial cheap attack_5
+      name: Belial stagger_3
       rect:
         serializedVersion: 2
         x: 162
-        y: 13
-        width: 74
-        height: 80
+        y: 9
+        width: 82
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38e9fc4ca9e311350800000000000000
-      internalID: 5985634214199926403
+      spriteID: 8644fae4cb098f550800000000000000
+      internalID: 6194860425896477800
       vertices: []
       indices: 
       edges: []

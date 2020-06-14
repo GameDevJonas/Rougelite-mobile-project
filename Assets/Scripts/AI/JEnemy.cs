@@ -23,6 +23,7 @@ public class JEnemy : MonoBehaviour
     public Collider2D myHitbox;
     public Collider2D myRoom;
     public Rigidbody2D rb;
+    SpriteRenderer myRend;
 
     public AIPath aIPath;
     public AIDestinationSetter destination;
@@ -142,6 +143,7 @@ public class JEnemy : MonoBehaviour
         aIPath.maxSpeed = speed;
 
         anim = GetComponentInChildren<Animator>();
+        myRend = GetComponentInChildren<SpriteRenderer>();
     }
 
     /*public void DecideEnemyType()
@@ -208,13 +210,23 @@ public class JEnemy : MonoBehaviour
 
         if (direction == "L")
         {
+            myRend.sortingOrder = 149;
             Transform animScale = anim.gameObject.transform;
             animScale.localScale = new Vector3(-1, 1, 1);
         }
         if (direction == "R")
         {
+            myRend.sortingOrder = 149;
             Transform animScale = anim.gameObject.transform;
             animScale.localScale = new Vector3(1, 1, 1);
+        }
+        if (direction == "U")
+        {
+            myRend.sortingOrder = 151;
+        }
+        if (direction == "D")
+        {
+            myRend.sortingOrder = 149;
         }
     }
 
