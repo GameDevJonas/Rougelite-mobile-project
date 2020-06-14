@@ -108,5 +108,6 @@ public class BossSound : MonoBehaviour
 public class OtherSFX
 {
     public AudioClip crumble;
+    public AudioClip deathSound;
     public AudioSource mySource;
 }
