@@ -698,6 +698,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98717459, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_text
+      value: 'Dexterity: Rue''s skill,
+
+        she''ll attack faster.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 98717459, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 98717459, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 98717459, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 98717459, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 600792093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
@@ -709,6 +731,54 @@ PrefabInstance:
     - target: {fileID: 600792093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817359106, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_text
+      value: 'Potion Potency: Rue''s knowledge. She''ll heal more from potions.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 817359106, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 817359106, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 817359106, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 817359106, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_text
+      value: "Health: Rue's vitality, \nshe'll perish if it reaches zero."
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 967791661, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1521603578, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchorMax.x
@@ -737,6 +807,48 @@ PrefabInstance:
     - target: {fileID: 1703841684, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918415189, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_text
+      value: 'Life On Hit: Health gained per attack.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918415189, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918415189, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918415189, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918415189, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110386335, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_text
+      value: 'Strength: Rue''s power,
+
+        she''ll deal more damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110386335, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110386335, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110386335, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110386335, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 750010033889884020, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
@@ -757,6 +869,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_text
+      value: 'Critical Strike Damage: Critical attacks deal more damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009447999594960085, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327859229288316926, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938234567586012093, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -104
       objectReference: {fileID: 0}
     - target: {fileID: 3132316459878082207, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
@@ -902,6 +1054,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_text
+      value: 'Critical Strike Chance: The probability doing critical damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510346446489772891, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571309104458607940, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_text
+      value: 'Movment Speed: Rue''s swiftness. She''ll run faster.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571309104458607940, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571309104458607940, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571309104458607940, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571309104458607940, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}

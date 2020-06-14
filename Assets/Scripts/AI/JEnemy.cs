@@ -546,7 +546,7 @@ public class JEnemy : MonoBehaviour
             float str = playerstats.Strength.Value;
             float dex = playerstats.Dexterity.Value;
             float critdmg = playerstats.CritDamage.Value / 100;
-            float crithpdmg = playerstats.PercentHpDmg.Value;
+            float currenthpdmg = playerstats.PercentHpDmg.Value;
             float ruehpdmg = playerstats.RueHPDmgOnHit.Value;
             float bowmod = playerstats.CrossbowAttackModifier.Value;
             float swordmod = playerstats.SwordAttackModifier.Value;
@@ -577,15 +577,14 @@ public class JEnemy : MonoBehaviour
                 {
                     damage *= 2;
                 }
-                if (arrowCrit.crit && crithpdmg == 0)
+                if (arrowCrit.crit)
                 {
                     damage *= critdmg;
                     crit = true;
                 }
-                if (arrowCrit.crit && crithpdmg > 0)
+                if (currenthpdmg > 0)
                 {
-                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
-                    crit = true;
+                    damage = damage + (myHealth * 0.1f);
                 }
                 if (ruehpdmg > 0)
                 {
@@ -617,15 +616,14 @@ public class JEnemy : MonoBehaviour
                 {
                     damage = myHealth;
                 }
-                if (swordCrit.Crit && crithpdmg == 0)
+                if (swordCrit.Crit)
                 {
                     damage *= critdmg;
                     crit = true;
                 }
-                if (swordCrit.Crit && crithpdmg > 0)
+                if (currenthpdmg > 0)
                 {
-                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
-                    crit = true;
+                    damage = damage + (myHealth * 0.1f);
                 }
                 if (ruehpdmg > 0)
                 {
@@ -648,15 +646,14 @@ public class JEnemy : MonoBehaviour
                 {
                     damage = myHealth;
                 }
-                if (swordProjectileCrit.crit && crithpdmg == 0)
+                if (swordProjectileCrit.crit)
                 {
                     damage *= critdmg;
                     crit = true;
                 }
-                if (swordProjectileCrit.crit && crithpdmg > 0)
+                if (currenthpdmg > 0)
                 {
-                    damage = (damage * critdmg) + (EnemyStats.health * 0.02f);
-                    crit = true;
+                    damage = damage + (myHealth * 0.1f);
                 }
                 if (ruehpdmg > 0)
                 {

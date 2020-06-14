@@ -156,7 +156,7 @@ public class ItemDatabase : MonoBehaviour
             new Item(31, "Ancient Loot", "Surfaced wrath", null, "When you raise the wall for long,\nTo contain the turmoil of your soul.\nWe will take hold and violently erupt,\nYour sorrows made wrath and violence inflicted.", "Gains rapid fire arrows, damage is increased by Dexterity.", RapidFire, null, "flat", 1, 1, 1),
             new Item(32, "Ancient Loot", "Hatred fragment", null, "Fundamentally flawed,\nCorruption beyond repair.\nWhy mend what is broken,\nInstead of swift destruction?", "Sword attacks execute enemies below 20% health.", SwordExecute, null, "flat", 1, 1, 1),
             new Item(33, "Ancient Loot", "Guilt of Belial", null, "I see what is broken and breaks them further,\nI torment them with their past and torment them with the future.\nI trap their lives in a prison of time\nwith bars of guilt.", "Boss doors no longer require sacrifices", NoSacrifice, null, "flat", 1, 1, 1),
-            new Item(34, "Ancient Loot", "Wickedness of Belial", null, "I whisper sweet promises and sweet release of sin,\nI say where all fault lies,\nnot with them but with others.\nI inspire their souls with wickedness\nand claim justice for their victimhood.", "Critical strikes deal equal to 2% of enemies’ maximum health.", PercentHpDmg, null, "flat", 1, 1, 1)
+            new Item(34, "Ancient Loot", "Wickedness of Belial", null, "I whisper sweet promises and sweet release of sin,\nI say where all fault lies,\nnot with them but with others.\nI inspire their souls with wickedness\nand claim justice for their victimhood.", "Attacks deal 10% current health bonus damage", PercentHpDmg, null, "flat", 1, 1, 1)
         };
     }
 }

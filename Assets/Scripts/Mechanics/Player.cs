@@ -636,7 +636,7 @@ public class Player : MonoBehaviour
             dir = "U";
             shootPoint.localPosition = new Vector2(-0.1f, 1f);
         }
-        else if (yInput == -1 && canMove == true) //Down
+        else if (yInput == -1) //Down
         {
             dir = "D";
             shootPoint.localPosition = new Vector2(-0.1f, 0.5f);
@@ -768,7 +768,7 @@ public class Player : MonoBehaviour
                 canAttack = false;
                 Invoke("AttackLock", attackspeed);
                 Invoke("MovementLock", attackspeed / 2);
-                Invoke("CanHeal", attackspeed / 2);
+                Invoke("CanHeal", attackspeed);
                 movementlock = true;
             }
         }
@@ -800,10 +800,10 @@ public class Player : MonoBehaviour
             {
                 canAttack = false;
                 attackcooldown = true;
+                movementlock = true;
                 Invoke("AttackLock", shootSpeed);
                 Invoke("MovementLock", shootSpeed / 2);
-                Invoke("CanHeal", shootSpeed / 2);
-                movementlock = true;
+                Invoke("CanHeal", shootSpeed);
             }
         }
     }
