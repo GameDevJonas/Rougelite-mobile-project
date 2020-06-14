@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     GameObject playerCanvas;
     public GameObject deathScreen;
     GameObject deathscreenclone;
+    public GameObject healthPopup;
 
     public Button swordAttack;
     public Button switchButton;
@@ -218,6 +219,33 @@ public class Player : MonoBehaviour
         }
 
         CheckForMovement();
+    }
+
+
+    public void HealthPopup(float health)
+    {
+        float fadetime = 0.5f;
+
+        double hpprint = System.Math.Round(health, 2);
+        GameObject healpopupclone = Instantiate(healthPopup, transform.position + transform.up * 18, Quaternion.identity);
+        TextMeshProUGUI hpText = healpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+        healpopupclone.AddComponent<Rigidbody2D>();
+        healpopupclone.GetComponent<Rigidbody2D>().velocity = RandomVector(-10f, 10f);
+        hpText.color = Color.green;
+        hpText.fontSize = 42;
+        hpText.CrossFadeAlpha(0, fadetime, false);
+        hpText.text = hpprint.ToString();
+        healpopupclone.SetActive(true);
+        Destroy(healpopupclone, fadetime);
+
+    }
+
+    Vector3 RandomVector(float min, float max)
+    {
+        float x = UnityEngine.Random.Range(min, max);
+        float y = 10;
+        float z = 0;
+        return new Vector3(x, y, z);
     }
 
     void CheckForMovement()

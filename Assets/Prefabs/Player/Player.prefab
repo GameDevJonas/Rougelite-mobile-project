@@ -1181,6 +1181,8 @@ MonoBehaviour:
   sword: {fileID: 1986842023111703662, guid: 913177ef11b38f249b9490cc83f26cc0, type: 3}
   deathScreen: {fileID: 7607809124662682556, guid: ab3d47477989468498780138cbea9a6b,
     type: 3}
+  healthPopup: {fileID: 7557401448817280372, guid: c525cc10c682bd340973ac3682bcf84b,
+    type: 3}
   swordAttack: {fileID: 1317067018}
   switchButton: {fileID: 0}
   shieldButton: {fileID: 0}

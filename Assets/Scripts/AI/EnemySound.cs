@@ -7,11 +7,11 @@ public class EnemySound : MonoBehaviour
     JEnemy myAi;
 
     public FootstepSounds footsteps;
-    float stepTimer;
     public VoiceSounds voice;
     public DamageSounds damage;
     public EnemyAttackSounds attack;
 
+    float stepTimer;
     float voiceSoundTimerSet = 3f;
     float voiceSoundTimer;
 

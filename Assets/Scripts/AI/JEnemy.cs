@@ -489,6 +489,8 @@ public class JEnemy : MonoBehaviour
             mySounds.PlayDamageSound();
             GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
             dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+            dmgpopupclone.AddComponent<Rigidbody2D>();
+            dmgpopupclone.GetComponent<Rigidbody2D>().velocity = RandomVector(-10f, 10f);
             dmgtext.CrossFadeAlpha(0, fadetime, false);
             dmgtext.text = dmgprint.ToString();
             dmgpopupclone.SetActive(true);
@@ -499,6 +501,8 @@ public class JEnemy : MonoBehaviour
             mySounds.PlayDamageSound();
             GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 18, Quaternion.identity);
             dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+            dmgpopupclone.AddComponent<Rigidbody2D>();
+            dmgpopupclone.GetComponent<Rigidbody2D>().velocity = RandomVector(-20f, 20f);
             dmgtext.color = Color.red;
             dmgtext.fontSize = 42;
             dmgtext.CrossFadeAlpha(0, fadetime, false);
@@ -506,6 +510,14 @@ public class JEnemy : MonoBehaviour
             dmgpopupclone.SetActive(true);
             Destroy(dmgpopupclone, fadetime);
         }
+    }
+
+    Vector3 RandomVector(float min, float max)
+    {
+        float x = UnityEngine.Random.Range(min, max);
+        float y = 10;
+        float z = 0;
+        return new Vector3(x, y, z);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

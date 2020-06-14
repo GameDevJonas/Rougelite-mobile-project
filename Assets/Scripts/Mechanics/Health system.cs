@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 public class HealthSystem //new class
 {
     private float health; //health number
     private float healthMax;
+
+    private Player player;
     public HealthSystem(float healthMax) //class handles health number
     {
         this.healthMax = healthMax; //setting health in other scripts defines the current health value
@@ -31,7 +36,16 @@ public class HealthSystem //new class
     }
     public void Heal(float healAmount)
     {
+        if (healAmount > 0 && health < healthMax)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player.HealthPopup(healAmount);
+        }
         health += healAmount;
-        if (health > healthMax) health = healthMax;
+        if (health > healthMax)
+        {
+            health = healthMax;
+        }
+
     }
 }
