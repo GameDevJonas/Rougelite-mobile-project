@@ -56,6 +56,7 @@ public class DirectorManager : MonoBehaviour
             belial.GetComponent<AIPath>().enabled = true;
             belial.GetComponent<JBoss>().enabled = true;
             initChecker = true;
+            this.enabled = false;
         }
         else if (!initChecker)
         {

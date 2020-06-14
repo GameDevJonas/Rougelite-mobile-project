@@ -21,17 +21,21 @@ public class JBoss : MonoBehaviour
     SpriteRenderer myRend;
     BossSound mySound;
 
-    bool isDead;
+    bool isDead, telegraphed, isAttacking;
     public bool doShake, doScream, doCrumble;
 
     string direction;
 
     int dirRotation;
 
+    int attackState;
+
     public Vector2 shakeAmp, shakeFreq;
 
     void Awake()
     {
+        isAttacking = false;
+        telegraphed = false;
         vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -42,24 +46,28 @@ public class JBoss : MonoBehaviour
         destination = GetComponent<AIDestinationSetter>();
         mySound = GetComponent<BossSound>();
 
+        vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+
     }
     private void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //transform.localScale = new Vector3(25, 25, 0);
-        GetDirFromPlayer();
         Anims();
         CheckForOtherSounds();
-
-
+        GetDirFromPlayer();
 
         switch (myState)
         {
             case BossState.idle:
+                isAttacking = false;
+                telegraphed = false;
                 StartCoroutine(IdleState());
                 path.enabled = false;
                 break;
@@ -72,20 +80,93 @@ public class JBoss : MonoBehaviour
                 path.enabled = false;
                 break;
             case BossState.melee:
-                MeleeState();
+                StartCoroutine(MeleeState());
                 break;
             case BossState.ranged:
-                RangedState();
+                StartCoroutine(RangedState());
                 break;
             case BossState.telegraph:
-                TelegraphState();
+                StartCoroutine(TelegraphState());
                 break;
             case BossState.attack:
                 break;
             case BossState.dead:
                 path.enabled = false;
+                StopAllCoroutines();
                 break;
         }
+    }
+
+
+    IEnumerator IdleState()
+    {
+        Debug.Log("Idle");
+        yield return new WaitForSeconds(1f);
+        myState = BossState.walk;
+        StopAllCoroutines();
+    }
+
+    IEnumerator WalkState()
+    {
+        Debug.Log("Walk");
+        yield return new WaitForSeconds(2f);
+        myState = BossState.decide;
+        StopAllCoroutines();
+    }
+
+    void DecideState()
+    {
+        StopAllCoroutines();
+        int rand = Random.Range(0, 2);
+        int tele = Random.Range(0, 2);
+        if (rand < 1)
+        {
+            attackState = 1;
+            if (tele < 1)
+            {
+                telegraphed = true;
+                myState = BossState.telegraph;
+            }
+            else
+            {
+                telegraphed = false;
+                myState = BossState.melee;
+            }
+        }
+        else
+        {
+            attackState = 2;
+            if (tele < 1)
+            {
+                telegraphed = true;
+                myState = BossState.telegraph;
+            }
+            else
+            {
+                telegraphed = false;
+                myState = BossState.ranged;
+            }
+        }
+    }
+
+    IEnumerator MeleeState()
+    {
+        telegraphed = false;
+        isAttacking = true;
+        Debug.Log("Melee");
+        yield return new WaitForSeconds(2f);
+        myState = BossState.idle;
+        StopAllCoroutines();
+    }
+
+    IEnumerator RangedState()
+    {
+        telegraphed = false;
+        isAttacking = true;
+        Debug.Log("Ranged");
+        yield return new WaitForSeconds(2f);
+        myState = BossState.idle;
+        StopAllCoroutines();
     }
 
     void GetDirFromPlayer()
@@ -108,12 +189,12 @@ public class JBoss : MonoBehaviour
                 direction = "D";
                 dirRotation = 180;
             }
-            else if (dirVector == new Vector2(1f, 0f))
+            else if (dirVector == new Vector2(1f, 0f) && myState == BossState.walk)
             {
                 direction = "R";
                 dirRotation = 270;
             }
-            else if (dirVector == new Vector2(-1f, 0f))
+            else if (dirVector == new Vector2(-1f, 0f) && myState == BossState.walk)
             {
                 direction = "L";
                 dirRotation = 90;
@@ -123,6 +204,7 @@ public class JBoss : MonoBehaviour
 
     void Anims()
     {
+        #region Not directly animator
         if (direction == "L")
         {
             myRend.sortingOrder = 149;
@@ -143,6 +225,7 @@ public class JBoss : MonoBehaviour
         {
             myRend.sortingOrder = 149;
         }
+        #endregion
 
         if (myState == BossState.walk)
         {
@@ -161,51 +244,29 @@ public class JBoss : MonoBehaviour
             anim.SetBool("IsIdle", false);
         }
 
+        anim.SetBool("Telegraphed", telegraphed);
+        anim.SetBool("IsAttacking", isAttacking);
+        anim.SetInteger("AttackState", attackState);
+
         CheckForShake();
         CheckForScream();
     }
 
-    IEnumerator IdleState()
+    IEnumerator TelegraphState()
     {
-        Debug.Log("Idle");
-        yield return new WaitForSeconds(1f);
-        myState = BossState.walk;
-    }
-
-    IEnumerator WalkState()
-    {
-        Debug.Log("Walk");
-        yield return new WaitForSeconds(2f);
-        myState = BossState.decide;
-    }
-
-    void DecideState()
-    {
+        if (attackState == 1)
+        {
+            //Melee
+            yield return new WaitForSeconds(3.9f);
+            myState = BossState.idle;
+        }
+        else if (attackState == 2)
+        {
+            //Ranged
+            yield return new WaitForSeconds(5.4f);
+            myState = BossState.idle;
+        }
         StopAllCoroutines();
-        Debug.Log("Decide");
-        myState = BossState.melee;
-    }
-
-    public void CheckForScream()
-    {
-        if (doScream)
-        {
-            mySound.PlayMeleeScream();
-        }
-    }
-
-    public void CheckForOtherSounds()
-    {
-        if (doCrumble)
-        {
-            mySound.CrumbleSound();
-            doCrumble = false;
-        }
-    }
-
-    void MeleeState()
-    {
-        Debug.Log("Melee");
     }
 
     void CheckForShake()
@@ -227,15 +288,26 @@ public class JBoss : MonoBehaviour
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
         myState = BossState.idle;
+        StopCoroutine(CamShake());
     }
 
-    void RangedState()
+    public void CheckForScream()
     {
-        Debug.Log("Ranged");
+        if (doScream)
+        {
+            mySound.PlayMeleeScream();
+        }
     }
 
-    void TelegraphState()
+    public void CheckForOtherSounds()
     {
-        Debug.Log("Telegraph");
+        if (doCrumble)
+        {
+            mySound.CrumbleSound();
+            doCrumble = false;
+        }
     }
+
+
+
 }
