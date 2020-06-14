@@ -6,6 +6,8 @@ public class BossSound : MonoBehaviour
 {
     JBoss myAi;
 
+    public AudioSource introLoop, mainLoop;
+
     public FootstepSounds footsteps;
     public VoiceSounds voice;
     public DamageSounds damage;
