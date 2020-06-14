@@ -22,13 +22,15 @@ public class DirectorManager : MonoBehaviour
     public GameObject belial;
     Player player;
 
+    public GameObject canvasToDestroy;
+
     void Awake()
     {
         music.clip = null;
         ambience.enabled = false;
         vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         vCam.GetComponent<CameraPicker>().enabled = false;
-        vCam.Follow = belial.transform;
+        //vCam.Follow = belial.transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         director = GetComponent<PlayableDirector>();
         time = director.duration;
@@ -44,6 +46,8 @@ public class DirectorManager : MonoBehaviour
     {
         if (timer >= time && !initChecker)
         {
+            Destroy(canvasToDestroy);
+            player.GetComponentInChildren<Canvas>().GetComponent<CanvasGroup>().enabled = false;
             music.Stop();
             music.clip = bossLoop;
             music.Play();
