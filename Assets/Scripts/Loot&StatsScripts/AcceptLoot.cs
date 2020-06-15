@@ -26,7 +26,7 @@ public class AcceptLoot : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (player == null) //finds rue and scripts after load.
+        if (player == null &&SceneManager.GetActiveScene().buildIndex != 0) //finds rue and scripts after load.
         {
             player = GameObject.FindGameObjectWithTag("Player");
             ItemDatabase = player.GetComponentInChildren<ItemDatabase>();

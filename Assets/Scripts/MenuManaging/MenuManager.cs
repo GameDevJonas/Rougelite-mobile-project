@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using UnityEngine.Playables;
 using TMPro;
 
 public class MenuManager : MonoBehaviour
@@ -18,7 +20,7 @@ public class MenuManager : MonoBehaviour
     public GameObject deathscreen;
 
     public static List<GameObject> menuManagersInScene = new List<GameObject>();
-    public  List<GameObject> menuManagersCheck = new List<GameObject>();
+    public List<GameObject> menuManagersCheck = new List<GameObject>();
 
     GameObject playerCanvas;
 
@@ -32,9 +34,11 @@ public class MenuManager : MonoBehaviour
     public bool fromStartMenu;
     public bool toBoss;
     public bool fromBoss;
+    bool removeVideo;
 
     void Awake()
     {
+        removeVideo = false;
         menuManagersInScene.Add(gameObject);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         isPaused = false;
@@ -52,12 +56,28 @@ public class MenuManager : MonoBehaviour
     private void Update()
     {
         menuManagersCheck = menuManagersInScene;
-        if(menuManagersInScene.Count > 1)
+        if (menuManagersInScene.Count > 1)
         {
             Destroy(menuManagersInScene[1]);
             startButton.SetActive(true);
             menuLogo.SetActive(true);
             menuManagersInScene.Remove(menuManagersInScene[1]);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetMouseButtonDown(0))
+        {
+            if (FindObjectOfType<VideoPlayer>().gameObject)
+            {
+                GameObject cutscene = FindObjectOfType<VideoPlayer>().gameObject;
+                cutscene.SetActive(false);
+                GetComponent<PlayableDirector>().enabled = false;
+            }
+        }
+        if (removeVideo)
+        {
+            GameObject cutscene = FindObjectOfType<VideoPlayer>().gameObject;
+            cutscene.SetActive(false);
+            removeVideo = false;
         }
     }
 
@@ -68,6 +88,12 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(1));
+        if (FindObjectOfType<VideoPlayer>().gameObject)
+        {
+            GameObject cutscene = GameObject.FindObjectOfType<VideoPlayer>().gameObject;
+            cutscene.SetActive(false);
+            GetComponent<PlayableDirector>().enabled = false;
+        }
     }
 
     public void TestButton()
@@ -147,6 +173,7 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(0));
+        removeVideo = true;
     }
 
     public void ReloadLevel(int buildIndex)

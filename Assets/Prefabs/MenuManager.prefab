@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dexterity:'
+  m_text: 'Dexterity: The speed of attacks.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -133,12 +133,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 98717459}
-    characterCount: 10
+    characterCount: 32
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Potion Potency:'
+  m_text: 'Potion Potency: Additional health gained from potions.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -849,12 +849,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 817359106}
-    characterCount: 15
+    characterCount: 54
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health:'
+  m_text: "Health: Rue's vitality, \nshe'll perish if it reaches zero."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -1266,12 +1266,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 967791661}
-    characterCount: 7
+    characterCount: 58
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 9
+    wordCount: 9
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Life On Hit:'
+  m_text: 'Life On Hit: Health gained per attack.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -1970,12 +1970,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1918415189}
-    characterCount: 12
+    characterCount: 38
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Strength:'
+  m_text: 'Strength: Attacks deal more damage.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -2318,12 +2318,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2110386335}
-    characterCount: 9
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2679,13 +2679,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5372811635944419547}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2835,13 +2835,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4358372737829769041}
-    characterCount: 16
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -3148,7 +3148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -53.9}
+  m_AnchoredPosition: {x: 175, y: -49}
   m_SizeDelta: {x: 249.8, y: 67.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &18793549372603071
@@ -3177,7 +3177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Critical Strike Chance:'
+  m_text: 'Critical Strike Chance: The probability doing critical damage.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -3247,12 +3247,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5510346446489772891}
-    characterCount: 23
+    characterCount: 62
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 7
+    wordCount: 8
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4940,7 +4940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Movment Speed:'
+  m_text: 'Movment Speed: Rue''s swiftness. She''ll run faster.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -5010,12 +5010,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6571309104458607940}
-    characterCount: 14
+    characterCount: 50
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -5236,13 +5236,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 750010033889884020}
-    characterCount: 11
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5392,13 +5392,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3132316459878082207}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5576,7 +5576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175.03, y: -102}
+  m_AnchoredPosition: {x: 175.03, y: -104}
   m_SizeDelta: {x: 249.75, y: 67.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3698433930622380477
@@ -5605,7 +5605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Critical Strike Damage:'
+  m_text: 'Critical Strike Damage: The increased damage on critical strikes.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 291ff3930f4c3e84e95ba20553913b42, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 291ff3930f4c3e84e95ba20553913b42,
@@ -5675,12 +5675,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1009447999594960085}
-    characterCount: 23
+    characterCount: 65
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 8
+    wordCount: 9
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
