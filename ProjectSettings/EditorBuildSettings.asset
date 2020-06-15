@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu.unity
     guid: 6b4d39e2a7c84a24bad1b037adc64c4c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene01.unity
     guid: 12e65dbcf7ec3d44d952e61d6a5d9bb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene02.unity
     guid: eeeb83911da79194881759098f93e4ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene03.unity
     guid: 6e5aa880a12977f4a9647835d9d37016
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene04.unity
     guid: eb9aef7ee67a8da4dbd4bece55ea210b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeons/AlphaScene05.unity
     guid: 2b5bf0a2efd459841912f9203830ee55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss1.unity
     guid: 6a09627be64d7634aa287f74a549e921
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss2.unity
     guid: a0d57dadd0fabde428bf2a69bd92a10b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss3.unity
     guid: ae11a7bc2c24b004f9308cb8668689ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bosses/Boss4.unity
     guid: 1d0ab9b50976e0e449bf06709e014c78
   - enabled: 1

@@ -72,6 +72,7 @@ public class BossSound : MonoBehaviour
     public void CrumbleSound()
     {
         otherSounds.mySource.clip = otherSounds.crumble;
+        otherSounds.mySource.Play();
     }
 
 
@@ -79,6 +80,13 @@ public class BossSound : MonoBehaviour
     {
         voice.mySource.clip = voice.voiceSounds[0];
         voice.mySource.pitch = .6f;
+        voice.mySource.Play();
+    }
+
+    public void PlayRangedScream()
+    {
+        voice.mySource.clip = voice.voiceSounds[2];
+        voice.mySource.pitch = .4f;
         voice.mySource.Play();
     }
 

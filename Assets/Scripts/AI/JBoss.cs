@@ -22,7 +22,7 @@ public class JBoss : MonoBehaviour
     BossSound mySound;
 
     bool isDead, telegraphed, isAttacking;
-    public bool doShake, doScream, doCrumble;
+    public bool doShake, doScream, doCrumble, spawnPattern;
 
     string direction;
 
@@ -32,8 +32,12 @@ public class JBoss : MonoBehaviour
 
     public Vector2 shakeAmp, shakeFreq;
 
+    public GameObject[] bulletPatterns;
+    public Transform patternPoint;
+
     void Awake()
     {
+        spawnPattern = false;
         isAttacking = false;
         telegraphed = false;
         vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
@@ -62,7 +66,11 @@ public class JBoss : MonoBehaviour
         Anims();
         CheckForOtherSounds();
         GetDirFromPlayer();
-
+        if (spawnPattern)
+        {
+            InstansiatePattern();
+            spawnPattern = false;
+        }
         switch (myState)
         {
             case BossState.idle:
@@ -100,6 +108,7 @@ public class JBoss : MonoBehaviour
 
     IEnumerator IdleState()
     {
+        spawnPattern = false;
         Debug.Log("Idle");
         yield return new WaitForSeconds(1f);
         myState = BossState.walk;
@@ -269,6 +278,11 @@ public class JBoss : MonoBehaviour
         StopAllCoroutines();
     }
 
+    public void InstansiatePattern()
+    {
+        GameObject patternClone = Instantiate(bulletPatterns[0], patternPoint.position, Quaternion.identity);
+    }
+
     void CheckForShake()
     {
         if (doShake)
@@ -293,9 +307,13 @@ public class JBoss : MonoBehaviour
 
     public void CheckForScream()
     {
-        if (doScream)
+        if (doScream && attackState == 1)
         {
             mySound.PlayMeleeScream();
+        }
+        else if(doScream && attackState == 2)
+        {
+            mySound.PlayRangedScream();
         }
     }
 
