@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 9083f6d56d9cb5f4f94f8b7f5c6d55c2
+guid: 6d1ee27330b035d42b0bdd375a867aa0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2090387543153384503
-    second: Belial cheap ranged attack_0
+      213: 7413940025579663494
+    second: Zombie Boss cheap melee_0
   - first:
-      213: -4845723534844094583
-    second: Belial cheap ranged attack_1
+      213: 6105176203020907200
+    second: Zombie Boss cheap melee_1
   - first:
-      213: 4725219123289498478
-    second: Belial cheap ranged attack_2
+      213: -4956673570154892014
+    second: Zombie Boss cheap melee_2
   - first:
-      213: 4424064831875847225
-    second: Belial cheap ranged attack_3
+      213: 4371686520568237851
+    second: Zombie Boss cheap melee_3
   - first:
-      213: -7821284583113397726
-    second: Belial cheap ranged attack_4
+      213: -3334546754711255826
+    second: Zombie Boss cheap melee_4
   - first:
-      213: 6264235437402685435
-    second: Belial cheap ranged attack_5
+      213: 4203106482324525006
+    second: Zombie Boss cheap melee_5
+  - first:
+      213: 7023009810859821010
+    second: Zombie Boss cheap melee_6
+  - first:
+      213: 6119067485578086261
+    second: Zombie Boss cheap melee_7
+  - first:
+      213: 9162737143483302984
+    second: Zombie Boss cheap melee_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,13 +68,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -82,7 +91,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +103,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +115,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,127 +126,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial cheap ranged attack_0
+      name: Zombie Boss cheap melee_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 233
-        width: 71
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3e077da937df2e0800000000000000
-      internalID: -2090387543153384503
+      spriteID: 680f9ba2c2b93e660800000000000000
+      internalID: 7413940025579663494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap ranged attack_1
+      name: Zombie Boss cheap melee_1
       rect:
         serializedVersion: 2
-        x: 145
-        y: 233
-        width: 74
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 85
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9871ed96e1880ccb0800000000000000
-      internalID: -4845723534844094583
+      spriteID: 0c2ba38f861f9b450800000000000000
+      internalID: 6105176203020907200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap ranged attack_2
+      name: Zombie Boss cheap melee_2
       rect:
         serializedVersion: 2
-        x: 22
-        y: 123
-        width: 71
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 170
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e63ad81e1c9539140800000000000000
-      internalID: 4725219123289498478
+      spriteID: 215b95746ab563bb0800000000000000
+      internalID: -4956673570154892014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap ranged attack_3
+      name: Zombie Boss cheap melee_3
       rect:
         serializedVersion: 2
-        x: 147
-        y: 123
-        width: 71
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 255
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 934124f568f656d30800000000000000
-      internalID: 4424064831875847225
+      spriteID: b1f45df6ab95bac30800000000000000
+      internalID: 4371686520568237851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap ranged attack_4
+      name: Zombie Boss cheap melee_4
       rect:
         serializedVersion: 2
-        x: 22
-        y: 13
-        width: 71
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 340
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a69405c17357390800000000000000
-      internalID: -7821284583113397726
+      spriteID: ee4018ec46f49b1d0800000000000000
+      internalID: -3334546754711255826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial cheap ranged attack_5
+      name: Zombie Boss cheap melee_5
       rect:
         serializedVersion: 2
-        x: 147
-        y: 13
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 425
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfffcc3e0f80fe650800000000000000
-      internalID: 6264235437402685435
+      spriteID: ecf4810a31f645a30800000000000000
+      internalID: 4203106482324525006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss cheap melee_6
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 106
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d70266a63eb67160800000000000000
+      internalID: 7023009810859821010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss cheap melee_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577468a357b4be450800000000000000
+      internalID: 6119067485578086261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss cheap melee_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 85
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844899fb2e4982f70800000000000000
+      internalID: 9162737143483302984
       vertices: []
       indices: 
       edges: []

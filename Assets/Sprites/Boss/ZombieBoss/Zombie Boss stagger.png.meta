@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 53409e8fe366bda4b841fac499720087
+guid: a29cfa2c5f413664aa28982a478cef00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 449531238790534706
-    second: Belial idle_0
+      213: 467799047044242177
+    second: Zombie Boss stagger_0
   - first:
-      213: 5736584247191693586
-    second: Belial idle_1
+      213: 8045973614429778850
+    second: Zombie Boss stagger_1
   - first:
-      213: -3797084917288357770
-    second: Belial idle_2
+      213: 360691543024909771
+    second: Zombie Boss stagger_2
   - first:
-      213: 8041879264848806477
-    second: Belial idle_3
+      213: 7629314814397345094
+    second: Zombie Boss stagger_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,13 +53,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,85 +111,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial idle_0
+      name: Zombie Boss stagger_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 124
-        width: 82
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 100
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2361d8ba74e0d3600800000000000000
-      internalID: 449531238790534706
+      spriteID: 10b965931c4fd7600800000000000000
+      internalID: 467799047044242177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_1
+      name: Zombie Boss stagger_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 124
-        width: 82
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 80
+        y: 100
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21966f5aaf07c9f40800000000000000
-      internalID: 5736584247191693586
+      spriteID: 2a3b0487f5a09af60800000000000000
+      internalID: 8045973614429778850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_2
+      name: Zombie Boss stagger_2
       rect:
         serializedVersion: 2
-        x: 25
-        y: 14
-        width: 82
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 670b803b26b0e4bc0800000000000000
-      internalID: -3797084917288357770
+      spriteID: bcdbc7f1c0f610500800000000000000
+      internalID: 360691543024909771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_3
+      name: Zombie Boss stagger_3
       rect:
         serializedVersion: 2
-        x: 162
-        y: 14
-        width: 82
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 80
+        y: 0
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4284eb659e7a9f60800000000000000
-      internalID: 8041879264848806477
+      spriteID: 64d67cfd665c0e960800000000000000
+      internalID: 7629314814397345094
       vertices: []
       indices: 
       edges: []

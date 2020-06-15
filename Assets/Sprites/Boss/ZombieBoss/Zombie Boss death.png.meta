@@ -1,0 +1,932 @@
+fileFormatVersion: 2
+guid: d2220d8f08fb0b04b940e13f867b9e62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5359006559838085465
+    second: Zombie Boss death_0
+  - first:
+      213: 345703457269901485
+    second: Zombie Boss death_1
+  - first:
+      213: 4567991591318381592
+    second: Zombie Boss death_2
+  - first:
+      213: 8129324821484532909
+    second: Zombie Boss death_3
+  - first:
+      213: 1098799777229203031
+    second: Zombie Boss death_4
+  - first:
+      213: 5578330309807526188
+    second: Zombie Boss death_5
+  - first:
+      213: -4195126708769839199
+    second: Zombie Boss death_6
+  - first:
+      213: 8420082198245616553
+    second: Zombie Boss death_7
+  - first:
+      213: -2143795699591212781
+    second: Zombie Boss death_8
+  - first:
+      213: -6574309383843825995
+    second: Zombie Boss death_9
+  - first:
+      213: -8098758845060116796
+    second: Zombie Boss death_10
+  - first:
+      213: 4767917636098967897
+    second: Zombie Boss death_11
+  - first:
+      213: 8930212821247655316
+    second: Zombie Boss death_12
+  - first:
+      213: 4862279213157732338
+    second: Zombie Boss death_13
+  - first:
+      213: 8088380804762963405
+    second: Zombie Boss death_14
+  - first:
+      213: 4559722520314904384
+    second: Zombie Boss death_15
+  - first:
+      213: 5684881135760771518
+    second: Zombie Boss death_16
+  - first:
+      213: -2326924843458301196
+    second: Zombie Boss death_17
+  - first:
+      213: -1221831794368847123
+    second: Zombie Boss death_18
+  - first:
+      213: -2924052778852705699
+    second: Zombie Boss death_19
+  - first:
+      213: 3772926216819544159
+    second: Zombie Boss death_20
+  - first:
+      213: 2683349831053425845
+    second: Zombie Boss death_21
+  - first:
+      213: -1748451164696731213
+    second: Zombie Boss death_22
+  - first:
+      213: -6043381156168291732
+    second: Zombie Boss death_23
+  - first:
+      213: -7186846109838547220
+    second: Zombie Boss death_24
+  - first:
+      213: 6365940664898087066
+    second: Zombie Boss death_25
+  - first:
+      213: -4573377039629203772
+    second: Zombie Boss death_26
+  - first:
+      213: -4996204527941157887
+    second: Zombie Boss death_27
+  - first:
+      213: 8967735373106158175
+    second: Zombie Boss death_28
+  - first:
+      213: 175763269207194062
+    second: Zombie Boss death_29
+  - first:
+      213: 2456834381028700022
+    second: Zombie Boss death_30
+  - first:
+      213: 4074903749356351345
+    second: Zombie Boss death_31
+  - first:
+      213: -5889878265627925093
+    second: Zombie Boss death_32
+  - first:
+      213: -5849314804807102677
+    second: Zombie Boss death_33
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Boss death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aedcd35debf0a5b0800000000000000
+      internalID: -5359006559838085465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da86238767f2cc400800000000000000
+      internalID: 345703457269901485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814e0896624c46f30800000000000000
+      internalID: 4567991591318381592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4f958aad921d070800000000000000
+      internalID: 8129324821484532909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75666016398bf3f00800000000000000
+      internalID: 1098799777229203031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c215fdb8cd53a6d40800000000000000
+      internalID: 5578330309807526188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a725003c7ae7c5c0800000000000000
+      internalID: -4195126708769839199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab2506d5242ad470800000000000000
+      internalID: 8420082198245616553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_8
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3111bd66b25bf32e0800000000000000
+      internalID: -2143795699591212781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_9
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6b874927c53c4a0800000000000000
+      internalID: -6574309383843825995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce83ae4dbd6b9f80800000000000000
+      internalID: -8098758845060116796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_11
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959cff914db0b2240800000000000000
+      internalID: 4767917636098967897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dfa132f3d7eeb70800000000000000
+      internalID: 8930212821247655316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_13
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff4803de294a7340800000000000000
+      internalID: 4862279213157732338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_14
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd0cf3ec73bf3070800000000000000
+      internalID: 8088380804762963405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ff7b94973674f30800000000000000
+      internalID: 4559722520314904384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_16
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9075fe541c4ee40800000000000000
+      internalID: 5684881135760771518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2f2a6fe2a15bfd0800000000000000
+      internalID: -2326924843458301196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2ed51e47e2b0fe0800000000000000
+      internalID: -1221831794368847123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a9dfb6d7dab67d0800000000000000
+      internalID: -2924052778852705699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50994587602c5430800000000000000
+      internalID: 3772926216819544159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_21
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc3b00547c2d3520800000000000000
+      internalID: 2683349831053425845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_22
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1222dede04cb7e0800000000000000
+      internalID: -1748451164696731213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_23
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6aac409bd8912ca0800000000000000
+      internalID: -6043381156168291732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6eca76a81334c90800000000000000
+      internalID: -7186846109838547220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_25
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98e6787e4d585850800000000000000
+      internalID: 6365940664898087066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_26
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c649f030d91880c0800000000000000
+      internalID: -4573377039629203772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_27
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7edee37ae9aab0800000000000000
+      internalID: -4996204527941157887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_28
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a92b90fcbc37c70800000000000000
+      internalID: 8967735373106158175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_29
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9f7a913cf607200800000000000000
+      internalID: 175763269207194062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fae294add681220800000000000000
+      internalID: 2456834381028700022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_31
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fea4ace57fc8830800000000000000
+      internalID: 4074903749356351345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_32
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9524fe5ce2f24ea0800000000000000
+      internalID: -5889878265627925093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss death_33
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f0a001d2f03dea0800000000000000
+      internalID: -5849314804807102677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

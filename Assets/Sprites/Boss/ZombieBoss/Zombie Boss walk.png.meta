@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 53409e8fe366bda4b841fac499720087
+guid: 0f8600d03b49f864a92ee26f9ddc8961
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 449531238790534706
-    second: Belial idle_0
+      213: -3122224045361852574
+    second: Zombie Boss walk_0
   - first:
-      213: 5736584247191693586
-    second: Belial idle_1
+      213: 7770554450254154278
+    second: Zombie Boss walk_1
   - first:
-      213: -3797084917288357770
-    second: Belial idle_2
+      213: 7717952019168298166
+    second: Zombie Boss walk_2
   - first:
-      213: 8041879264848806477
-    second: Belial idle_3
+      213: -8593108406506182080
+    second: Zombie Boss walk_3
+  - first:
+      213: 1950298199223296212
+    second: Zombie Boss walk_4
+  - first:
+      213: -3127145687576023720
+    second: Zombie Boss walk_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,13 +59,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,85 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Belial idle_0
+      name: Zombie Boss walk_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 124
-        width: 82
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 100
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2361d8ba74e0d3600800000000000000
-      internalID: 449531238790534706
+      spriteID: 26f0603e5c1aba4d0800000000000000
+      internalID: -3122224045361852574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_1
+      name: Zombie Boss walk_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 124
-        width: 82
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 80
+        y: 100
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21966f5aaf07c9f40800000000000000
-      internalID: 5736584247191693586
+      spriteID: 62aca333a1e86db60800000000000000
+      internalID: 7770554450254154278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_2
+      name: Zombie Boss walk_2
       rect:
         serializedVersion: 2
-        x: 25
-        y: 14
-        width: 82
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 160
+        y: 100
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 670b803b26b0e4bc0800000000000000
-      internalID: -3797084917288357770
+      spriteID: 6b40900587cab1b60800000000000000
+      internalID: 7717952019168298166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Belial idle_3
+      name: Zombie Boss walk_3
       rect:
         serializedVersion: 2
-        x: 162
-        y: 14
-        width: 82
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4284eb659e7a9f60800000000000000
-      internalID: 8041879264848806477
+      spriteID: 04aa6c9be652fb880800000000000000
+      internalID: -8593108406506182080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss walk_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0e9ca01e9d01b10800000000000000
+      internalID: 1950298199223296212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss walk_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85de223c0952a94d0800000000000000
+      internalID: -3127145687576023720
       vertices: []
       indices: 
       edges: []
