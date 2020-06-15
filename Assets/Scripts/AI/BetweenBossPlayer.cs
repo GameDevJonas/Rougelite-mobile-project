@@ -15,13 +15,22 @@ public class BetweenBossPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
+        if (player == null)
         {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        Vector3 myPos = (boss.position + player.position) / 2;
-        transform.position = myPos;
+        if (boss == null)
+        {
+            transform.position = player.transform.position;
 
-        distance = (boss.position - player.position).magnitude;
+        }
+        else
+        {
+            Vector3 myPos = (boss.position + player.position) / 2;
+            transform.position = myPos;
+
+            distance = (boss.position - player.position).magnitude;
+
+        }
     }
 }

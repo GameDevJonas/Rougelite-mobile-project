@@ -13,8 +13,8 @@ public class JBoss : MonoBehaviour
     public enum BossState { idle, walk, decide, melee, ranged, telegraph, attack, dead, stagger };
     public BossState myState = BossState.idle;
 
-    AIPath path;
-    AIDestinationSetter destination;
+    public AIPath path;
+    public AIDestinationSetter destination;
 
     GameObject player;
 
@@ -29,7 +29,7 @@ public class JBoss : MonoBehaviour
 
     int dirRotation;
 
-    int attackState;
+    public int attackState;
 
     public Vector2 shakeAmp, shakeFreq;
 
@@ -50,6 +50,10 @@ public class JBoss : MonoBehaviour
     public LayerMask playerMask, teleRangeMask;
     public float overlapRange;
     public Transform teleRangePoint;
+
+    public GameObject altar;
+
+    public int counter;
 
     #region Stat based variables
     public int level;
@@ -83,6 +87,14 @@ public class JBoss : MonoBehaviour
 
     void Awake()
     {
+
+        //StartBoss();
+
+    }
+
+    private void Start()
+    {
+        //altar.SetActive(false);
         spawnPattern = false;
         isAttacking = false;
         telegraphed = false;
@@ -98,11 +110,24 @@ public class JBoss : MonoBehaviour
 
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
-        //StartBoss();
-
     }
+
+
     public void StartBoss()
     {
+
+        if (path == null)
+        {
+            path = GetComponent<AIPath>();
+        }
+        if (destination == null)
+        {
+            destination = GetComponent<AIDestinationSetter>();
+        }
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
         doShake = false;
         level = SceneManager.GetActiveScene().buildIndex;
         EnemyStats = new EnemyStats(thisType, level);
@@ -147,6 +172,7 @@ public class JBoss : MonoBehaviour
                 telegraphed = false;
                 path.enabled = false;
                 overlapRange = 40f;
+                counter = 0;
                 StartCoroutine(IdleState());
                 break;
             case BossState.walk:
@@ -195,10 +221,13 @@ public class JBoss : MonoBehaviour
         InstantiateCheapRanged();
         InstantiateMeleeTele();
 
-        if (patternsInScene[0] == null)
+
+
+        if (patternsInScene.Count > 0 && patternsInScene[0] == null)
         {
             patternsInScene.Remove(patternsInScene[0]);
         }
+
 
     }
 
@@ -223,7 +252,11 @@ public class JBoss : MonoBehaviour
     void DeadState()
     {
         anim.SetTrigger("IsDead");
-        this.enabled = false;
+        if (!dropping)
+        {
+            dropping = true;
+            Invoke("DropLootAndDie", 2f);
+        }
     }
 
     IEnumerator IdleState()
@@ -350,10 +383,16 @@ public class JBoss : MonoBehaviour
             Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, teleRangeMask);
             destination.target = teleRangePoint;
             overlapRange = 15f;
+            int count = 0;
             while (!overlap)
             {
                 overlapRange = 15f;
                 yield return new WaitForSeconds(.1f);
+                count++;
+                if(count >= 20)
+                {
+                    myState = BossState.idle;
+                }
             }
             telegraphed = true;
             path.enabled = false;
@@ -369,20 +408,22 @@ public class JBoss : MonoBehaviour
     #region Attack Instantiating
     void InstantiateCheapMelee()
     {
-        if (spawnCheapMelee)
+        if (spawnCheapMelee && counter < 1)
         {
+            counter++;
+            spawnCheapMelee = false;
             mySound.PlayAttackSound();
             GameObject meleeCheapClone = Instantiate(cheapMelee, transform.position, Quaternion.Euler(0, 0, dirRotation), transform);
             meleeCheapClone.transform.localScale = new Vector3(400, 400, 1);
             Destroy(meleeCheapClone, .3f);
-            spawnCheapMelee = false;
         }
     }
 
     void InstantiateCheapRanged()
     {
-        if (spawnCheapRange)
+        if (spawnCheapRange && counter < 1)
         {
+            counter++;
             spawnCheapRange = false;
             float rotationToPlayer = (player.transform.position - transform.position).magnitude;
             GameObject bulletClone = Instantiate(bullet, shootPoint.position, Quaternion.identity);
@@ -394,12 +435,13 @@ public class JBoss : MonoBehaviour
 
     void InstantiateMeleeTele()
     {
-        if (spawnMeleeTele)
+        if (spawnMeleeTele && counter < 1)
         {
+            counter++;
+            spawnMeleeTele = false;
             GameObject meleeTeleClone = Instantiate(teleMelee, patternPoint.position, Quaternion.Euler(0, 0, -180), transform);
             meleeTeleClone.transform.localScale = new Vector3(630, 740, 1);
             Destroy(meleeTeleClone, .5f);
-            spawnMeleeTele = false;
         }
     }
 
@@ -578,6 +620,147 @@ public class JBoss : MonoBehaviour
         float y = 10;
         float z = 0;
         return new Vector3(x, y, z);
+    }
+
+    void DropLootAndDie()
+    {
+        PlayerStats playerstats = player.GetComponent<PlayerStats>();
+        if (playerstats.DropGarantueed.Value == 0)
+        {
+            foreach (var item in Table) //checks table
+            {
+                lootTotal += item;
+            }
+            float randomNumber = Random.Range(0, (lootTotal + 1)); //pulls random number based on table total + 1
+
+
+            foreach (var weight in Table) //weight, is the number listed in the table of drop chance.
+            {
+                if (randomNumber <= weight) //if less or equal to a weight, give item
+                {
+
+
+                    if (weight == commondropRange)
+                    {
+                        Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                        Corpse();
+                        return;
+                    }
+
+                    if (weight == raredropRange)
+                    {
+                        Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                        Corpse();
+                        return;
+                    }
+
+                    if (weight == legendarydropRange)
+                    {
+                        Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                        Corpse();
+                        return;
+                    }
+
+                    if (weight == ancientdropRange)
+                    {
+                        Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                        Corpse();
+                        return;
+                    }
+
+                    if (weight == potiondropRange)
+                    {
+                        Instantiate<GameObject>(potion, transform.position, Quaternion.identity);
+                        Corpse();
+                        return;
+                    }
+
+                    if (weight == none)
+                    {
+                        Corpse();
+                        return;
+                    }
+                }
+
+                else //if not, roll -= highest value weight.
+
+                {
+                    randomNumber -= weight;
+                }
+            }
+        }
+
+        if (playerstats.DropGarantueed.Value > 0)
+        {
+            float randomNumberDrop = Random.Range(0, 2);
+            if (randomNumberDrop == 0)
+            {
+                float randomnumberLoot = Random.Range(0, 4);
+                if (randomnumberLoot == 0)
+                {
+                    Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 1)
+                {
+                    Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 2)
+                {
+                    Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 3)
+                {
+                    Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+            }
+            if (randomNumberDrop == 1)
+            {
+                float randomnumberLoot = Random.Range(0, 4);
+                if (randomnumberLoot == 0)
+                {
+                    Instantiate<GameObject>(commonLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 1)
+                {
+                    Instantiate<GameObject>(rareLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 2)
+                {
+                    Instantiate<GameObject>(legendaryLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+                if (randomnumberLoot == 3)
+                {
+                    Instantiate<GameObject>(ancientLoot, transform.position, Quaternion.identity);
+                    Instantiate<GameObject>(potion, transform.position + transform.right * 10, Quaternion.identity);
+                    Corpse();
+                    return;
+                }
+            }
+        }
+    }
+
+    public void Corpse()
+    {
+        altar.SetActive(true);
+        GetComponent<Animator>().enabled = false;
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

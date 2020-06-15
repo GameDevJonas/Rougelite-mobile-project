@@ -24,6 +24,8 @@ public class DirectorManager : MonoBehaviour
 
     public GameObject canvasToDestroy;
 
+    GameObject altar;
+
     void Awake()
     {
         music.clip = null;
@@ -42,6 +44,9 @@ public class DirectorManager : MonoBehaviour
         player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
         player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
         player.enabled = false;
+        altar = FindObjectOfType<FromBossToDungeon>().gameObject;
+        altar.SetActive(false);
+        belial.GetComponent<JBoss>().altar = altar;
     }
 
     // Update is called once per frame

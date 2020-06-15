@@ -108,7 +108,7 @@ public class BossdoorScript : MonoBehaviour
     {
         SacrificeMade = true;
         MenuManager menu = FindObjectOfType<MenuManager>();
-        menu.ToAlphaBoss();
+        menu.ToBossLevel();
     }
     private void OnCollisionEnter2D(Collision2D collider)
     {

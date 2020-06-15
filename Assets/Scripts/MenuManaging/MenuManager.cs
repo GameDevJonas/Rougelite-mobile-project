@@ -118,21 +118,28 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void ToAlphaBoss()
+    public void ToBossLevel()
     {
         int currenctScene = SceneManager.GetActiveScene().buildIndex;
         //if (currenctScene == 5)
         //{
         //    currenctScene = 0;
         //}
-        toBoss = true;
+        //toBoss = true;
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(currenctScene + 5));
         Debug.Log(SceneManager.sceneCount);
     }
 
-    public void ToAlphaLevel()
+    public void LoadNextLevel(int scene)
+    {
+        startButton.SetActive(false);
+        loadingThing.SetActive(true);
+        StartCoroutine(StartLoad(scene));
+    }
+
+    public void ToStartScreen()
     {
         //wait for rue animations
         Destroy(GameObject.FindGameObjectWithTag("Player"));

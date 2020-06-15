@@ -2213,7 +2213,7 @@ public class DeathScreen : MonoBehaviour
         if (MenuManager != null)
         {
             Time.timeScale = 1;
-            MenuManager.ToAlphaLevel();
+            MenuManager.ToStartScreen();
             Destroy(gameObject);
         }
     }
@@ -2226,9 +2226,9 @@ public class DeathScreen : MonoBehaviour
             {
                 audio.Play();
             }
-            player.HealthSystem.Heal(PlayerStats.Health.Value);
             MenuManager.ReloadLevel(levelIndex);
             RemoveSacrifices();
+            player.HealthSystem.Heal(PlayerStats.Health.Value);
         }
         Destroy(gameObject, 4f);
     }

@@ -40,7 +40,7 @@ public class BossAI : MonoBehaviour
         if (Health == 0)//If dead
         {
             menuManager.fromBoss = true;
-            menuManager.ToAlphaLevel();
+            menuManager.ToStartScreen();
             drop = Random.Range(-1, 2);
         if (drop == 0)
             {
