@@ -109,7 +109,7 @@ public class BossSound : MonoBehaviour
     public void PlayDeathSound()
     {
         damage.mySource.clip = damage.deathSound;
-        damage.mySource.pitch = 1;
+        damage.mySource.pitch = .6f;
         damage.mySource.Play();
     }
 }

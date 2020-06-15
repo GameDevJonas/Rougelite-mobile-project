@@ -4,12 +4,13 @@ using UnityEngine;
 using Pathfinding;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using TMPro;
 
 public class JBoss : MonoBehaviour
 {
     public CinemachineVirtualCamera vCam;
 
-    public enum BossState { idle, walk, decide, melee, ranged, telegraph, attack, dead };
+    public enum BossState { idle, walk, decide, melee, ranged, telegraph, attack, dead, stagger };
     public BossState myState = BossState.idle;
 
     AIPath path;
@@ -36,6 +37,13 @@ public class JBoss : MonoBehaviour
     public List<GameObject> patternsInScene = new List<GameObject>();
     public Transform patternPoint;
 
+    public GameObject damagePopup;
+    public TextMeshProUGUI dmgtext;
+
+    public LayerMask playerMask, teleRangeMask;
+    public float overlapRange;
+    public Transform teleRangePoint;
+
     #region Stat based variables
     public int level;
     public EnemyStats EnemyStats;
@@ -45,6 +53,7 @@ public class JBoss : MonoBehaviour
     public float debugHealth;
     public float damage;
     public HealthSystem healthSystem;
+    public bool attacked, arrowKnockback, swordprojectileattacked;
 
     //loot
     private int drop;
@@ -109,29 +118,43 @@ public class JBoss : MonoBehaviour
         path.maxSpeed = speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (myHealth <= 0 && !isDead)
+        {
+            if (patternsInScene.Count > 0)
+            {
+                Destroy(patternsInScene[0]);
+                patternsInScene.Remove(patternsInScene[0]);
+            }
+            mySound.PlayDeathSound();
+            //DropLootAndDie();
+            myState = BossState.dead;
+            isDead = true;
+        } //ded
+
         switch (myState)
         {
             case BossState.idle:
                 isAttacking = false;
                 telegraphed = false;
-                StartCoroutine(IdleState());
                 path.enabled = false;
+                overlapRange = 40f;
+                StartCoroutine(IdleState());
                 break;
             case BossState.walk:
-                StartCoroutine(WalkState());
                 path.enabled = true;
+                StartCoroutine(WalkState());
                 break;
             case BossState.decide:
                 DecideState();
-                path.enabled = false;
                 break;
             case BossState.melee:
+                path.enabled = false;
                 StartCoroutine(MeleeState());
                 break;
             case BossState.ranged:
+                path.enabled = false;
                 StartCoroutine(RangedState());
                 break;
             case BossState.telegraph:
@@ -140,12 +163,18 @@ public class JBoss : MonoBehaviour
             case BossState.attack:
                 break;
             case BossState.dead:
+                isAttacking = false;
+                telegraphed = false;
                 path.enabled = false;
                 StopAllCoroutines();
+                DeadState();
+                break;
+            case BossState.stagger:
                 break;
         }
 
-        //transform.localScale = new Vector3(25, 25, 0);
+        myHealth = healthSystem.GetHealth();
+        attacked = false;
         Anims();
         CheckForOtherSounds();
         GetDirFromPlayer();
@@ -155,13 +184,19 @@ public class JBoss : MonoBehaviour
             spawnPattern = false;
         }
 
-        if(patternsInScene[0] == null)
+        if (patternsInScene[0] == null)
         {
             patternsInScene.Remove(patternsInScene[0]);
         }
 
     }
 
+    #region States
+    void DeadState()
+    {
+        anim.SetTrigger("IsDead");
+        this.enabled = false;
+    }
 
     IEnumerator IdleState()
     {
@@ -174,6 +209,7 @@ public class JBoss : MonoBehaviour
 
     IEnumerator WalkState()
     {
+        path.enabled = true;
         Debug.Log("Walk");
         yield return new WaitForSeconds(2f);
         myState = BossState.decide;
@@ -183,9 +219,9 @@ public class JBoss : MonoBehaviour
     void DecideState()
     {
         StopAllCoroutines();
-        attackState = 2;
-        telegraphed = true;
-        myState = BossState.telegraph;
+        //attackState = 2;
+        //telegraphed = true;
+        //myState = BossState.telegraph;
         int rand = Random.Range(0, 2);
         int tele = Random.Range(0, 2);
         if (rand < 1)
@@ -193,13 +229,23 @@ public class JBoss : MonoBehaviour
             attackState = 1;
             if (tele < 1)
             {
-                telegraphed = true;
+                //telegraphed = true;
                 myState = BossState.telegraph;
             }
             else
             {
                 telegraphed = false;
-                myState = BossState.melee;
+                Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, playerMask);
+                overlapRange = 40f;
+                if (overlap)
+                {
+                    myState = BossState.melee;
+                }
+                else
+                {
+                    attackState = 2;
+                    myState = BossState.ranged;
+                }
             }
         }
         else
@@ -207,13 +253,25 @@ public class JBoss : MonoBehaviour
             attackState = 2;
             if (tele < 1)
             {
-                telegraphed = true;
+                //telegraphed = true;
                 myState = BossState.telegraph;
             }
             else
             {
                 telegraphed = false;
-                myState = BossState.ranged;
+                Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, playerMask);
+                overlapRange = 40f;
+
+                if (overlap)
+                {
+                    attackState = 1;
+                    myState = BossState.melee;
+                }
+                else
+                {
+                    attackState = 2;
+                    myState = BossState.ranged;
+                }
             }
         }
     }
@@ -223,7 +281,7 @@ public class JBoss : MonoBehaviour
         telegraphed = false;
         isAttacking = true;
         Debug.Log("Melee");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         myState = BossState.idle;
         StopAllCoroutines();
     }
@@ -233,9 +291,53 @@ public class JBoss : MonoBehaviour
         telegraphed = false;
         isAttacking = true;
         Debug.Log("Ranged");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         myState = BossState.idle;
         StopAllCoroutines();
+    }
+    IEnumerator TelegraphState()
+    {
+        if (attackState == 1)
+        {
+            //Melee
+            Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, playerMask);
+            overlapRange = 40f;
+            destination.target = player.transform;
+            while (!overlap)
+            {
+                yield return new WaitForSeconds(.1f);
+            }
+            path.enabled = false;
+            telegraphed = true;
+            yield return new WaitForSeconds(3.9f);
+            path.enabled = true;
+            myState = BossState.idle;
+        }
+        else if (attackState == 2)
+        {
+            //Ranged
+            Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, teleRangeMask);
+            overlapRange = 15f;
+            destination.target = teleRangePoint;
+            while (!overlap)
+            {
+                yield return new WaitForSeconds(.1f);
+            }
+            telegraphed = true;
+            path.enabled = false;
+            yield return new WaitForSeconds(5.4f);
+            destination.target = player.transform;
+            path.enabled = true;
+            myState = BossState.idle;
+        }
+        StopAllCoroutines();
+    }
+    #endregion
+
+    public void InstansiatePattern()
+    {
+        GameObject patternClone = Instantiate(bulletPatterns[0], patternPoint.position, Quaternion.identity);
+        patternsInScene.Add(patternClone);
     }
 
     void GetDirFromPlayer()
@@ -321,28 +423,6 @@ public class JBoss : MonoBehaviour
         CheckForScream();
     }
 
-    IEnumerator TelegraphState()
-    {
-        if (attackState == 1)
-        {
-            //Melee
-            yield return new WaitForSeconds(3.9f);
-            myState = BossState.idle;
-        }
-        else if (attackState == 2)
-        {
-            //Ranged
-            yield return new WaitForSeconds(5.4f);
-            myState = BossState.idle;
-        }
-        StopAllCoroutines();
-    }
-
-    public void InstansiatePattern()
-    {
-        GameObject patternClone = Instantiate(bulletPatterns[0], patternPoint.position, Quaternion.identity);
-        patternsInScene.Add(patternClone);
-    }
 
     void CheckForShake()
     {
@@ -372,7 +452,7 @@ public class JBoss : MonoBehaviour
         {
             mySound.PlayMeleeScream();
         }
-        else if(doScream && attackState == 2)
+        else if (doScream && attackState == 2)
         {
             mySound.PlayRangedScream();
         }
@@ -387,6 +467,202 @@ public class JBoss : MonoBehaviour
         }
     }
 
+    #region Damage to boss
+    void DamagePopUp(float damage, bool crit)
+    {
+        float fadetime = 0.7f;
+
+        double dmgprint = System.Math.Round(damage, 2);
+        if (!crit)
+        {
+            mySound.PlayDamageSound();
+            GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 15, Quaternion.identity);
+            dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+            dmgpopupclone.AddComponent<Rigidbody2D>();
+            dmgpopupclone.GetComponent<Rigidbody2D>().velocity = RandomVector(-10f, 10f);
+            dmgtext.CrossFadeAlpha(0, fadetime, false);
+            dmgtext.text = dmgprint.ToString();
+            dmgpopupclone.SetActive(true);
+            Destroy(dmgpopupclone, fadetime);
+        }
+        else
+        {
+            mySound.PlayDamageSound();
+            GameObject dmgpopupclone = Instantiate(damagePopup, transform.position + transform.up * 18, Quaternion.identity);
+            dmgtext = dmgpopupclone.GetComponentInChildren<TextMeshProUGUI>();
+            dmgpopupclone.AddComponent<Rigidbody2D>();
+            dmgpopupclone.GetComponent<Rigidbody2D>().velocity = RandomVector(-20f, 20f);
+            dmgtext.color = Color.red;
+            dmgtext.fontSize = 42;
+            dmgtext.CrossFadeAlpha(0, fadetime, false);
+            dmgtext.text = dmgprint.ToString();
+            dmgpopupclone.SetActive(true);
+            Destroy(dmgpopupclone, fadetime);
+        }
+    }
+
+    Vector3 RandomVector(float min, float max)
+    {
+        float x = UnityEngine.Random.Range(min, max);
+        float y = 10;
+        float z = 0;
+        return new Vector3(x, y, z);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+
+        if (collider.tag == "Sword" && !isDead || collider.tag == "Arrow" && !isDead || collider.tag == "SwordProjectile" && !isDead)
+        {
+
+            PlayerStats playerstats = player.GetComponent<PlayerStats>();
+            Player rue = player.GetComponent<Player>();
+            Arrow arrowCrit = collider.GetComponent<Arrow>();
+            Swordscript swordCrit = collider.GetComponent<Swordscript>();
+            SwordProjectile swordProjectileCrit = collider.GetComponent<SwordProjectile>();
+            float str = playerstats.Strength.Value;
+            float dex = playerstats.Dexterity.Value;
+            float critdmg = playerstats.CritDamage.Value / 100;
+            float currenthpdmg = playerstats.PercentHpDmg.Value;
+            float ruehpdmg = playerstats.RueHPDmgOnHit.Value;
+            float bowmod = playerstats.CrossbowAttackModifier.Value;
+            float swordmod = playerstats.SwordAttackModifier.Value;
+            float rapidfire = playerstats.RapidFire.Value;
+            float firearrow = playerstats.FireArrows.Value;
+            float swordexecute = playerstats.SwordExecute.Value;
+            bool crit = false;
 
 
+
+
+            if (collider.tag == "Arrow")
+            {
+                if (attacked)
+                {
+                    return;
+                }
+                float damage = 0;
+                if (rapidfire > 0)
+                {
+                    damage = ((str / 10) + dex) * bowmod;
+                }
+                if (rapidfire == 0)
+                {
+                    damage = str * bowmod;
+                }
+                if (firearrow > 0)
+                {
+                    damage *= 2;
+                }
+                if (arrowCrit.crit)
+                {
+                    damage *= critdmg;
+                    crit = true;
+                }
+                if (currenthpdmg > 0)
+                {
+                    damage = damage + (myHealth * 0.1f);
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+
+
+                DamagePopUp(damage, crit);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+
+                if (crit)
+                {
+                    myState = BossState.stagger;
+                }
+                attacked = true;
+
+                if (playerstats.ArrowKnockback.Value < 0)
+                {
+                    arrowKnockback = false;
+                }
+                else
+                {
+
+                }
+
+            }
+            else if (collider.tag == "Sword")
+            {
+                if (attacked)
+                {
+                    return;
+                }
+                float damage = str * swordmod;
+                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
+                {
+                    damage = myHealth;
+                }
+                if (swordCrit.Crit)
+                {
+                    damage *= critdmg;
+                    crit = true;
+                }
+                if (currenthpdmg > 0)
+                {
+                    damage = damage + (myHealth * 0.1f);
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+                DamagePopUp(damage, crit);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+                if (crit)
+                {
+                    myState = BossState.stagger;
+                }
+                attacked = true;
+            }
+            else if (collider.tag == "SwordProjectile")
+            {
+                if (swordprojectileattacked)
+                {
+                    return;
+                }
+                float damage = str * swordmod;
+                if (swordexecute > 0 && myHealth <= (EnemyStats.health * 0.2))
+                {
+                    damage = myHealth;
+                }
+                if (swordProjectileCrit.crit)
+                {
+                    damage *= critdmg;
+                    crit = true;
+                }
+                if (currenthpdmg > 0)
+                {
+                    damage = damage + (myHealth * 0.1f);
+                }
+                if (ruehpdmg > 0)
+                {
+                    damage += (playerstats.Health.Value * 0.1f);
+                }
+                DamagePopUp(damage, crit);
+                healthSystem.Damage(damage);
+                rue.HealthSystem.Heal(playerstats.LifeOnHit.Value);
+
+                if (crit)
+                {
+                    myState = BossState.stagger;
+                }
+                swordprojectileattacked = true;
+            }
+        }
+    } //Deal damage to enemy
+    #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, overlapRange);
+    }
 }

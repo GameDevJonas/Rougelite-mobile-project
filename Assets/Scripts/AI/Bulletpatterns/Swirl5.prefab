@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad7d5e38ae0a3a4592635ea641e6213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 4
-  shootFreq: 0.1
+  rotationSpeed: 5.5
+  shootFreq: 0.01
   shootTimer: 0
   bulletForce: 4000
   duration: 1.8
