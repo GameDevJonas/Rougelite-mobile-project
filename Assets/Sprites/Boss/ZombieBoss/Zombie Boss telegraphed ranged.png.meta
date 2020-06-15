@@ -1,0 +1,1076 @@
+fileFormatVersion: 2
+guid: 6aaa9df8f680dbc4ab4e2ebfc9f9e11c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4083870528368986608
+    second: Zombie Boss telegraphed ranged_0
+  - first:
+      213: -4581017670313782611
+    second: Zombie Boss telegraphed ranged_1
+  - first:
+      213: -4811614602235394860
+    second: Zombie Boss telegraphed ranged_2
+  - first:
+      213: 5547717725238464232
+    second: Zombie Boss telegraphed ranged_3
+  - first:
+      213: -2964711943243830897
+    second: Zombie Boss telegraphed ranged_4
+  - first:
+      213: 2276373561001141953
+    second: Zombie Boss telegraphed ranged_5
+  - first:
+      213: -5063718715058176124
+    second: Zombie Boss telegraphed ranged_6
+  - first:
+      213: -5713284671548636618
+    second: Zombie Boss telegraphed ranged_7
+  - first:
+      213: -8744441017760614501
+    second: Zombie Boss telegraphed ranged_8
+  - first:
+      213: -5051710888674607770
+    second: Zombie Boss telegraphed ranged_9
+  - first:
+      213: -3844527473232708907
+    second: Zombie Boss telegraphed ranged_10
+  - first:
+      213: -4558911183768946249
+    second: Zombie Boss telegraphed ranged_11
+  - first:
+      213: 9168045118616649614
+    second: Zombie Boss telegraphed ranged_12
+  - first:
+      213: -8008348034820444006
+    second: Zombie Boss telegraphed ranged_13
+  - first:
+      213: 6754429479594299538
+    second: Zombie Boss telegraphed ranged_14
+  - first:
+      213: -6690566490169731526
+    second: Zombie Boss telegraphed ranged_15
+  - first:
+      213: -6279187177085346086
+    second: Zombie Boss telegraphed ranged_16
+  - first:
+      213: -1882211738980387762
+    second: Zombie Boss telegraphed ranged_17
+  - first:
+      213: 5335114265943567567
+    second: Zombie Boss telegraphed ranged_18
+  - first:
+      213: 502030869779528176
+    second: Zombie Boss telegraphed ranged_19
+  - first:
+      213: 1373661412625235972
+    second: Zombie Boss telegraphed ranged_20
+  - first:
+      213: -5102635390046884449
+    second: Zombie Boss telegraphed ranged_21
+  - first:
+      213: 3355330865194091193
+    second: Zombie Boss telegraphed ranged_22
+  - first:
+      213: 4245325674515782124
+    second: Zombie Boss telegraphed ranged_23
+  - first:
+      213: -6094378523765096259
+    second: Zombie Boss telegraphed ranged_24
+  - first:
+      213: 3946721499878899273
+    second: Zombie Boss telegraphed ranged_25
+  - first:
+      213: 7943906985904784694
+    second: Zombie Boss telegraphed ranged_26
+  - first:
+      213: 8074484302306800467
+    second: Zombie Boss telegraphed ranged_27
+  - first:
+      213: -2297384518835642294
+    second: Zombie Boss telegraphed ranged_28
+  - first:
+      213: 5898018839961529825
+    second: Zombie Boss telegraphed ranged_29
+  - first:
+      213: 6135569286580804530
+    second: Zombie Boss telegraphed ranged_30
+  - first:
+      213: -4069369925660769908
+    second: Zombie Boss telegraphed ranged_31
+  - first:
+      213: -1482165563677618857
+    second: Zombie Boss telegraphed ranged_32
+  - first:
+      213: 5991701162139318275
+    second: Zombie Boss telegraphed ranged_33
+  - first:
+      213: -553690610780209246
+    second: Zombie Boss telegraphed ranged_34
+  - first:
+      213: -7909405231795705385
+    second: Zombie Boss telegraphed ranged_35
+  - first:
+      213: 7255754041338958025
+    second: Zombie Boss telegraphed ranged_36
+  - first:
+      213: -210242033262522675
+    second: Zombie Boss telegraphed ranged_37
+  - first:
+      213: -5059179367025094767
+    second: Zombie Boss telegraphed ranged_38
+  - first:
+      213: 1183762728527258009
+    second: Zombie Boss telegraphed ranged_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01631e7446d2357c0800000000000000
+      internalID: -4083870528368986608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2d82b33b4fc60c0800000000000000
+      internalID: -4581017670313782611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d44da52306b93db0800000000000000
+      internalID: -4811614602235394860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee0af6c0e37dfc40800000000000000
+      internalID: 5547717725238464232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89e791023a3bd6d0800000000000000
+      internalID: -2964711943243830897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6609761bd479f10800000000000000
+      internalID: 2276373561001141953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_6
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 500
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fb57a48ae0ab9b0800000000000000
+      internalID: -5063718715058176124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632c8ab8cd556b0b0800000000000000
+      internalID: -5713284671548636618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97f501793185a680800000000000000
+      internalID: -8744441017760614501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66db39c36b7b4e9b0800000000000000
+      internalID: -5051710888674607770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_10
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dafbbcd1ae75aac0800000000000000
+      internalID: -3844527473232708907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_11
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b975e8be6e7bb0c0800000000000000
+      internalID: -4558911183768946249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_12
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f36e306707b3f70800000000000000
+      internalID: 9168045118616649614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_13
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9074d274e1acd090800000000000000
+      internalID: -8008348034820444006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29015af33dd8cbd50800000000000000
+      internalID: 6754429479594299538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_15
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a361d4fa9355623a0800000000000000
+      internalID: -6690566490169731526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_16
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aded3afe788dbd8a0800000000000000
+      internalID: -6279187177085346086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_17
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44f002556a01e5e0800000000000000
+      internalID: -1882211738980387762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_18
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc6fa188222a0a40800000000000000
+      internalID: 5335114265943567567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_19
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f93d7b8a6297f600800000000000000
+      internalID: 502030869779528176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_20
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400403dd6c9301310800000000000000
+      internalID: 1373661412625235972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d2bedc52ccf29b0800000000000000
+      internalID: -5102635390046884449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_22
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b24cc305a7809e20800000000000000
+      internalID: 3355330865194091193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_23
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9db51553d6aea30800000000000000
+      internalID: 4245325674515782124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_24
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db04634a50b6c6ba0800000000000000
+      internalID: -6094378523765096259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_25
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ebda32b4295c630800000000000000
+      internalID: 3946721499878899273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_26
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6354997a05d6e3e60800000000000000
+      internalID: 7943906985904784694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_27
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353f67741b45e0070800000000000000
+      internalID: 8074484302306800467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40e152c3fc0e10e0800000000000000
+      internalID: -2297384518835642294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_29
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ede77ac2e8f9d150800000000000000
+      internalID: 5898018839961529825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_30
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb127d22cbe52550800000000000000
+      internalID: 6135569286580804530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_31
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c810551fc91b687c0800000000000000
+      internalID: -4069369925660769908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_32
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dcdaec54a4e6be0800000000000000
+      internalID: -1482165563677618857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_33
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308fb99267cc62350800000000000000
+      internalID: 5991701162139318275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_34
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aff9f4b255e058f0800000000000000
+      internalID: -553690610780209246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d96336f8d52c3290800000000000000
+      internalID: -7909405231795705385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_36
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c01d93abdd91b460800000000000000
+      internalID: 7255754041338958025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_37
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce08821cf1151df0800000000000000
+      internalID: -210242033262522675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_38
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fcb7d9b2f2ac9b0800000000000000
+      internalID: -5059179367025094767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed ranged_39
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991e6340ee19d6010800000000000000
+      internalID: 1183762728527258009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

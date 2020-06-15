@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: caf8cce7f6d229a40b1463a9a2f372ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8733245702184047633
+    second: Zombie Boss telegraphed melee_0
+  - first:
+      213: -1705335401098097301
+    second: Zombie Boss telegraphed melee_1
+  - first:
+      213: -6996372557159425205
+    second: Zombie Boss telegraphed melee_2
+  - first:
+      213: 4908613017683640946
+    second: Zombie Boss telegraphed melee_3
+  - first:
+      213: 3014426429248862843
+    second: Zombie Boss telegraphed melee_4
+  - first:
+      213: 1846020600717240880
+    second: Zombie Boss telegraphed melee_5
+  - first:
+      213: -3160526706006247476
+    second: Zombie Boss telegraphed melee_6
+  - first:
+      213: 7292879516628827882
+    second: Zombie Boss telegraphed melee_7
+  - first:
+      213: 2452904155983770802
+    second: Zombie Boss telegraphed melee_8
+  - first:
+      213: 6142823733937742916
+    second: Zombie Boss telegraphed melee_9
+  - first:
+      213: -5619151971066118741
+    second: Zombie Boss telegraphed melee_10
+  - first:
+      213: 6147921893302603152
+    second: Zombie Boss telegraphed melee_11
+  - first:
+      213: 7823551438620153810
+    second: Zombie Boss telegraphed melee_12
+  - first:
+      213: -318759748184960317
+    second: Zombie Boss telegraphed melee_13
+  - first:
+      213: -5956469134778009915
+    second: Zombie Boss telegraphed melee_14
+  - first:
+      213: 7806300213596568412
+    second: Zombie Boss telegraphed melee_15
+  - first:
+      213: 6394101854921570450
+    second: Zombie Boss telegraphed melee_16
+  - first:
+      213: 8981724464529094693
+    second: Zombie Boss telegraphed melee_17
+  - first:
+      213: 4825749493705029698
+    second: Zombie Boss telegraphed melee_18
+  - first:
+      213: -8003549918431985708
+    second: Zombie Boss telegraphed melee_19
+  - first:
+      213: -4028828976449239797
+    second: Zombie Boss telegraphed melee_20
+  - first:
+      213: 4674248581583849091
+    second: Zombie Boss telegraphed melee_21
+  - first:
+      213: 3241413500726574372
+    second: Zombie Boss telegraphed melee_22
+  - first:
+      213: 8533609876328140051
+    second: Zombie Boss telegraphed melee_23
+  - first:
+      213: 2636848159539686589
+    second: Zombie Boss telegraphed melee_24
+  - first:
+      213: 4621317169237131714
+    second: Zombie Boss telegraphed melee_25
+  - first:
+      213: -9035084503079952172
+    second: Zombie Boss telegraphed melee_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febec19fd474dc680800000000000000
+      internalID: -8733245702184047633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d46aaec7e6558e0800000000000000
+      internalID: -1705335401098097301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b98364a34e7ee90800000000000000
+      internalID: -6996372557159425205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27244ea5885ee1440800000000000000
+      internalID: 4908613017683640946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a7de4cdd465d920800000000000000
+      internalID: 3014426429248862843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 400
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03aedc9a4f16e9910800000000000000
+      internalID: 1846020600717240880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7bc51c4bd8324d0800000000000000
+      internalID: -3160526706006247476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee3262f743853560800000000000000
+      internalID: 7292879516628827882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_8
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4fd7575577a0220800000000000000
+      internalID: 2452904155983770802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_9
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444a233d3a1bf3550800000000000000
+      internalID: 6142823733937742916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badfaa9cd03c402b0800000000000000
+      internalID: -5619151971066118741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_11
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 300
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d062d836ec15550800000000000000
+      internalID: 6147921893302603152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d753fc1596d29c60800000000000000
+      internalID: 7823551438620153810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_13
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c21eb8a2b9839bf0800000000000000
+      internalID: -318759748184960317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_14
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c67af171ee565da0800000000000000
+      internalID: -5956469134778009915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bba794fac855c60800000000000000
+      internalID: 7806300213596568412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_16
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298344872c96cb850800000000000000
+      internalID: 6394101854921570450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 200
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52831b230de75ac70800000000000000
+      internalID: 8981724464529094693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2483f4bb89188f240800000000000000
+      internalID: 4825749493705029698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df31c9f0cdade090800000000000000
+      internalID: -8003549918431985708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0541fd3469b618c0800000000000000
+      internalID: -4028828976449239797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_21
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386cd29d1544ed040800000000000000
+      internalID: 4674248581583849091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_22
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d76f8b760dbfc20800000000000000
+      internalID: 3241413500726574372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_23
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 100
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31dcd4238f87d6670800000000000000
+      internalID: 8533609876328140051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc61043e67f79420800000000000000
+      internalID: 2636848159539686589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_25
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c10bca0b77322040800000000000000
+      internalID: 4621317169237131714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Boss telegraphed melee_26
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 85
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0684ea38eec9280800000000000000
+      internalID: -9035084503079952172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
