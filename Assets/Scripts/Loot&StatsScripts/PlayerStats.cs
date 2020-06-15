@@ -137,7 +137,8 @@ public class PlayerStats : MonoBehaviour
 
                 if (itemToAdd.modType == "flat") //adds additive flat number increases / decreases. 10 + 10 = 20
                 {
-                    AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+                    itemToAdd.statType.RemoveModifier(flat);
+                    AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
                 }
                 if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
                 {
@@ -147,7 +148,7 @@ public class PlayerStats : MonoBehaviour
                 if (itemToAdd.modType == "multpercent") //adds multiplicative percent increases. (10 + 10%) 11 + (10% + 10%) 11% = 22.21
                 {
                     itemToAdd.statType.RemoveModifier(mult);
-                    AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
+                    AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
                 }
             }
         }
@@ -159,7 +160,7 @@ public class PlayerStats : MonoBehaviour
             if (itemToAdd.modType == "flat")
             {
                 itemToAdd.statType.RemoveModifier(flat);
-                AddFlatModifier(itemToAdd.statType, itemToAdd.statValue);
+                AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
             }
             if (itemToAdd.modType == "percent")
             {
@@ -188,7 +189,7 @@ public class PlayerStats : MonoBehaviour
             if (itemToAdd.modType == "multpercent")
             {
                 itemToAdd.statType.RemoveModifier(mult);
-                AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue);
+                AddPercentMultModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
             }
         }
         
@@ -333,7 +334,7 @@ public class PlayerStats : MonoBehaviour
         if (item.modType == "flat")
         {
             item.statType.RemoveModifier(flat);
-            AddFlatModifier(item.statType, (item.statValue * item.collection));
+            AddFlatModifier(item.statType, item.statValue * item.collection);
             UpdateStatsInfo();
         }
         if (item.modType == "percent")
@@ -357,7 +358,7 @@ public class PlayerStats : MonoBehaviour
             }
             else
             {
-                AddPercentModifier(item.statType, (item.statValue * item.collection));
+                AddPercentModifier(item.statType, item.statValue * item.collection);
             }
             UpdateStatsInfo();
         }
