@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
     public GameObject menuLogo;
     public GameObject deathscreen;
 
+    public static List<GameObject> menuManagersInScene = new List<GameObject>();
+    public  List<GameObject> menuManagersCheck = new List<GameObject>();
+
     GameObject playerCanvas;
 
     #region Main Menu loadingBar
@@ -32,6 +35,7 @@ public class MenuManager : MonoBehaviour
 
     void Awake()
     {
+        menuManagersInScene.Add(gameObject);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         isPaused = false;
         toBoss = false;
@@ -44,6 +48,17 @@ public class MenuManager : MonoBehaviour
         //DontDestroyOnLoad(alphaAudio);
         startButton.SetActive(true);
         pauseMenu.SetActive(false);
+    }
+    private void Update()
+    {
+        menuManagersCheck = menuManagersInScene;
+        if(menuManagersInScene.Count > 1)
+        {
+            Destroy(menuManagersInScene[1]);
+            startButton.SetActive(true);
+            menuLogo.SetActive(true);
+            menuManagersInScene.Remove(menuManagersInScene[1]);
+        }
     }
 
     public void StartGame()
@@ -106,14 +121,14 @@ public class MenuManager : MonoBehaviour
     public void ToAlphaBoss()
     {
         int currenctScene = SceneManager.GetActiveScene().buildIndex;
-        if (currenctScene == 5)
-        {
-            currenctScene = 0;
-        }
+        //if (currenctScene == 5)
+        //{
+        //    currenctScene = 0;
+        //}
         toBoss = true;
         startButton.SetActive(false);
         loadingThing.SetActive(true);
-        StartCoroutine(StartLoad(currenctScene + 1));
+        StartCoroutine(StartLoad(currenctScene + 5));
         Debug.Log(SceneManager.sceneCount);
     }
 
@@ -147,12 +162,12 @@ public class MenuManager : MonoBehaviour
             Debug.Log("Loading progress: " + (progress * 100) + "%");
             loadingSlider.value = Mathf.RoundToInt(progress);
             progressText.text = "Progress: " + progress * 100 + "%";
-
-            if ((buildIndex - 1) != 0 && buildIndex != 0)
+            int prevScene = SceneManager.GetActiveScene().buildIndex;
+            if (prevScene != 0)
             {
                 //Debug.Log(buildIndex - 1);
                 //Debug.Log("Startet unload");
-                SceneManager.UnloadSceneAsync(buildIndex - 1);
+                SceneManager.UnloadSceneAsync(prevScene);
                 //destroyPrev.priority = 10;
             }
 

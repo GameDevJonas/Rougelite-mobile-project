@@ -129,6 +129,21 @@ public class Player : MonoBehaviour
         useTouch = false;
 #endif
 
+        
+    }
+
+    public void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= 6)
+        {
+            GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
+            transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
+        }
+        else
+        {
+            GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = false;
+            GetComponentInChildren<CanvasGroup>().alpha = 1;
+        }
     }
 
     public void StartPosition(Vector3 startPos)

@@ -39,6 +39,8 @@ public class DirectorManager : MonoBehaviour
         belial.GetComponent<AIPath>().enabled = false;
         belial.GetComponent<JBoss>().enabled = false;
         belial.GetComponent<AIDestinationSetter>().enabled = false;
+        player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
+        player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
         player.enabled = false;
     }
 

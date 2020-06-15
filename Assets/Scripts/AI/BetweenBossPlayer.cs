@@ -10,12 +10,15 @@ public class BetweenBossPlayer : MonoBehaviour
     void Start()
     {
         boss = GameObject.FindGameObjectWithTag("Enemy").transform;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(player == null)
+        {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         Vector3 myPos = (boss.position + player.position) / 2;
         transform.position = myPos;
 
