@@ -210,7 +210,7 @@ public class JBoss : MonoBehaviour
         myHealth = healthSystem.GetHealth();
         attacked = false;
         Anims();
-        CheckForOtherSounds();
+        
         GetDirFromPlayer();
         if (spawnPattern && patternsInScene.Count < 1)
         {
@@ -534,6 +534,7 @@ public class JBoss : MonoBehaviour
 
         CheckForShake();
         CheckForScream();
+        CheckForOtherSounds();
     }
 
 
@@ -541,13 +542,14 @@ public class JBoss : MonoBehaviour
     {
         if (doShake)
         {
-            StartCoroutine(CamShake());
             doShake = false;
+            StartCoroutine(CamShake());
         }
     }
 
     IEnumerator CamShake()
     {
+        mySound.CrumbleSound();
         //Starts cam shake
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Random.Range(shakeAmp.x, shakeAmp.y);
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Random.Range(shakeFreq.x, shakeFreq.y);
@@ -575,8 +577,8 @@ public class JBoss : MonoBehaviour
     {
         if (doCrumble)
         {
-            mySound.CrumbleSound();
             doCrumble = false;
+            //mySound.CrumbleSound();
         }
     }
 
@@ -625,6 +627,7 @@ public class JBoss : MonoBehaviour
     void DropLootAndDie()
     {
         PlayerStats playerstats = player.GetComponent<PlayerStats>();
+        isDead = true;
         if (playerstats.DropGarantueed.Value == 0)
         {
             foreach (var item in Table) //checks table
@@ -759,6 +762,12 @@ public class JBoss : MonoBehaviour
     public void Corpse()
     {
         altar.SetActive(true);
+        
+        Invoke("DestroyCorpse", 3f);
+    }
+
+    void DestroyCorpse()
+    {
         GetComponent<Animator>().enabled = false;
         Destroy(gameObject);
     }

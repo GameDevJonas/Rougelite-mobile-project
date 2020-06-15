@@ -14,6 +14,24 @@ TextureImporter:
   - first:
       213: -6099550793053330036
     second: Zombie Boss idle_3
+  - first:
+      213: -9164402218595468262
+    second: Zombie Boss idle_0
+  - first:
+      213: 8883062033529273455
+    second: Zombie Boss idle_1
+  - first:
+      213: -1283182411053048797
+    second: Zombie Boss idle_2
+  - first:
+      213: -247967344459756420
+    second: Zombie Boss idle_3
+  - first:
+      213: -2344738956559111491
+    second: Zombie Boss idle_4
+  - first:
+      213: 5879265966808856744
+    second: Zombie Boss idle_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,15 +136,15 @@ TextureImporter:
         y: 100
         width: 80
         height: 100
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4745f3ea85fac9b50800000000000000
-      internalID: 6601343949233673332
+      spriteID: a1cb0ddbcb081d080800000000000000
+      internalID: -9164402218595468262
       vertices: []
       indices: 
       edges: []
@@ -139,15 +157,15 @@ TextureImporter:
         y: 100
         width: 80
         height: 100
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06dfd68bd531fca80800000000000000
-      internalID: -8444509483049288352
+      spriteID: f6c7542ead9f64b70800000000000000
+      internalID: 8883062033529273455
       vertices: []
       indices: 
       edges: []
@@ -160,15 +178,15 @@ TextureImporter:
         y: 0
         width: 80
         height: 100
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51b7d8ec88abd3800800000000000000
-      internalID: 593835822626470677
+      spriteID: 32c572f4568313ee0800000000000000
+      internalID: -1283182411053048797
       vertices: []
       indices: 
       edges: []
@@ -181,15 +199,15 @@ TextureImporter:
         y: 0
         width: 80
         height: 100
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c85aa9adeda0a5ba0800000000000000
-      internalID: -6099550793053330036
+      spriteID: c7c4495930b0f8cf0800000000000000
+      internalID: -247967344459756420
       vertices: []
       indices: 
       edges: []

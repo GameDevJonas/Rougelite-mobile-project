@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826914222987617505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 22.6, z: 0}
+  m_LocalPosition: {x: -1.2, y: 12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3504933653680289168}
@@ -451,7 +451,7 @@ MonoBehaviour:
   teleMelee: {fileID: 1986842023111703662, guid: 1c287887d716ce8498a0d5e649924a9b,
     type: 3}
   bulletPatterns:
-  - {fileID: 6476476028705134137, guid: b4317fb02d812b44ba017e17ba78b2b0, type: 3}
+  - {fileID: 6476476028705134137, guid: 50250eea962febb4fb91fd7545fae92a, type: 3}
   patternsInScene: []
   patternPoint: {fileID: 7435729208278890510}
   playerMask:
@@ -641,23 +641,21 @@ MonoBehaviour:
   mainLoop: {fileID: 0}
   footsteps:
     footstepSounds:
-    - {fileID: 8300000, guid: 61447948fab92f446813ed0e2f3889be, type: 3}
-    - {fileID: 8300000, guid: 9d434cad79bdab64eb6a59fe719115fb, type: 3}
-    - {fileID: 8300000, guid: ee84224974e57b94b8968f08bbf2b0df, type: 3}
-    - {fileID: 8300000, guid: 53f949321b774c648809331969c20c51, type: 3}
+    - {fileID: 8300000, guid: 2f8d463b97ad0274facee9597ca40b8f, type: 3}
+    - {fileID: 8300000, guid: 72271de7264323541bfde8c82ffbfde4, type: 3}
     myStepRatio: 0.6
     mySource: {fileID: 7041525829965153353}
   voice:
     voiceSounds:
-    - {fileID: 8300000, guid: efa81beb1fe3e504cb88de0eb0260b8f, type: 3}
-    - {fileID: 8300000, guid: 9770a2781d95511459efb5e95ca175d5, type: 3}
-    - {fileID: 8300000, guid: 99edce950ee3f79449bde9be4c9e0d37, type: 3}
+    - {fileID: 8300000, guid: 8ad28ea88311ae649973ff3787ebd6fd, type: 3}
+    - {fileID: 8300000, guid: b580f23a744048046a11ec4c10b712ac, type: 3}
+    - {fileID: 8300000, guid: 8ac472ccd7ff03640bace9cabdb11541, type: 3}
     mySource: {fileID: 1451433483166784450}
   damage:
     damageSounds:
-    - {fileID: 8300000, guid: e624b6133364bce43981ac8ea7dde22c, type: 3}
-    - {fileID: 8300000, guid: 050f92e187ca03341ae7c522c281e37d, type: 3}
-    deathSound: {fileID: 8300000, guid: db72e4f5ea84fe549aa4ef601d227deb, type: 3}
+    - {fileID: 8300000, guid: 06c20fc4d77a658439a4b553b6b1bb84, type: 3}
+    - {fileID: 8300000, guid: 1b567a36b9877444f890a07e2bee1d60, type: 3}
+    deathSound: {fileID: 8300000, guid: 031ddf0eb9adf2c4a85bdc7bba1c5c6f, type: 3}
     mySource: {fileID: 4530478743363166134}
   attack:
     attackSounds:
@@ -667,7 +665,7 @@ MonoBehaviour:
     mySource: {fileID: 6432388896344378170}
   otherSounds:
     crumble: {fileID: 8300000, guid: dc328ba03c4e14949b2a3e15d20cec1c, type: 3}
-    deathSound: {fileID: 0}
+    deathSound: {fileID: 8300000, guid: 031ddf0eb9adf2c4a85bdc7bba1c5c6f, type: 3}
     mySource: {fileID: 2253549516166933482}
 --- !u!114 &4530478742850422375
 MonoBehaviour:
@@ -1111,7 +1109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4569826072078603986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.8, y: 20.1, z: 0}
+  m_LocalPosition: {x: 2.7, y: 13.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3504933653680289168}
