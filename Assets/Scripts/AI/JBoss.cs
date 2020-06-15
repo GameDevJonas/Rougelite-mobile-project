@@ -23,9 +23,9 @@ public class JBoss : MonoBehaviour
     BossSound mySound;
 
     bool isDead, telegraphed, isAttacking;
-    public bool doShake, doScream, doCrumble, spawnPattern;
+    public bool doShake, doScream, doCrumble, spawnPattern, spawnCheapMelee, spawnCheapRange, spawnMeleeTele;
 
-    string direction;
+    public string direction;
 
     int dirRotation;
 
@@ -33,12 +33,19 @@ public class JBoss : MonoBehaviour
 
     public Vector2 shakeAmp, shakeFreq;
 
+    public GameObject damagePopup;
+    public TextMeshProUGUI dmgtext;
+
+    public Transform shootPoint;
+    public GameObject bullet;
+
+    public GameObject cheapMelee;
+
+    public GameObject teleMelee;
+
     public GameObject[] bulletPatterns;
     public List<GameObject> patternsInScene = new List<GameObject>();
     public Transform patternPoint;
-
-    public GameObject damagePopup;
-    public TextMeshProUGUI dmgtext;
 
     public LayerMask playerMask, teleRangeMask;
     public float overlapRange;
@@ -183,6 +190,9 @@ public class JBoss : MonoBehaviour
             InstansiatePattern();
             spawnPattern = false;
         }
+        InstantiateCheapMelee();
+        InstantiateCheapRanged();
+        InstantiateMeleeTele();
 
         if (patternsInScene[0] == null)
         {
@@ -281,6 +291,7 @@ public class JBoss : MonoBehaviour
         telegraphed = false;
         isAttacking = true;
         Debug.Log("Melee");
+        //Instantiate melee swing in front/towards player
         yield return new WaitForSeconds(1f);
         myState = BossState.idle;
         StopAllCoroutines();
@@ -291,6 +302,7 @@ public class JBoss : MonoBehaviour
         telegraphed = false;
         isAttacking = true;
         Debug.Log("Ranged");
+        //Instantiate bullet from shootPoint
         yield return new WaitForSeconds(1f);
         myState = BossState.idle;
         StopAllCoroutines();
@@ -333,6 +345,42 @@ public class JBoss : MonoBehaviour
         StopAllCoroutines();
     }
     #endregion
+
+    void InstantiateCheapMelee()
+    {
+        if (spawnCheapMelee)
+        {
+            mySound.PlayAttackSound();
+            GameObject meleeCheapClone = Instantiate(cheapMelee, transform.position, Quaternion.Euler(0, 0, dirRotation), transform);
+            meleeCheapClone.transform.localScale = new Vector3(400, 400, 1);
+            Destroy(meleeCheapClone, .3f);
+            spawnCheapMelee = false;
+        }
+    }
+
+    void InstantiateCheapRanged()
+    {
+        if (spawnCheapRange)
+        {
+            spawnCheapRange = false;
+            float rotationToPlayer = (player.transform.position - transform.position).magnitude;
+            GameObject bulletClone = Instantiate(bullet, shootPoint.position, Quaternion.identity);
+            bulletClone.GetComponent<Bullet>().bulletForce = 6000;
+            bulletClone.transform.up = player.transform.position - transform.position;
+            Destroy(bulletClone, 3f);
+        }
+    }
+
+    void InstantiateMeleeTele()
+    {
+        if (spawnMeleeTele)
+        {
+            GameObject meleeTeleClone = Instantiate(teleMelee, patternPoint.position, Quaternion.Euler(0, 0, -180), transform);
+            meleeTeleClone.transform.localScale = new Vector3(630, 740, 1);
+            Destroy(meleeTeleClone, .5f);
+            spawnMeleeTele = false;
+        }
+    }
 
     public void InstansiatePattern()
     {

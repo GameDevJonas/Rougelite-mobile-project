@@ -5706,7 +5706,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 71.53783
+  orthographic size: 60.1949
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8119,7 +8119,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 71.53783
+    OrthographicSize: 60.1949
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -8474,6 +8474,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838167001}
   m_CullTransparentMesh: 0
+--- !u!4 &1844547859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1726329815602156237, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+    type: 3}
+  m_PrefabInstance: {fileID: 1043560776931713940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845532944
 GameObject:
   m_ObjectHideFlags: 0
@@ -9678,7 +9684,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e624b6133364bce43981ac8ea7dde22c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.552
+  m_Volume: 0.819
   m_Pitch: 0.66
   Loop: 0
   Mute: 0
@@ -10302,6 +10308,29 @@ PrefabInstance:
       propertyPath: teleRangeMask.m_Bits
       value: 4096
       objectReference: {fileID: 0}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 1844547859}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: cheapMelee
+      value: 
+      objectReference: {fileID: 1986842023111703662, guid: 0d694c0c783051541af74d062da9445b,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: teleMelee
+      value: 
+      objectReference: {fileID: 1986842023111703662, guid: 1c287887d716ce8498a0d5e649924a9b,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3985157303769009050, guid: f4485e6b336b28f4dae608fbcd5b1850,
+        type: 3}
     - target: {fileID: 1043560775528139346, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
         type: 3}
       propertyPath: target
@@ -10314,6 +10343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701368478307924278, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
         type: 3}
+      propertyPath: attack.attackSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701368478307924278, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
       propertyPath: mainLoop
       value: 
       objectReference: {fileID: 702972805119320060}
@@ -10322,6 +10356,26 @@ PrefabInstance:
       propertyPath: damage.mySource
       value: 
       objectReference: {fileID: 2099332001}
+    - target: {fileID: 6701368478307924278, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: attack.attackSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4dcbe6596faf9845bd4c606272bb3dd, type: 3}
+    - target: {fileID: 6701368478307924278, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: attack.attackSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0996b3bb2493a3546bde01d7e4250540, type: 3}
+    - target: {fileID: 6701368478307924278, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: attack.attackSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6d04f97b59911d47afed77e3ff7913e, type: 3}
+    - target: {fileID: 7465580561637693229, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.63
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3fba1ce0a9a0e468f29b27441ec797, type: 3}
 --- !u!1 &1515681998549383311

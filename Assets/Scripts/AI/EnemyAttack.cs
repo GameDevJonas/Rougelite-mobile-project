@@ -11,7 +11,14 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = GetComponentInParent<JEnemy>().damage;
+        if (GetComponentInParent<JEnemy>() == null)
+        {
+            damage = GetComponentInParent<JBoss>().damage;
+        }
+        else
+        {
+            damage = GetComponentInParent<JEnemy>().damage;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,11 +31,26 @@ public class EnemyAttack : MonoBehaviour
 
             PlayerStats playerStats = player.GetComponentInChildren<PlayerStats>();
 
-            Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JEnemy>().direction);
+            if (GetComponentInParent<JEnemy>() == null)
+            {
+                Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JBoss>().direction);
+            }
+            else
+            {
+                Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JEnemy>().direction);
+            }
 
             if (playerStats.ShieldReflectsDmg.Value > 0 && Player.canTakeDamage == false)
             {
-                GetComponentInParent<JEnemy>().healthSystem.Damage(damage);
+                if (GetComponentInParent<JEnemy>() == null)
+                {
+                    GetComponentInParent<JBoss>().healthSystem.Damage(damage);
+                }
+                else
+                {
+                    GetComponentInParent<JEnemy>().healthSystem.Damage(damage);
+                }
+                
                 print(damage);
             }
         }
