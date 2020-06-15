@@ -36,6 +36,35 @@ public class JBoss : MonoBehaviour
     public List<GameObject> patternsInScene = new List<GameObject>();
     public Transform patternPoint;
 
+    #region Stat based variables
+    public int level;
+    public EnemyStats EnemyStats;
+    public EnemyType thisType;
+    public float speed = 30f;
+    public float myHealth;
+    public float debugHealth;
+    public float damage;
+    public HealthSystem healthSystem;
+
+    //loot
+    private int drop;
+    public int[] Table;
+    public int commondropRange;
+    public int raredropRange;
+    public int legendarydropRange;
+    public int ancientdropRange;
+    public int potiondropRange;
+    public int none;
+    public int lootTotal;
+    public bool dropping;
+
+    public GameObject commonLoot;
+    public GameObject rareLoot;
+    public GameObject legendaryLoot;
+    public GameObject ancientLoot;
+    public GameObject potion;
+    #endregion
+
     void Awake()
     {
         spawnPattern = false;
@@ -53,11 +82,31 @@ public class JBoss : MonoBehaviour
 
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
         vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+        //StartBoss();
 
     }
-    private void Start()
+    public void StartBoss()
     {
+        doShake = false;
+        level = SceneManager.GetActiveScene().buildIndex;
+        EnemyStats = new EnemyStats(thisType, level);
 
+        myHealth = EnemyStats.health;
+        damage = EnemyStats.damage;
+        speed = EnemyStats.speed;
+        healthSystem = new HealthSystem(myHealth);
+
+
+        Table = EnemyStats.Table;
+        commondropRange = EnemyStats.commondropRange;
+        raredropRange = EnemyStats.raredropRange;
+        legendarydropRange = EnemyStats.legendarydropRange;
+        ancientdropRange = EnemyStats.ancientdropRange;
+        potiondropRange = EnemyStats.potiondropRange;
+        none = EnemyStats.none;
+        lootTotal = EnemyStats.lootTotal;
+
+        path.maxSpeed = speed;
     }
 
     // Update is called once per frame

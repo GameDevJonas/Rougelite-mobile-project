@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5787,7 +5787,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 77.89048
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8200,7 +8200,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 77.89048
+    OrthographicSize: 60
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -10229,6 +10229,36 @@ PrefabInstance:
       propertyPath: doCrumble
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: ancientLoot
+      value: 
+      objectReference: {fileID: 4633701987345043094, guid: 6c47138bba0d6524cbb2f5ca63bceb9d,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: commonLoot
+      value: 
+      objectReference: {fileID: 4633701987345043094, guid: 8d7087df0b6740e4a93c7b90be7861c0,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: rareLoot
+      value: 
+      objectReference: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: legendaryLoot
+      value: 
+      objectReference: {fileID: 4633701987345043094, guid: e964a78261a9c1641a4e3e6dabda5bee,
+        type: 3}
+    - target: {fileID: 1043560775528139345, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
+        type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 4633701987345043094, guid: e690ca87d66d61542b99fcd3395f16ee,
+        type: 3}
     - target: {fileID: 1043560775528139346, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
         type: 3}
       propertyPath: target

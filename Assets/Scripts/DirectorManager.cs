@@ -61,6 +61,7 @@ public class DirectorManager : MonoBehaviour
             belial.GetComponent<AIDestinationSetter>().enabled = true;
             belial.GetComponent<AIPath>().enabled = true;
             belial.GetComponent<JBoss>().enabled = true;
+            belial.GetComponent<JBoss>().StartBoss();
             initChecker = true;
             this.enabled = false;
         }

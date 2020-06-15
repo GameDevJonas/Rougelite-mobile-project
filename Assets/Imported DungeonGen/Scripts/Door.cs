@@ -12,27 +12,30 @@ public class Door : MonoBehaviour
 
     private RaycastHit2D upRay, leftRay, rightRay, downRay;
 
+    public Collider2D myRoom;
+    public GameObject player;
+
     void Start()
     {
         length = 6f;
+
+        myRoom = GetComponentInParent<RoomInstance>().GetComponent<Collider2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
         upRay = Physics2D.Raycast(upStartDir.position, Vector2.right, length, whatLayer);
         leftRay = Physics2D.Raycast(leftStartDir.position, Vector2.up, length, whatLayer);
         rightRay = Physics2D.Raycast(rightStartDir.position, Vector2.down, length, whatLayer);
         downRay = Physics2D.Raycast(downStartDir.position, Vector2.left, length, whatLayer);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (upRay)
         {
             //Debug.Log(upRay.collider.gameObject + " upRay", gameObject);
@@ -44,6 +47,7 @@ public class Door : MonoBehaviour
             {
                 upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().isThereDoor = true;
                 upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().SwitchTile();
+                upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().enabled = false;
             }
         }
         else if (leftRay)
@@ -73,8 +77,14 @@ public class Door : MonoBehaviour
             {
                 downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().isThereDoor = true;
                 downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().SwitchTile();
+                downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().enabled = false;
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
 

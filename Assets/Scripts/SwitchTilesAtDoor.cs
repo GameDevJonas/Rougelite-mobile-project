@@ -16,6 +16,15 @@ public class SwitchTilesAtDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isThereDoor)
+        {
+            GetComponent<SpriteRenderer>().sprite = notDoorSprite;
+            this.enabled = false;
+        }
+    }
+
+    public void SwitchTile()
+    {
         if (isThereDoor)
         {
             GetComponent<SpriteRenderer>().sprite = doorSprite;
@@ -24,10 +33,6 @@ public class SwitchTilesAtDoor : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = notDoorSprite;
         }
-    }
-
-    public void SwitchTile()
-    {
-        
+        this.enabled = false;
     }
 }

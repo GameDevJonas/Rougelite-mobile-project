@@ -209,7 +209,7 @@ public class EnemyStats
                 this.hidesInLight = true;
             }
         }
-        if (thisType == EnemyType.melee)
+        if (enemyType == EnemyType.melee)
         {
             if (level == 1 || level == 6)
             {
@@ -392,7 +392,7 @@ public class EnemyStats
                 this.hidesInLight = false;
             }
         }
-        if (thisType == EnemyType.ranged)
+        if (enemyType == EnemyType.ranged)
         {
             if (level == 1 || level == 6)
             {
@@ -575,7 +575,7 @@ public class EnemyStats
                 this.hidesInLight = true;
             }
         }
-        if (thisType == EnemyType.elite)
+        if (enemyType == EnemyType.elite)
         {
             if (level == 1 || level == 6)
             {
@@ -758,7 +758,7 @@ public class EnemyStats
                 this.hidesInLight = false;
             }
         }
-        if (thisType == EnemyType.boss)
+        if (enemyType == EnemyType.boss)
         {
             if (level == 1 || level == 6)
             {
