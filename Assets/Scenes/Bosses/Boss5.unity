@@ -5489,6 +5489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229709191}
+  - component: {fileID: 1229709192}
   m_Layer: 12
   m_Name: TelegraphRangePoint
   m_TagString: Untagged
@@ -5510,6 +5511,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1229709192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229709190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.2891159}
+  serializedVersion: 2
+  m_Radius: 3.5358276
 --- !u!1 &1257445149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,7 +5706,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 103.2263
+  orthographic size: 71.53783
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8102,7 +8119,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 103.2263
+    OrthographicSize: 71.53783
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
