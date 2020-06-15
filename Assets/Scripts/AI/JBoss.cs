@@ -33,6 +33,7 @@ public class JBoss : MonoBehaviour
     public Vector2 shakeAmp, shakeFreq;
 
     public GameObject[] bulletPatterns;
+    public List<GameObject> patternsInScene = new List<GameObject>();
     public Transform patternPoint;
 
     void Awake()
@@ -62,15 +63,6 @@ public class JBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.localScale = new Vector3(25, 25, 0);
-        Anims();
-        CheckForOtherSounds();
-        GetDirFromPlayer();
-        if (spawnPattern)
-        {
-            InstansiatePattern();
-            spawnPattern = false;
-        }
         switch (myState)
         {
             case BossState.idle:
@@ -103,6 +95,22 @@ public class JBoss : MonoBehaviour
                 StopAllCoroutines();
                 break;
         }
+
+        //transform.localScale = new Vector3(25, 25, 0);
+        Anims();
+        CheckForOtherSounds();
+        GetDirFromPlayer();
+        if (spawnPattern && patternsInScene.Count < 1)
+        {
+            InstansiatePattern();
+            spawnPattern = false;
+        }
+
+        if(patternsInScene[0] == null)
+        {
+            patternsInScene.Remove(patternsInScene[0]);
+        }
+
     }
 
 
@@ -126,6 +134,9 @@ public class JBoss : MonoBehaviour
     void DecideState()
     {
         StopAllCoroutines();
+        attackState = 2;
+        telegraphed = true;
+        myState = BossState.telegraph;
         int rand = Random.Range(0, 2);
         int tele = Random.Range(0, 2);
         if (rand < 1)
@@ -281,6 +292,7 @@ public class JBoss : MonoBehaviour
     public void InstansiatePattern()
     {
         GameObject patternClone = Instantiate(bulletPatterns[0], patternPoint.position, Quaternion.identity);
+        patternsInScene.Add(patternClone);
     }
 
     void CheckForShake()

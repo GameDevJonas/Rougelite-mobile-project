@@ -542,6 +542,8 @@ GameObject:
   - component: {fileID: 1814065024}
   - component: {fileID: 1814065023}
   - component: {fileID: 1814065022}
+  - component: {fileID: 911748890}
+  - component: {fileID: 911748887}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -635,6 +637,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &911748890
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065021}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &911748887
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a186eaf99e981e418d835a61411fb8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2070419409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1621,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 32767
+  m_SortingOrder: 150
   m_Sprite: {fileID: 5616450073383564847, guid: 44c97a7bca832ba49a38b07f69aed47f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3150,6 +3183,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b781721d37edf84ca98eec707e482e3, type: 3}
+--- !u!4 &496618011368227172 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2843506161688584469, guid: 6b781721d37edf84ca98eec707e482e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2419135290951016561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &496618011368227173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2843506161688584468, guid: 6b781721d37edf84ca98eec707e482e3,
@@ -3162,9 +3201,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7eda42bc2629744a84ea06acad9cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &496618011368227172 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2843506161688584469, guid: 6b781721d37edf84ca98eec707e482e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2419135290951016561}
-  m_PrefabAsset: {fileID: 0}

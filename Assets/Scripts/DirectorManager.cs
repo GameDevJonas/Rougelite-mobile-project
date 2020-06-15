@@ -29,7 +29,8 @@ public class DirectorManager : MonoBehaviour
         music.clip = null;
         ambience.enabled = false;
         vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-        vCam.GetComponent<CameraPicker>().enabled = false;
+        vCam.m_Lens.OrthographicSize = 60;
+        vCam.GetComponent<BossCamera>().enabled = false;
         //vCam.Follow = belial.transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         director = GetComponent<PlayableDirector>();
@@ -53,8 +54,7 @@ public class DirectorManager : MonoBehaviour
             music.Play();
             ambience.enabled = true;
             belial.GetComponentInChildren<Light2D>().intensity = 0;
-            vCam.GetComponent<CameraPicker>().enabled = true;
-            vCam.Follow = player.transform;
+            vCam.GetComponent<BossCamera>().enabled = true;
             player.enabled = true;
             belial.GetComponent<AIDestinationSetter>().enabled = true;
             belial.GetComponent<AIPath>().enabled = true;
