@@ -23,7 +23,7 @@ public class JBoss : MonoBehaviour
     BossSound mySound;
 
     bool isDead, telegraphed, isAttacking;
-    public bool doShake, doScream, doCrumble, spawnPattern, spawnCheapMelee, spawnCheapRange, spawnMeleeTele;
+    public bool doShake, doScream, doCrumble, spawnPattern, spawnCheapMelee, spawnCheapRange, spawnMeleeTele, inStagger;
 
     public string direction;
 
@@ -177,6 +177,7 @@ public class JBoss : MonoBehaviour
                 DeadState();
                 break;
             case BossState.stagger:
+                StaggerState();
                 break;
         }
 
@@ -202,6 +203,23 @@ public class JBoss : MonoBehaviour
     }
 
     #region States
+    void StaggerState()
+    {
+        StopAllCoroutines();
+        inStagger = true;
+        path.enabled = false;
+        destination.enabled = false;
+        Invoke("OutOfStagger", .2f);
+    }
+
+    void OutOfStagger()
+    {
+        inStagger = false;
+        path.enabled = true;
+        destination.enabled = true;
+        myState = BossState.walk;
+    }
+
     void DeadState()
     {
         anim.SetTrigger("IsDead");
@@ -317,6 +335,7 @@ public class JBoss : MonoBehaviour
             destination.target = player.transform;
             while (!overlap)
             {
+                overlapRange = 40f;
                 yield return new WaitForSeconds(.1f);
             }
             path.enabled = false;
@@ -329,10 +348,11 @@ public class JBoss : MonoBehaviour
         {
             //Ranged
             Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, teleRangeMask);
-            overlapRange = 15f;
             destination.target = teleRangePoint;
+            overlapRange = 15f;
             while (!overlap)
             {
+                overlapRange = 15f;
                 yield return new WaitForSeconds(.1f);
             }
             telegraphed = true;
@@ -346,6 +366,7 @@ public class JBoss : MonoBehaviour
     }
     #endregion
 
+    #region Attack Instantiating
     void InstantiateCheapMelee()
     {
         if (spawnCheapMelee)
@@ -387,6 +408,7 @@ public class JBoss : MonoBehaviour
         GameObject patternClone = Instantiate(bulletPatterns[0], patternPoint.position, Quaternion.identity);
         patternsInScene.Add(patternClone);
     }
+    #endregion
 
     void GetDirFromPlayer()
     {
@@ -466,6 +488,7 @@ public class JBoss : MonoBehaviour
         anim.SetBool("Telegraphed", telegraphed);
         anim.SetBool("IsAttacking", isAttacking);
         anim.SetInteger("AttackState", attackState);
+        anim.SetBool("InStagger", inStagger);
 
         CheckForShake();
         CheckForScream();

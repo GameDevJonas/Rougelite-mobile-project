@@ -47,7 +47,6 @@ public class Door : MonoBehaviour
             {
                 upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().isThereDoor = true;
                 upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().SwitchTile();
-                upRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().enabled = false;
             }
         }
         else if (leftRay)
@@ -77,7 +76,6 @@ public class Door : MonoBehaviour
             {
                 downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().isThereDoor = true;
                 downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().SwitchTile();
-                downRay.collider.gameObject.GetComponent<SwitchTilesAtDoor>().enabled = false;
             }
         }
     }

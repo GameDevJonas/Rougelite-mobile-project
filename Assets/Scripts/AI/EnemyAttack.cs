@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (GetComponentInParent<JEnemy>() == null)
         {
-            damage = GetComponentInParent<JBoss>().damage;
+            damage = FindObjectOfType<JBoss>().damage;
         }
         else
         {
@@ -33,7 +33,7 @@ public class EnemyAttack : MonoBehaviour
 
             if (GetComponentInParent<JEnemy>() == null)
             {
-                Player.TakeDamageAndKnockBack(damage, GetComponentInParent<JBoss>().direction);
+                Player.TakeDamageAndKnockBack(damage, FindObjectOfType<JBoss>().direction);
             }
             else
             {
@@ -44,7 +44,7 @@ public class EnemyAttack : MonoBehaviour
             {
                 if (GetComponentInParent<JEnemy>() == null)
                 {
-                    GetComponentInParent<JBoss>().healthSystem.Damage(damage);
+                    FindObjectOfType<JBoss>().healthSystem.Damage(damage);
                 }
                 else
                 {
