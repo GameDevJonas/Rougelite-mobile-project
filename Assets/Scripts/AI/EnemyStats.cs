@@ -72,9 +72,9 @@ public class EnemyStats
 
                 int[] table = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 Table = table;
-                commondropRange = 20;
+                commondropRange = 19;
                 raredropRange = 10;
-                legendarydropRange = 0;
+                legendarydropRange = 1;
                 ancientdropRange = 0;
                 potiondropRange = 30;
                 none = 40;
@@ -89,9 +89,9 @@ public class EnemyStats
                 
                 int[] thisTable = { none, potiondropRange, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 this.Table = thisTable;
-                this.commondropRange = 20;
+                this.commondropRange = 19;
                 this.raredropRange = 10;
-                this.legendarydropRange = 0;
+                this.legendarydropRange = 1;
                 this.ancientdropRange = 0;
                 this.potiondropRange = 30;
                 this.none = 40;
@@ -108,9 +108,9 @@ public class EnemyStats
 
                 int[] table = { potiondropRange, none, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 Table = table;
-                commondropRange = 20;
+                commondropRange = 19;
                 raredropRange = 14;
-                legendarydropRange = 1;
+                legendarydropRange = 2;
                 ancientdropRange = 0;
                 potiondropRange = 35;
                 none = 30;
@@ -125,9 +125,9 @@ public class EnemyStats
 
                 int[] thisTable = { potiondropRange, none, commondropRange, raredropRange, legendarydropRange, ancientdropRange };
                 this.Table = thisTable;
-                this.commondropRange = 20;
+                this.commondropRange = 19;
                 this.raredropRange = 14;
-                this.legendarydropRange = 1;
+                this.legendarydropRange = 2;
                 this.ancientdropRange = 0;
                 this.potiondropRange = 35;
                 this.none = 30;
@@ -145,8 +145,8 @@ public class EnemyStats
                 int[] table = { potiondropRange, raredropRange, none, commondropRange, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 13;
-                raredropRange = 25;
-                legendarydropRange = 2;
+                raredropRange = 24;
+                legendarydropRange = 3;
                 ancientdropRange = 0;
                 potiondropRange = 40;
                 none = 20;
@@ -162,8 +162,8 @@ public class EnemyStats
                 int[] thisTable = { potiondropRange, raredropRange, none, commondropRange, legendarydropRange, ancientdropRange };
                 this.Table = thisTable;
                 this.commondropRange = 13;
-                this.raredropRange = 25;
-                this.legendarydropRange = 2;
+                this.raredropRange = 24;
+                this.legendarydropRange = 3;
                 this.ancientdropRange = 0;
                 this.potiondropRange = 40;
                 this.none = 20;
@@ -181,9 +181,9 @@ public class EnemyStats
                 int[] table = { potiondropRange, raredropRange, commondropRange, none, legendarydropRange, ancientdropRange };
                 Table = table;
                 commondropRange = 12;
-                raredropRange = 30;
-                legendarydropRange = 3;
-                ancientdropRange = 0;
+                raredropRange = 28;
+                legendarydropRange = 4;
+                ancientdropRange = 1;
                 potiondropRange = 45;
                 none = 10;
 
@@ -198,9 +198,9 @@ public class EnemyStats
                 int[] thisTable = { potiondropRange, raredropRange, commondropRange, none, legendarydropRange, ancientdropRange };
                 this.Table = thisTable;
                 this.commondropRange = 12;
-                this.raredropRange = 30;
-                this.legendarydropRange = 3;
-                this.ancientdropRange = 0;
+                this.raredropRange = 28;
+                this.legendarydropRange = 4;
+                this.ancientdropRange = 1;
                 this.potiondropRange = 45;
                 this.none = 10;
 
@@ -763,7 +763,7 @@ public class EnemyStats
             if (level == 1 || level == 6)
             {
                 health = 250;
-                damage = 50;
+                damage = 30;
                 speed = 30;
 
                 int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -780,7 +780,7 @@ public class EnemyStats
                 hidesInLight = false;
 
                 this.health = 250;
-                this.damage = 50;
+                this.damage = 30;
                 this.speed = 30;
 
                 int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -798,8 +798,8 @@ public class EnemyStats
             }
             if (level == 2 || level == 7)
             {
-                health = 1000;
-                damage = 100;
+                health = 750;
+                damage = 50;
                 speed = 35;
 
                 int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -815,8 +815,8 @@ public class EnemyStats
                 hidesInDark = false;
                 hidesInLight = false;
 
-                this.health = 1000;
-                this.damage = 100;
+                this.health = 750;
+                this.damage = 50;
                 this.speed = 35;
 
                 int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -834,8 +834,8 @@ public class EnemyStats
             }
             if (level == 3 || level == 8)
             {
-                health = 2000;
-                damage = 150;
+                health = 1000;
+                damage = 80;
                 speed = 35;
 
                 int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -851,8 +851,8 @@ public class EnemyStats
                 hidesInDark = false;
                 hidesInLight = false;
 
-                this.health = 2000;
-                this.damage = 150;
+                this.health = 1000;
+                this.damage = 80;
                 this.speed = 35;
 
                 int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -870,8 +870,8 @@ public class EnemyStats
             }
             if (level == 4 || level == 9)
             {
-                health = 3500;
-                damage = 200;
+                health = 1500;
+                damage = 90;
                 speed = 40;
 
                 int[] table = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -887,8 +887,8 @@ public class EnemyStats
                 hidesInDark = false;
                 hidesInLight = false;
 
-                this.health = 3500;
-                this.damage = 200;
+                this.health = 1500;
+                this.damage = 90;
                 this.speed = 40;
 
                 int[] thisTable = { legendarydropRange, raredropRange, ancientdropRange, none, commondropRange, potiondropRange };
@@ -906,8 +906,8 @@ public class EnemyStats
             }
             if (level == 5 || level == 10)
             {
-                health = 7000;
-                damage = 500;
+                health = 3000;
+                damage = 250;
                 speed = 45;
 
                 int[] table = { ancientdropRange, none, commondropRange, raredropRange, legendarydropRange, potiondropRange };
@@ -923,8 +923,8 @@ public class EnemyStats
                 hidesInDark = true;
                 hidesInLight = false;
 
-                this.health = 7000;
-                this.damage = 500;
+                this.health = 3000;
+                this.damage = 250;
                 this.speed = 45;
 
                 int[] thisTable = { ancientdropRange, none, commondropRange, raredropRange, legendarydropRange, potiondropRange };
