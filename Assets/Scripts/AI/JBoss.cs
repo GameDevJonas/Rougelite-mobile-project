@@ -43,6 +43,8 @@ public class JBoss : MonoBehaviour
 
     public GameObject teleMelee;
 
+    public GameObject destroyChildren;
+
     public GameObject[] bulletPatterns;
     public List<GameObject> patternsInScene = new List<GameObject>();
     public Transform patternPoint;
@@ -780,9 +782,13 @@ public class JBoss : MonoBehaviour
 
     void DestroyCorpse()
     {
+        
         vCam.Follow = player.transform;
         player.GetComponent<Player>().enabled = true;
+        Destroy(destroyChildren);
         GetComponent<Animator>().enabled = false;
+        GetComponentInChildren<Animator>().enabled = false;
+        transform.DetachChildren();
         Destroy(gameObject);
     }
 

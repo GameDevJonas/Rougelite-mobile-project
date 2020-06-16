@@ -939,7 +939,7 @@ public class SacrificeScript : MonoBehaviour
             //Sacrifice mechanic, med intensity
             if (sacrifice[0].description == "mechanic" && sacrifice[0].intensity == 1)
             {
-                option01text.text = "Sacrifice a tendon. \n Can no longer dodge.";
+                option01text.text = "Sacrifice a tendon. \n Limping impairs movement.";
                 return;
             }
 
@@ -1185,7 +1185,7 @@ public class SacrificeScript : MonoBehaviour
             //Sacrifice mechanic, med intensity
             if (sacrifice[1].description == "mechanic" && sacrifice[1].intensity == 1)
             {
-                option02text.text = "Sacrifice a tendon. \n Can no longer dodge.";
+                option02text.text = "Sacrifice a tendon. \n Limping impairs movement.";
                 return;
             }
 
