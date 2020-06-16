@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     public float shieldKnockBack;
     public int extraLives = 5;
     public int strengthPotionCount = 0;
+    public int currentLevel;
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
     public bool subtractextralife = true;
     public bool isdead = false;
     public bool slowingdown = false;
+    public bool playBattle = false;
 
     public MenuManager menuManager;
 
@@ -82,6 +84,8 @@ public class Player : MonoBehaviour
     public LightConeScript LightCone;
 
     public GameObject currentRoom;
+    public GameObject battlemusic;
+    public GameObject music;
 
     public AstarStarter aStarManager;
 
@@ -151,10 +155,37 @@ public class Player : MonoBehaviour
     {
         aStarManager = GameObject.FindGameObjectWithTag("RoomRoot").GetComponent<AstarStarter>();
         transform.position = startPos;
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
     {
+        print(SceneManager.GetActiveScene().buildIndex);
+        if (music == null && currentLevel <= 4)
+        {
+            music = GameObject.FindGameObjectWithTag("Music");
+        }
+        else if (currentLevel > 4)
+        {
+            music = null;
+        }
+        
+        if (currentRoom.GetComponentInChildren<JEnemy>() != null && music != null && music.GetComponent<AudioSource>().volume > 0)
+        {
+            music.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.2f;
+        }
+        if (currentRoom.GetComponentInChildren<JEnemy>() == null && music != null && music.GetComponent<AudioSource>().volume < 0.8)
+        {
+            music.GetComponent<AudioSource>().volume += Time.deltaTime * 0.5f;
+        }
+        if (currentRoom.GetComponentInChildren<JEnemy>() != null && music != null && battlemusic.GetComponent<AudioSource>().volume < 0.8)
+        {
+            battlemusic.GetComponent<AudioSource>().volume += Time.deltaTime * 0.1f;
+        }
+        if (currentRoom.GetComponentInChildren<JEnemy>() == null && music != null && battlemusic.GetComponent<AudioSource>().volume > 0)
+        {
+            battlemusic.GetComponent<AudioSource>().volume -= Time.deltaTime * 0.5f;
+        }
         CheckInput();
         DirectionManaging();
         //SwordAttack();
@@ -910,6 +941,8 @@ public class Player : MonoBehaviour
         {
             currentRoom = collision.gameObject;
             aStarManager.DoTheScan(currentRoom);
+            
+            
         }
     }
 }
