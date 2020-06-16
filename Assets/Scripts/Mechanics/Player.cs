@@ -452,27 +452,50 @@ public class Player : MonoBehaviour
     {
         maxspeed = playerstats.MovementSpeed.Value * 5;
         speed = maxspeed;
-        attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
+        if (playerstats.WalkAfterDodge.Value > 0)
+        {
+            attackspeed = (100f - (playerstats.Dexterity.Value + (playerstats.MovementSpeed.Value * 2))) / 100f;
+        }
+        if (playerstats.WalkAfterDodge.Value <= 0)
+        {
+            attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
+        }
         if (playerstats.RapidFire.Value > 0)
         {
             shootSpeed = 0.25f;
         }
-        else
+        if (playerstats.RapidFire.Value <= 0)
         {
             shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
         }
-
-        if (HealthSystem.GetHealth() >= maxHealth)
+        if (playerstats.EnemiesVisibleInsideLight.Value > 0)
         {
-            HealthSystem = new HealthSystem(playerstats.Health.Value);
-            currentHealth = HealthSystem.GetHealth();
+            if (HealthSystem.GetHealth() >= maxHealth)
+            {
+                HealthSystem = new HealthSystem(playerstats.Health.Value + playerstats.PotionPotency.Value + playerstats.LifeOnHit.Value);
+                currentHealth = HealthSystem.GetHealth();
+            }
+            if (HealthSystem.GetHealth() < maxHealth)
+            {
+                HealthSystem.ModMaxHealth(playerstats.Health.Value + playerstats.PotionPotency.Value + playerstats.LifeOnHit.Value);
+                currentHealth = HealthSystem.GetHealth();
+            }
+            maxHealth = playerstats.Health.Value + playerstats.PotionPotency.Value + playerstats.LifeOnHit.Value;
         }
-        else
+        if (playerstats.EnemiesVisibleInsideLight.Value <= 0)
         {
-            HealthSystem.ModMaxHealth(playerstats.Health.Value);
-            currentHealth = HealthSystem.GetHealth();
+            if (HealthSystem.GetHealth() >= maxHealth)
+            {
+                HealthSystem = new HealthSystem(playerstats.Health.Value);
+                currentHealth = HealthSystem.GetHealth();
+            }
+            if (HealthSystem.GetHealth() < maxHealth)
+            {
+                HealthSystem.ModMaxHealth(playerstats.Health.Value);
+                currentHealth = HealthSystem.GetHealth();
+            }
+            maxHealth = playerstats.Health.Value;
         }
-        maxHealth = playerstats.Health.Value;
         healthbar.SetMaxHealth(maxHealth);
         potionPotency = playerstats.PotionPotency.Value;
 
