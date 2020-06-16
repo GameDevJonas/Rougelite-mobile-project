@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public float speed;
+    public float maxspeed;
     public float attackspeed;
     public int potion = 3;
     public float potionPotency;
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
     public bool potionsIncreaseStr = false;
     public bool subtractextralife = true;
     public bool isdead = false;
+    public bool slowingdown = false;
 
     public MenuManager menuManager;
 
@@ -230,6 +232,25 @@ public class Player : MonoBehaviour
         if (dir != LightCone.direction)
         {
             LightCone.RotateMeBaby(dir, playerstats.HasEye.Value);
+        }
+        float minspeed = maxspeed / 2f;
+        if (!slowingdown && playerstats.CanDodge.Value > 0)
+        {
+            print("slowdown");
+            speed -= Time.deltaTime * 80;
+            if (speed <= minspeed)
+            {
+                slowingdown = true;
+            }
+        }
+        if (slowingdown && playerstats.CanDodge.Value > 0)
+        {
+            print("speedup");
+            speed += Time.deltaTime * 80;
+            if (speed >= maxspeed)
+            {
+                slowingdown = false;
+            }
         }
 
         CheckForMovement();
@@ -429,7 +450,8 @@ public class Player : MonoBehaviour
 
     public void UpdateStats()
     {
-        speed = playerstats.MovementSpeed.Value * 5;
+        maxspeed = playerstats.MovementSpeed.Value * 5;
+        speed = maxspeed;
         attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         if (playerstats.RapidFire.Value > 0)
         {
@@ -497,18 +519,15 @@ public class Player : MonoBehaviour
             HealthSystem.Heal((maxHealth / 2.5f) + potionPotency);
             if (potionsIncreaseStr == true)
             {
-                print("yes");
-                strengthPotionCount += 5;
+                strengthPotionCount += 1;
                 playerstats.RemoveFlatModifier(playerstats.Strength);
                 if (playerstats.Loot.Any((des => des.id.Equals(1))))
                 {
-                    print("yes, yes");
                     playerstats.AddFlatModifier(playerstats.Strength,
                     (playerstats.Loot.Find(x => x.id == 1).statValue) * (playerstats.Loot.Find(x => x.id == 1).collection) + strengthPotionCount);
                 }
                 else
                 {
-                    print("yes, yes, yes");
                     playerstats.AddFlatModifier(playerstats.Strength, strengthPotionCount);
                 }
                 UpdateStats();

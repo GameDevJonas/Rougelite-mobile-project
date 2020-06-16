@@ -41,8 +41,14 @@ public class GetStats : MonoBehaviour
                 currentStats = player.GetComponent<PlayerStats>();
                 currenthealth = player.GetComponent<Player>();
             }
-
-            currentMaxHealth.text = "Health: " + currenthealth.currentHealth + "/" + currentStats.Health.Value;
+            if (currentStats.EnemiesVisibleInsideLight.Value > 0)
+            {
+                currentMaxHealth.text = "Health: " + currenthealth.currentHealth + "/" + (currentStats.Health.Value + currentStats.PotionPotency.Value + currentStats.LifeOnHit.Value);
+            }
+            if (currentStats.EnemiesVisibleInsideLight.Value <= 0)
+            {
+                currentMaxHealth.text = "Health: " + currenthealth.currentHealth + "/" + currentStats.Health.Value;
+            }
             currentStrength.text = "Strength: " + currentStats.Strength.Value;
             currentDexterity.text = "Dexterity: " + currentStats.Dexterity.Value;
             currentMovementSpeed.text = "Movement Speed: " + currentStats.MovementSpeed.Value;

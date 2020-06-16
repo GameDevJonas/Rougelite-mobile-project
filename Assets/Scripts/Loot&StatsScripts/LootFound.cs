@@ -41,9 +41,11 @@ public class LootFound : MonoBehaviour
             //GiveItem(3);
             //GiveItem(7);
             //GiveItem(11);
+            //GiveItem(13);
             //GiveItem(14);
             //GiveItem(15);
             //GiveItem(16);
+            //GiveItem(17);
             //GiveItem(19);
             //GiveItem(20);
             //GiveItem(21);
