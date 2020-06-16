@@ -5,6 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 [Serializable]
 public class Player : MonoBehaviour
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
     public float knockBack;
     public float shieldKnockBack;
     public int extraLives = 5;
+    public int strengthPotionCount = 0;
 
     public HealthSystem HealthSystem = new HealthSystem(50);
     public Healthbar healthbar;
@@ -456,7 +458,7 @@ public class Player : MonoBehaviour
         {
             potionsIncreaseStr = true;
         }
-        else
+        if (playerstats.PotsIncreaseStr.Value <= 0 && potionsIncreaseStr == true)
         {
             potionsIncreaseStr = false;
         }
@@ -495,7 +497,21 @@ public class Player : MonoBehaviour
             HealthSystem.Heal((maxHealth / 2.5f) + potionPotency);
             if (potionsIncreaseStr == true)
             {
-                playerstats.AddFlatModifier(playerstats.Strength, 5);
+                print("yes");
+                strengthPotionCount += 5;
+                playerstats.RemoveFlatModifier(playerstats.Strength);
+                if (playerstats.Loot.Any((des => des.id.Equals(1))))
+                {
+                    print("yes, yes");
+                    playerstats.AddFlatModifier(playerstats.Strength,
+                    (playerstats.Loot.Find(x => x.id == 1).statValue) * (playerstats.Loot.Find(x => x.id == 1).collection) + strengthPotionCount);
+                }
+                else
+                {
+                    print("yes, yes, yes");
+                    playerstats.AddFlatModifier(playerstats.Strength, strengthPotionCount);
+                }
+                UpdateStats();
             }
         }
         else

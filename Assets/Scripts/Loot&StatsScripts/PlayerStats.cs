@@ -138,7 +138,14 @@ public class PlayerStats : MonoBehaviour
                 if (itemToAdd.modType == "flat") //adds additive flat number increases / decreases. 10 + 10 = 20
                 {
                     itemToAdd.statType.RemoveModifier(flat);
-                    AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                    if (itemToAdd.statType == Strength)
+                    {
+                        AddFlatModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) + player.strengthPotionCount);
+                    }
+                    else
+                    {
+                        AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                    } 
                 }
                 if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
                 {
@@ -160,7 +167,14 @@ public class PlayerStats : MonoBehaviour
             if (itemToAdd.modType == "flat")
             {
                 itemToAdd.statType.RemoveModifier(flat);
-                AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                if (itemToAdd.statType == Strength)
+                {
+                    AddFlatModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) + player.strengthPotionCount);
+                }
+                else
+                {
+                    AddFlatModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                }
             }
             if (itemToAdd.modType == "percent")
             {
@@ -283,6 +297,7 @@ public class PlayerStats : MonoBehaviour
 
         }
         _ = ShieldReflectsDmg.Value;
+        _ = PotsIncreaseStr.Value;
         _ = NoSacrifice.Value;
         _ = RueHPDmgOnHit.Value;
         _ = IncreasedLifeOnHit;
@@ -334,7 +349,14 @@ public class PlayerStats : MonoBehaviour
         if (item.modType == "flat")
         {
             item.statType.RemoveModifier(flat);
-            AddFlatModifier(item.statType, item.statValue * item.collection);
+            if (item.statType == Strength)
+            {
+                AddFlatModifier(item.statType, (item.statValue * item.collection) + player.strengthPotionCount);
+            }
+            else
+            {
+                AddFlatModifier(item.statType, item.statValue * item.collection);
+            }
             UpdateStatsInfo();
         }
         if (item.modType == "percent")
@@ -396,6 +418,10 @@ public class PlayerStats : MonoBehaviour
         {
             Loot.Remove(item); //removes item from inventory
         }
+    }
+    public void RemoveFlatModifier(CharacterStat statType)
+    {
+        statType.RemoveModifier(flat);
     }
     public void RemoveAllModifiers(CharacterStat statType) //removes modifiers from items. (All at once at the moment.)
     {
