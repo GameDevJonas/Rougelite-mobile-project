@@ -19,6 +19,9 @@ public class MenuManager : MonoBehaviour
     public GameObject menuLogo;
     public GameObject deathscreen;
     public GameObject cutscene;
+    public GameObject confirm;
+    public GameObject pauseEnter;
+    public GameObject pauseExit;
 
     public static List<GameObject> menuManagersInScene = new List<GameObject>();
     public List<GameObject> menuManagersCheck = new List<GameObject>();
@@ -125,6 +128,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         removeVideo = true;
+        confirm.GetComponent<AudioSource>().Play();
         menuLogo.SetActive(false);
         fromStartMenu = true;
         startButton.SetActive(false);
@@ -135,7 +139,7 @@ public class MenuManager : MonoBehaviour
             GameObject cutscene = GameObject.FindObjectOfType<VideoPlayer>().gameObject;
             cutscene.SetActive(false);
             GetComponent<PlayableDirector>().enabled = false;
-        }
+        } 
     }
 
     public void TestButton()
@@ -145,6 +149,7 @@ public class MenuManager : MonoBehaviour
     {
         if (isPaused)
         {
+            pauseEnter.GetComponent<AudioSource>().Play();
             Time.timeScale = 1;
             if (playerCanvas != null)
             {
@@ -162,6 +167,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (!isPaused)
         {
+            pauseExit.GetComponent<AudioSource>().Play();
             if (playerCanvas != null)
             {
                 playerCanvas.SetActive(false);
