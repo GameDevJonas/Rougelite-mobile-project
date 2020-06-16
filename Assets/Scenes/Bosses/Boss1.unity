@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 61.32972
+    OrthographicSize: 80.15541
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3679,7 +3679,7 @@ GameObject:
   - component: {fileID: 828447555}
   m_Layer: 0
   m_Name: BetweenPoint
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10184,7 +10184,7 @@ GameObject:
   - component: {fileID: 2066880802}
   m_Layer: 12
   m_Name: TelegraphRangePoint
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10339,7 +10339,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 61.32972
+  orthographic size: 80.15541
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

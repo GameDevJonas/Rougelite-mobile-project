@@ -18,6 +18,7 @@ TagManager:
   - SwordProjectile
   - DeathScreen
   - Music
+  - Ignore
   layers:
   - Default
   - TransparentFX

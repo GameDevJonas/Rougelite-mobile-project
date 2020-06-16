@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5375,7 +5375,7 @@ GameObject:
   - component: {fileID: 946493281}
   m_Layer: 0
   m_Name: BetweenPoint
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7114,7 +7114,7 @@ GameObject:
   - component: {fileID: 1229709192}
   m_Layer: 12
   m_Name: TelegraphRangePoint
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9777,11 +9777,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7414f822d5f013c4d9ea97e7fdc93916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 553032198}
+  textbox: {fileID: 0}
   choice01: {fileID: 654889544}
-  option01text: {fileID: 1343756404}
+  option01text: {fileID: 0}
   choice02: {fileID: 644314487}
-  option02text: {fileID: 926633279}
+  option02text: {fileID: 0}
   choice03: {fileID: 424198900}
   SacrificeDatabase: {fileID: 0}
   BossDoor: {fileID: 0}

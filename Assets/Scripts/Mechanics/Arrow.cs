@@ -212,7 +212,7 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player" && collision.tag != "RoomRoot" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value <= 0)
+        if (collision.tag != "Player" && collision.tag != "RoomRoot" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && collision.tag != "Ignore" && collision.tag != "SpawnPos" && stats.FireArrows.Value <= 0)
         {
             //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);
@@ -227,7 +227,7 @@ public class Arrow : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
         }
 
-        if (collision.tag != "Player" && collision.tag != "Enemy" && collision.tag != "RoomRoot" && collision.tag != "Obstacle" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && stats.FireArrows.Value > 0)
+        if (collision.tag != "Player" && collision.tag != "Enemy" && collision.tag != "RoomRoot" && collision.tag != "Obstacle" && collision.tag != "Arrow" && collision.tag != "EnemyAttack" && collision.tag != "Loot" && collision.tag != "Ignore" && collision.tag != "SpawnPos" && stats.FireArrows.Value > 0)
         {
             //Debug.Log(collision.gameObject.name, collision.gameObject);
             rb.velocity = new Vector2(0, 0);
