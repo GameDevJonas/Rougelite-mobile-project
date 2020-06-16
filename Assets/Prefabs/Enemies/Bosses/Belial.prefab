@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 6701368478307924278}
   - component: {fileID: 1605442160}
   - component: {fileID: 1605442162}
+  - component: {fileID: 4538946832238123543}
   m_Layer: 0
   m_Name: Belial
   m_TagString: Enemy
@@ -451,6 +452,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vCam: {fileID: 0}
   myState: 0
+  path: {fileID: 0}
+  destination: {fileID: 0}
   doShake: 0
   doScream: 0
   doCrumble: 0
@@ -458,7 +461,9 @@ MonoBehaviour:
   spawnCheapMelee: 0
   spawnCheapRange: 0
   spawnMeleeTele: 0
+  inStagger: 0
   direction: 
+  attackState: 0
   shakeAmp: {x: 30, y: 80}
   shakeFreq: {x: 9, y: 15}
   damagePopup: {fileID: 7557401448817280372, guid: c525cc10c682bd340973ac3682bcf84b,
@@ -482,6 +487,8 @@ MonoBehaviour:
     m_Bits: 4096
   overlapRange: 40
   teleRangePoint: {fileID: 0}
+  altar: {fileID: 0}
+  counter: 0
   level: 0
   thisType: 4
   speed: 30
@@ -741,6 +748,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!61 &4538946832238123543
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043560775528139348}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.2734718, y: 20.30085}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 23.7295, y: 52.890198}
+  m_EdgeRadius: 0
 --- !u!1 &1043560775569058182
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +846,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 111
-  m_Sprite: {fileID: -5787719293474464681, guid: 25334795fd5323d4f8b6cf5984b6c990,
+  m_Sprite: {fileID: -8549691946186335083, guid: fe2fa419e6283274f95050c0f8565d70,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
