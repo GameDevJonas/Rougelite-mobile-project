@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using TMPro;
 
 public class SacrificeScript : MonoBehaviour
 {
 
-    public Text textbox;
+    public TextMeshProUGUI textbox;
     public GameObject choice01;
-    public Text option01text;
+    public TextMeshProUGUI option01text;
     public GameObject choice02;
-    public Text option02text;
+    public TextMeshProUGUI option02text;
     public GameObject choice03;
     public SacrificeDatabase SacrificeDatabase;
     public BossdoorScript BossDoor;

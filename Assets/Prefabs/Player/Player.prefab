@@ -1232,6 +1232,7 @@ MonoBehaviour:
   knockBack: 100
   shieldKnockBack: 75
   extraLives: 5
+  strengthPotionCount: 0
   healthbar: {fileID: 1319494376}
   playerstats: {fileID: 0}
   hasSword: 1
@@ -1718,8 +1719,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: x10000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4a2348bad5f50b44aae9c975a9c9c2a3, type: 2}
+  m_sharedMaterial: {fileID: -1000710273043745343, guid: 4a2348bad5f50b44aae9c975a9c9c2a3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

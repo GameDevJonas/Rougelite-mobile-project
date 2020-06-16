@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LastScene : MonoBehaviour
 {
-
+    public static bool returnToMainMenu = false;
     private void Awake()
     {
+
     }
 
     void Start()
@@ -30,6 +31,7 @@ public class LastScene : MonoBehaviour
 
     void RestartGame()
     {
+        returnToMainMenu = true;
         SceneManager.LoadScene(0);
     }
 }

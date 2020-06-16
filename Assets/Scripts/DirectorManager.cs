@@ -44,7 +44,13 @@ public class DirectorManager : MonoBehaviour
             belial.GetComponent<AIPath>().enabled = false;
             belial.GetComponent<JBoss>().enabled = false;
             belial.GetComponent<AIDestinationSetter>().enabled = false;
+            player.GetComponentInChildren<CanvasGroup>().enabled = true;
             player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().ResetTrigger("Return");
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().ResetTrigger("FadeIn");
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().ResetTrigger("FadeOut");
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().SetTrigger("Return");
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().SetTrigger("FadeOut");
             player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
             player.enabled = false;
             altar = FindObjectOfType<FromBossToDungeon>().gameObject;
@@ -64,6 +70,7 @@ public class DirectorManager : MonoBehaviour
     {
         if (timer >= time && !initChecker)
         {
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().SetTrigger("FadeIn");
             Destroy(canvasToDestroy);
             player.GetComponentInChildren<Canvas>().GetComponent<CanvasGroup>().enabled = false;
             music.Stop();

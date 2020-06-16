@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using TMPro;
 
 //ADD 2 SPRITES, ONE LOCKED AND ONE OPEN
 public class BossdoorScript : MonoBehaviour

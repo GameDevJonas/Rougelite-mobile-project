@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
     public GameObject otherCanvas;
     public GameObject menuLogo;
     public GameObject deathscreen;
+    public GameObject cutscene;
 
     public static List<GameObject> menuManagersInScene = new List<GameObject>();
     public List<GameObject> menuManagersCheck = new List<GameObject>();
@@ -38,6 +39,7 @@ public class MenuManager : MonoBehaviour
 
     void Awake()
     {
+        cutscene = FindObjectOfType<VideoPlayer>().gameObject;
         removeVideo = false;
         menuManagersInScene.Add(gameObject);
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
@@ -63,30 +65,44 @@ public class MenuManager : MonoBehaviour
             menuLogo.SetActive(true);
             menuManagersInScene.Remove(menuManagersInScene[1]);
         }
-
-        if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetMouseButtonDown(0))
+        if (LastScene.returnToMainMenu && SceneManager.GetActiveScene().buildIndex == 0)
         {
-            if (FindObjectOfType<VideoPlayer>().gameObject)
-            {
-                GameObject cutscene = FindObjectOfType<VideoPlayer>().gameObject;
-                cutscene.SetActive(false);
-                GetComponent<PlayableDirector>().enabled = false;
-            }
-        }
-        if (removeVideo && SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            GameObject cutscene = FindObjectOfType<VideoPlayer>().gameObject;
             cutscene.SetActive(false);
+            GetComponent<PlayableDirector>().enabled = false;
+            LastScene.returnToMainMenu = false;
             removeVideo = false;
         }
+        else if (cutscene == null && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            cutscene = GameObject.FindObjectOfType<VideoPlayer>().gameObject;
+            if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetMouseButtonDown(0))
+            {
+                if (cutscene != null)
+                {
+                    cutscene.SetActive(false);
+                    GetComponent<PlayableDirector>().enabled = false;
+                }
+            }
+            if (removeVideo && SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                cutscene.SetActive(false);
+                GetComponent<PlayableDirector>().enabled = false;
+                removeVideo = false;
+            }
+        }
 
-        if(SceneManager.GetActiveScene().buildIndex == 11)
+        if (SceneManager.GetActiveScene().buildIndex == 11)
         {
             VideoPlayer video = FindObjectOfType<VideoPlayer>();
-            if(video.time >= video.clip.length || Input.GetMouseButtonDown(0))
+            if (video.time >= video.clip.length || Input.GetMouseButtonDown(0))
             {
                 ToStartScreen();
             }
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 0 && cutscene == null)
+        {
+            cutscene = FindObjectOfType<VideoPlayer>().gameObject;
         }
     }
 
@@ -180,8 +196,8 @@ public class MenuManager : MonoBehaviour
         //fromStartMenu = true;
         startButton.SetActive(false);
         loadingThing.SetActive(true);
-        StartCoroutine(StartLoad(0));
         removeVideo = true;
+        StartCoroutine(StartLoad(0));
     }
 
     public void ReloadLevel(int buildIndex)
