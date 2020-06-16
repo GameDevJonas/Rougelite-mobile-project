@@ -3044,7 +3044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &475866421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,10 +3057,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66974c6a077e30b4c9870c5921c2549d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newClip: {fileID: 0}
   music: {fileID: 2119685336}
   ambience: {fileID: 1045966037}
   bossLoop: {fileID: 8300000, guid: 6740f05cf60f06644ae278f6d768b3c0, type: 3}
-  belial: {fileID: 1853503178}
+  belial: {fileID: 0}
   canvasToDestroy: {fileID: 1500854735}
 --- !u!320 &475866422
 PlayableDirector:
@@ -8901,12 +8902,12 @@ PrefabInstance:
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 272
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95.4
+      value: -126
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -11080,19 +11081,13 @@ PrefabInstance:
       objectReference: {fileID: 2119685336}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3fba1ce0a9a0e468f29b27441ec797, type: 3}
---- !u!1 &1853503178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1043560775528139348, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
-    type: 3}
-  m_PrefabInstance: {fileID: 1853503177}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1853503179 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1605442162, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
     type: 3}
   m_PrefabInstance: {fileID: 1853503177}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853503178}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}

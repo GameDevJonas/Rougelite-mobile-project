@@ -99,7 +99,7 @@ public class LootFound : MonoBehaviour
             Loot.Add(itemToAdd);
             Item itemCheck = CheckforItems(id);
 
-            Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
+            //Debug.Log("Got " + itemToAdd.title + itemToAdd.description);
 
         }
     }

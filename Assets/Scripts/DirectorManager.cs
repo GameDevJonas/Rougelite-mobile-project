@@ -29,25 +29,34 @@ public class DirectorManager : MonoBehaviour
 
     void Awake()
     {
-        music.clip = null;
-        ambience.enabled = false;
-        vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-        vCam.m_Lens.OrthographicSize = 60;
-        vCam.GetComponent<BossCamera>().enabled = false;
-        //vCam.Follow = belial.transform;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        director = GetComponent<PlayableDirector>();
-        time = director.duration;
-        belial.GetComponentInChildren<Light2D>().intensity = 1;
-        belial.GetComponent<AIPath>().enabled = false;
-        belial.GetComponent<JBoss>().enabled = false;
-        belial.GetComponent<AIDestinationSetter>().enabled = false;
-        player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
-        player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
-        player.enabled = false;
-        altar = FindObjectOfType<FromBossToDungeon>().gameObject;
-        altar.SetActive(false);
-        belial.GetComponent<JBoss>().altar = altar;
+        if (belial != null)
+        {
+            music.clip = null;
+            ambience.enabled = false;
+            vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+            vCam.m_Lens.OrthographicSize = 60;
+            vCam.GetComponent<BossCamera>().enabled = false;
+            //vCam.Follow = belial.transform;
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            director = GetComponent<PlayableDirector>();
+            time = director.duration;
+            belial.GetComponentInChildren<Light2D>().intensity = 1;
+            belial.GetComponent<AIPath>().enabled = false;
+            belial.GetComponent<JBoss>().enabled = false;
+            belial.GetComponent<AIDestinationSetter>().enabled = false;
+            player.GetComponentInChildren<CanvasGroup>().GetComponent<Animator>().enabled = true;
+            player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
+            player.enabled = false;
+            altar = FindObjectOfType<FromBossToDungeon>().gameObject;
+            altar.SetActive(false);
+            belial.GetComponent<JBoss>().altar = altar;
+        }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player.transform.position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
+            player.GetComponentInChildren<Canvas>().GetComponent<CanvasGroup>().enabled = false;
+        }
     }
 
     // Update is called once per frame

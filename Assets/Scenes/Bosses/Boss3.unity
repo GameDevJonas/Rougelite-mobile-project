@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1549,19 +1549,13 @@ PrefabInstance:
       objectReference: {fileID: 1029466381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3fba1ce0a9a0e468f29b27441ec797, type: 3}
---- !u!1 &249637441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1043560775528139348, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
-    type: 3}
-  m_PrefabInstance: {fileID: 249637440}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &249637442 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1605442162, guid: 8a3fba1ce0a9a0e468f29b27441ec797,
     type: 3}
   m_PrefabInstance: {fileID: 249637440}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249637441}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
@@ -2843,7 +2837,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 60.5293
+    OrthographicSize: 60
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5603,7 +5597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &950173408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5616,10 +5610,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66974c6a077e30b4c9870c5921c2549d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newClip: {fileID: 0}
   music: {fileID: 1029466381}
   ambience: {fileID: 457446125}
   bossLoop: {fileID: 8300000, guid: 6740f05cf60f06644ae278f6d768b3c0, type: 3}
-  belial: {fileID: 249637441}
+  belial: {fileID: 0}
   canvasToDestroy: {fileID: 375139000}
 --- !u!320 &950173409
 PlayableDirector:
@@ -8683,12 +8678,12 @@ PrefabInstance:
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 318
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95.4
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 1665562176945504412, guid: 02c39016bbff67a46a3e8d87e29468fd,
         type: 3}
@@ -10517,7 +10512,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 60.5293
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -278,7 +278,7 @@ MonoBehaviour:
   newClip: {fileID: 11400000, guid: d5c56c99677422f478f631cdc3acd00b, type: 2}
   music: {fileID: 679896233}
   ambience: {fileID: 560635561}
-  bossLoop: {fileID: 8300000, guid: 6740f05cf60f06644ae278f6d768b3c0, type: 3}
+  bossLoop: {fileID: 8300000, guid: 98e2a71cfc1878e4382671e548023837, type: 3}
   belial: {fileID: 1043560776277976128}
   canvasToDestroy: {fileID: 2147008958}
 --- !u!320 &64775668
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 60.32971
+    OrthographicSize: 60.89407
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -10339,7 +10339,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 60.32971
+  orthographic size: 60.89407
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -16,7 +16,10 @@ public class FromBossToDungeon : MonoBehaviour
 
     void Update()
     {
-        manager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
+        if (GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>())
+        {
+            manager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
+        }
         currentScene = SceneManager.GetActiveScene().buildIndex;
         if (currentScene != 10)
         {
@@ -24,22 +27,22 @@ public class FromBossToDungeon : MonoBehaviour
         }
         else
         {
-            manager.ToStartScreen();
-            //Load cutscene scene
+            nextScene = 11;
         }
 
     }
 
     void LoadNextScene()
     {
+
         manager.LoadNextLevel(nextScene);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Player>())
         {
-            Debug.Log("collision");
             LoadNextScene();
         }
     }

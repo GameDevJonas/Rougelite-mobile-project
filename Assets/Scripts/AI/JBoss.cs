@@ -210,7 +210,7 @@ public class JBoss : MonoBehaviour
         myHealth = healthSystem.GetHealth();
         attacked = false;
         Anims();
-        
+
         GetDirFromPlayer();
         if (spawnPattern && patternsInScene.Count < 1)
         {
@@ -257,14 +257,26 @@ public class JBoss : MonoBehaviour
         {
             dropping = true;
             FindObjectOfType<DirectorManager>().EndBoss();
-            Invoke("DropLootAndDie", 2f);
+            if (SceneManager.GetActiveScene().buildIndex != 10)
+            {
+                Invoke("DropLootAndDie", 2f);
+            }
+            else
+            {
+                Invoke("StopDeathBelial", 2f);
+                Invoke("Corpse", 2f);
+            }
         }
+    }
+
+    void StopDeathBelial()
+    {
+        anim.SetBool("StopDeath", true);
     }
 
     IEnumerator IdleState()
     {
         spawnPattern = false;
-        Debug.Log("Idle");
         yield return new WaitForSeconds(1f);
         myState = BossState.walk;
         StopAllCoroutines();
@@ -273,7 +285,6 @@ public class JBoss : MonoBehaviour
     IEnumerator WalkState()
     {
         path.enabled = true;
-        Debug.Log("Walk");
         yield return new WaitForSeconds(2f);
         myState = BossState.decide;
         StopAllCoroutines();
@@ -343,7 +354,6 @@ public class JBoss : MonoBehaviour
     {
         telegraphed = false;
         isAttacking = true;
-        Debug.Log("Melee");
         //Instantiate melee swing in front/towards player
         yield return new WaitForSeconds(1f);
         myState = BossState.idle;
@@ -354,7 +364,6 @@ public class JBoss : MonoBehaviour
     {
         telegraphed = false;
         isAttacking = true;
-        Debug.Log("Ranged");
         //Instantiate bullet from shootPoint
         yield return new WaitForSeconds(1f);
         myState = BossState.idle;
@@ -391,7 +400,7 @@ public class JBoss : MonoBehaviour
                 overlapRange = 15f;
                 yield return new WaitForSeconds(.1f);
                 count++;
-                if(count >= 20)
+                if (count >= 20)
                 {
                     myState = BossState.idle;
                 }
@@ -460,8 +469,6 @@ public class JBoss : MonoBehaviour
         int dirTwo = Mathf.RoundToInt(dir.x);
         int dirThree = Mathf.RoundToInt(dir.y);
         Vector2 dirVector = new Vector2(dirTwo, dirThree);
-        //Debug.Log("OG number = " + dir.x + " normalized number = " + dirTwo + ", " + "OG number = " + dir.y + " normalized number = " + + dirThree);
-        //Debug.Log("x: " + dirTwo + " y: " + dirThree);
         if (myState != BossState.attack && !isDead)
         {
             if (dirVector == new Vector2(0f, 1f))
@@ -765,7 +772,7 @@ public class JBoss : MonoBehaviour
 
     public void Corpse()
     {
-        altar.SetActive(true);   
+        altar.SetActive(true);
         Invoke("DestroyCorpse", 3f);
     }
 

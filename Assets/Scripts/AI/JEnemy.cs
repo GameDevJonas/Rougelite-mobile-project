@@ -175,8 +175,6 @@ public class JEnemy : MonoBehaviour
         int dirTwo = Mathf.RoundToInt(dir.x);
         int dirThree = Mathf.RoundToInt(dir.y);
         Vector2 dirVector = new Vector2(dirTwo, dirThree);
-        //Debug.Log("OG number = " + dir.x + " normalized number = " + dirTwo + ", " + "OG number = " + dir.y + " normalized number = " + + dirThree);
-        //Debug.Log("x: " + dirTwo + " y: " + dirThree);
         if (myState != EnemyState.attack && !isDead)
         {
             if (dirVector == new Vector2(0f, 1f))
@@ -342,10 +340,7 @@ public class JEnemy : MonoBehaviour
         while (myRoom.bounds.Contains(player.transform.position)) //Go to rue
         {
             Collider2D overlap = Physics2D.OverlapCircle(transform.position, overlapRange, mask);
-            //Debug.Log("rue is in room");
             yield return new WaitForSeconds(.01f);
-            /*walkPoint = (rue.transform.position - transform.position).normalized * speed;
-            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
             if (aIPath.reachedEndOfPath && overlap)
             {
                 mySounds.PlayVoiceSound(); //VOICE SOUND
@@ -353,25 +348,18 @@ public class JEnemy : MonoBehaviour
                 {
                     mySounds.PlayAttackSound();
                 }
-                //Debug.Log("Player is here, do attack");
                 aIPath.enabled = false;
-                //yield return new WaitForSeconds(2f);
                 myState = EnemyState.attack;
             }
         }
         if (!myRoom.bounds.Contains(player.transform.position)) //Return to startPos
         {
             yield return new WaitForSeconds(.2f);
-            /*walkPoint = (startPos - transform.position).normalized * speed;
-            rb.velocity = new Vector2(walkPoint.x, walkPoint.y);*/
-            //destination.target = startPosO.transform;
             transform.position = startPosO.transform.position;
             aIPath.canMove = false;
             aIPath.enabled = false;
             myState = EnemyState.idle;
         }
-
-        //Debug.Log("Walkstate is fin");
         aIPath.canMove = false;
         myState = EnemyState.idle;
 

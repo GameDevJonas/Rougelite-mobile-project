@@ -73,16 +73,26 @@ public class MenuManager : MonoBehaviour
                 GetComponent<PlayableDirector>().enabled = false;
             }
         }
-        if (removeVideo)
+        if (removeVideo && SceneManager.GetActiveScene().buildIndex == 0)
         {
             GameObject cutscene = FindObjectOfType<VideoPlayer>().gameObject;
             cutscene.SetActive(false);
             removeVideo = false;
         }
+
+        if(SceneManager.GetActiveScene().buildIndex == 11)
+        {
+            VideoPlayer video = FindObjectOfType<VideoPlayer>();
+            if(video.time >= video.clip.length || Input.GetMouseButtonDown(0))
+            {
+                ToStartScreen();
+            }
+        }
     }
 
     public void StartGame()
     {
+        removeVideo = true;
         menuLogo.SetActive(false);
         fromStartMenu = true;
         startButton.SetActive(false);
@@ -98,7 +108,6 @@ public class MenuManager : MonoBehaviour
 
     public void TestButton()
     {
-        Debug.Log("Hei");
     }
     public void PauseMenu()
     {
@@ -155,7 +164,6 @@ public class MenuManager : MonoBehaviour
         startButton.SetActive(false);
         loadingThing.SetActive(true);
         StartCoroutine(StartLoad(currenctScene + 5));
-        Debug.Log(SceneManager.sceneCount);
     }
 
     public void LoadNextLevel(int scene)
@@ -193,16 +201,11 @@ public class MenuManager : MonoBehaviour
         {
             Time.timeScale = 1;
             float progress = Mathf.Clamp01(loadStart.progress / 0.9f);
-            Debug.Log("Loading progress: " + (progress * 100) + "%");
             loadingSlider.value = Mathf.RoundToInt(progress);
-            progressText.text = "Progress: " + progress * 100 + "%";
             int prevScene = SceneManager.GetActiveScene().buildIndex;
             if (prevScene != 0)
             {
-                //Debug.Log(buildIndex - 1);
-                //Debug.Log("Startet unload");
                 SceneManager.UnloadSceneAsync(prevScene);
-                //destroyPrev.priority = 10;
             }
 
             // Loading completed

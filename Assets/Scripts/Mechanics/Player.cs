@@ -9,11 +9,9 @@ using TMPro;
 [Serializable]
 public class Player : MonoBehaviour
 {
-    //public float knockBackDebug;
 
     public enum WeaponState { sword, bow };
     public WeaponState weaponInUse = WeaponState.sword;
-    //public TextMeshProUGUI debugWeaponState;
 
     private Rigidbody2D rb;
 
@@ -93,7 +91,6 @@ public class Player : MonoBehaviour
         isMoving = false;
 
         playerstats = GetComponent<PlayerStats>();
-        //debugWeaponState.text = "sword";
 
         anim = GetComponentInChildren<Animator>();
 
@@ -689,12 +686,10 @@ public class Player : MonoBehaviour
             otherSFX.PlaySwitchSound(weaponState); //SWITCH WEAPON SOUND
             if (weaponInUse == WeaponState.sword)
             {
-                //debugWeaponState.text = "bow";
                 weaponInUse = WeaponState.bow;
             }
             else if (weaponInUse == WeaponState.bow)
             {
-                //debugWeaponState.text = "sword";
                 weaponInUse = WeaponState.sword;
             }
             anim.SetTrigger("SwitchWeapons");

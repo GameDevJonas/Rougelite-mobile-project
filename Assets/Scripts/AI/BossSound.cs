@@ -71,7 +71,6 @@ public class BossSound : MonoBehaviour
 
     public void CrumbleSound()
     {
-        Debug.Log("PlayCrumble");
         //otherSounds.mySource.clip = otherSounds.crumble;
         otherSounds.mySource.Play();
     }
