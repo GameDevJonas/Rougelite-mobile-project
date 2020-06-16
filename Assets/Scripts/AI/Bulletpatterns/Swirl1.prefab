@@ -98,7 +98,7 @@ MonoBehaviour:
   shootTimer: 0
   bulletForce: 4000
   duration: 1
-  bullet: {fileID: 3985157303769009050, guid: f4485e6b336b28f4dae608fbcd5b1850, type: 3}
+  bullet: {fileID: 3985157303769009050, guid: a8684ba2e5c943f4a8fd70195a611688, type: 3}
 --- !u!58 &6476476028705134139
 CircleCollider2D:
   m_ObjectHideFlags: 0
