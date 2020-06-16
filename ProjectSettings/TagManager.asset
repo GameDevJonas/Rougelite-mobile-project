@@ -17,6 +17,7 @@ TagManager:
   - EnemyAttack
   - SwordProjectile
   - DeathScreen
+  - Music
   layers:
   - Default
   - TransparentFX

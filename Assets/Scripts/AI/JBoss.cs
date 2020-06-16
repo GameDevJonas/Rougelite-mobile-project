@@ -227,8 +227,6 @@ public class JBoss : MonoBehaviour
         {
             patternsInScene.Remove(patternsInScene[0]);
         }
-
-
     }
 
     #region States
@@ -251,10 +249,14 @@ public class JBoss : MonoBehaviour
 
     void DeadState()
     {
-        anim.SetTrigger("IsDead");
+        BossCamera script = FindObjectOfType<BossCamera>();
+        script.enabled = false;
+        vCam.Follow = gameObject.transform;
+        player.GetComponent<Player>().enabled = false;
         if (!dropping)
         {
             dropping = true;
+            FindObjectOfType<DirectorManager>().EndBoss();
             Invoke("DropLootAndDie", 2f);
         }
     }
@@ -531,6 +533,7 @@ public class JBoss : MonoBehaviour
         anim.SetBool("IsAttacking", isAttacking);
         anim.SetInteger("AttackState", attackState);
         anim.SetBool("InStagger", inStagger);
+        anim.SetBool("IsDead", isDead);
 
         CheckForShake();
         CheckForScream();
@@ -626,6 +629,7 @@ public class JBoss : MonoBehaviour
 
     void DropLootAndDie()
     {
+        anim.SetBool("StopDeath", true);
         PlayerStats playerstats = player.GetComponent<PlayerStats>();
         isDead = true;
         if (playerstats.DropGarantueed.Value == 0)
@@ -761,13 +765,14 @@ public class JBoss : MonoBehaviour
 
     public void Corpse()
     {
-        altar.SetActive(true);
-        
+        altar.SetActive(true);   
         Invoke("DestroyCorpse", 3f);
     }
 
     void DestroyCorpse()
     {
+        vCam.Follow = player.transform;
+        player.GetComponent<Player>().enabled = true;
         GetComponent<Animator>().enabled = false;
         Destroy(gameObject);
     }

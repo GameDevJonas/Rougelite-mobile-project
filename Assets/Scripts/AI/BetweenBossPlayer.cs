@@ -7,6 +7,7 @@ public class BetweenBossPlayer : MonoBehaviour
     Transform boss, player;
     public float distance;
 
+
     void Start()
     {
         boss = GameObject.FindGameObjectWithTag("Enemy").transform;
@@ -33,4 +34,6 @@ public class BetweenBossPlayer : MonoBehaviour
 
         }
     }
+
+
 }

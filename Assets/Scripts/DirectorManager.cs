@@ -10,6 +10,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class DirectorManager : MonoBehaviour
 {
     PlayableDirector director;
+    public PlayableAsset newClip;
     double time;
     float timer;
     bool initChecker = false;
@@ -68,11 +69,18 @@ public class DirectorManager : MonoBehaviour
             belial.GetComponent<JBoss>().enabled = true;
             belial.GetComponent<JBoss>().StartBoss();
             initChecker = true;
-            this.enabled = false;
+            //this.enabled = false;
         }
         else if (!initChecker)
         {
             timer += Time.deltaTime;
         }
     }
+
+    public void EndBoss()
+    {
+        director.playableAsset = newClip;
+        director.Play();
+    }
+
 }
