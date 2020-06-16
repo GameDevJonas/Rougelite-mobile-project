@@ -850,6 +850,11 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
       objectReference: {fileID: 1687875459}
+    - target: {fileID: 1439575642, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2238762981087464670, guid: 7d6feec88bf135c4296629701bfc9eb3,
+        type: 2}
     - target: {fileID: 1521603578, guid: 1ec625e2664421e4c9dcc1e128e8b5ff, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -878,6 +883,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1780030247493311110, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2238762981087464670, guid: 7d6feec88bf135c4296629701bfc9eb3,
+        type: 2}
+    - target: {fileID: 2023653849606194199, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2238762981087464670, guid: 7d6feec88bf135c4296629701bfc9eb3,
+        type: 2}
+    - target: {fileID: 2127308250739850581, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2238762981087464670, guid: 7d6feec88bf135c4296629701bfc9eb3,
+        type: 2}
+    - target: {fileID: 4599316151467675068, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2238762981087464670, guid: 7d6feec88bf135c4296629701bfc9eb3,
+        type: 2}
     - target: {fileID: 4926919477902615528, guid: 1ec625e2664421e4c9dcc1e128e8b5ff,
         type: 3}
       propertyPath: m_LocalPosition.x
