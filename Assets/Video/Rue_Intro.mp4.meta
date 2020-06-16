@@ -18,8 +18,8 @@ VideoClipImporter:
       codec: 1
       resizeFormat: 0
       aspectRatio: 0
-      customWidth: 1920
-      customHeight: 1080
+      customWidth: 1280
+      customHeight: 720
       bitrateMode: 2
       spatialQuality: 2
     1:
@@ -27,8 +27,8 @@ VideoClipImporter:
       codec: 1
       resizeFormat: 0
       aspectRatio: 0
-      customWidth: 1920
-      customHeight: 1080
+      customWidth: 1280
+      customHeight: 720
       bitrateMode: 2
       spatialQuality: 2
     7:
@@ -36,8 +36,8 @@ VideoClipImporter:
       codec: 1
       resizeFormat: 0
       aspectRatio: 0
-      customWidth: 1920
-      customHeight: 1080
+      customWidth: 1280
+      customHeight: 720
       bitrateMode: 2
       spatialQuality: 2
   userData: 
