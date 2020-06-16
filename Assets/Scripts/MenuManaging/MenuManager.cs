@@ -36,9 +36,11 @@ public class MenuManager : MonoBehaviour
     public bool toBoss;
     public bool fromBoss;
     bool removeVideo;
+    bool startButtonActive;
 
     void Awake()
     {
+        startButtonActive = false;
         cutscene = FindObjectOfType<VideoPlayer>().gameObject;
         removeVideo = false;
         menuManagersInScene.Add(gameObject);
@@ -75,19 +77,23 @@ public class MenuManager : MonoBehaviour
         else if (cutscene == null && SceneManager.GetActiveScene().buildIndex == 0)
         {
             cutscene = GameObject.FindObjectOfType<VideoPlayer>().gameObject;
-            if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetMouseButtonDown(0))
-            {
-                if (cutscene != null)
-                {
-                    cutscene.SetActive(false);
-                    GetComponent<PlayableDirector>().enabled = false;
-                }
-            }
             if (removeVideo && SceneManager.GetActiveScene().buildIndex == 0)
             {
+                startButtonActive = true;
                 cutscene.SetActive(false);
                 GetComponent<PlayableDirector>().enabled = false;
                 removeVideo = false;
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 0 && Input.GetMouseButtonDown(0))
+        {
+            if (cutscene != null && !startButtonActive)
+            {
+                startButton.SetActive(false);
+                cutscene.SetActive(false);
+                Invoke("StartButtonDelay", .1f);
+                GetComponent<PlayableDirector>().enabled = false;
             }
         }
 
@@ -100,9 +106,19 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if(SceneManager.GetActiveScene().buildIndex == 0 && cutscene == null)
+        if (SceneManager.GetActiveScene().buildIndex == 0 && cutscene == null)
         {
             cutscene = FindObjectOfType<VideoPlayer>().gameObject;
+        }
+    }
+
+    void StartButtonDelay()
+    {
+        if (!startButtonActive)
+        {
+            cutscene = null;
+            startButton.SetActive(true);
+            startButtonActive = true;
         }
     }
 

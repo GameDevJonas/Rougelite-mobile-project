@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 60.89407
+    OrthographicSize: 61.32972
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -10339,7 +10339,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 60.89407
+  orthographic size: 61.32972
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11560,11 +11560,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7414f822d5f013c4d9ea97e7fdc93916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 7355640691617132540}
+  textbox: {fileID: 0}
   choice01: {fileID: 7355640692351764758}
-  option01text: {fileID: 7355640691733653419}
+  option01text: {fileID: 0}
   choice02: {fileID: 7355640691049206360}
-  option02text: {fileID: 7355640692045823874}
+  option02text: {fileID: 0}
   choice03: {fileID: 7284716817528417897}
   SacrificeDatabase: {fileID: 0}
   BossDoor: {fileID: 0}

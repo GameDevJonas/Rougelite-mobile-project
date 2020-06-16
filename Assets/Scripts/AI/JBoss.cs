@@ -199,6 +199,7 @@ public class JBoss : MonoBehaviour
                 isAttacking = false;
                 telegraphed = false;
                 path.enabled = false;
+                destination.enabled = false;
                 StopAllCoroutines();
                 DeadState();
                 break;
