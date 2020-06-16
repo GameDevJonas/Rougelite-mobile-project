@@ -200,6 +200,7 @@ public class JBoss : MonoBehaviour
                 telegraphed = false;
                 path.enabled = false;
                 destination.enabled = false;
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 StopAllCoroutines();
                 DeadState();
                 break;

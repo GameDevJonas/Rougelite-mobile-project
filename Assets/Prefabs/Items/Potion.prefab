@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  potionSound: {fileID: 7523876999770907583, guid: 87fc9c3a28704784da812032b26caac3,
+    type: 3}

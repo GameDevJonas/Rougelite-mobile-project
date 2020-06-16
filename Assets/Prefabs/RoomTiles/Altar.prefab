@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sacrfice all of your shrunken leeches
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a2348bad5f50b44aae9c975a9c9c2a3, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 4a2348bad5f50b44aae9c975a9c9c2a3,
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21.1
+  m_fontSize: 15.2
   m_fontSizeBase: 15.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -133,13 +133,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.5060974, z: 0, w: 0.00000678038}
   m_textInfo:
     textComponent: {fileID: 3634166164336132073}
-    characterCount: 37
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 6
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 2
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1871,7 +1871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sacrfice all of your shrunken leeches
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a2348bad5f50b44aae9c975a9c9c2a3, type: 2}
   m_sharedMaterial: {fileID: -1000710273043745343, guid: 4a2348bad5f50b44aae9c975a9c9c2a3,
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21.1
+  m_fontSize: 15.2
   m_fontSizeBase: 15.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1941,13 +1941,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: -0.000021095784, z: 0, w: -0.00000084386954}
   m_textInfo:
     textComponent: {fileID: 6604415795677159008}
-    characterCount: 37
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 6
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 2
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

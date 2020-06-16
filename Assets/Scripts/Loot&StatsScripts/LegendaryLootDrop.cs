@@ -21,6 +21,8 @@ public class LegendaryLootDrop : MonoBehaviour
     public AcceptLoot AcceptLoot;
     public List<int> AvailableLoot = new List<int>(new int[] { 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 });
 
+    public GameObject pickUpSound;
+
     private void Start()
     {
         rue = GameObject.FindGameObjectWithTag("Player");
@@ -116,6 +118,8 @@ public class LegendaryLootDrop : MonoBehaviour
         {
             pickup = true;
             IsInRange = true;
+            GameObject sfx = Instantiate(pickUpSound, transform.position, Quaternion.identity);
+            Destroy(sfx, .5f);
         }
     }
 

@@ -126,12 +126,17 @@ MonoBehaviour:
     statValue: 0
     amount: 0
     collection: 0
-  player: {fileID: 0}
+  rue: {fileID: 0}
   MenuManager: {fileID: 0}
   RareLoot: {fileID: 4633701987345043094, guid: e61c236fd58534f4a9621ab48ea6279d,
     type: 3}
   PlayerStats: {fileID: 0}
+  player: {fileID: 0}
+  LootFound: {fileID: 0}
+  AcceptLoot: {fileID: 0}
   AvailableLoot: 0d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000
+  pickUpSound: {fileID: 168234078393030861, guid: 3f8a18e4472232344afa6287ea4d5ed7,
+    type: 3}
 --- !u!114 &3811812350027708479
 MonoBehaviour:
   m_ObjectHideFlags: 0

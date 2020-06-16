@@ -131,7 +131,11 @@ MonoBehaviour:
   LegendaryLoot: {fileID: 4633701987345043094, guid: e964a78261a9c1641a4e3e6dabda5bee,
     type: 3}
   PlayerStats: {fileID: 0}
+  LootFound: {fileID: 0}
+  AcceptLoot: {fileID: 0}
   AvailableLoot: 190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000
+  pickUpSound: {fileID: 168234078393030861, guid: 3f8a18e4472232344afa6287ea4d5ed7,
+    type: 3}
 --- !u!114 &-5047040453692705695
 MonoBehaviour:
   m_ObjectHideFlags: 0

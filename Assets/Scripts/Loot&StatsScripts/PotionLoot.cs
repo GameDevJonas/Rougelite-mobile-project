@@ -7,6 +7,8 @@ public class PotionLoot : MonoBehaviour
     private bool IsInRange;
     private bool pickup = false;
     public GameObject player;
+
+    public GameObject potionSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class PotionLoot : MonoBehaviour
         {
             pickup = true;
             IsInRange = true;
+            GameObject sfx = Instantiate(potionSound, transform.position, Quaternion.identity);
+            Destroy(sfx, .5f);
         }
     }
 

@@ -130,6 +130,8 @@ MonoBehaviour:
   MenuManager: {fileID: 0}
   PlayerStats: {fileID: 0}
   AvailableLoot: 05000000060000000700000008000000090000000a0000000b0000000c000000
+  pickUpSound: {fileID: 168234078393030861, guid: 3f8a18e4472232344afa6287ea4d5ed7,
+    type: 3}
 --- !u!114 &137152797354462230
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class CommonLootDrop : MonoBehaviour
 
     public List<int> AvailableLoot = new List<int>(new int[] { 0, 1, 2, 3, 4 });
 
+    public GameObject pickUpSound;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -45,6 +47,8 @@ public class CommonLootDrop : MonoBehaviour
         {
             pickup = true;
             IsInRange = true;
+            GameObject sfx = Instantiate(pickUpSound, transform.position, Quaternion.identity);
+            Destroy(sfx, .5f);
         }
     }
 

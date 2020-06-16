@@ -19,6 +19,7 @@ public class AncientLootDrop : MonoBehaviour
     public LootFound LootFound;
     public AcceptLoot AcceptLoot;
     public List<int> AvailableLoot = new List<int>(new int[] { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 }); //list of database id's
+    public GameObject pickUpSound;
 
     private void Start()
     {
@@ -115,6 +116,8 @@ public class AncientLootDrop : MonoBehaviour
         {
             pickup = true;
             IsInRange = true;
+            GameObject sfx = Instantiate(pickUpSound, transform.position, Quaternion.identity);
+            Destroy(sfx, .5f);
         }
     }
 

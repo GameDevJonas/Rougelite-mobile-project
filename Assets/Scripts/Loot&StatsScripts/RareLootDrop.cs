@@ -16,6 +16,7 @@ public class RareLootDrop : MonoBehaviour
     public PlayerStats PlayerStats;
     public List<int> AvailableLoot = new List<int>(new int[] { 5, 6, 7, 8, 9, 10, 11, 12 });
 
+    public GameObject pickUpSound;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -67,6 +68,8 @@ public class RareLootDrop : MonoBehaviour
         {
             pickup = true;
             IsInRange = true;
+            GameObject sfx = Instantiate(pickUpSound, transform.position, Quaternion.identity);
+            Destroy(sfx, .5f);
         }
     }
 
