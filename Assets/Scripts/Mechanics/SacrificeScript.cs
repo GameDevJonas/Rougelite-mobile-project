@@ -932,21 +932,21 @@ public class SacrificeScript : MonoBehaviour
             //Sacrifice mechanic, low intensity
             if (sacrifice[0].description == "mechanic" && sacrifice[0].intensity == 0)
             {
-                option01text.text = "Sacrifice your eye. \n Reduces vision and impairs aiming.";
+                option01text.text = "Sacrifice your eye.";
                 return;
             }
 
             //Sacrifice mechanic, med intensity
             if (sacrifice[0].description == "mechanic" && sacrifice[0].intensity == 1)
             {
-                option01text.text = "Sacrifice a tendon. \n Limping impairs movement.";
+                option01text.text = "Sacrifice a tendon.";
                 return;
             }
 
             //Sacrifice mechanic, high intensity
             if (sacrifice[0].description == "mechanic" && sacrifice[0].intensity == 2)
             {
-                option01text.text = "Sacrifice your arm. \n Can no longer use shield.";
+                option01text.text = "Sacrifice your arm.";
                 return;
             }
 
@@ -1098,7 +1098,7 @@ public class SacrificeScript : MonoBehaviour
             if (sacrifice[1].description == "violet")
             {
                 violet = PlayerStats.Loot.Find(des => des.title.Equals("Violet light particle", System.StringComparison.InvariantCultureIgnoreCase));
-                option02text.text = "Sacrifice your Violet light particle";
+                option02text.text = "Sacrifice your Violet fruit";
                 return;
             }
 
@@ -1178,21 +1178,21 @@ public class SacrificeScript : MonoBehaviour
             //Sacrifice mechanic, low intensity
             if (sacrifice[1].description == "mechanic" && sacrifice[1].intensity == 0)
             {
-                option02text.text = "Sacrifice your eye. \n Reduces vision and impairs aiming.";
+                option02text.text = "Sacrifice your eye.";
                 return;
             }
 
             //Sacrifice mechanic, med intensity
             if (sacrifice[1].description == "mechanic" && sacrifice[1].intensity == 1)
             {
-                option02text.text = "Sacrifice a tendon. \n Limping impairs movement.";
+                option02text.text = "Sacrifice a tendon.";
                 return;
             }
 
             //Sacrifice mechanic, high intensity
             if (sacrifice[1].description == "mechanic" && sacrifice[1].intensity == 2)
             {
-                option02text.text = "Sacrifice your arm. \n Can no longer use shield.";
+                option02text.text = "Sacrifice your arm.";
                 return;
             }
 
