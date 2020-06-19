@@ -341,7 +341,7 @@ public class Player : MonoBehaviour
         //HURT ANIM
 
 
-        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || canTakeDamage && !knockBackCooldown)
+        if (canTakeDamage && playerstats.IgnoreKnockback.Value <= 0.1f || canTakeDamage && !knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
             otherSFX.PlayDamageSound(); //DAMAGE SOUND
@@ -382,12 +382,12 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", .75f);
             Invoke("StopKnockBack", .75f);
         }
-        else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || canTakeDamage && knockBackCooldown)
+        else if (canTakeDamage && playerstats.IgnoreKnockback.Value > 0.1f || canTakeDamage && knockBackCooldown)
         {
             HealthSystem.Damage(dmg);
             otherSFX.PlayDamageSound(); //DAMAGE SOUND
         }
-        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0 || !canTakeDamage && !knockBackCooldown)
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value <= 0.1f || !canTakeDamage && !knockBackCooldown)
         {
             otherSFX.PlayShieldSound(); //SHIELD BLOCK SOUND
             if (dir == "U")
@@ -433,7 +433,7 @@ public class Player : MonoBehaviour
             Invoke("MovementLock", .5f);
             Invoke("StopKnockBack", .5f);
         }
-        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0 || !canTakeDamage && knockBackCooldown)
+        else if (!canTakeDamage && playerstats.IgnoreKnockback.Value > 0.1f || !canTakeDamage && knockBackCooldown)
         {
             //Knockback w/ shield
             otherSFX.PlayShieldSound(); //SHIELD BLOCK SOUND
@@ -483,23 +483,23 @@ public class Player : MonoBehaviour
     {
         maxspeed = playerstats.MovementSpeed.Value * 5;
         speed = maxspeed;
-        if (playerstats.WalkAfterDodge.Value > 0)
+        if (playerstats.WalkAfterDodge.Value > 0.1f)
         {
             attackspeed = (100f - (playerstats.Dexterity.Value + (playerstats.MovementSpeed.Value * 2))) / 100f;
         }
-        if (playerstats.WalkAfterDodge.Value <= 0)
+        if (playerstats.WalkAfterDodge.Value <= 0.1f)
         {
             attackspeed = (100f - playerstats.Dexterity.Value) / 100f;
         }
-        if (playerstats.RapidFire.Value > 0)
+        if (playerstats.RapidFire.Value > 0.1f)
         {
-            shootSpeed = 0.25f;
+            shootSpeed = (100f - playerstats.Dexterity.Value) / 50f;
         }
-        if (playerstats.RapidFire.Value <= 0)
+        if (playerstats.RapidFire.Value <= 0.1f)
         {
             shootSpeed = (100f - playerstats.Dexterity.Value) / 100f;
         }
-        if (playerstats.EnemiesVisibleInsideLight.Value > 0)
+        if (playerstats.EnemiesVisibleInsideLight.Value > 0.1f)
         {
             if (HealthSystem.GetHealth() >= maxHealth)
             {
@@ -513,7 +513,7 @@ public class Player : MonoBehaviour
             }
             maxHealth = playerstats.Health.Value + playerstats.PotionPotency.Value + playerstats.LifeOnHit.Value;
         }
-        if (playerstats.EnemiesVisibleInsideLight.Value <= 0)
+        if (playerstats.EnemiesVisibleInsideLight.Value <= 0.1f)
         {
             if (HealthSystem.GetHealth() >= maxHealth)
             {
@@ -530,28 +530,28 @@ public class Player : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
         potionPotency = playerstats.PotionPotency.Value;
 
-        if (playerstats.PotsIncreaseStr.Value > 0 && potionsIncreaseStr == false)
+        if (playerstats.PotsIncreaseStr.Value > 0.1f && potionsIncreaseStr == false)
         {
             potionsIncreaseStr = true;
         }
-        if (playerstats.PotsIncreaseStr.Value <= 0 && potionsIncreaseStr == true)
+        if (playerstats.PotsIncreaseStr.Value <= 0.1f && potionsIncreaseStr == true)
         {
             potionsIncreaseStr = false;
         }
-        if (playerstats.HasSword.Value > 0 && hasSword == true)
+        if (playerstats.HasSword.Value > 0.1f && hasSword == true)
         {
             hasSword = false;
         }
-        if (playerstats.HasCrossbow.Value > 0 && hasBow == true)
+        if (playerstats.HasCrossbow.Value > 0.1f && hasBow == true)
         {
             hasBow = false;
         }
-        if (playerstats.IgnoreUnitCollision.Value > 0 && ignore == false)
+        if (playerstats.IgnoreUnitCollision.Value > 0.1f && ignore == false)
         {
             ignore = true;
             Physics2D.IgnoreLayerCollision(9, 11, ignore: true);
         }
-        if (playerstats.IgnoreUnitCollision.Value == 0 && ignore == true)
+        if (playerstats.IgnoreUnitCollision.Value <= 0.1f && ignore == true)
         {
             ignore = false;
             Physics2D.IgnoreLayerCollision(9, 11, ignore: false);
@@ -825,34 +825,34 @@ public class Player : MonoBehaviour
             anim.SetBool("InAttackAnim", true);
             //---------------------
             canHeal = false;
-            if (playerstats.SwordRangeIncreased.Value <= 0 && playerstats.SwordArcIncreased.Value <= 0)
+            if (playerstats.SwordRangeIncreased.Value <= 0.1f && playerstats.SwordArcIncreased.Value <= 0.1f)
             {
                 GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
                 clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
                 Destroy(clonedObject, 0.2f);
             }
-            if (playerstats.SwordRangeIncreased.Value > 0 && playerstats.SwordArcIncreased.Value <= 0)
+            if (playerstats.SwordRangeIncreased.Value > 0.1f && playerstats.SwordArcIncreased.Value <= 0.1f)
             {
                 GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
                 clonedObject.transform.localScale = new Vector3(15, 24, 15);
                 clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
                 Destroy(clonedObject, 0.2f);
             }
-            if (playerstats.SwordRangeIncreased.Value <= 0 && playerstats.SwordArcIncreased.Value > 0)
+            if (playerstats.SwordRangeIncreased.Value <= 0.1f && playerstats.SwordArcIncreased.Value > 0.1f)
             {
                 GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
                 clonedObject.transform.localScale = new Vector3(24, 15, 24);
                 clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
                 Destroy(clonedObject, 0.2f);
             }
-            if (playerstats.SwordRangeIncreased.Value > 0 && playerstats.SwordArcIncreased.Value > 0)
+            if (playerstats.SwordRangeIncreased.Value > 0.1f && playerstats.SwordArcIncreased.Value > 0.1f)
             {
                 GameObject clonedObject = Instantiate(sword, shootPoint.position, Quaternion.identity, transform);
                 clonedObject.transform.localScale = new Vector3(24, 24, 24);
                 clonedObject.GetComponent<Swordscript>().RotateMeBaby(dir, playerstats.HasEye.Value);
                 Destroy(clonedObject, 0.2f);
             }
-            if (playerstats.SwordProjectile.Value > 0)
+            if (playerstats.SwordProjectile.Value > 0.1f)
             {
                 GameObject swordprojectileClone = Instantiate(swordprojectile, shootPoint.position, Quaternion.identity, transform);
                 swordprojectileClone.GetComponent<SwordProjectile>().ShootyShoot(dir, playerstats.HasEye.Value);
@@ -879,12 +879,12 @@ public class Player : MonoBehaviour
         {
             otherSFX.PlayAttackSound(weaponState); //ATTACK SOUND
             //SETS ANIMATOR TRIGGER
-            anim.SetBool("InAttackAnim", true);
             anim.SetTrigger("DoFire");
+            anim.SetBool("InAttackAnim", true);
             //---------------------
             GameObject arrowClone = Instantiate(arrow, shootPoint.position, Quaternion.identity);
             arrowClone.GetComponent<Arrow>().ShootyShoot(dir, playerstats.HasEye.Value);
-            if (playerstats.TripleArrow.Value > 0)
+            if (playerstats.TripleArrow.Value > 0.1f)
             {
                 GameObject arrowClone2 = Instantiate(arrow, shootPoint.position, Quaternion.identity);
                 arrowClone2.GetComponent<Arrow>().ShootyShoot1(dir);

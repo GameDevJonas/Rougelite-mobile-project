@@ -150,7 +150,26 @@ public class PlayerStats : MonoBehaviour
                 if (itemToAdd.modType == "percent") //adds percentage increases / decreases. 10 + 10% = 11
                 {
                     itemToAdd.statType.RemoveModifier(percent);
-                    AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                    if (itemToAdd.statType == Health && LessHP.Value > 0)
+                    {
+                        AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                    }
+                    if (itemToAdd.statType == Strength && LessStr.Value > 0)
+                    {
+                        AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                    }
+                    if (itemToAdd.statType == Dexterity && LessDex.Value > 0)
+                    {
+                        AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                    }
+                    if (itemToAdd.statType == MovementSpeed && LessMS.Value > 0)
+                    {
+                        AddPercentModifier(itemToAdd.statType, (itemToAdd.statValue * itemToAdd.collection) - 0.25f);
+                    }
+                    else
+                    {
+                        AddPercentModifier(itemToAdd.statType, itemToAdd.statValue * itemToAdd.collection);
+                    }
                 }
                 if (itemToAdd.modType == "multpercent") //adds multiplicative percent increases. (10 + 10%) 11 + (10% + 10%) 11% = 22.21
                 {
@@ -215,35 +234,12 @@ public class PlayerStats : MonoBehaviour
         _ = Strength.Value;
         _ = Dexterity.Value;
         _ = CritChance.Value;
-
-        if (CritChance.Value > 100)
-        {
-            RemoveAllModifiers(CritChance);
-            if (CritChance.Value == CritChance.BaseValue) //if value above max, remove modifiers and set to max.
-            {
-                AddFlatModifier(CritChance, 100);
-                return;
-            }
-
-        }
-
         _ = CritDamage.Value;
         _ = LifeOnHit.Value;
         _ = SwordAttackModifier.Value;
         _ = CrossbowAttackModifier.Value;
         _ = PotionPotency.Value;
         _ = MovementSpeed.Value;
-
-        if (MovementSpeed.Value > 15)
-        {
-            RemoveAllModifiers(MovementSpeed);
-            if (MovementSpeed.Value == MovementSpeed.BaseValue)
-            {
-                AddFlatModifier(MovementSpeed, 15);
-                return;
-            }
-        }
-
         _ = EnemiesVisibleInsideLight.Value;
         _ = EnemiesVisibleOutsideLight.Value;
         _ = IgnoreUnitCollision.Value;
@@ -422,6 +418,7 @@ public class PlayerStats : MonoBehaviour
     public void RemoveFlatModifier(CharacterStat statType)
     {
         statType.RemoveModifier(flat);
+        UpdateStatsInfo();
     }
     public void RemoveAllModifiers(CharacterStat statType) //removes modifiers from items. (All at once at the moment.)
     {

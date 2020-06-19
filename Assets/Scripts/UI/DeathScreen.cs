@@ -1058,7 +1058,7 @@ public class DeathScreen : MonoBehaviour
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
-                    "Lost " + raretosac.title + " and the " + (raretosac.statValue * 3) + "%" + " " + raretosac.statString + " it yielded.";
+                    "Lost 3 " + raretosac.title + " and the " + (raretosac.statValue * 3) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
                     PlayerStats.SacrificeModifier(raretosac);
                 }
@@ -1082,7 +1082,7 @@ public class DeathScreen : MonoBehaviour
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
-                    "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
+                    "Lost 7 " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
                     PlayerStats.SacrificeModifier(raretosac);
                 }
@@ -1369,7 +1369,7 @@ public class DeathScreen : MonoBehaviour
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
-                    "Lost " + raretosac.title + " and the " + raretosac.statValue * 3 + "%" + " " + raretosac.statString + " it yielded.";
+                    "Lost 3 " + raretosac.title + " and the " + raretosac.statValue * 3 + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 3;
                     PlayerStats.SacrificeModifier(raretosac);
                 }
@@ -1393,7 +1393,7 @@ public class DeathScreen : MonoBehaviour
                 else
                 {
                     textbox.text = "Sacrifice accepted... \n " +
-                    "Lost " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
+                    "Lost 7 " + raretosac.title + " and the " + (raretosac.statValue * 7) + "%" + " " + raretosac.statString + " it yielded.";
                     PlayerStats.Loot.Single(x => x.id == raretosac.id).collection -= 7;
                     PlayerStats.SacrificeModifier(raretosac);
                 }
